@@ -1,0 +1,103 @@
+@unocss all;
+
+:root {
+  --sp-bg: #0a0a08;
+  --sp-surface: #141410;
+  --sp-raised: #1c1c16;
+  --sp-active: #2a2a20;
+  --sp-border: #2a2a22;
+  --sp-border-active: #4a4a3a;
+  --sp-text: #c8c4a8;
+  --sp-text-dim: #8a8668;
+  --sp-text-muted: #5a5648;
+  --sp-accent: #d4c86a;
+  --sp-accent-bright: #e8d878;
+  --sp-pad: #3a3428;
+  --sp-pad-active: #8a7a3a;
+  --sp-meter-low: #3a4a2a;
+  --sp-meter-mid: #6a7a3a;
+  --sp-meter-clip: #c84838;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--sp-bg);
+  color: var(--sp-text);
+  font-size: 11px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+#app {
+  height: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--sp-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sp-border-active);
+}
+
+/* Range input */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--sp-raised);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 16px;
+  background: var(--sp-accent);
+  border: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 8px;
+  height: 16px;
+  background: var(--sp-accent);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+/* Focus states - keyboard navigation */
+:focus-visible {
+  outline: 1px solid var(--sp-accent);
+  outline-offset: 1px;
+}
+
+/* Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
