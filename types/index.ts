@@ -1,109 +1,125 @@
-// SP-1200 Hardware Emulation Types
-// All parameters follow the parametric law: name, type, domain, value
+// SP-1200 Types — 1:1 Hardware Model (E-mu SP-1200, 1987)
+// 32 Sounds (4 Banks of 8), 8 Output Channels, 7 Functional Modules
 
-// === PHYSICAL CONSTRAINTS ===
-// SP-1200: 12-bit DAC, 26.04kHz sample rate, 10 second total sample time
-// SSM2044 analog filters, 12 voices max
+// === PADS & BANKS ===
+// 32 sample slots: Bank A (0-7), Bank B (8-15), Bank C (16-23), Bank D (24-31)
+export type PadId =
+  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7     // Bank A (A1-A8)
+  | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 // Bank B (B1-B8)
+  | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 // Bank C (C1-C8)
+  | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 // Bank D (D1-D8)
 
-export type BitDepth = 12 | 16 | 24
-export type SampleRate = 26040 | 44100 | 48000
+export type BankId = 'A' | 'B' | 'C' | 'D'
+export type VoiceChannel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 // Channels 1 to 8
 
-export interface HardwareConstraints {
-  bitDepth: BitDepth        // SP-1200: 12-bit
-  sampleRate: SampleRate    // SP-1200: 26.04kHz
-  maxSampleTime: number     // SP-1200: 10 seconds total
-  maxVoices: number         // SP-1200: 12 voices
-  filterType: 'ssm2044' | 'none'
+// Slider Performance Modes
+export type PerformanceMode = 'tune_decay' | 'mix' | 'multi'
+
+// 7 Hardware Modules
+export type HardwareModule = 'sync' | 'sample' | 'disk' | 'setup' | 'master' | 'programming' | 'performance'
+
+export interface PadConfig {
+  id: PadId
+  bank: BankId
+  voiceChannel: VoiceChannel
+  label: string          // 6-character sound name
+  abbr: string           // 3-letter catalog abbreviation
+  sampleId: string | null
+  tune: number           // 0-31, 16 is nominal center
+  decay: number          // 0-31, 16 is nominal center
+  isDecayed: boolean     // true = slider affects decay, false = slider affects tuning
+  level: number          // 0-100 (mix volume)
 }
 
-// === DRUM VOICE ===
-export type VoiceId = 'bd' | 'sd' | 'lt' | 'mt' | 'ht' | 'rs' | 'cp' | 'cb' | 'cy' | 'oh' | 'ch' | 'cl'
-
-export interface VoiceParam {
+// === SAMPLES ===
+export interface SampleData {
   id: string
-  label: string
-  value: number
-  min: number
-  max: number
-  step: number
-  unit?: string
+  name: string
+  buffer: AudioBuffer     // decoded audio
+  duration: number        // seconds (max 2.50s per sample)
+  sampleRate: number      // original rate
+  isStock: boolean
+  assignedPad: PadId | null
 }
 
-export interface DrumVoice {
-  id: VoiceId
-  label: string
-  params: {
-    tune: VoiceParam       // 0-100 (pitch, affects drive)
-    decay: VoiceParam      // 0-100 (envelope decay)
-    attack: VoiceParam     // 0-100 (attack shape)
-    snappy: VoiceParam     // 0-100 (snare snap amount)
-    level: VoiceParam      // 0-100 (output level)
-    drive: VoiceParam      // 0-100 (analog drive)
-    filter: VoiceParam     // 0-100 (SSM2044 filter freq)
-    resonance: VoiceParam  // 0-100 (filter resonance)
-  }
-  output: 'stereo' | 'individual'
-  muted: boolean
-  solo: boolean
-}
-
-// === STEP SEQUENCER ===
+// === PATTERNS (SEGMENTS) & SONGS ===
 export type StepIndex = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
 
-export interface Step {
-  index: StepIndex
+export interface StepData {
   active: boolean
-  velocity: number    // 0-100 (accent level)
+  velocity: number        // 0-127 (intensity)
   accent: boolean
-  slide: boolean
+  tie: boolean
 }
 
 export interface Pattern {
-  id: string
+  index: number           // 0-99 (Segments 01-99)
   name: string
-  steps: Record<VoiceId, Step[]>
-  length: 8 | 12 | 16
-  swing: number       // 50-75 (SP-1200: 50-66)
-  bpm: number         // 60-180
+  steps: Record<VoiceChannel, StepData[]>
+  length: number          // in measures
+  timeSignature: [number, number] // e.g. [4, 4]
+  bpm: number
+  swing: number           // 50-71%
 }
 
-// === SIGNAL CHAIN ===
-export type ModuleType = 'bitcrusher' | 'drive' | 'filter' | 'compressor' | 'delay' | 'reverb'
-
-export interface SignalModule {
-  id: string
-  type: ModuleType
-  enabled: boolean
-  order: number
-  params: VoiceParam[]
-  inputs: string[]    // module IDs
-  outputs: string[]   // module IDs
+export interface SongEntry {
+  patternIndex: number
+  repeats: number
+  mixOverride?: number    // Stored mix 1-8
+  tempoOverride?: number
 }
 
-export interface SignalChain {
-  voiceId: VoiceId
-  modules: SignalModule[]
+export interface Song {
+  index: number           // 0-99 (Songs 01-99)
+  name: string
+  entries: SongEntry[]
 }
 
-// === PERFORMANCE ===
-export interface Performance {
-  patternId: string
-  playing: boolean
+// === SEQUENCER STATE ===
+export type SequencerMode = 'pattern' | 'song'
+
+export interface SequencerState {
+  mode: SequencerMode
+  activeModule: HardwareModule
+  currentPattern: number
+  currentSong: number
   currentStep: StepIndex
-  selectedVoice: VoiceId
-  selectedPattern: number
-  recordMode: boolean
-  quantize: boolean
+  playing: boolean
+  recording: boolean
+  bpm: number
+  swing: number           // 50-71
+  selectedPad: PadId
+  selectedBank: BankId
+  performanceMode: PerformanceMode
+  mixVolume: number       // 0-100
+  metronomeVolume: number // 0-100
 }
 
-// === VIEW/POV ===
-export type ViewId = 'performance' | 'design' | 'mix' | 'pattern' | 'module'
+// === LCD DISPLAY ===
+export interface LcdState {
+  line1: string
+  line2: string
+  memoryBars: number      // 0-10 (filled segments)
+}
 
-export interface AppState {
-  currentView: ViewId
-  hardware: HardwareConstraints
-  voices: Record<VoiceId, DrumVoice>
-  pattern: Pattern
-  performance: Performance
-  signalChains: Record<VoiceId, SignalChain>
+// === HARDWARE CONSTANTS ===
+export const SP1200 = {
+  BIT_DEPTH: 12,
+  SAMPLE_RATE: 26041.6667, // 26.041666... Hz native
+  MAX_SAMPLE_TIME: 10.04,  // seconds total (4 x 2.51s)
+  MAX_SAMPLE_DURATION: 2.50, // max length for any single sample
+  MAX_VOICES: 8,
+  MAX_PATTERNS: 100,
+  MAX_SONGS: 100,
+  SWING_VALUES: [50, 54, 58, 62, 67, 71],
+  BPM_MIN: 40,
+  BPM_MAX: 240,
+  PADS_COUNT: 32,
+  BANK_SIZE: 8,
+  BANKS: ['A', 'B', 'C', 'D'] as const,
+  STEPS_PER_PATTERN: 16,
+} as const
+
+export function padToVoiceChannel(padId: PadId): VoiceChannel {
+  return (padId % 8) as VoiceChannel
 }

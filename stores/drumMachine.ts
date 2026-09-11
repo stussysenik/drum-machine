@@ -1,329 +1,370 @@
-// SP-1200 Drum Machine State
-// Parametric law: every property is a named parameter
+// SP-1200 State Store — UI state ONLY, never audio data
+// 1:1 Hardware Model: 32 Sounds, 4 Banks (A, B, C, D), 8 Channel Sliders, 7 Modules
 
 import { defineStore } from 'pinia'
-import type { VoiceId, DrumVoice, Pattern, Step, StepIndex, ViewId, SignalChain, SignalModule, ModuleType } from '~/types'
+import type {
+  PadId,
+  BankId,
+  VoiceChannel,
+  Pattern,
+  Song,
+  SongEntry,
+  StepData,
+  StepIndex,
+  SequencerMode,
+  PerformanceMode,
+  HardwareModule,
+  SampleData,
+  LcdState,
+} from '~/types'
+import { SP1200 } from '~/types'
+
+// Default sound names across Bank A-D (standard factory mapping)
+const defaultSoundLabels: Record<number, { name: string; abbr: string }> = {
+  0: { name: 'BASS-1', abbr: 'BA1' },
+  1: { name: 'SNARE1', abbr: 'SN1' },
+  2: { name: 'TOM-LO', abbr: 'TML' },
+  3: { name: 'TOM-MD', abbr: 'TMM' },
+  4: { name: 'TOM-HI', abbr: 'TMH' },
+  5: { name: 'RIM-SH', abbr: 'RIM' },
+  6: { name: 'CLAP-1', abbr: 'CLP' },
+  7: { name: 'HI-HAT', abbr: 'HAT' },
+
+  8: { name: 'O-HAT1', abbr: 'OH1' },
+  9: { name: 'COWBL1', abbr: 'CB1' },
+  10: { name: 'CLAVE1', abbr: 'CLV' },
+  11: { name: 'CRASH1', abbr: 'CY1' },
+  12: { name: 'PERC-1', abbr: 'PC1' },
+  13: { name: 'PERC-2', abbr: 'PC2' },
+  14: { name: 'PERC-3', abbr: 'PC3' },
+  15: { name: 'PERC-4', abbr: 'PC4' },
+
+  16: { name: 'BASS-2', abbr: 'BA2' },
+  17: { name: 'SNARE2', abbr: 'SN2' },
+  18: { name: 'SHAKER', abbr: 'SHK' },
+  19: { name: 'CONGA1', abbr: 'CG1' },
+  20: { name: 'CONGA2', abbr: 'CG2' },
+  21: { name: 'TAMB-1', abbr: 'TB1' },
+  22: { name: 'FX-HIT', abbr: 'FX1' },
+  23: { name: 'RIDE-1', abbr: 'RD1' },
+
+  24: { name: 'USER-1', abbr: 'US1' },
+  25: { name: 'USER-2', abbr: 'US2' },
+  26: { name: 'USER-3', abbr: 'US3' },
+  27: { name: 'USER-4', abbr: 'US4' },
+  28: { name: 'USER-5', abbr: 'US5' },
+  29: { name: 'USER-6', abbr: 'US6' },
+  30: { name: 'USER-7', abbr: 'US7' },
+  31: { name: 'USER-8', abbr: 'US8' },
+}
 
 export const useDrumMachineStore = defineStore('drumMachine', {
   state: () => ({
-    // Hardware constraints (SP-1200 physical limits)
-    hardware: {
-      bitDepth: 12 as const,
-      sampleRate: 26040 as const,
-      maxSampleTime: 10,
-      maxVoices: 12,
-      filterType: 'ssm2044' as const
-    },
+    // === HARDWARE STATUS ===
+    activeModule: 'performance' as HardwareModule,
+    performanceMode: 'mix' as PerformanceMode, // 'tune_decay' | 'mix' | 'multi'
+    selectedBank: 'A' as BankId,               // 'A' | 'B' | 'C' | 'D'
+    selectedPad: 0 as PadId,
 
-    // Current view/POV
-    currentView: 'performance' as ViewId,
+    // Master Pots
+    mixVolume: 85,
+    metronomeVolume: 50,
 
-    // Performance state
+    // === SEQUENCER ===
     playing: false,
+    recording: false,
+    mode: 'pattern' as SequencerMode, // 'pattern' (Segment) | 'song'
+    currentPattern: 0,
+    currentSong: 0,
     currentStep: 0 as StepIndex,
-    bpm: 90,
-    swing: 52, // SP-1200: 50-66 range
+    bpm: 92.4,
+    swing: 54, // 50, 54, 58, 62, 67, 71
 
-    // Selected targets
-    selectedVoice: 'bd' as VoiceId,
-    selectedPattern: 0,
+    // 8 Channel Sliders (0-100, 50 is center)
+    faders: [85, 80, 75, 75, 75, 70, 65, 80] as number[],
 
-    // Record/quantize
-    recordMode: false,
-    quantize: true,
+    // === 32 SOUND PADS (8 pads x 4 banks) ===
+    padSettings: Array.from({ length: 32 }, (_, i) => ({
+      id: i as PadId,
+      bank: (['A', 'B', 'C', 'D'][Math.floor(i / 8)]) as BankId,
+      voiceChannel: (i % 8) as VoiceChannel,
+      label: defaultSoundLabels[i]?.name ?? `SND-${i + 1}`,
+      abbr: defaultSoundLabels[i]?.abbr ?? `S${i + 1}`,
+      sampleId: null as string | null,
+      tune: 16,        // 0-31, 16 is nominal center
+      decay: 16,       // 0-31
+      isDecayed: i % 8 === 7 || i % 8 === 3, // cymbals default to decay
+      gain: 80,        // 0-100
+    })),
 
-    // Voices - all 12 SP-1200 voices
-    voices: {
-      bd: createVoice('bd', 'Bass Drum'),
-      sd: createVoice('sd', 'Snare'),
-      lt: createVoice('lt', 'Low Tom'),
-      mt: createVoice('mt', 'Mid Tom'),
-      ht: createVoice('ht', 'High Tom'),
-      rs: createVoice('rs', 'Rimshot'),
-      cp: createVoice('cp', 'Clap'),
-      cb: createVoice('cb', 'Cowbell'),
-      cy: createVoice('cy', 'Cymbal'),
-      oh: createVoice('oh', 'Open Hat'),
-      ch: createVoice('ch', 'Closed Hat'),
-      cl: createVoice('cl', 'Click')
-    } as Record<VoiceId, DrumVoice>,
+    // === PATTERNS (100 Segments) ===
+    patterns: Array.from({ length: 100 }, (_, i) => createPattern(i)),
 
-    // Pattern - 16 steps x 12 voices
-    pattern: {
-      id: 'P001',
-      name: 'PATTERN 01',
-      length: 16 as const,
-      swing: 52,
-      bpm: 90,
-      steps: createEmptySteps()
-    } as Pattern,
+    // === SONGS (100 Songs) ===
+    songs: Array.from({ length: 100 }, (_, i) => createSong(i)),
 
-    // Signal chains per voice
-    signalChains: createSignalChains() as Record<VoiceId, SignalChain>
+    // === SAMPLES & MEMORY ===
+    samples: [] as SampleData[],
+    totalMemorySeconds: 0,
+
+    // === 2x16 LCD DISPLAY ===
+    lcd: {
+      line1: 'SEGMENT: 01',
+      line2: 'BPM: 092.4',
+      memoryBars: 0,
+    } as LcdState,
+
+    // Keypad entry buffer
+    keypadBuffer: '',
   }),
 
   getters: {
-    // Active voices (not muted)
-    activeVoices: (state) => {
-      return Object.entries(state.voices)
-        .filter(([, voice]) => !voice.muted)
-        .map(([id]) => id as VoiceId)
+    activePattern: (state): Pattern => state.patterns[state.currentPattern],
+
+    activePatternSteps: (state): Record<VoiceChannel, StepData[]> =>
+      state.patterns[state.currentPattern].steps,
+
+    selectedPadSampleId: (state): string | null =>
+      state.padSettings[state.selectedPad].sampleId,
+
+    // Returns array of 8 pad IDs for the active Bank
+    visibleBankPads: (state): PadId[] => {
+      const bankIndex = ['A', 'B', 'C', 'D'].indexOf(state.selectedBank)
+      const start = (bankIndex >= 0 ? bankIndex : 0) * 8
+      return Array.from({ length: 8 }, (_, i) => (start + i) as PadId)
     },
 
-    // Soloed voices
-    soloedVoices: (state) => {
-      return Object.entries(state.voices)
-        .filter(([, voice]) => voice.solo)
-        .map(([id]) => id as VoiceId)
-    },
+    remainingMemory: (state): number =>
+      Math.max(0, SP1200.MAX_SAMPLE_TIME - state.totalMemorySeconds),
 
-    // Current pattern steps for selected voice
-    currentVoiceSteps: (state) => {
-      return state.pattern.steps[state.selectedVoice]
-    },
-
-    // Is any voice soloed
-    hasSolo: (state) => {
-      return Object.values(state.voices).some(v => v.solo)
-    },
-
-    // Step duration in ms (with swing)
-    stepDuration: (state) => {
-      const baseStep = (60000 / state.bpm) / 4 // 16th notes
-      return baseStep
-    },
-
-    // Swing offset for even steps
-    swingOffset: (state) => {
-      return ((state.swing - 50) / 50) * (60000 / state.bpm) / 6
-    }
+    getSample: (state) => (id: string): SampleData | undefined =>
+      state.samples.find(s => s.id === id),
   },
 
   actions: {
-    // View navigation
-    setView(view: ViewId) {
-      this.currentView = view
-    },
-
-    // Transport control
+    // === TRANSPORT ===
     play() {
       this.playing = true
+      this.updateLcd()
     },
-
     stop() {
       this.playing = false
       this.currentStep = 0
+      this.updateLcd()
     },
-
     togglePlay() {
-      this.playing = !this.playing
-      if (!this.playing) this.currentStep = 0
-    },
-
-    // Step sequencer
-    advanceStep() {
-      const maxStep = this.pattern.length - 1
-      if (this.currentStep >= maxStep) {
-        this.currentStep = 0
+      if (this.playing) {
+        this.stop()
       } else {
-        this.currentStep = (this.currentStep + 1) as StepIndex
+        this.play()
       }
     },
+    toggleRecord() {
+      this.recording = !this.recording
+    },
 
+    // === STEP SEQUENCER ===
     setCurrentStep(step: StepIndex) {
       this.currentStep = step
     },
 
-    // Pattern editing
-    toggleStep(voiceId: VoiceId, stepIndex: number) {
-      const step = this.pattern.steps[voiceId][stepIndex]
+    toggleStep(voiceChannel: VoiceChannel, stepIndex: number) {
+      const step = this.patterns[this.currentPattern].steps[voiceChannel][stepIndex]
       step.active = !step.active
     },
 
-    setStepVelocity(voiceId: VoiceId, stepIndex: number, velocity: number) {
-      this.pattern.steps[voiceId][stepIndex].velocity = Math.max(0, Math.min(100, velocity))
+    // === PAD & BANK SELECTION ===
+    selectPad(padId: PadId) {
+      this.selectedPad = padId
+      const bankIdx = Math.floor(padId / 8)
+      this.selectedBank = ['A', 'B', 'C', 'D'][bankIdx] as BankId
+      const padConfig = this.padSettings[padId]
+      this.setLcd(
+        `SOUND: ${padConfig.label}`,
+        `CH:${padConfig.voiceChannel + 1} TN:${padConfig.tune} LV:${padConfig.gain}`
+      )
     },
 
-    toggleAccent(voiceId: VoiceId, stepIndex: number) {
-      this.pattern.steps[voiceId][stepIndex].accent = !this.pattern.steps[voiceId][stepIndex].accent
+    selectBank(bank: BankId) {
+      this.selectedBank = bank
+      const bankIdx = ['A', 'B', 'C', 'D'].indexOf(bank)
+      this.selectedPad = (bankIdx * 8) as PadId
+      this.setLcd(`BANK ${bank} SELECTED`, `SOUNDS ${bank}1 - ${bank}8`)
+      setTimeout(() => this.updateLcd(), 1200)
     },
 
-    toggleSlide(voiceId: VoiceId, stepIndex: number) {
-      this.pattern.steps[voiceId][stepIndex].slide = !this.pattern.steps[voiceId][stepIndex].slide
+    cycleBank() {
+      const order: BankId[] = ['A', 'B', 'C', 'D']
+      const nextIdx = (order.indexOf(this.selectedBank) + 1) % 4
+      this.selectBank(order[nextIdx])
     },
 
-    // Voice selection
-    selectVoice(voiceId: VoiceId) {
-      this.selectedVoice = voiceId
+    // === MODE CYCLING ===
+    cyclePerformanceMode() {
+      if (this.performanceMode === 'tune_decay') {
+        this.performanceMode = 'mix'
+        this.setLcd('MODE: MIX', 'SLIDERS: LEVELS')
+      } else if (this.performanceMode === 'mix') {
+        this.performanceMode = 'multi'
+        this.setLcd('MODE: MULTI-MODE', 'PADS: PITCH SPREAD')
+      } else {
+        this.performanceMode = 'tune_decay'
+        this.setLcd('MODE: TUNE/DECAY', 'SLIDERS: PITCH/DK')
+      }
+      setTimeout(() => this.updateLcd(), 1200)
     },
 
-    // Voice parameters
-    setVoiceParam(voiceId: VoiceId, paramKey: string, value: number) {
-      const voice = this.voices[voiceId]
-      if (voice && voice.params[paramKey]) {
-        voice.params[paramKey].value = Math.max(
-          voice.params[paramKey].min,
-          Math.min(voice.params[paramKey].max, value)
-        )
+    setHardwareModule(mod: HardwareModule) {
+      this.activeModule = mod
+      switch (mod) {
+        case 'sync':
+          this.setLcd('SYNC MODULE', '1:INT 2:MIDI 3:SMP')
+          break
+        case 'sample':
+          this.setLcd('SAMPLE MODULE', '1:VU 4:THRS 7:ARM')
+          break
+        case 'disk':
+          this.setLcd('DISK MODULE', '1:LOAD 2:SAVE 3:CAT')
+          break
+        case 'setup':
+          this.setLcd('SET-UP FUNCTION?', '(11 - 23)')
+          break
+        default:
+          this.updateLcd()
       }
     },
 
-    // Voice mute/solo
-    toggleMute(voiceId: VoiceId) {
-      this.voices[voiceId].muted = !this.voices[voiceId].muted
+    // === CHANNEL FADER UPDATES ===
+    setFader(channelIndex: number, value: number) {
+      this.faders[channelIndex] = Math.max(0, Math.min(100, value))
+      const padId = this.visibleBankPads[channelIndex]
+      const pad = this.padSettings[padId]
+
+      if (this.performanceMode === 'mix') {
+        pad.gain = this.faders[channelIndex]
+        const bar = '█'.repeat(Math.round(value / 10))
+        this.setLcd(`CH ${channelIndex + 1} MIX LEVEL`, `[${bar.padEnd(10, '░')}] ${value}%`)
+      } else if (this.performanceMode === 'tune_decay') {
+        const tuneVal = Math.round((value / 100) * 31)
+        if (pad.isDecayed) {
+          pad.decay = tuneVal
+          this.setLcd(`CH ${channelIndex + 1} DECAY`, `VAL: ${tuneVal} / 31`)
+        } else {
+          pad.tune = tuneVal
+          this.setLcd(`CH ${channelIndex + 1} TUNE`, `VAL: ${tuneVal - 16} ST`)
+        }
+      }
     },
 
-    toggleSolo(voiceId: VoiceId) {
-      this.voices[voiceId].solo = !this.voices[voiceId].solo
+    // === KEYPAD & LCD ENTRY ===
+    pressKeypad(key: string) {
+      if (key === 'ENTER') {
+        if (this.keypadBuffer) {
+          const fnNum = parseInt(this.keypadBuffer, 10)
+          this.handleFunctionCode(fnNum)
+          this.keypadBuffer = ''
+        } else {
+          this.updateLcd()
+        }
+      } else if (key === 'NO') {
+        this.keypadBuffer = ''
+        this.updateLcd()
+      } else if (key === 'YES') {
+        this.setLcd('COMMAND CONFIRMED', 'EXECUTING...')
+        setTimeout(() => this.updateLcd(), 1000)
+      } else {
+        this.keypadBuffer += key
+        this.setLcd(`KEYPAD ENTRY:`, `${this.keypadBuffer}_`)
+      }
     },
 
-    // BPM
+    handleFunctionCode(code: number) {
+      if (code === 18) {
+        this.performanceMode = 'tune_decay'
+        this.setLcd('SET-UP 18: DECAY', '1:TUNE 2:DECAY')
+      } else if (code === 11) {
+        this.performanceMode = 'multi'
+        this.setLcd('SET-UP 11: MULTI', 'PITCH SPREAD ON')
+      } else if (code === 12) {
+        this.performanceMode = 'multi'
+        this.setLcd('SET-UP 12: MULTI', 'LEVEL SPREAD ON')
+      } else if (code === 13) {
+        this.performanceMode = 'mix'
+        this.setLcd('SET-UP 13: EXIT', 'MULTI MODE OFF')
+      } else if (code === 15) {
+        this.setLcd('STORE MIX (1-8)', 'SELECT REGISTER')
+      } else if (code === 23) {
+        this.setLcd('SPECIAL FUNCTIONS', '11-23 CATALOG')
+      } else {
+        this.setLcd(`FUNCTION #${code}`, 'SELECTED')
+        setTimeout(() => this.updateLcd(), 1500)
+      }
+    },
+
+    // === SAMPLES ===
+    addSample(sample: SampleData) {
+      this.samples.push(sample)
+      this.totalMemorySeconds += sample.duration
+      this.updateLcd()
+    },
+
+    assignSampleToPad(sampleId: string, padId: PadId) {
+      this.padSettings[padId].sampleId = sampleId
+    },
+
+    // === TEMPO ===
     setBpm(bpm: number) {
-      this.bpm = Math.max(60, Math.min(180, bpm))
-      this.pattern.bpm = this.bpm
+      this.bpm = Math.max(SP1200.BPM_MIN, Math.min(SP1200.BPM_MAX, bpm))
+      this.patterns[this.currentPattern].bpm = this.bpm
+      this.updateLcd()
     },
 
-    // Swing
-    setSwing(swing: number) {
-      this.swing = Math.max(50, Math.min(75, swing))
-      this.pattern.swing = this.swing
+    // === LCD RENDER ===
+    setLcd(line1: string, line2: string) {
+      this.lcd.line1 = line1.padEnd(16, ' ').slice(0, 16)
+      this.lcd.line2 = line2.padEnd(16, ' ').slice(0, 16)
     },
 
-    // Signal chain
-    toggleModule(voiceId: VoiceId, moduleId: string) {
-      const chain = this.signalChains[voiceId]
-      const module = chain.modules.find(m => m.id === moduleId)
-      if (module) {
-        module.enabled = !module.enabled
-      }
+    updateLcd() {
+      const modeStr = this.mode === 'song' ? 'SONG' : 'SEGMENT'
+      const numStr = String((this.mode === 'song' ? this.currentSong : this.currentPattern) + 1).padStart(2, '0')
+      const bpmStr = this.bpm.toFixed(1).padStart(5, ' ')
+      const memSecs = (SP1200.MAX_SAMPLE_TIME - this.totalMemorySeconds).toFixed(1)
+      this.lcd.line1 = `${modeStr}: ${numStr}  ${bpmStr}`.slice(0, 16)
+      this.lcd.line2 = `MEM: ${memSecs}s [BANK ${this.selectedBank}]`.slice(0, 16)
     },
-
-    setModuleParam(voiceId: VoiceId, moduleId: string, paramIndex: number, value: number) {
-      const chain = this.signalChains[voiceId]
-      const module = chain.modules.find(m => m.id === moduleId)
-      if (module && module.params[paramIndex]) {
-        module.params[paramIndex].value = Math.max(
-          module.params[paramIndex].min,
-          Math.min(module.params[paramIndex].max, value)
-        )
-      }
-    },
-
-    reorderModules(voiceId: VoiceId, fromIndex: number, toIndex: number) {
-      const chain = this.signalChains[voiceId]
-      const [moved] = chain.modules.splice(fromIndex, 1)
-      chain.modules.splice(toIndex, 0, moved)
-      chain.modules.forEach((m, i) => { m.order = i })
-    },
-
-    // Pattern management
-    clearPattern() {
-      this.pattern.steps = createEmptySteps()
-    },
-
-    clearVoiceSteps(voiceId: VoiceId) {
-      this.pattern.steps[voiceId] = createVoiceSteps()
-    },
-
-    randomizePattern() {
-      Object.keys(this.pattern.steps).forEach(voiceId => {
-        this.pattern.steps[voiceId as VoiceId].forEach(step => {
-          step.active = Math.random() > 0.8
-          step.velocity = Math.floor(Math.random() * 50) + 50
-          step.accent = Math.random() > 0.9
-        })
-      })
-    }
-  }
+  },
 })
 
-// === FACTORY FUNCTIONS ===
-
-function createVoice(id: VoiceId, label: string): DrumVoice {
-  return {
-    id,
-    label,
-    params: {
-      tune: { id: 'tune', label: 'Tune', value: 50, min: 0, max: 100, step: 1 },
-      decay: { id: 'decay', label: 'Decay', value: 50, min: 0, max: 100, step: 1 },
-      attack: { id: 'attack', label: 'Attack', value: 0, min: 0, max: 100, step: 1 },
-      snappy: { id: 'snappy', label: 'Snappy', value: 50, min: 0, max: 100, step: 1 },
-      level: { id: 'level', label: 'Level', value: 80, min: 0, max: 100, step: 1 },
-      drive: { id: 'drive', label: 'Drive', value: 20, min: 0, max: 100, step: 1 },
-      filter: { id: 'filter', label: 'Filter', value: 70, min: 0, max: 100, step: 1 },
-      resonance: { id: 'resonance', label: 'Res', value: 30, min: 0, max: 100, step: 1 }
-    },
-    output: 'stereo',
-    muted: false,
-    solo: false
-  }
-}
-
-function createVoiceSteps(): Step[] {
-  return Array.from({ length: 16 }, (_, i) => ({
-    index: i as StepIndex,
+function createSteps(): StepData[] {
+  return Array.from({ length: 16 }, () => ({
     active: false,
-    velocity: 80,
+    velocity: 100,
     accent: false,
-    slide: false
+    tie: false,
   }))
 }
 
-function createEmptySteps(): Record<VoiceId, Step[]> {
-  const voices: VoiceId[] = ['bd', 'sd', 'lt', 'mt', 'ht', 'rs', 'cp', 'cb', 'cy', 'oh', 'ch', 'cl']
-  const result = {} as Record<VoiceId, Step[]>
-  voices.forEach(voiceId => {
-    result[voiceId] = createVoiceSteps()
-  })
-  return result
+function createPattern(index: number): Pattern {
+  const steps = {} as Record<VoiceChannel, StepData[]>
+  for (let v = 0; v < 8; v++) {
+    steps[v as VoiceChannel] = createSteps()
+  }
+  return {
+    index,
+    name: `SEGMENT ${String(index + 1).padStart(2, '0')}`,
+    steps,
+    length: 2,
+    timeSignature: [4, 4],
+    bpm: 92.4,
+    swing: 54,
+  }
 }
 
-function createSignalChains(): Record<VoiceId, SignalChain> {
-  const voices: VoiceId[] = ['bd', 'sd', 'lt', 'mt', 'ht', 'rs', 'cp', 'cb', 'cy', 'oh', 'ch', 'cl']
-  const result = {} as Record<VoiceId, SignalChain>
-  
-  voices.forEach(voiceId => {
-    result[voiceId] = {
-      voiceId,
-      modules: [
-        {
-          id: `${voiceId}-bitcrusher`,
-          type: 'bitcrusher',
-          enabled: true,
-          order: 0,
-          params: [
-            { id: 'bits', label: 'Bits', value: 12, min: 4, max: 16, step: 1 },
-            { id: 'rate', label: 'Rate', value: 100, min: 1, max: 100, step: 1 }
-          ],
-          inputs: [],
-          outputs: [`${voiceId}-drive`]
-        },
-        {
-          id: `${voiceId}-drive`,
-          type: 'drive',
-          enabled: true,
-          order: 1,
-          params: [
-            { id: 'amount', label: 'Amount', value: 20, min: 0, max: 100, step: 1 }
-          ],
-          inputs: [`${voiceId}-bitcrusher`],
-          outputs: [`${voiceId}-filter`]
-        },
-        {
-          id: `${voiceId}-filter`,
-          type: 'filter',
-          enabled: true,
-          order: 2,
-          params: [
-            { id: 'cutoff', label: 'Cutoff', value: 70, min: 0, max: 100, step: 1 },
-            { id: 'res', label: 'Res', value: 30, min: 0, max: 100, step: 1 }
-          ],
-          inputs: [`${voiceId}-drive`],
-          outputs: []
-        }
-      ]
-    }
-  })
-  
-  return result
+function createSong(index: number): Song {
+  return {
+    index,
+    name: `SONG ${String(index + 1).padStart(2, '0')}`,
+    entries: [],
+  }
 }

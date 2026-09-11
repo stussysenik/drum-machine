@@ -1,120 +1,229 @@
-// SP-1200 Step Sequencer
-// 16 steps, swing timing, trigger scheduling
+// SP-1200 Sequencer — Tone.js Transport look-ahead clock
+// Web Audio API internal clock (not JS timers) for zero-drift timing.
+// Swing applied to even steps (SP-1200 behavior, 50-66 range).
+//
+// SINGLETON: all callers share one instance so keyboard, faceplate,
+// and app.vue all control the same transport state.
 
-import type { VoiceId, StepIndex } from '~/types'
+import * as Tone from 'tone'
+import type { StepIndex, VoiceChannel, PadId } from '~/types'
+import { SP1200 } from '~/types'
+
+// Module-level singleton state
+let isRunning = false
+let stepIndex = 0
+let transportId: number | null = null
+let _store: ReturnType<typeof useDrumMachineStore> | null = null
+let _audio: ReturnType<typeof useAudioEngine> | null = null
+
+// Song mode state
+let songEntryIndex = 0
+let songRepeatCount = 0
+let totalStepsInPattern = 0
+
+function getStore() {
+  if (!_store) _store = useDrumMachineStore()
+  return _store
+}
+
+function getAudio() {
+  if (!_audio) _audio = useAudioEngine()
+  return _audio
+}
+
+// Convert store swing (50-66) to Tone.js swing amount (0-1)
+function getSwingAmount(): number {
+  return (getStore().swing - 50) / 16  // 0 to 1
+}
+
+// Called on each 16th note tick from Tone.js Transport
+function onStep(time: number) {
+  const store = getStore()
+  const audio = getAudio()
+
+  if (!isRunning || !store.playing) return
+
+  // In song mode, check if we need to advance to next song entry
+  if (store.mode === 'song') {
+    handleSongAdvance()
+  }
+
+  const pattern = store.activePattern
+
+  // Check all 8 voice channels for active steps
+  for (let v = 0; v < 8; v++) {
+    const voiceChannel = v as VoiceChannel
+    const step = pattern.steps[voiceChannel][stepIndex]
+
+    if (step.active) {
+      // Find which pad(s) map to this voice channel
+      const padA = v as PadId
+      const padB = (v + 8) as PadId
+
+      // Trigger pad from the active bank
+      if (store.selectedBank === 'A' && audio.hasSample(padA)) {
+        audio.triggerPad(padA)
+      } else if (store.selectedBank === 'B' && audio.hasSample(padB)) {
+        audio.triggerPad(padB)
+      }
+    }
+  }
+
+  // Schedule visual update on the main thread (after audio is queued)
+  Tone.Draw.schedule(() => {
+    store.setCurrentStep(stepIndex as StepIndex)
+  }, time)
+
+  // Advance to next step
+  stepIndex++
+  totalStepsInPattern++
+
+  // When we complete 16 steps, advance song entry if in song mode
+  if (stepIndex >= 16) {
+    stepIndex = 0
+
+    if (store.mode === 'song') {
+      songRepeatCount++
+      const song = store.songs[store.currentSong]
+      const entry = song.entries[songEntryIndex]
+
+      if (entry && songRepeatCount >= entry.repeats) {
+        // Move to next entry
+        songEntryIndex = (songEntryIndex + 1) % song.entries.length
+        songRepeatCount = 0
+
+        if (songEntryIndex === 0) {
+          // Looped back to start — full song cycle complete
+        }
+
+        // Load the new pattern
+        const nextEntry = song.entries[songEntryIndex]
+        if (nextEntry) {
+          store.selectPattern(nextEntry.patternIndex)
+        }
+      }
+    }
+  }
+}
+
+// Handle song mode pattern advancement
+function handleSongAdvance() {
+  const store = getStore()
+  const song = store.songs[store.currentSong]
+
+  if (song.entries.length === 0) return
+
+  // Make sure we're in bounds
+  if (songEntryIndex >= song.entries.length) {
+    songEntryIndex = 0
+    songRepeatCount = 0
+  }
+
+  // Load the correct pattern for current entry
+  const entry = song.entries[songEntryIndex]
+  if (entry && store.currentPattern !== entry.patternIndex) {
+    store.selectPattern(entry.patternIndex)
+  }
+}
+
+// Start the sequencer
+function start() {
+  if (isRunning) return
+
+  const store = getStore()
+  const audio = getAudio()
+
+  audio.init()
+  audio.resume()
+
+  isRunning = true
+  stepIndex = 0
+  songEntryIndex = 0
+  songRepeatCount = 0
+  totalStepsInPattern = 0
+  store.play()
+
+  // Configure Tone.js Transport
+  const transport = Tone.getTransport()
+  transport.bpm.value = store.bpm
+  transport.swing = getSwingAmount()
+  transport.swingSubdivision = '16n'
+
+  // Schedule repeating 16th note callback
+  transportId = transport.scheduleRepeat((time) => {
+    onStep(time)
+  }, '16n')
+
+  transport.start()
+}
+
+// Stop the sequencer
+function stop() {
+  isRunning = false
+
+  const transport = Tone.getTransport()
+  transport.stop()
+
+  if (transportId !== null) {
+    transport.clear(transportId)
+    transportId = null
+  }
+
+  stepIndex = 0
+  getStore().stop()
+  getAudio().stopAll()
+}
+
+// Toggle play/stop
+function toggle() {
+  if (getStore().playing) {
+    stop()
+  } else {
+    start()
+  }
+}
+
+// Tap tempo — average last 4 taps
+const tapTimes: number[] = []
+function tapTempo() {
+  const now = performance.now()
+  tapTimes.push(now)
+
+  if (tapTimes.length > 4) {
+    tapTimes.splice(0, tapTimes.length - 4)
+  }
+
+  if (tapTimes.length >= 2) {
+    let total = 0
+    for (let i = 1; i < tapTimes.length; i++) {
+      total += tapTimes[i] - tapTimes[i - 1]
+    }
+    const avgInterval = total / (tapTimes.length - 1)
+    const bpm = Math.round(60000 / avgInterval)
+    getStore().setBpm(bpm)
+    Tone.getTransport().bpm.value = bpm
+  }
+}
+
+// Sync transport settings when store changes
+function syncTransport() {
+  const transport = Tone.getTransport()
+  transport.bpm.value = getStore().bpm
+  transport.swing = getSwingAmount()
+}
+
+// Cleanup
+function dispose() {
+  stop()
+}
 
 export function useSequencer() {
-  const store = useDrumMachineStore()
-  const audio = useAudioEngine()
-  
-  let timer: number | null = null
-  let nextNoteTime = 0
-  let current16thNote = 0
-  const lookahead = 25 // ms - how often to call scheduler
-  const scheduleAheadTime = 0.1 // s - how far ahead to schedule
-
-  // Calculate step duration with swing
-  function getStepDuration(stepIndex: number): number {
-    const baseStep = (60 / store.bpm) / 4 // 16th note duration
-    // Apply swing to even steps (SP-1200 behavior)
-    if (stepIndex % 2 === 1) {
-      return baseStep + store.swingOffset
-    }
-    return baseStep - store.swingOffset
-  }
-
-  // Schedule a note
-  function scheduleNote(step: StepIndex, time: number) {
-    // Trigger all active voices at this step
-    Object.entries(store.pattern.steps).forEach(([voiceId, steps]) => {
-      const stepData = steps[step]
-      const voice = store.voices[voiceId as VoiceId]
-      
-      if (stepData.active && !voice.muted && (!store.hasSolo || voice.solo)) {
-        audio.trigger(voiceId as VoiceId, voice)
-      }
-    })
-  }
-
-  // Scheduler - runs on interval
-  function scheduler() {
-    if (!store.playing) return
-
-    while (nextNoteTime < performance.now() / 1000 + scheduleAheadTime) {
-      scheduleNote(current16thNote as StepIndex, nextNoteTime)
-      
-      // Advance to next step
-      const duration = getStepDuration(current16thNote)
-      nextNoteTime += duration
-      current16thNote = (current16thNote + 1) % store.pattern.length
-      
-      // Update store for visual feedback
-      store.setCurrentStep(current16thNote as StepIndex)
-    }
-  }
-
-  // Start sequencer
-  function start() {
-    if (timer) return
-    
-    audio.init()
-    current16thNote = 0
-    nextNoteTime = performance.now() / 1000
-    store.play()
-    
-    timer = window.setInterval(scheduler, lookahead)
-  }
-
-  // Stop sequencer
-  function stop() {
-    if (timer) {
-      clearInterval(timer)
-      timer = null
-    }
-    store.stop()
-  }
-
-  // Toggle play
-  function toggle() {
-    if (store.playing) {
-      stop()
-    } else {
-      start()
-    }
-  }
-
-  // Tap tempo
-  let tapTimes: number[] = []
-  function tapTempo() {
-    const now = performance.now()
-    tapTimes.push(now)
-    
-    // Keep only last 4 taps
-    if (tapTimes.length > 4) {
-      tapTimes = tapTimes.slice(-4)
-    }
-    
-    if (tapTimes.length >= 2) {
-      const intervals: number[] = []
-      for (let i = 1; i < tapTimes.length; i++) {
-        intervals.push(tapTimes[i] - tapTimes[i - 1])
-      }
-      const avgInterval = intervals.reduce((a, b) => a + b, 0) / intervals.length
-      const bpm = Math.round(60000 / avgInterval)
-      store.setBpm(bpm)
-    }
-  }
-
-  // Cleanup
-  function dispose() {
-    stop()
-  }
-
   return {
     start,
     stop,
     toggle,
     tapTempo,
-    dispose
+    syncTransport,
+    dispose,
   }
 }

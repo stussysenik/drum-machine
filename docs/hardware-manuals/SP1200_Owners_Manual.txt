@@ -1,0 +1,6478 @@
+SP-1200 OWNERS MANUAL 
+
+
+
+
+Copyright 1987 by E-MU Systems, Inc. Scotts Valley CA 
+
+
+
+SP-1200 Operation Manual 
+©1987 E-MU Systems 
+All Rights Reserved 
+
+
+
+E-MU PN Fl 332 Rev. E 
+
+
+
+E-MU/ENSONIQ World Headquarters 
+
+1600 Green Hills Road 
+P.O.Box 660015 
+Scotts Valley, CA USA 
+95067-0015 
+
+Telephone: 831-438-1921 
+Fax:831-438-8612 
+Internet: www.emu.com 
+
+
+
+Europe, Africa, Middle East 
+E-mu Systems, Ltd. 
+
+Suite 6, Adam Ferguson House 
+Eskmills Industrial Park 
+Musselburgh, East Lothian 
+Scotland, EH21 7PQ 
+Telephone: 44-31-653-6556 
+Fax:44-31-665-0473 
+
+
+
+Notice: 
+
+This product is covered under one or more of the following U.S. patents: 3,969,682; 3,986,423; 
+4,404,529; 4,699,038; 4,987,600; 5,01 3,1 05; 5,072,645; 5,111 ,727 and foreign patents and/or 
+pending patents. 
+
+SP-1200 is a registered trademark of E-MU Systems, Inc. 
+
+
+
+CONTENTS 
+
+
+
+Table of Contents 
+
+What is it? 
+
+SP-1 200 Ground Rules 
+
+Activating and De-activating Modules 
+
+Accessing Functions Within the Module 
+
+What's a Default? 
+
+Settings & Values 2 
+
+Entering 2 
+
+Leading Zeroes 2 
+
+Segment and Song Modes 2 
+
+The Transitory Nature of Segment Mode 3 
+
+The Right Arrow/Left Arrow Buttons (stepping and "fast forwarding") 3 
+
+The Current Song Display 3 
+
+The Current Segment Display 3 
+
+Beep messages 3 
+
+Part 1: Getting Ready 5 
+
+1 A Setup 6 
+
+1B Instant Gratification! 6 
+
+1C Background: The Performance Module 7 
+
+1D Selecting Drum Sounds 7 
+
+1E Adjusting the Mix 8 
+
+IFTuning the Drums/Changing Decay (SET-UP 18) 8 
+
+1G Background: Setting Up Additional Sounds Using the Setup Module 9 
+
+1H Accessing/Exiting Multilevel (SET-UP 12 & 13) 9 
+
+1 1 Accessing/Exiting Multipitch (SET-UP 11 & 13) 10 
+
+U Accessing Dynamics (SET-UP 14) 10 
+
+1K Storing (Defining) a Mix (SET-UP 15) 11 
+
+1L Auditioning (Selecting) a Mix (SET-UP 16) 11 
+
+1M Assigning Drum Sounds to Output Channels (SET-UP 17) 12 
+
+1N Dynamic Allocation (SET-UP Special Function 22) 13 
+
+10 Playing Back Segments 13 
+
+1P Setting Tempo 14 
+
+1Q Programming the Metronome 15 
+
+
+
+CONTENTS 
+
+Part 2: Recording Segments 17 
+
+2A Recording A Segment: Overview 18 
+
+2B Erasing a Segment 18 
+
+2C "Dimensioning" a Segment (setting time signature and/or bar length) 19 
+
+Part 1: Standard Dimensioning 19 
+
+Part 2: Real-Time Dimensioning 20 
+
+Part 3: Truncation 21 
+
+2D Understanding Auto Correct 21 
+
+2E Setting Auto Correct 23 
+
+2F Recording a Segment in Real Time (also "Repeat" recording) 23 
+
+2G Recording a Segment in Step Time 25 
+
+2H Erasing A Specific Drum Sound 26 
+
+21 Erasing a Specific Note of a Drum Track 26 
+
+2J Copying and Appending Segments 27 
+
+2K Adding Swing 28 
+
+2L Swapping Drum Sounds (SET-UP Special Function 18) 29 
+
+2M Copying Sounds (SET-UP Special Function 17) 29 
+
+2N Clearing The Memoryn (SET-UP Special Functions 12, 15, & 16) 30 
+
+20 Check Remaining Memory (SET-UP Special Function 13) 30 
+
+Part 3: Creating a Song 31 
+
+3A Creating a Song: Overview 32 
+
+3B Selecting a Song 33 
+
+To Choose a Particular Song: 33 
+
+3C Chaining Segments Together 34 
+
+3D Ending a Song 35 
+
+3E Editing Songs (stepping, inserting, deleting) 35 
+
+3F Using Repeats 36 
+
+3G Changing the Song Drum Sound Mix 38 
+
+3H Setting Song Tempo 39 
+
+31 Programming Tempo Changes Within a Song 39 
+
+Part 4: Sampling Your Own Sounds 41 
+
+4A Sampling: An Overview 42 
+
+4B Setting Levels Prior to Sampling (SAMPLE 1 & 3) 42 
+
+4C Assigning the Sample to a Play Button and Output (SAMPLE 2) 43 
+
+4D Setting the Sampling Threshold (SAMPLE 4) 43 
+
+4E Setting the Sample Length (SAMPLE 5) 44 
+
+4F Initiating and Stopping Sampling (SAMPLE 7 & 9) 44 
+
+4G Deleting (Erasing) a Sound (SET-UP 20) 45 
+
+4H Modifying a Sample Via Truncation and Looping (SET-UP 19) 46 
+
+iv 
+
+
+
+CONTENTS 
+
+
+
+Part 5: Saving Your Data 49 
+
+5A Background: Saving Data 50 
+
+5B General Care and Handling of Disks 50 
+
+Inserting the disk in the drive 50 
+
+Labelling 51 
+
+Write-protecting disks 51 
+
+5C Formatting Disks and Copying Software (DISK 9) 52 
+
+To Format a Disk: 53 
+
+To Copy Software: 53 
+
+5D Disk Operations (DISK through 8) 53 
+
+Part 6: MIDI, Sync & SMPTE 55 
+
+6A MIDI Channel and Mode Select (SET-UP 22) 56 
+
+Emax Keyboard to SP-1200 Play Buttons Chart 57 
+
+6B Background: Synchronization 58 
+
+6C Internal Sync (SYNC 1) 58 
+
+6D MIDI Sync (SYNC 2) 58 
+
+6E SMPTE Sync (SYNC 3) 59 
+
+6F Click Sync (SYNC 4) 60 
+
+6G Writing SMPTE Time Code on Tape (SET-UP Special Function 14) 61 
+
+6H Writing a 24 Pulses-Per-Quarter Note Click Sync Track on Tape 62 
+
+7: Mixing & Processing the SP-1200 63 
+
+7A Mixing and Processing: Overview 64 
+
+7B Pseudo Automated Mixdown 64 
+
+7C Creating Ambience 64 
+
+7D Using Special Effects in the Studio 65 
+
+Appendix 67 
+
+Appendix A: The Art of Sampling 67 
+
+Part 1:Taking the Best Possible Sample 67 
+
+General Tips 67 
+
+Maintaining sample quality when sampling from tape recordings: 69 
+
+Part 2: Manipulating the Sample 69 
+
+Appendix B: Understanding Rhythmic Notation 70 
+
+Appendix C: Understanding Time Signatures 70 
+
+Appendix D: Understanding MIDI/SMPTE 71 
+
+Appendix E: Tips on Creating Realistic Drum Parts 74 
+
+Appendix F: How the SP-1200 Works 74 
+
+Appendix G: Special Functions (SET-UP MODULE FUNCTION #23) 75 
+
+Appendix H: Interface Interconnection 81 
+
+V 
+
+
+
+Appendix I: Cassette/MidiDisk Operation 82 
+
+Appendix J: MIDI Implementation 83 
+
+SP 1200 MIDI Implementation Chart 83 
+
+
+
+VI 
+
+
+
+INTRODUCTION 
+
+
+
+WHAT IS IT? 
+
+The SP-1200 is the latest member of E-MU's family of high-technology musical instruments. 
+It combines the most popular features of our first drum machine, the Drumulator, along 
+with the Emulator II' s sampling capabilities, modular design, and extensive use of display 
+messages. 
+
+Thanks to 12 bit sound digitizing, the drum sounds have a crispness and dynamic range 
+unattainable with the more common (and inexpensive) 8 bit digitizing technology. Best of 
+all, despite the wide range of functions the 
+
+SP-1200 is remarkably easy to learn and use. After even a short period of familiarization, 
+creating drum parts becomes second nature. We have made every effort to make the 
+SP-1200's operation as transparent as possible, so that you can get rhythmic ideas from 
+your head into reality in the shortest possible time. 
+
+You're going to love what the SP-1200 can do. Ready? Let's start. 
+
+SP-1200 GROUND RULES 
+
+Here are all the background terms you will need to know in order to make sense of the 
+manual. 
+
+
+
+Activating and De-activating Modules 
+
+The SP-1200 is organized as seven modules: Set-up, Disk, Sync, Sample, Master Control, 
+Programming, and Performance. The Set-up, Disk, Sync, and Sample modules are used less 
+frequently than the others, and are normally inactive. To access the functions in one of these 
+modules, it must be activated by pressing the switch located in the module. When acti- 
+vated, the associated LED will glow and functions other than those which pertain to the 
+module will be locked out. 
+
+After you have finished working with a module, de-activate it by pressing the switch again 
+(the associated LED will extinguish); or, select a different module. 
+
+Accessing Functions Within the Module 
+
+The Set-up, Disk, Sync, and Sample modules include a printed list of functions. When the 
+module is active, you can select the desired function by keying in its number. Example: If 
+while the Set-up module is active you wanted to alter the MIDI parameters, you would key 
+in 22. If you wanted to define a mix,you would key in 15. 
+
+What's a Default? 
+
+A default is the setting or value that a function assumes until changed; the default is gener- 
+ally the most common option for a given function. Example: Most metronomes click every 
+quarter note, so the SP-1200's metronome defaults to quarter notes. However, this default 
+setting can be easily changed to any one of several other values. 
+
+
+
+INTRODUCTION 
+
+
+
+SETTINGS & VALUES 
+
+There are two ways of altering the SP-1200's parameters. One is to alter a slider setting; this 
+is typically done when changing levels, pitch, and so on. The other is to specify a numeric 
+value with the keypad. This is typically done when telling the SP-1200 how many measures 
+long a segment should be, the time signature, and so on. 
+
+Entering 
+
+During the process of specifying a setting or value, it is necessary to tell the SP-1200's 
+computer when the data you select should be entered into memory. For example, suppose 
+you're setting the tempo; typically, you would vary the tempo until the groove sounded 
+"just right". However, how is the computer going to know that the tempo you have just 
+selected is the right one? 
+
+Pressing the ENTER button tells the computer to write the desired setting or value you 
+have selected into its memory. Generally the display will confirm what you have chosen; 
+when it shows the desired setting or value, press ENTER. 
+
+Leading Zeroes 
+
+You will often need to enter numbers via the keypad. 
+
+If the function you have selected requires that you enter a two- digit number, you must 
+enter a leading zero when entering a single digit number. Example: Enter 07 instead of 7. 
+
+If the function you have selected allows for entering a one-digit number only and does not 
+accept a two-digit number, do not enter a leading zero. 
+
+
+
+SEGMENT AND SONG MODES 
+
+The SP-1200 has two main operational modes. In segment mode, you create individual 
+segments of rhythms, typically a few measures long. In song mode, you chain these seg- 
+ments together to make a complete song. Example: The intro, verse, chorus, and solo of a 
+song could all be separate segments; combining these together in the proper order would 
+create a song. 
+
+Segment and song modes are selected by the left-most button in the Programming module. 
+In song mode, the labels above the eight buttons to the right of the SEGMENT/SONG 
+button apply; in segment mode, the labels below the eight buttons to the right of the 
+SEGMENT/SONG button apply. 
+
+
+
+INTRODUCTION 
+
+
+
+THE TRANSITORY NATURE OF SEGMENT MODE 
+
+Segment mode is the SP-1200's "scratchpad" where you work up rhythmic segments prior 
+to combining them in songs. Therefore, tempos, mixes, and most other segment parameters 
+set while in segment mode (except tuning and dynamics) are retained only while you are in 
+segment mode. When going into song mode, the song parameters for tempo, mix, and so 
+on replace the parameters worked out in segment mode. If you return to segment mode 
+from song mode, the segment parameters for tempo, mix, etc. will be those of the last song 
+you selected. 
+
+The Right Arrow/Left Arrow Buttons (stepping and "fast forwarding") 
+
+The Right Arrow and Left Arrow buttons step through values shown in the display. Each 
+time you press one of these buttons you will step through one value. Holding down these 
+buttons "fast forwards" (in the case of Right Arrow) or "fast backwards" (in the case of Left 
+Arrow) through the values. 
+
+The Current Song Display 
+
+When you first turn on the SP-1200, the display will show the Current Song and tempo for 
+that song. The Current Song remains as is until changed. 
+
+The Current Segment Display 
+
+When you go into segment mode, the display will show the Current Segment and tempo 
+for that segment. The Current Segment remains as is until changed. 
+
+
+
+BEEP MESSAGES 
+
+The SP-1200 confirms certain actions (as described later in the manual) by sending out a 
+"beep" tone. When monitoring via the MIX OUT jack, the beep level is set by the METRO- 
+NOME VOLUME in conjunction with the MIX VOLUME. Since the MIX VOLUME serves 
+as a master control for all SP-1200 sounds (drums and metronome), if MIX VOLUME is 
+turned down you won't hear anything — and that includes beep messages. 
+
+
+
+GETTING READY 
+
+
+
+Parti: GETTING READY 
+
+
+1A 
+
+
+Setup 
+
+
+1B 
+
+
+Instant Gratification! 
+
+
+1C 
+
+
+Background: Performance Module 
+
+
+1D 
+
+
+Selecting Drum Sounds 
+
+
+1E 
+
+
+Adjusting the Mix 
+
+
+1F 
+
+
+Tuning the Drums/Changing Decay 
+
+
+1G 
+
+
+Background: Additional Sounds Using the Setup Module 
+
+
+1H 
+
+
+Accessing/Exiting Multilevel 
+
+
+11 
+
+
+Accessing /Exiting Multipitch 
+
+
+U 
+
+
+Accessing Dynamics 
+
+
+1K 
+
+
+Storing (Defining) a Mix 
+
+
+1L 
+
+
+Auditioning (Selecting) a Mix 
+
+
+1M 
+
+
+Assigning Drum Sounds to Output Channels 
+
+
+1N 
+
+
+Dynamic Allocation 
+
+
+10 
+
+
+Playing Back Segments 
+
+
+1P 
+
+
+Setting Tempo 
+
+
+1Q 
+
+
+Programming the Metronome 
+
+
+
+GETTING READY 
+
+
+
+1A SETUP 
+
+IMPORTANT!! Before you turn on your SP-1200: There is a 115/230 Volt selector switch on 
+the back of the SP-1200, next to the on-off switch. Make sure the AC voltage indicated on 
+the switch agrees with the AC voltage present in your part of the world. If not, change the 
+switch settings with a small screwdriver. 
+
+1. Set up the SP-1200 on a hard surface. 
+
+2. Patch a standard, guitar-type patch cord between the MIX OUT jack on the rear 
+panel and a high quality amp or mixing console. The better the sound system, the 
+more life-like the sound of the SP-1200. 
+
+3. Make sure the ON-OFF switch is in the OFF position. Plug the line cord into a prop- 
+erly wired three-wire AC outlet. 
+
+4. Turn the MIX VOLUME and METRONOME VOLUME controls all the way to the 
+left. 
+
+5. Turn the ON-OFF switch to ON; the SP-1200 will run a self-test where all LEDs will 
+light up briefly to show they're working properly. The liquid crystal display will 
+light up and read: SP-1200 Insert Diskette. 
+
+6. Insert a formatted SP-1200 diskette, label side up, and the display will say: Loading 
+Software, Loading Sequences, and Loading Sounds while the disk drive is doing 
+each task. 
+
+7. Now we're ready to go! Press the RUN/STOP switch (located near the lower right- 
+hand corner of the SP-1200) to start the drums, then turn up the MIX VOLUME 
+control to hear a demo of what this baby can do. Adjust the monitor system levels to 
+suit. If you hear the drums, all is well — to proceed, press RUN/STOP a second time 
+and the song will stop. 
+
+
+
+1 B INSTANT GRATIFICATION! 
+
+Yes, the SP-1200 is an extremely versatile device. But that versatility means that in order to 
+learn about all the options, you'll have to spend a few hours with the SP-1200 and this 
+manual. 
+
+If you're patient enough to actually do that right now, we salute your willpower. Chances 
+are, though, you can hardly wait to start making some sounds. So, we'll short circuit the 
+learning process a bit with this little exercise. Follow these steps EXACTLY as given. 
+
+1. Hook up the SP-1200 as described previously, then turn up the METRONOME 
+VOLUME control about halfway. MIX VOLUME and the monitor system levels 
+should be set as described in the previous Section. 
+
+2. Push the SONG /SEGMENT button until the SEGMENT light glows. 
+
+
+
+GETTING READY 
+
+
+
+3. Locate the ten number buttons (0 - 9) towards the right of the SP-1200. Press 9 and 
+then press 9 again. The display says Seg 99 and shows the tempo in Beats per 
+Minute. Seg 99 will have a default length of two measures (which we'll leave as is 
+for now). 
+
+4. Hold down RECORD and press RUN/STOP; both their LEDs will be lit to indicate 
+you are in record mode. You should also hear the metronome (if not, check the 
+METRONOME VOLUME control). 
+
+5. The eight large buttons along the bottom of the SP-1200 play various drum sounds. 
+Play in time with the metronome, and whatever you play will be recorded. You will 
+have two measures to play to; they repeat over and over again to allow for easy 
+multitracking of drum parts. To play additional drum sounds, hit the SELECT but- 
+ton to audition other banks of drums. 
+
+6. For now, you can only play 8th notes; later on, we'll cover how to play all the other 
+note values. 
+
+7. When you've finished recording, press RUN/STOP (the RUN/STOP light goes out). 
+To play back what you've recorded, press RUN/STOP again (RUN/STOP light 
+glows). 
+
+8. Congratulations! You have now experienced about 0.5% of the 
+SP-1200's capabilities. To find out about the other 99.5%, keep reading. 
+
+
+
+1C BACKGROUND: THE PERFORMANCE MODULE 
+
+This module is where you select drum sounds, tuning, drum mix, and so on. 
+
+All of these adjustments reset to their default values when the SP-1200 is turned off. How- 
+ever, eight different drum mixes may be stored in memory and recalled when creating a 
+song. 
+
+
+
+1D SELECTING DRUM SOUNDS 
+
+The row of eight large buttons (Drum Play buttons) along the bottom of the SP-1200 play 
+the different drum sounds. 
+
+The SELECT button (left of Play buttons) chooses between four different banks of drum 
+sounds. To audition the drums, select a bank with the SELECT switch, then play the Play 
+Buttons. Listen to all four banks to familiarize yourself with the available sounds on each 
+disk. 
+
+
+
+GETTING READY 
+
+
+
+1E ADJUSTING THE MIX 
+
+1. Press the TUNE-MIX-MULTI switch (towards the upper left corner of the Perfor- 
+mance module) until the MIX LED lights. The display graphically shows the level of 
+each drum in the selected bank. 
+
+2. Vary the slider above the corresponding Drum Play button to vary the level of each 
+individual drum. As soon as you move the slider, the graph in the display will jump 
+to its new position. 
+
+3. Note that MIX settings are not stored while in segment mode. If you come up with a 
+particularly good mix, you can save the mix as described in Section IK. 
+
+
+
+1F TUNING THE DRUMS/CHANGING DECAY (SET-UP 18) 
+
+1. You may tune or change the decay time of any of the drum sounds. Cymbals may 
+also be tuned, but due to the nature of the SP-1200's tuning change hardware, the 
+sound will probably be different from your expectations of a "tuned cymbal" (SP- 
+1200 tuning creates more of a ring modulation type of effect). 
+
+2. Each sound may be programmed to have its tuning or decay (but not both) varied 
+by its associated slider while the TUNE /DECAY LED is lit. Whether the slider af- 
+fects tuning or decay is programmed in the SET-UP module. Activate SETUP, then 
+key in 18. Play the desired sound. The display will indicate whether the sound is 
+"TUNED" or "DECAYED". Key in 1 if you want the slider to vary the tuning, or 2 if 
+you want the slider to vary the decay. Drums and claps default to tuning variations, 
+while cymbals default to decay variations. 
+
+3. Press the TUNE-MIX-MULTI switch until the TUNE/DECAY LED lights. Sounds 
+which are set for decay mode have a small diagonal line above the drum sound 
+number. The display graphically shows the relative tuning or decay of each drum; 
+the center line indicates normal pitch or decay. 
+
+4. Vary the slider above the corresponding Drum Play button to vary the individual 
+tuning (plus or minus a fifth) for each drum set for tuning change. As soon as you 
+move the slider, the corresponding display graph will jump to its new position. The 
+higher-pitched the drum, the taller the bar; the lower-pitched the drum, the shorter 
+the bar. With those sounds set for decay change, varying the slider changes the 
+amount of decay. The longer the decay, the taller the bar; the shorter the decay, the 
+shorter the bar. 
+
+
+
+8 
+
+
+
+GETTING READY 
+
+
+
+1 G BACKGROUND: SETTING UP ADDITIONAL SOUNDS 
+USING THE SETUP MODULE 
+
+This is where things really start to get interesting, thanks to a cute little trick called multi- 
+mode and its offshoots, multipitch and multilevel. 
+
+Multipitch takes a single drum sound or handclap and "spreads" its pitch over all eight 
+Drum Play buttons, with the leftmost button playing the highest pitch and the rightmost 
+button playing the lowest pitch. With cymbals, multipitch spreads the decay with the 
+leftmost button playing the longest decay and the right most button playing the shortest 
+decay. 
+
+Multilevel takes a sound and spreads the level over all eight Drum Play buttons, with the 
+leftmost button playing the softest level and the rightmost button playing the loudest level. 
+
+1H ACCESSING/EXITING MULTILEVEL (SET-UP 12 & 13) 
+
+1. Activate the SET-UP module by pressing its button. Its LED will glow, and the dis- 
+play will ask for a function from the list printed to the right of the SET-UP button. 
+
+2. Key in 12 (MULTI-LEVEL). Select the sound to be multileveled by using SELECT to 
+select the Bank containing the sound, then press the sound's Play button. 
+
+3. To edit the factory preset levels, select MIX with the TUNE-MIX-MULTI switch and 
+vary the sliders to change levels. The display shows each sound's relative level. 
+When the levels are set as desired, press ENTER. 
+
+4. While in multilevel, you may also edit the pitch for each level of the sound (or the 
+decay if the sound is set up for decay variations instead of tuning variations). Press 
+the TUNE-MIX-MULTI button and select TUNE/DECAY; the display shows the 
+relative pitch of each sound. Use the sliders as described earlier to set the pitch. 
+
+Whenever you select the bank containing the multileveled sound, it will still be in multi- 
+level mode. This will be indicated by the MULTIMODE LED (next to the TUNE-MIX- 
+MULTI switch) being on. 
+
+To Turn Off Multilevel: 
+
+1. Activate the SET-UP module (if it is not already) and select the bank to "de-multi- 
+level". The display should be asking "Set-up Function?"; if it instead shows the bar 
+graph, press ENTER to alert the computer it can move on to the next task. 
+
+2. Key in 13 (EXIT MULTI-MODE). When the display asks "Exit Multi Mode?", press 
+YES. The Bank will return to its normal preset assignments. 
+
+Note: If you later change the mix of a segment or song that contains multilevel effects, these 
+will all increase or decrease proportionately in level. For example, if you programmed 
+some soft sounds and medium level sounds, increasing the mix level will bring up all the 
+sounds by an equivalent amount (within the dynamic range limits of the drum machine, of 
+course). 
+
+
+
+GETTING READY 
+
+
+
+11 ACCESSING/EXITING MULTIPITCH (SET-UP 11 & 13) 
+
+1. Activate the SET-UP Module by pressing its switch. Its LED will glow, and the 
+display will ask for a function from the list printed to the right of the SET-UP switch. 
+
+2. Key in 11 (MULTI-PITCH). Select the sound to be multi-pitched by using SELECT to 
+select the bank containing the sound, then press the sound's Play button. That sound 
+will now be spread across the Play buttons at factory pre-selected pitches. 
+
+3. If you want to edit the factory preset pitches, select TUNE /DECAY with the TUNE- 
+MIX-MULTI switch and vary the sliders to change pitch. The display shows the 
+relative pitch of each sound. When the tuning is as desired, press ENTER. 
+
+4. While in multipitch, you may also edit the level for each sound of the multipitched 
+Bank. Press the TUNE-MIX-MULTI button and select MIX, then use the sliders as 
+described earlier to set the levels. 
+
+Whenever you select the bank containing the multipitched sound, it will still be in 
+multipitch mode. This will be indicated by the MULTIMODE LED (next to the TUNE-MIX- 
+MULTI switch) being on. 
+
+To Turn off Multi-pitch: 
+
+1. Activate the SET-UP module (if it is not already) and select the bank to "de- 
+multipitch". The display should be asking "Set-up Function?"; if it instead shows the 
+bar graph, press ENTER to alert the computer it can move on to the next task. 
+
+2. Key in 13 (EXIT MULTI-MODE). When the display asks "Exit Multi Mode?", press 
+YES. The Bank will return to its normal preset assignments. 
+
+Notes: Once a segment has been recorded with sounds at particular pitches, these pitches 
+cannot be modified after the fact for that segment unless you erase the sound and re-record 
+it. 
+
+You can enter and exit multipitch and multilevel modes while recording to gain additional 
+drum sounds. Pitch changes can also be recorded along with the segment. 
+
+
+
+1 J ACCESSING DYNAMICS (SET-UP 14) 
+
+Yes, the harder you hit the buttons the louder the sound. We did this in such an incredibly 
+ingenious way that engineers across the country will burst out laughing when they take the 
+SP-1200 apart for the first time. 
+
+1. Activate the SET-UP Module by pressing its switch. Its LED will glow, and the 
+
+display will ask for a function from the list printed to the right of the SET-UP switch. 
+
+2. Key in 14 (DYNAMIC BUTTONS). The display asks whether you want dynamic 
+buttons or not; press YES if you do. 
+
+3. Hit the buttons to check out the dynamics. 
+
+10 
+
+
+
+GETTING READY 
+
+
+
+All buttons for all banks are now dynamically responsive. To turn off dynamics, select 
+Function 14 in the SET-UP module and when the display asks "Dynamic Buttons?", press 
+NO. 
+
+
+
+1 K STORING (DEFINING) A MIX (SET-UP 15) 
+
+The SP-1200 memorizes up to eight different mixes; each mix contains the level data for all 
+four banks. When creating a song, this mix information can be stored as part of the song so 
+that different songs (or different sections of the same song) have different mixes. To store a 
+mix for later use: 
+
+1. After perfecting the mix, activate the SET-UP Module by pressing its switch. Its LED 
+will glow, and the display will ask for a function from the list printed to the right of 
+the SET-UP switch. 
+
+2. Key in 15 (DEFINE MIX). The display will ask "Save Current Mix As Mix #_". As- 
+sign a number from 1 to 8 (do not include leading zeroes in this case); when the 
+display confirms your choice, press ENTER. 
+
+We will describe how to audition a particular mix in the next Section; in Section 3G, we'll 
+cover how to select the desired mix when creating a song. 
+
+Note: Channel assignments (Section 1M) and pitch/ decay information (Section IF) are also 
+stored with the mix, thereby allowing programmed channel changes and pitch/decay 
+changes. 
+
+
+
+1L AUDITIONING (SELECTING) A MIX (SET-UP 16) 
+
+You may select an already defined drum mix (see Section IK) which will assign the mix 
+levels to the drum sounds in all four banks. 
+
+1. Activate the Set-Up module by pressing its switch. Its LED will glow, and the dis- 
+play will ask for a function from the list printed to the right of the SET-UP switch. 
+
+2. Key in 16 (SELECT MIX). The display will ask for the desired mix number (as de- 
+fined according to the instructions in Section IK). Enter a number from 1 to 8 (do not 
+include leading zeroes in this case); when the display confirms your choice, press 
+ENTER. 
+
+
+
+11 
+
+
+
+GETTING READY 
+
+
+
+1 M ASSIGNING DRUM SOUNDS TO OUTPUT CHANNELS 
+(SET-UP 17) 
+
+The MIX OUT jack carries a mono mix of the SP-1200's eight individual drum outputs; MIX 
+VOLUME regulates the overall level. 
+
+The SP-1200 also has eight individual output channel jacks. These are typically used in the 
+studio to send different sounds to different mixing console channels. 
+
+Since there are more than eight drum sounds, there is a default pre-set assignment that 
+determines which drums go to which channels. However, this may be changed in the 
+following manner: 
+
+1. Activate the SET-UP Module by pressing its switch. Its LED will glow, and the 
+display will ask for a function from the list printed to the right of the SET-UP switch. 
+
+2. Key in 17 (CHANNEL ASSIGN). The display asks you to select a sound; select it 
+using the appropriate Bank select and Drum Play buttons. Note that you can con- 
+secutively hit different play buttons to see the channels to which different sounds are 
+assigned. 
+
+3. The display now confirms your Drum Sound choice and shows its existing output 
+channel assignment. To change this assignment, enter a number from 1 to 8 via the 
+keypad. The drum sound will now appear at the like-numbered output jack on the 
+rear panel. This information is stored with mixes (Section IK). 
+
+Note: There are 3 different types of filtering on the outputs. Channels 1 and 2 have dynamic 
+filters whose bandwidth varies in time, channels 3, 4, 5, and 6 are filtered by a constant 
+amount, and channels 7 and 8 are totally unfiltered. Knowing this can be handy when 
+assigning sampled sounds, as different sampled sounds may respond better to particular 
+amounts of filtering. To hear the filter effects, select a drum sound and assign it to each 
+channel in succession, carefully noting the difference in sound between the different chan- 
+nel assignments. 
+
+• The unfiltered versions of each output are available by inserting a standard phone 
+plug into the individual output jacks. This will also disconnect the channel from the 
+MIX OUT jack. Note that without any filtering, some sounds may sound very 
+"gritty" and noisy. You may need to "EQ" the sound at the mixing board. The fil- 
+tered versions of each individual output are available by using a stereo plug and 
+connecting to the ring of the plug. The MIX OUT jack reflects the filtered outputs of 
+all eight channels. 
+
+
+
+12 
+
+
+
+GETTING READY 
+
+
+
+1N DYNAMIC ALLOCATION (SET-UP SPECIAL FUNCTION 22) 
+
+Normally, if two drum sounds are assigned to the same output channel and they are played 
+at the same time, one of the sounds will be cancelled (sometimes called channel ripoff). By 
+using the Dynamic Allocation function, the second drum will be automatically assigned to 
+the adjacent channel with the same type of filtering, thus preventing the cancellation. The 
+channel pairs 1,2 3,4 5,6 7,8 have the same type of filtering on them. 
+
+1. Activate the SET-UP module by pressing its switch. Its LED will glow, and the dis- 
+play will ask for a function from the list printed to the right of the SET-UP switch. 
+
+2. Key in 23 (SPECIAL). Now move slider #1 to catalog the various special functions. 
+
+3. Key in 22 to select dynamic allocation. The display shows the channel pairs 1,2 3,4 
+5,6 7,8 with NO under each pair. To enable dynamic allocation for a pair of channels, 
+press YES then press ENTER to advance to the next pair of channels. 
+
+4. De-activate the SET-UP module. 
+
+
+
+1 PLAYING BACK SEGMENTS 
+
+You can record and play back 100 rhythm patterns called segments. These are numbered 
+from 00 through 99. Several segments were loaded into the SP-1200 at the factory; here is 
+how to play them. 
+
+1. Press the SONG /SEGMENT button a few times. The SEGMENT light shows you are 
+in segment mode, and can play back or record segments. The SONG light shows you 
+are in song mode. For now, choose the segment mode. The display will show the 
+segment number and tempo in Beats per Minute. 
+
+2. To select a different segment, key in two digits with the keypad. Leading zeroes 
+must be entered for single digit segments (i.e. press then 7 to select segment 07). 
+
+3. Make sure METRONOME LEVEL is up so that you can hear any beep messages 
+from the SP-1200 in subsequent steps. 
+
+4. Press RUN/STOP Several things will happen: the segment will play continuously, 
+the RUN/STOP light will glow (except for a blink at the beginning of the segment), 
+and you will hear a metronome clicking along with the segment (adjust METRO- 
+NOME LEVEL to suit). If instead of hearing a rhythm pattern you hear a beep, the 
+segment you've selected has never been put in record mode (which means it cannot 
+contain any drum sounds). Key in a different segment number. To stop a segment, 
+press RUN/STOP a second time. A rear panel jack parallels the RUN/STOP switch 
+for remote applications. 
+
+5. Repeat step 2 to select another segment. If the SP-1200 is running, the new segment 
+will begin playing as soon as the current segment ends. If the current segment ends 
+and the SP-1200 stops (RUN/STOP light goes off), the new segment you've selected 
+is empty. 
+
+13 
+
+
+
+GETTING READY 
+
+
+
+Note: Remember as you go through these examples that the ENTER button, in addition to 
+its normal enter function, is a fail-safe /reset button as long as the display shows a flashing 
+cursor. For example, if you accidentally enter the wrong first digit of a segment number, 
+before doing anything else press ENTER. This restores the SP-1200 to where it was before 
+you hit the wrong key. 
+
+
+
+1P SETTING TEMPO 
+
+The tempo may be varied from 40 to 240 Beats Per Minute. Segment tempo settings are 
+"remembered" by the SP-1200 only while you are in segment mode. If you switch over to 
+song mode (as described later), the SP-1200 acquires the tempo of the selected song. If you 
+then switch back to segment mode, the SP-1200 will retain this song tempo. 
+
+1. To change tempo (the SP-1200 may be stopped or running), press TEMPO. The 
+cursor will flash under the first digit of the tempo display. There are five ways to 
+enter tempo: 
+
+• Press the Right Arrow button once to increase the tempo by 1 BPM. Hold the 
+button down to increment through the tempo 1 BPM at a time. 
+
+• Press the Left Arrow button once to decrease the tempo by 1 BPM. Hold the 
+button down to decrement through the tempo 1 BPM at a time. 
+
+• Use the Keypad to enter the tempo directly, accurate to l/10th BPM (four digits). 
+Leading zeroes must be entered. 
+
+• Use Slider #1 to vary the tempo. 
+
+• "Tap" the tempo you want on the TAP/REPEAT button. The SP-1200 will com- 
+pute the time between taps and translate that to Beats Per Minute. If desired, you 
+can tap continuously and when the groove feels just right, stop tapping; the last 
+time interval between taps will be remembered as the tempo. The rear panel 
+TAP/AUTO REP jack accepts a momentary-action, normally open footswitch if 
+you want to tap with your foot instead of your hand. 
+
+2. When the display shows the desired tempo press ENTER. This tempo will apply to 
+all segments when you are in segment mode. 
+
+
+
+14 
+
+
+
+GETTING READY 
+
+
+
+1Q PROGRAMMING THE METRONOME 
+
+When playing back or recording segments, you can program the metronome for a variety 
+of different beats. The metronome produces an accented click on the first beat of each 
+measure and a softer click on the other beats. 
+
+1. The SP-1200 must be stopped (RUN/STOP light off), and the SEGMENT light must 
+be on. 
+
+2. Press METRONOME. The Right Arrow and Left Arrow buttons step through the 
+various metronome options: 
+
+Off no metronome output 
+
+1/4 quarter notes (this is the default value) 
+
+1 /4 t quarter note triplets 
+
+1/8 eighth notes 
+
+1/8 t eighth note triplets 
+
+1/16 sixteenth notes 
+
+1 / 1 6t sixteenth note triplets 
+
+1/32 thirty-second notes 
+
+l/32t thirty-second note triplets 
+
+Click sends a 24 pulses-per-quarter-note signal out the rear channel 
+
+MET OUT jack for synchronizing other devices to the SP-1200 
+
+3. When the display shows the desired metronome value, press ENTER. 
+
+Note: The higher metronome speeds are useful when recording a fast, complex drum part 
+since you may slow the tempo way down, yet still have clicks occurring regularly enough 
+so that you know where you are in the segment. (If the tempo is very slow and you select, 
+
+for example, quarter note clicks, the clicks occur too far apart to be helpful.) 
+
+
+
+15 
+
+
+
+16 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+Part 2: 
+
+
+RECORDING SEGMENTS 
+
+
+2A 
+
+
+Recording a Segment: Overview 
+
+
+2B 
+
+
+Erasing a Segment 
+
+
+2C 
+
+
+"Dimensioning" a Segment 
+Standard Dimensioning 
+Real Time Dimensioning 
+
+
+2D 
+
+
+Understanding Auto Correct 
+
+
+2E 
+
+
+Setting Auto Correct 
+
+
+2F 
+
+
+Recording a Segment in Real Time 
+
+
+2G 
+
+
+Recording a Segment in Step Time 
+
+
+2H 
+
+
+Erasing a Specific Drum Sound 
+
+
+21 
+
+
+Erasing a Specific Note of a Drum Track 
+
+
+2J 
+
+
+Copying and Appending Segments 
+
+
+2K 
+
+
+Adding Swing 
+
+
+2L 
+
+
+Swapping Drum Sounds 
+
+
+2M 
+
+
+Copying Sounds 
+
+
+2N 
+
+
+Clearing the Memory 
+
+
+20 
+
+
+Check Remaining Memory 
+
+
+
+17 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+2A RECORDING A SEGMENT: OVERVIEW 
+
+There are two ways to record a segment, real time and step time. In both cases, recording 
+initially consists of: 
+
+1. Programming the metronome (if necessary). 
+
+2. Erasing previously recorded sounds (if necessary). 
+
+3. Defining the segment's time signature and the number of measures in the segment 
+("dimensioning" the segment). 
+
+4. Setting Auto Correct (to correct for timing errors in real time recording; this also 
+determines the step rate in step time recording, and the repeat rate when recording 
+repetitive "drum rolls" as described in Section 2F). 
+
+5. Selecting the desired bank of drum sounds for recording (this may be changed at 
+any time during the recording process). 
+
+6. In real time, entering record mode and playing drum sounds (the SP-1200's memory 
+remembers what you play) in time with the metronome; in step time, entering 
+record mode and stepping through each step of the segment, playing drum sounds 
+as required at the various steps. While in real time, you can record pitch changes, 
+enter/exit multipitch or multilevel mode, change Auto Correct, change tempo, or 
+switch banks if desired. 
+
+7. After recording the segment, you can make changes with either real time or step 
+time editing. 
+
+We have already covered the first step in recording (programming the metronome), as well 
+as the fifth step (selecting different drum sounds). Now let's cover the remaining steps in 
+the order given above. 
+
+
+
+2B ERASING A SEGMENT 
+
+Erasing a segment clears out all existing drum sounds in that segment, and automatically 
+re-dimensions the segment to two measures of 4/4. Before erasing a segment, always check 
+whether that segment already contains something you want to keep. To erase: 
+
+1. Stop the SP-1200, confirm that you are in segment mode, and press ERASE. 
+
+2. The display helpfully mentions that you can erase either a sound or segment. Eras- 
+ing a sound will be covered later; to erase a segment, enter the two-digit segment 
+number. The display will replace the flashing cursor with the number you entered, 
+and ask you to confirm that this is the segment you want to erase. 
+
+3. If this is the segment to be erased, press YES. If not, press NO and the 
+SP-1200 will return you to step 2. 
+
+
+
+18 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+4. After erasing, the display will return to whatever segment you had keyed in prior to 
+starting the erase process. For example, if you had first selected segment 01 but then 
+decided to erase segment 51, after erasing 51 you would return to 01. If you want to 
+continue working with segment 51, make sure you key it back in again so that 51 
+appears in the display. 
+
+
+
+2C DIMENSIONING A SEGMENT 
+
+(SETTING TIME SIGNATURE AND/OR BAR LENGTH) 
+
+"Dimensioning" a segment defines the segment's time signature (from 1 to 99 beats per 
+measure), and the number of bars and beats per segment (up to 99 bars and 99 beats; thus, 
+you could have a segment that was, say, 2 measures and 3 beats long). If desired, each 
+segment may be dimensioned differently. The time signature cannot be changed after a 
+segment has been recorded, however, the segment length can be changed after recording by 
+using the copy and truncate functions. If you are not familiar with time signature notation, 
+see Appendix B. 
+
+After erasing a segment, it assumes a length of two measures and a 4/4 time signature. If 
+this dimensioning suits your musical needs, skip ahead to the next section. Otherwise, 
+there are two ways to dimension a segment: standard dimensioning and real-time dimen- 
+sioning. Make sure you are in segment mode, then proceed with whichever procedure 
+seems more suitable for re-dimensioning the segment. 
+
+Part 1: Standard Dimensioning 
+
+1. Set the time signature by pressing TIME SIGNATURE. The display will probably 
+show the 04/4 default time signature and a cursor will be flashing under the first 
+digit. There are three ways to enter the desired time signature numerator (number of 
+beats per measure): 
+
+• Press the Right Arrow button once to increase the numerator value by one. Hold 
+the button down to increment through the values one digit at a time. 
+
+• Press the Left Arrow button once to decrease the numerator value by one. Hold 
+the button down to decrement through the values one digit at a time. 
+
+• Use the keypad to enter the numerator directly. Leading zeroes must be entered. 
+
+2. When the display shows the desired time signature numerator press ENTER. The 
+cursor will now flash under the first digit of the denominator (i.e. the rhythmic value 
+of each beat in the measure); the default value is 4. 
+
+3. There are four denominator values: 4 (quarter note), 8 (eighth note), 16 (sixteenth 
+note), and 32 (thirty-second note). Tap the Right Arrow key to step from longer to 
+shorter rhythmic values; tap the Left Arrow key to step from shorter to longer rhyth- 
+mic values (or hold the button to "fast forward"). 
+
+
+
+19 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+4. When the display shows the desired time signature denominator press ENTER. The 
+time signature will now be stored with the segment. 
+
+5. To set the number of measures and beats in the segment (segment length), press 
+SEGMENT LENGTH. The display will probably show the default value of 02 bars, 
+00 beats. 
+
+6. To increase the number of measures in a segment (up to 99), press Right Arrow. Tap 
+this button to go forward a digit at time, or hold it down to "fast forward". To de- 
+crease the number of measures in a segment, (down to 1), tap or hold Left Arrow. 
+You may also use the keypad to enter the number of bars. 
+
+7. When the display shows the desired segment length, press ENTER. You may now 
+select the number of additional beats in the segment. 
+
+8. To increase the number of additional beats in the segment (up to 99), press Right 
+Arrow. Tap this button to go forward a digit at a time, or hold it down to "fast for- 
+ward". To decrease the number of additional beats in the segment, (down to 1), tap 
+or hold Left Arrow. Or, enter the number of additional beats with the keypad. 
+
+9. When the display shows the desired number of additional beats in the segment, 
+press ENTER. Dimensioning is now complete. To re-dimension a segment after it has 
+been recorded, see Part 3: Truncation. 
+
+Part 2: Real-Time Dimensioning 
+
+Real-time dimensioning mode is useful when you want a segment's length to be other than 
+some number of whole measures and beats (i.e. if you wanted 2 measures, 1 beat, and just a 
+tiny bit more). 
+
+1. Press SEGMENT LENGTH then press RUN/STOP; the metronome will click and the 
+display will count off the beats and measures as they go by. 
+
+2. After the appropriate number of beats and measures have gone by, press RUN/ 
+STOP a second time. If you do not press RUN/STOP precisely on the beat, it will be 
+auto corrected by the SP-1200 (see next section for more information on Auto Cor- 
+rect). 
+
+3. If you miss the desired end point of the segment, hit RUN/STOP again to re-start the 
+process. Press RUN/STOP again when the segment is the desired length. Also note 
+that you can edit this setting (until the segment is recorded) by using the Right 
+Arrow, Left Arrow, and keypad buttons (this works similarly to step 8 in Part 1). 
+
+Note: If you dimension to more than an even beat (for example, 2 bars, 1 beat, and an 
+eighth note), the display will indicate a + sign. 
+
+
+
+20 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+Part 3: Truncation 
+
+Truncation mode is used to shorten the length of an existing segment. 
+
+1. Select the segment you wish to truncate and press Segment Length. The display will 
+read: Truncate Length and show the number of bars and beats in the existing seg- 
+ment. 
+
+2. Enter the desired segment length in bars using the keypad or the cursor keys. When 
+the correct number of bars is chosen, press Enter. 
+
+3. Enter the desired number of additional beats in the segment, then press Enter again. 
+The display will read: Truncate Length Confirm Yes/ No. 
+
+4. Pressing Yes will truncate the segment to the selected length. Pressing No will return 
+you to segment mode. 
+
+Note: If you select a segment length that is longer than the original length, the display will 
+tell you to Use Copy to Lengthen Segment. 
+
+
+
+2D UNDERSTANDING AUTO CORRECT 
+
+Auto correct lets you create patterns with perfect timing by placing whatever drum sound 
+you play on your choice of the nearest eighth note, eighth note triplet, sixteenth note, six- 
+teenth note triplet, thirty-second note, or thirty-second note triplet. (For more information 
+on rhythmic notation, see Appendix B.) 
+
+To understand how this works, consider Fig. 2-1, which shows one measure of 4/4 music 
+(there are four quarter notes, eight eighth notes, and sixteen sixteenth notes in a measure of 
+4/4). 
+
+
+
+Fig. 2-1 
+
+
+
+J 
+
+
+
+
+J 
+
+
+
+
+J 
+
+
+
+
+J 
+
+
+J 
+
+
+1 
+
+
+s 
+
+
+J 
+
+
+s 
+
+
+1 
+
+
+J 
+
+
+
+
+
+
+Suppose you want to record a bass drum on every quarter note, but your sense of timing is 
+a little shaky. The upper row of dots in Fig. 2-2 shows where you might have played the 
+
+21 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+four bass drum beats. The first one is a little behind the beat, the second a little in front of 
+the beat, the third right on the beat, and the fourth slightly behind the beat. The lower row 
+of dots in 
+
+Fig. 2-2 shows how setting Auto Correct to eighth note resolution puts each drum sound on 
+the nearest eighth note, thereby correcting a not-so-tight bass drum part for perfect timing. 
+
+
+
+Fig. 2-2 
+
+
+
+' * I 
+
+
+
+f\ you play 
+
+beats 
+"fall on 
+
+
+
+eighth note Auto Correct 
+
+
+
+Now consider Fig. 2-3, which shows Auto Correct set to sixteenth note resolution. In this 
+case, the beats you played have been assigned to the nearest sixteenth note — which is fine 
+on beats 3 and 4, but not on 1 and 2. 
+
+
+
+Fig. 2-3 
+
+
+
+. . . 
+
+J! V. t !L 
+
+
+
+rj you play 
+
+. beats 
+fall on 
+
+
+
+sixteenth note Auto Correct 
+
+
+
+This illustrates an important point: Use the least amount of resolution needed. If you are 
+recording a simple snare back beat, there's no point in using an Auto Correct setting with 
+any more resolution than eighth notes. To record something more complex, set a finer 
+resolution (such as sixteenth or even thirty-second notes). 
+
+You may change Auto Correct while you are in segment mode, whether the SP-1200 is 
+running or stopped. If you change Auto Correct while the SP-1200 is running, the change 
+takes effect at the end of the segment. Changing Auto Correct as desired takes the pressure 
+off of recording long drum parts — use low resolution to record most of a part, then switch 
+over to finer resolution to record more complex rhythms. Note that recording triplets is 
+easy, since there are four triplet Auto Correct options, and that alternating between triplet 
+and non-triplet Auto Correct modes lets you record complex polyrhythms. 
+
+
+
+22 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+Another option is high resolution mode, where the SP-1200 places beats exactly where you 
+play them rather than "rounding them off" to the nearest specified note. This allows synco- 
+pation, beats which slightly lead or lag the rhythm, and so on. 
+
+When programming in step time, the Auto Correct setting determines the rhythmic value 
+of each step. For example, with an Auto Correct setting of 1/8, you will step through the 
+song an eighth note at a time. Selecting HiRes mode steps through the song at a rate 
+equivalent to sixty-fourth note triplets. See later for more information on step time record- 
+ing. 
+
+
+
+2E SETTING AUTO CORRECT 
+
+To set Auto Correct, the SP-1200 must be in segment mode. The SP-1200 can be stopped or 
+running (recording). 
+
+1. Press AUTO CORRECT. The display shows the current Auto Correct value (default 
+is 1/4). 
+
+2. The Right Arrow and Left Arrow buttons step through the various Auto Correct 
+options: 1/4 (quarter notes), l/4t (quarter note triplets), 1/8 (eighth notes), l/8t 
+(eighth note triplets), 1/16 (sixteenth notes), l/16t (sixteenth note triplets), 1/32 
+(thirty-second notes), l/32t (thirty-second note triplets), and HiRes (no 
+autocorrection) 
+
+3. When the display shows the desired Auto Correct value, press ENTER. 
+Note: Changing Auto Correct does not affect any parts recorded prior to the change. 
+
+
+
+2F RECORDING A SEGMENT IN REALTIME 
+(ALSO "REPEAT" RECORDING) 
+
+Now that you've selected a segment and dimensioned it, you're ready to record drum 
+patterns into the segment. 
+
+1. If necessary, program the metronome and Auto Correct resolution. Set pitch, mix, 
+and other parameters as desired. 
+
+2. While holding down RECORD, push RUN/STOP so that the RUN/STOP light 
+glows; the metronome will start. The RUN/STOP LED will blink off at the beginning 
+of the segment, and there will also be an accented metronome beat at the beginning 
+of each measure. 
+
+3. Play the various drums where you want them to occur in the segment. The segment 
+will repeat over and over, so you may "overdub" as many drum beats as you like. 
+For example, record a basic bass drum part first, then snare drum sounds, then some 
+differently tuned snare drum sounds, cowbell, etc. Any drum sounds you record 
+during one cycle of the segment will play back on the next cycle of the segment. 
+
+23 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+4. For drum roll effects (repeat recording), hold down the TAP/REPEAT button and 
+the Drum Play button. The drum sound will repeat, at the rate set by Auto Correct, 
+for as long as you hold the TAP /REPEAT and Drum Play buttons. If a drum is 
+multileveled or multipitched, you can obtain some great effects by holding down the 
+TAP /REPEAT button and sequentially pressing down the various Play buttons for 
+the multileveled or multipitched Bank. Plugging a momentary-action, normally 
+open footswitch into the rear panel TAP/AUTO REP enables auto repeat for as long 
+as the footswitch is pressed down. 
+
+5. Several parameters can be changed while recording for special effects (or just to 
+make your life easier, for that matter). 
+
+a. Switch banks to change drum sounds. 
+
+b. Change tempo by pressing the TEMPO button. 
+
+c. Change Auto Correct by pressing AUTO CORRECT and using the Left and Right 
+Arrow buttons. 
+
+d. Change the mix by selecting MIX with the TUNE/ MIX /MULTI button and vary- 
+ing the sliders. Real time level changes are not recorded along with the segment; 
+to record different drum levels, either use the dynamic buttons option (Section 1J) 
+or access multilevel (see step "f" below). 
+
+e. Change pitch by selecting TUNE/DECAY with the TUNE /MIX /MULTI switch. 
+To record pitch changes, vary the slider as you play the Play buttons. Hint: Don't 
+forget about the wonders of Auto Repeat; holding down REPEAT, a drum sound, 
+and varying its pitch while recording produces some absolutely fabulous effects 
+(in particular, try the cowbell). 
+
+f. Access multimode by activating the SET-UP module (however, its LED will not 
+light if accessed during recording) and proceed as described in Sections 1H and 
+II. You may also exit multimode while recording. 
+
+g. Punch out of recording temporarily by pressing RECORD. The RECORD light 
+will go out. You may now practice a part, check out drum sounds for sonic com- 
+patibility with a segment, and so on. To resume recording, press RECORD again; 
+the light will go on and you're ready to roll. 
+
+6. Repeat steps 3 through 5 until you have recorded the complete drum part for that 
+segment. 
+
+
+
+24 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+2G RECORDING A SEGMENT IN STEP TIME 
+
+Here is an alternate way to record and edit drum sounds which is particularly helpful with 
+unusual rhythms. 
+
+1. If necessary, program the Auto Correct resolution. Auto Correct determines the rate 
+at which you step through the song; for example, when set to l/16th notes you will 
+step through the segment a sixteenth note at a time. If some notes fall at other Auto 
+Correct times (such as triplets), you may change Auto Correct at any time to "land" 
+on other rhythmic values. 
+
+Set the initial pitch, mix, and other parameters as desired. 
+
+2. Press the STEP PROGRAM button; the SP-1200 will automatically go into step time 
+record mode. There are two ways to step through the segment: Hold RUN/STOP to 
+run through the segment at the current tempo setting, or use the Right and Left 
+Arrow buttons to increment a step at a time in either direction. The display will 
+indicate your exact location in the segment in measures and beats, and show the step 
+rate. It will also indicate which sounds are recorded on that beat (up to four sounds; 
+more than four sounds is indicated by a + symbol in the display). 
+
+3. Play the various drums where you want them to occur in the segment, or hold 
+ERASE and press any Drum Play buttons containing sounds to be erased. The dis- 
+play will indicate up to four drums at a time. If you record more than four sounds, a 
++ symbol will appear in the display. 
+
+4. Change banks if desired and record more drum parts. 
+
+5. Repeat steps 3 and 4 until you have recorded the complete drum part for that seg- 
+ment. Note that unlike real time recording, you cannot change pitch, enter/exit 
+multimode, alter level, etc. while in step program mode (although, of course, a bank 
+set up as a multi-mode bank of drum sounds will record just like any other bank). 
+Instead, exit step by pressing either ENTER or STEP PROGRAM, make the desired 
+change, and re-enter step time. 
+
+Note: Step time can also be used to edit or examine segments which have been recorded in 
+real time, and additional parts can be overdubbed in real time over a segment recorded in 
+step time. 
+
+
+
+25 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+2H ERASING A SPECIFIC DRUM SOUND 
+
+When you are in segment mode and editing a segment, you may erase a drum /percussion 
+sound wherever it appears in the segment. 
+
+1. Stop the SP-1200, confirm that you are in segment mode, and press ERASE. 
+
+2. The display helpfully mentions that you can erase either a sound or segment. To 
+erase a sound, hit the appropriate Play button. The display will replace the flashing 
+cursor with the name of the sound you entered, and ask you to confirm that this is 
+the sound you want to erase. 
+
+3. If this is the sound to be erased, press YES to return to the Current Segment display. 
+If not, press NO and the SP-1200 will return you to step 2. 
+
+
+
+21 ERASING A SPECIFIC NOTE OF A DRUM TRACK 
+
+Sounds can be erased in either step time or real time. As in the previous section, you must 
+be in segment mode to erase sounds. To erase specific notes in a drum track in real time, the 
+SP-1200 must be running and in record mode. 
+
+1. For real time erasing, set Auto Correct to high resolution mode before erasing. Oth- 
+erwise, you will only be able to erase notes on the selected Auto Correct beats. For 
+step time, select the lowest resolution Auto Correct value that still steps through all 
+the notes you want to erase; or, choose HiRes, which steps through the segment at 
+the equivalent of sixty-fourth note triplets. 
+
+2. Put the SP-1200 into record mode by holding down RECORD and pressing RUN/ 
+STOP so that the RUN/STOP light glows. 
+
+3. Press ERASE; while holding down ERASE, press the Play button or buttons corre- 
+sponding to the sound or sounds you want to erase. For real-time erasing, press the 
+Drum Play button(s) down just before the note or series of notes you want to erase, 
+and release just after the note(s) you want to erase ends. To erase one note out of a 
+rapid series of notes, tap the Drum Play button simultaneously with the note to be 
+erased. For step-time erasing, while holding down ERASE press the Play button on 
+the step where the sound to be erased occurs. 
+
+When erasing, you will hear the drum sound in its normal place as it is being erased, 
+however, the next time the segment cycles the drum sound(s) you erased will be 
+gone. 
+
+Note: For real time erasing, you may use Auto Correct settings other than high resolution 
+for special effects. For example, suppose you recorded a series of four sixteenth note snare 
+drum sounds with an Auto Correct of 16. If you erase using an Auto Correct setting of 8, 
+you could erase only every eighth note, so two of the sixteenth notes would remain. Re- 
+turning the Auto Correct to 16 would let you erase all four sixteenth notes. Note that this 
+technique may be used to advantage if you want to "thin out" an overly complex drum 
+part. 
+
+26 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+2J COPYING AND APPENDING SEGMENTS 
+
+You may copy a segment to one or more other segments. For example, suppose you set up 
+a great hi-hat and bass drum pattern in segment 54. Now suppose you want segment 55 to 
+contain a snare part recorded over the basic bass drum/hi-hat pattern, and segment 56 to 
+contain a torn part recorded over the same basic bass drum/hi-hat part. Rather than having 
+to re-create the hi-hat and bass drum pattern for segments 55 and 56, you may simply copy 
+segment 54 to segments 55 and 56 (or any segment to any other segment, of course). 
+
+You may also link segments together or repeat a segment up to 99 times by copying a 
+segment to itself ("append" mode). 
+
+1. You must be in segment mode and the SP-1200 must be stopped. 
+
+2. Press COPY. The display asks for the two-digit segment number to be copied, which 
+may be keyed in via the keypad or accessed with the Right Arrow and Left Arrow 
+buttons. When the display confirms your choice, press ENTER. 
+
+3. The display nows asks for the two-digit segment number to be copied to, which may 
+be keyed in via the keypad or accessed with the Right Arrow and Left Arrow but- 
+tons. When the display confirms your choice, press ENTER. 
+
+4. If you entered the same number for both the segment to be copied and the segment 
+to be copied to (e.g. segment 23 to be copied into segment 23), the SP-1200 will go 
+into append mode and the display will ask you how many times you want the 
+segment to play, up to 99 times. For example, if you want segment 23 to play 
+through three times instead of just once, you would enter 03. This number may be 
+keyed in via the keypad or accessed with the Right Arrow and Left Arrow buttons. 
+When the display confirms your choice, press ENTER. 
+
+Long segments use up a lot of memory. If you plan to repeat a segment several times, it's 
+better to use the song mode repeat commands as described in Section 3F However, if you 
+plan to modify some parts of the appended segment, then it is necessary to append. 
+
+
+
+27 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+2K ADDING SWING 
+
+While in segment mode, you may specify that a segment have a particular rhythmic swing 
+to it. The SP-1200 defaults to a "swing factor" of 50%, which means that each quarter note 
+is weighted so that the first eighth note takes up 50% of the quarter note, and the second 
+eighth note takes up the other 50%. This is the way you would normally expect things to 
+be. 
+
+However, you may change the swing factor to 54%, 58%, 63%, 67%, or 71%. For example, 
+with a swing factor of 58%, the first eighth note spreads out slightly to take up 58% of the 
+quarter note, while the second eighth note shrinks slightly so that it takes up 42% of the 
+quarter note. This lets you program a swinging, less metronomic feel to individual seg- 
+ments. 
+
+To program a segment for swing, you must be in segment mode. Then, follow these steps: 
+
+1. The SP-1200 must be stopped (RUN/STOP light off). Press SWING. 
+
+2. The display shows the current swing setting for the selected segment. The Right 
+Arrow and Left Arrow buttons step through the various swing options. 
+
+3. When the display shows the desired swing value, press ENTER. 
+
+Notes: Swing can help add a more human "feel" to a series of repeating segments. For 
+example, if you repeat the same segment four times, try setting a swing factor of 54% for, 
+say, the third segment. This results in a series of segments which are more psycho-acousti- 
+cally interesting than merely repeating the same pattern over and over. 
+
+67% is considered the "classic" jazz swing factor, where the first eighth note is 2/3 of a 
+quarter note, and the second eighth note is 1/3 of a quarter note (i.e. the second eighth note 
+behaves more like an eighth note triplet). If this sounds too "perfect", try a swing factor of 
+64% instead. The results will be similar, but the "feel" will be slightly different. 
+
+If you're trying to record or erase in a segment which has a swing factor other than 50%, 
+there are two cautions. To erase a specific note, you have to erase where the note would 
+normally occur if the segment had a 50% swing factor. If you record while a segment is in 
+swing mode, the beats may or may not fall where you want them to fall. Therefore, it's best 
+to go out of swing mode when recording or erasing, then re-enter swing mode after you've 
+finished your alterations. 
+
+
+
+28 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+2L SWAPPING DRUM SOUNDS 
+
+(SET-UP SPECIAL FUNCTION 18) 
+
+After recording the segment, you might come to the realization that a part would sound 
+better with, say, the Electric Snare than the regular Snare. No problem! Just swap sounds... 
+
+1. Activate the SET-UP module and key in 23 (SPECIAL) then 18 (special function 
+"swap sound"). The display will ask which original sound you want to swap. Press 
+the appropriate play button. 
+
+2. The display now asks you for the sound you want swapped in place of the original 
+sound; again, press the appropriate Play button. If the display confirms your choice, 
+press YES. Otherwise, press NO to stop the swapping process. Note that if the origi- 
+nal sound has pitch or other changes, the swapped sound will acquire the same 
+characteristics. 
+
+Swapping is particularly useful when sampling. Suppose you record a part with one snare 
+drum sound, then six months later you sample a new, mind-boggling snare sound. Simply 
+record the new sample into one of the sound locations, and swap the existing snare sound 
+with the new sound. 
+
+
+
+2M COPYING SOUNDS (SET-UP SPECIAL FUNCTION 17) 
+
+You may copy any sound into any other sound, thus replacing the original sound with the 
+copy. Generally this function is used to replace existing sounds with sampled sounds; it 
+will be described further in Section 4A. 
+
+1. Activate the SET-UP module and key in 23 (SPECIAL) then 17 (special function 
+
+"copy sound"). The display will ask which sound you want to copy. Press the appro- 
+priate Play button. 
+
+2. The display now asks you for the destination (where the sound will be copied to); 
+again, press the appropriate Play button. If the display confirms your choice, press 
+YES. Otherwise, press NO to stop the copying process. 
+
+Hint: Copying sounds is also useful if you want one sound to go to several outputs. This 
+lets you do such things as create harmonies. 
+
+
+
+29 
+
+
+
+RECORDING SEGMENTS 
+
+
+
+2N CLEARING THE MEMORY 
+
+(SET-UP SPECIAL FUNCTIONS 12, 15, & 16) 
+
+If you reach a memory FULL condition (as indicated by the display), save what you have 
+on disk. After doing this, you will probably want to clear some or all data in the SP-1200's 
+memory to create more space. Another occasion where you might want to clear data is if 
+you've finished working on a song /segment or group of songs /segments, saved the data, 
+and want to start over from scratch. Here's how to clear data: 
+
+1. Activate the SET-UP module by pressing its switch. Its LED will glow, and the dis- 
+play will ask for a function from the list printed to the right of the SET-UP switch. 
+
+2. Key in 23 (SPECIAL). We hid the memory clearing functions in the SPECIAL section 
+to make it harder to erase things accidentally. Now move Slider #1 to catalog the 
+various special functions; note that there are three separate memory clearing op- 
+tions. 
+
+3. Key in 12 to clear all memory. The display will ask if you really want to do this. If so, 
+press YES. 
+
+4. Key in 15 to clear all sound memory (this erases all samples in the 
+SP-1200). The display will ask if you really want to do this. If so, press YES. 
+
+5. Key in 16 to clear all sequence memory. This keeps the samples intact but erases the 
+various segment and song patterns. The display will ask if you really want to do 
+this. If so, press YES. 
+
+6. De-active the SET-UP module. ..and start filling up the memory again. 
+
+
+
+20 CHECK REMAINING MEMORY 
+(SET-UP SPECIAL FUNCTION 13) 
+
+Whenever the SP-1200 is stopped, you may check the remaining amount of memory by 
+activating the SET-UP module, keying in 23 for the special function menu, and keying in 13 
+to select the memory remaining function. The display will show the amount of sequence 
+memory available (expressed as a percentage) and the amount of sound (sampling) 
+memory in seconds. 
+
+If you find yourself running out of memory often, make sure you read Section 3M 
+(Efficient Use of Memory). 
+
+
+
+30 
+
+
+
+CREATING A SONG 
+
+
+
+Part 3: CREATING A SONG 
+
+
+3A 
+
+
+Creating a Song: Overview 
+
+
+3B 
+
+
+Selecting a Song 
+
+
+3C 
+
+
+Chaining Segments Together 
+
+
+3D 
+
+
+Ending a Song 
+
+
+3E 
+
+
+Editing Songs 
+
+
+3F 
+
+
+Using Repeats 
+
+
+3G 
+
+
+Changing the Song Drum Sound Mix 
+
+
+3H 
+
+
+Setting Song Tempo 
+
+
+31 
+
+
+Programming Tempo Changes Within a Song 
+
+
+3J 
+
+
+Jumping to a Sub-Song 
+
+
+3K 
+
+
+Programming Trigger Outputs 
+
+
+3L 
+
+
+Starting at a Specified Point in the Song 
+
+
+3M 
+
+
+Efficient Use of Memory 
+
+
+
+31 
+
+
+
+CREATING A SONG 
+
+
+
+3A CREATING A SONG: OVERVIEW 
+
+There are two ways to create songs using segments. One way is to simply run the SP-1200 
+and key in each segment just before you want it to appear. However, a far easier way is to 
+go into song mode (by pressing the SONG /SEGMENT button), and programming a se- 
+quence of segments to create a song. 
+
+We suggest first writing out the order of segments on paper, and also noting any repeats, 
+tempo changes, or mix changes. Writing the song out first makes the whole process go 
+much more smoothly. 
+
+Selecting a song for either playback, recording, or editing consists of: 
+
+• Pressing the SONG /SEGMENT button to go into song mode (the SONG light 
+glows). 
+
+• Selecting one of 100 different songs to work on (00 to 99). 
+
+• When you first enter song mode, the display's top line shows the current song 
+number and song tempo. 
+
+• To play back the song, press RUN/STOP. 
+
+• To create a song, press the REC/EDIT button to enter EDIT mode (its LED will 
+light). EDIT mode is a safety feature that prevents accidental song step erasures. 
+After entering EDIT mode, key in the number of each segment you want chained 
+together, in the order in which you want them to play. To save memory space, 
+repeat commands let you repeat a segment (or group of segments) many times. 
+
+When creating a song, you are automatically in EDIT mode and have the following editing 
+options: 
+
+• Stepping sequentially through each step (either up or down). 
+
+• Inserting an additional step at any place in the song. 
+
+• Deleting a step at any place in the song. 
+
+• Choosing a drum mix for the particular song or any section of the song. 
+
+• Choosing the tempo for the particular song, including accelerandos and 
+ritardandos (speeding up and slowing down). This can be done instantly, or over 
+a selected number of steps. 
+
+• Adding repeats when a segment plays over many times. 
+
+• Going to a Sub-song, and returning where you left off after the 
+Sub-song has played through. 
+
+• Jump to another song, which can have its own mix, tempo, etc. 
+
+Note: When going to song mode from segment mode, segment level and tempo settings 
+are not transferred over to the song. Instead, each song has its own programmed tempo 
+(see Section 3H) and can acquire (at any time during the song) any of the eight previously 
+defined drum sound mixes (see Section IK). 
+
+
+
+32 
+
+
+
+CREATING A SONG 
+
+
+
+When it comes time to end the song, you may: 
+
+• Unconditionally end it. 
+
+• Repeat the song indefinitely 
+
+• Link the end of the song to the beginning of another song. 
+
+There are many other features of song mode, such as indefinite repeat, programmed metro- 
+nome outputs, and so on. These will be described in detail in this section. 
+
+Remember: To work with a song you must be in song mode (press the SONG /SEGMENT 
+button until the SONG light glows). 
+
+
+
+3B SELECTING A SONG 
+
+To Choose a Particular Song: 
+
+1. Press the SONG/SEGMENT button so that the SONG light glows. 
+
+2. Key in the two digit song number with the keypad. Leading zeroes must be entered 
+for single digit song numbers (i.e. press then 7 to select song 07). The display's 
+upper line will confirm your choice. 
+
+3. To start entering segment numbers, press REC/EDIT The lower line will indicate 
+the contents of the first song step — either END for end (Section 3D), the number of 
+a segment (Section 3C), a begin repeat ( I -) sign (Section 3F), a Mix # (Section 3G), or 
+tempo change command (Section 31). 
+
+
+
+33 
+
+
+
+CREATING A SONG 
+
+
+
+3C CHAINING SEGMENTS TOGETHER 
+
+As mentioned in the overview, it's best to write out the order of segments you want to 
+program into a song. Let's try a simple example: 
+
+Segment # Section of Song 
+
+Step 1: 61 Introduction 
+
+Step 2: 62 
+
+Step 3: 61 
+
+Step 4: 63 
+
+Step 5: 64 First verse 
+
+Step 6: 64 
+
+Step 7: 64 
+
+Step 8: 65 
+
+Step 9: End End 
+
+Here is how you would write a song using these segments: 
+
+1. Make sure you are in song mode (SONG light glows). 
+
+2. Select the song you want to program (Section 3B), then press REC/EDIT to enter 
+EDIT mode. 
+
+3. Key in the first segment number (in this case, 61). The display's lower line confirms 
+your choice for the first song step. 
+
+4. Press ENTER or Right Arrow (whichever you prefer). This enters the first segment 
+number into step 1, and advances to step 2 (the display's lower line now says Step 2: 
+to confirm that you have reached the second step). 
+
+5. Key in the next segment number (in this case, 62) in a manner similar to steps 3 and 
+4. After you press ENTER or Right Arrow, the display's lower line will show Step 3: 
+to indicate that you're ready to program the next step. Continue keying in the vari- 
+ous segment numbers until the entire eight segment song has been entered 
+
+6. Proceed to the next section for information on how to end the song. 
+
+
+
+34 
+
+
+
+CREATING A SONG 
+
+
+
+3D ENDING A SONG 
+
+After programming your song, you have several ways to end it. This assumes that you've 
+already entered all the segments, and that you are one step past the last step in which you 
+entered a piece of song data (for example, if you've entered eight segments, the display's 
+lower line should now show Step 9:). Here are your options: 
+
+1. To repeat the song indefinitely (loop the song), press END (a flashing cursor will 
+appear after End), then press REPEAT. The display's lower line will indicate that this 
+step will continuously "loop" the song. 
+
+2. To link the end of your first song to the beginning of another song, press END (a 
+flashing cursor will appear after End), then key in the two-digit number of the song 
+you want to link. The display's lower line will confirm your choice by saying "Link 
+(song number)". 
+
+3. To stop the SP-1200 completely after the song, press END (a flashing cursor will 
+appear after End). Press END a second time; the flashing cursor will disappear, and 
+the display's lower line will show End to confirm that the song ends at this step. 
+
+Note: Entering End at step 1 of the song (in other words, pressing END twice as described 
+above in paragraph 3) erases the song. The display will ask "End Here? Yes /No" to check if 
+you really want to do this. If you do, press YES. 
+
+
+
+3E EDITING SONGS (STEPPING, INSERTING, DELETING) 
+
+1. Stepping: To change a song step, locate the step with the Right Arrow and Left 
+Arrow buttons. Pressing Right Arrow increases the step number, Left Arrow de- 
+creases the step number. Tap either key once to move one step at a time, or hold 
+either key down for a "fast forward" or "fast backward" effect. When you reach the 
+step you want to change, simply key in the new information. 
+
+2. Inserting: Inserting creates an additional step (or steps) in an existing song. Con- 
+sider a situation where you want to insert another segment in a song right after step 
+4. First, press Right Arrow or Left Arrow until you reach step 5 (the step which is 
+right after step 4). Press INSERT. Two things happen: This step becomes available for 
+entering a song step, and all subsequent steps are automatically renumbered to 
+reflect the addition of the inserted step (for example, what used to be step 5 now 
+becomes step 6, step 6 becomes step 7, step 7 becomes step 8, etc.). You may now key 
+in the instruction for the new step 5 (in this case, it would be a segment number). 
+After entering the instruction, press ENTER to enter the instruction into the SP- 
+1200's memory, unless you want to add more steps. In that case, press INSERT again 
+to add another insert, and continue as described above. 
+
+3. Deleting: Move to the step you want to delete (let's choose step 8 as an example) by 
+using the Right Arrow and Left Arrow keys. When step 8 appears in the left-hand 
+readout, press DELETE. The current step 8 is deleted, and all subsequent steps are 
+automatically renumbered to reflect the deletion of this step (step 9 becomes the new 
+
+35 
+
+
+
+CREATING A SONG 
+
+
+
+step 8, what used to be step 10 becomes step 9, and so on). To delete more steps, 
+continue pressing DELETE. 
+
+
+
+3F USING REPEATS 
+
+You may enclose a segment, or group of segments, inside repeat instructions to repeat the 
+segment(s) a selected number of times. This not only simplifies song programming, but 
+also saves memory compared to entering multiple segments. As you write out the order of 
+steps for a song, take these repeat instruction steps into account; consider the following 
+song as an example: 
+
+
+
+Song Step # 
+
+
+Segment to 
+Be Played 
+
+
+Song Step # 
+
+
+Segment to 
+Be Played 
+
+
+Step 1: 
+
+
+61 
+
+
+Step 17: 
+
+
+65 
+
+
+Step 2: 
+
+
+61 
+
+
+Step 18: 
+
+
+66 
+
+
+Step 3: 
+
+
+61 
+
+
+Step 19: 
+
+
+67 
+
+
+Step 4: 
+
+
+61 
+
+
+Step 20: 
+
+
+68 
+
+
+Step 5: 
+
+
+62 
+
+
+Step 21: 
+
+
+65 
+
+
+Step 6: 
+
+
+63 
+
+
+Step 22: 
+
+
+66 
+
+
+Step 7: 
+
+
+67 
+
+
+Step 23: 
+
+
+67 
+
+
+Step 8: 
+
+
+68 
+
+
+Step 24: 
+
+
+68 
+
+
+Step 9: 
+
+
+65 
+
+
+Step 25: 
+
+
+65 
+
+
+Step 10: 
+
+
+66 
+
+
+Step 26: 
+
+
+66 
+
+
+Step 11: 
+
+
+67 
+
+
+Step 27: 
+
+
+67 
+
+
+Step 12: 
+
+
+68 
+
+
+Step 28: 
+
+
+68 
+
+
+Step 13: 
+
+
+65 
+
+
+Step 29: 
+
+
+End 
+
+
+Step 14: 
+
+
+66 
+
+
+
+
+
+
+Step 15: 
+
+
+67 
+
+
+
+
+
+
+Step 16: 
+
+
+68 
+
+
+
+
+
+
+
+36 
+
+
+
+CREATING A SONG 
+
+
+
+can simplify this by 
+
+
+using the repeat function: 
+
+
+Song Step # 
+
+
+Segment to be Played or Instruction 
+
+
+Step 1: 
+
+
+Begin repeat 
+
+
+Step 2: 
+
+
+61 
+
+
+Step 3: 
+
+
+End repeat 4 (- 4) 
+
+
+Step 4: 
+
+
+62 
+
+
+Step 5: 
+
+
+63 
+
+
+Step 6: 
+
+
+67 
+
+
+Step 7: 
+
+
+68 
+
+
+Step 8: 
+
+
+Begin repeat 
+
+
+Step 9: 
+
+
+65 
+
+
+Step 10: 
+
+
+66 
+
+
+Step 11: 
+
+
+67 
+
+
+Step 12: 
+
+
+68 
+
+
+Step 13: 
+
+
+End repeat 5 (- 5) 
+
+
+Step 14: 
+
+
+End 
+
+
+
+Here's how you would use repeat instructions to advantage in this example: 
+
+1. At step 1, press REPEAT. The right-hand display shows the I - begin repeat sign. 
+Press ENTER to enter this step into the SP-1200's memory. Note that the SP-1200, 
+being such an intelligent fellow, will automatically insert the right kind of repeat 
+mark — if there is no begin repeat instruction in the song, it will insert a begin repeat 
+command when you press REPEAT; if a begin repeat already exists, then the SP-1200 
+will give you an end repeat command when you press REPEAT. 
+
+2. At step 2, key in the segment number, then press ENTER to enter this step into the 
+SP-1200's memory. 
+
+3. At step 3, press REPEAT; the display's lower line will show the I - end repeat sign 
+and the default setting of 02 repeats, with a flashing cursor under the first digit. 
+
+4. Specify the number of times you want the repeat to occur. This can be done with the 
+keypad, or you can increment the default setting with the Right Arrow key or decre- 
+ment the default setting with the Left Arrow key. In this example, you would key in 
+04. Leading zeroes must be entered for single-digit repeat numbers. Finally, press 
+ENTER to enter the number of repeats into the SP-1200's memory. 
+
+
+
+37 
+
+
+
+CREATING A SONG 
+
+
+
+5. Enter segments 62, 63, 67, and 68 as described in Section 3C. 
+
+6. When you reach step 8, press REPEAT. The display's lower line will show a begin 
+repeat symbol. 
+
+7. Enter segments 65, 66, 67, and 68. 
+
+8. When you reach step 13, press REPEAT to end the repeat, then press 05 to indicate 
+that you want segments 65, 66, 67, and 68 repeated five times. Finally, press ENTER 
+to enter this step into the SP-1200's memory. 
+
+9. At step 14, press END twice to unconditionally end the song. 
+
+10. Now start the SP-1200. It will play back the song, with the lower display line show- 
+ing each segment as it occurs. 
+
+11. Editing: To insert a repeat after entering a series of segments, first stop the SP-1200, 
+then use the INSERT command to create a new step. You may then enter a repeat 
+instruction in this new step. 
+
+Note: It is possible to create "illegal" repeat commands when using the INSERT and DE- 
+LETE buttons, such as having one repeat inside another repeat. The SP-1200 will not follow 
+these illegal commands, but rather, will look for the last begin repeat command and execute 
+this loop, ignoring any other loops. 
+
+
+
+3G CHANGING THE SONG DRUM SOUND MIX 
+
+A song initially has a default drum sound mix where all drums are at the same level. How- 
+ever, you may insert a "change mix" command as one of the song steps (usually, the first 
+song step will specify the desired initial mix). Segments which play after the change mix 
+command will reflect the new mix. You may select from any of the eight drum sound mixes 
+(as defined in Section IK), and have an unlimited number of mix changes during the course 
+of a song. 
+
+To change a mix, follow these steps: 
+
+1. At the song step immediately prior to where you want the mix to change, press MIX 
+CHANGE. If you have already programmed a song and want to add a mix change, 
+insert a song step and then press MIX CHANGE. The display's lower line will show 
+the song step number and Mix #, with a flashing cursor after the #. 
+
+2. Use the keypad to key in the number representing the desired drum mix (see Section 
+1L); leading zeroes are not entered in this case. The display will confirm your choice 
+of mixes. 
+
+3. Press ENTER, Right Arrow, or Left Arrow to enter the change mix command into the 
+SP-1200's memory. 
+
+
+
+38 
+
+
+
+SAMPLING YOUR OWN SOUNDS 
+
+3H SETTING SONG TEMPO 
+
+Each song can have its own programmed tempo from 40 to 240 Beats Per Minute. 
+
+1. To change tempo (the SP-1200 may be stopped or running and in or out of EDIT 
+mode), press TEMPO. (Note: If you change tempo while the SP-1200 is running, the 
+tempo setting is not stored and does not loop around if a song should repeat. For 
+best results, change tempo while the SP-1200 is stopped.) The cursor will flash under 
+the first digit of the tempo. There are five ways to enter tempo: 
+
+• Press the Right Arrow button once to increase the tempo by 1 BPM. Hold the 
+button down to increment through the tempo 1 BPM at a time. 
+
+• Press the Left Arrow button once to decrease the tempo by 1 BPM. Hold the 
+button down to decrement through the tempo 1 BPM at a time. 
+
+• Use the Keypad to enter the tempo directly, accurate to l/10th BPM four digits). 
+Leading zeroes must be entered. 
+
+• Vary Slider #1 
+
+• "Tap" the tempo you want on the TAP/REPEAT button. The SP-1200 will 
+compute the time between taps and translate that to Beats Per Minute. If desired, 
+you can tap continuously and when the groove feels just right, stop tapping; the 
+last time between taps will be remembered as the tempo. The rear panel TAP/ 
+AUTO REP jack accepts a momentary-action, normally open f ootswitch if you 
+want to tap with your foot instead of your hand. 
+
+2. When the display shows the desired tempo press ENTER. 
+
+
+
+31 PROGRAMMING TEMPO CHANGES WITHIN A SONG 
+
+The tempo change feature is very handy if you want to program the tempo to speed up or 
+slow down at specific places in the song. You may introduce tempo changes at any point in 
+a song; as you write out the song steps, allot a step for each tempo change instruction. 
+
+1. Make sure you are in song mode. 
+
+2. At the song step immediately prior to where you want the tempo to change, press 
+TEMPO CHANGE. If you have already programmed a song and want to add a 
+tempo change, insert a song step and then press TEMPO CHANGE. The display will 
+ask you to specify Accelerando (key in 1) or Ritardando (key in 2). 
+
+3. After selecting Accelerando or Ritardando, the display's lower line will show the 
+song step number, a quarter note symbol, and +00/00 (for Accelerando) or -00/00 
+(for Ritardando). A cursor will be flashing under the first 0. 
+
+4. The first pair of digits signifies the tempo increase or decrease in BPM (up to 99, 
+within the constraints of the 40 to 240 BPM range); the second pair of digits signifies 
+the number of beats over which this change is to occur (up to 32 beats). Use the 
+keypad to key in the desired BPM change, then press ENTER. Next, key in the de 
+
+39 
+
+
+
+40 
+
+
+
+SAMPLING YOUR OWN SOUNDS 
+
+
+
+Part 4: SAMPLING YOUR OWN SOUNDS 
+
+
+
+4A Sampling: An Overview 
+
+4B Setting Levels Prior to Sampling 
+
+4C Assigning Sound Location and Output Channel 
+
+4D Setting the Sampling Threshold 
+
+4E Setting the Sample Length 
+
+4F Initiating and Stopping Sampling 
+
+4G Deleting (Erasing) a Sound 
+
+4H Modifying Via Truncation and Looping 
+
+
+
+41 
+
+
+
+SAMPLING YOUR OWN SOUNDS 
+
+4A SAMPLING: AN OVERVIEW 
+
+The SP-1200's sampling capabilities are pretty staggering. The SP-1200 can hold 32 user 
+sampled sounds. These samples can come from acoustic drums, electronic drums, synthe- 
+sizers, or even records, CDs, and tapes. 
+
+There is a catch; with the SP-1200 (ten seconds of sampling time), the average length of 
+each sound can only be about 320 milliseconds long (10 seconds divided by 32 sounds). On 
+the other hand, since most percussion sounds are fairly short, (many shorter than 320 
+milliseconds) 10 seconds can be a lot of drum time. 
+
+This chapter of the manual gives the basics of sampling, while the Appendix gives addi- 
+tional tips and techniques to help you create top-quality samples. 
+
+Sampling always begins by activating the Sample module. 
+
+
+
+4B SETTING LEVELS PRIOR TO SAMPLING (SAMPLE 1 & 3) 
+
+There are two Sample module functions involved in level setting: VU Mode (SAMPLE 1) 
+and Level (SAMPLE 3). The module's GAIN control trims the record level, just like the 
+record level control on a tape recorder. 
+
+1. Plug the output of the sound being sampled (microphone, synth drum output, etc.) 
+into the rear panel SAMPLE IN jack. 
+
+2. Activate the SAMPLE module; this automatically puts the SP-1200 in VU mode 
+(SAMPLE 1). (If you select another SAMPLE function at some point, entering the 
+data for that function usually returns you automatically to VU mode.) 
+
+The left of the display's top line will show the sound location where the sample will 
+be recorded; this defaults to the lowest available empty sound location. 
+
+The right of the display's top line will show the preamp gain setting, which defaults 
+to the last selected value (for a new SP-1200, this is +00 dB). +00 dB is good for line 
+level signals, +20 dB works for most electrified instruments, and +40 is suitable for 
+mic level signals. For the highest-quality recording, we recommend using the +00 dB 
+setting exclusively. If additional gain is required, use a low noise outboard preamp. 
+
+The display's bottom line is a moving-bar VU meter with "peak hold", which briefly 
+"holds" the highest level attained. The VU meter may or may not be showing any 
+activity. 
+
+3. Play the sound to be sampled. Note the moving bar display in the lower line; louder 
+signals will kick the bars further over to the right. If the meter hardly moves at all, 
+turn up the GAIN control. If you cannot achieve sufficient gain to get a good signal 
+level, proceed to the next step. 
+
+If the meter bar hits the extreme right hand side, the SP-1200 is being overloaded. 
+Turn down the GAIN control so that the peaks are below this overload point. Gener- 
+ally, you will want to sample at the highest possible level short of overload. 
+
+42 
+
+
+
+SAMPLING YOUR OWN SOUNDS 
+
+4. To select between the available preamp gains of +00 dB, +20 dB, and +40 dB, with 
+the module active key in 3. Use the Right Arrow and Left Arrow buttons to step 
+through the three gain options. After making your selection, press ENTER to return 
+to VU mode. Check that the sound to be sampled is now providing sufficient level to 
+the SP-1200. 
+
+
+
+4C ASSIGNING THE SAMPLE TO A PARTICULAR PLAY 
+BUTTON AND OUTPUT CHANNEL (SAMPLE 2) 
+
+The SP-1200 default assignment places the sampled sound on the lowest available empty 
+play button number, with the sound appearing on output channel 7 or 8. Both of these can 
+be changed as follows: 
+
+1. With the SAMPLE module active, key in 2. The display's top line will give the cur- 
+rent button number, with a cursor appearing underneath the number. Key in the 
+desired Sound number with the keypad (leading zeroes are not entered); when the 
+display confirms your choice, press ENTER. 
+
+If an asterisk appears next to the Sound location, it already contains a sampled 
+sound. If you press ENTER, as a safety measure you will be asked if you want to 
+erase the existing sampled sound. 
+
+2. The bottom line will now show the output channel assignment for the selected 
+Sound. A cursor will appear under the output channel number. Key in the desired 
+output channel number with the keypad (leading zeroes are not entered); when the 
+display confirms your choice, press ENTER. The output channel number is stored 
+with the sound number until changed. 
+
+
+
+4D SETTING THE SAMPLING THRESHOLD (SAMPLE 4) 
+
+There are two ways to initiate sampling: Threshold-sensitive sampling and forced sampling 
+(SAMPLE 9). With threshold-sensitive sampling, once sampling is "armed" sampling 
+begins whenever the signal to be sampled exceeds the programmable threshold level. To 
+set the threshold level: 
+
+1. With the SAMPLE module active, key in 4. The display shows the regular bar graph 
+display on the bottom line, and a single bar on the top line which represents the 
+threshold. If the threshold has not been adjusted since the memory was last cleared, 
+the threshold defaults to minimum and the display advises you to "Use Slider #1"; 
+otherwise, upon selecting SAMPLE 4, the threshold sits at wherever it had been set 
+previously. 
+
+2. To change the threshold level, vary Slider #1. Generally, you will set threshold just 
+above the residual noise of the sound to be sampled (the display's lower line will 
+show this noise, if any, as erratically moving bars towards the left of the line). There- 
+fore, the noise will not initiate sampling, but a signal that exceeds the threshold will. 
+
+43 
+
+
+
+SAMPLING YOUR OWN SOUNDS 
+
+Hint: Set the lowest possible threshold. If the beginning of a sound is cut off, the threshold 
+is too high. If there's a delay before the beginning of a sound, the threshold is too low and 
+the sample was probably triggered by some noise prior to the actual signal. 
+
+Note: Once sampling has begun, the SP-1200 will continue sampling even if the signal falls 
+below the threshold level. 
+
+
+
+4E SETTING THE SAMPLE LENGTH (SAMPLE 5) 
+
+Once sampling starts, the SP-1200 will normally sample until it runs out of memory or is 
+stopped (Section 4F). However, this function lets you program a fixed sample time up to 2.5 
+seconds; after this time has elapsed, the SP-1200 will stop sampling. 
+
+1. With the SAMPLE module active, key in 5. The display's top line indicates the 
+amount of time available for sampling. The maximum settable sample length is 2.5 
+seconds. Therefore, even if you have more than 2.5 seconds available, the display 
+will indicate 2.5 seconds. Once you have less than 2.5 seconds of sampling time left, 
+the display will indicate the maximum amount of time available for sampling. 
+
+2. Vary Slider #1 to change the sample length in 100 millisecond(0.1 second) incre- 
+ments. When the display confirms your choice, press ENTER. The sample length 
+will remain as set until changed, or until you select a different sound location. 
+
+Note: The SP-1200 is partitioned into four 2.5 second zones. Sounds cannot "cross over" 
+from one zone to the other. For example, if you record a 2.0 second sound, then another 
+three 2.0 second sounds, there will 0.5 seconds remaining in each zone. You cannot record a 
+1.0 second sound at this point, although you would be able to record four 0.5 second 
+sounds. 
+
+To check the remaining memory available for sampling, query the sample length as 
+described above. 
+
+
+
+4F INITIATING AND STOPPING SAMPLING (SAMPLE 7 & 9) 
+
+You've set the level, the threshold, the sample length, and assigned the sound to be 
+sampled to the right sound location and output channel; now it's time to sample. The 
+SAMPLE module must be active. 
+
+1. To initiate threshold-sensitive sampling, key in 7. The display's top line says 
+
+"Sample Armed", while the bottom line shows the moving-bar VU meter. As soon as 
+the level of the signal to be sampled exceeds the threshold, sampling will begin. 
+Sampling will stop at the end of the programmed sample length or if the SP-1200 
+runs out of memory. 
+
+
+
+44 
+
+
+
+SAMPLING YOUR OWN SOUNDS 
+
+2. Forced sampling is useful for situations where the signal to be sampled is more or 
+less continuous (continuous signals greatly complicate the threshold-setting process 
+described earlier). To initiate forced sampling, key in 9. The display's top line 
+says/'Sampling", while the bottom line shows the moving-bar VU meter. Sampling 
+will stop at the end of the programmed sample length or if the SP-1200 runs out of 
+memory. 
+
+3. After sampling is complete, the SP-1200 will check the sample and one of two mes- 
+sages will appear in the display's top line. "Sample Overload" indicates that the 
+sound being sampled exceeded the SP-1200's headroom (however, this sound is 
+nonetheless available for use if desired). "Sample is good" indicates that no overload 
+occurred. 
+
+4. If you are not satisfied with the sample, try again by keying in 6 to 
+re-sample the sound. 
+
+
+
+4G DELETING (ERASING) A SOUND (SET-UP 20) 
+
+Recording over a sound will erase the previous sound contents. However, you might also 
+want to erase a sound without recording over it in order to create more memory space. 
+
+To Erase a Sound: 
+
+1. Activate the SET-UP module and key in 20. The display will ask you which Sound 
+you want to delete. 
+
+2. Key in the Sound to be deleted with the keypad. The display will ask you to confirm 
+your choice by pressing YES (if you press NO, you will remain in the module, 
+whereupon you can re-select the Delete function or any other SET-UP module func- 
+tion). 
+
+3. After pressing YES, the sample will be deleted. 
+
+Note: If you have copied a sound over to another bank, deleting the original sound will not 
+erase the copied sound. The copied sound must itself be specifically erased. Here's an 
+example to help get the point across: 
+
+Suppose you record a tambourine in sound location A7, then copy this over to bank D, 
+cowbell sound. Erasing A7 will not erase the tambourine sound that replaced the cowbell 
+sound in bank D. To erase the bank D sound, in step 2 above press the cowbell play button. 
+The tambourine sound which had been copied over will be erased. 
+
+
+
+45 
+
+
+
+SAMPLING YOUR OWN SOUNDS 
+
+4H MODIFYING A SAMPLE VIA TRUNCATION AND LOOPING 
+(SET-UP 19) 
+
+Truncation shortens a sound's length by trimming off parts of the beginning and/or end. 
+This allows you to cut off unneeded portions of a sound to save memory, change instru- 
+ment characteristics (i.e. remove the attack from a plucked string note), cut off a long decay 
+(which is great for simulating noise- gated reverb effects on drums), or isolate a particular 
+section of a sample. 
+
+As mentioned in the introduction, the SP-1200's memory capacity is 10 seconds. Since each 
+second requires 26,000 samples, this works out to a total available memory space of 260,000 
+samples. All truncation and looping times are referenced to samples, not seconds. Example: 
+If you truncate the beginning (start) of a sound by 2,600 samples, you have cut l/10th of a 
+second from the start of the sound (26,000 samples = 1 second, so 2,600 samples = l/10th of 
+a second). 
+
+To Truncate a Sound: 
+
+1. It is good practice to set Sliders #1 and #2 all the way down, and Sliders #3 and #4 
+all the way up, before beginning the truncation process. 
+
+2. Activate the SET-UP module and key in 19. The display's top line will show the 
+name of the sound to be truncated. If this is the desired sound, press ENTER. If not, 
+key in the desired sound using the black play buttons and then press ENTER. 
+
+Note: If there are any copies of the selected sound in the SP-1200, the display will 
+read "Copied" and will not let you truncate or loop the sound until all copies are 
+deleted. This occurs because copied sounds are using the same sample data as the 
+original. Truncating the sound would truncate all the copies. 
+
+3. The display's top line will now show the Start point (which defaults to 00000) and 
+the sound being truncated. The display's bottom line will show the End point of the 
+sample (which defaults to the sample length) and Loop Length (which defaults to 
+NONE). Example: If the End display shows 26,000, then the sample is exactly one 
+second long. 
+
+4. Slider #1 gives coarse control over the amount of start truncation, while Slider #2 
+gives fine control. Moving the sliders upwards increases the amount of truncation. 
+Example: Adjusting these sliders so that the bottom line indicates S=2600 means that 
+you have cut l/10th of a second from the beginning of the sample. 
+
+Note that you cannot truncate a sound one sample at a time, but rather, in groups of 
+samples (even with the fine truncation slider). 
+
+5. Slider #3 gives coarse control over end truncation, while Slider #4 gives fine control. 
+Moving the sliders downwards increases the amount of truncation. Example: With a 
+26000 sample length sound, setting these sliders so that E=13000 means that the end 
+point now occurs halfway through the sample (26000 divided by 2 = 13000). 
+
+
+
+46 
+
+
+
+SAMPLING YOUR OWN SOUNDS 
+
+As with start truncation, samples are truncated in groups rather than one at a time, 
+even with the fine truncation slider. As you change truncation, press the appropriate 
+Play button to hear the results. 
+
+6. Looping can be set at the same time as truncation, or you can loop a previously 
+truncated sample. Looping marks off a section (called a loop) of a sound. The dis- 
+play indicates the Loop Length (L=), whose end point is the end of the sample. With 
+a looped sound, the sound plays normally until it reaches the end of the loop. It then 
+jumps back to the Loop start point and re-plays through the loop. Upon reaching the 
+loop end, it again re-plays the loop. Fig. 4-1 indicates a typical looping action. Loop- 
+ing provides "infinite sustain" effects, extends short samples, and if the loop is 
+rhythmically related to a composition, produces interesting rhythmic effects. 
+
+You might wonder how useful an infinitely sustaining sound is, especially since this 
+is supposed to be a percussive device. ..well, don't forget about SETUP 18, which lets 
+you alter a sound's decay time instead of its tuning. Short decays work great with 
+looped sounds if you want percussive effects. 
+
+7. If the display is already showing the truncation /loop parameters, proceed to step 7. 
+Otherwise, activate the SET-UP module and key in 19. The display's top line will 
+show the sound to be truncated /looped. If this is the desired sound, press ENTER. If 
+not, key in the desired sound with the black play buttons and then press ENTER. 
+
+8. Slider #5 gives coarse control over the loop length, while Slider #6 gives fine control. 
+Moving the sliders upwards increases the loop length. Example: Adjusting these 
+sliders so that L=2600 means that the loop length is l/10th of a second long. 
+
+Note that you cannot alter loop length a sample at a time, but rather, in groups of 
+samples (even with the fine loop length slider). 
+
+9. If you decide to change the truncation, note that you cannot truncate the sound 
+shorter than the loop length; you must decrease the loop length in order to truncate 
+any further. Also, you cannot set a loop length longer than the total sample time (fair 
+enough). 
+
+10. When truncation and looping are set as desired, press ENTER. The display now asks 
+"Make Truncation Permanent? Y/N." Press YES to discard the truncated portions of 
+the sound; this frees up additional sampling memory. Press NO to retain the current 
+truncation settings, but hold the full sound in memory. This is useful if you think 
+you might need to return to the original sound. 
+
+Note: Activating SET-UP and selecting SPECIAL FUNCTION 19 sets a default decay for all 
+sounds (as set by Slider 1). This is useful if you loop a sound and want it to decay, but also 
+want to produce different pitched sounds. 
+
+
+
+47 
+
+
+
+48 
+
+
+
+SAVING YOUR DATA 
+
+
+
+Part 5: SAVING YOUR DATA 
+
+
+
+5A Background: Saving Data 
+
+5B Handling of Disks 
+
+5C Formatting Disks 
+
+5D Disk Operations 
+
+
+
+49 
+
+
+
+SAVING YOUR DATA 
+
+
+
+5A BACKGROUND: SAVING DATA 
+
+Since you spend a lot of time working on segments, songs, and sampled sounds, you 
+should spend the small amount of time necessary to save them. Don't just save when 
+you've filled up the memory; save periodically in case something goes wrong (yes, inte- 
+grated circuits are subject to Murphy's Law). 
+
+
+
+5B GENERAL CARE AND HANDLING OF DISKS 
+
+Disks represent the sum total of your experience with the SP-1200, and should be handled 
+with care. 
+
+
+
+Disks should never be: 
+
+• Bent or sat on 
+
+• Exposed to strong magnetic fields (TVs, speakers, etc.) 
+
+• Subjected to temperature extremes 
+
+• Left out in the sun 
+
+• Touched on any of their magnetic surfaces 
+
+• Used for coasters or frisbees. 
+
+Disks should always be: 
+
+• Stored vertically 
+
+• Kept away from dust, dirt, and smoke 
+
+• Treated carefully and gently. 
+
+The SP-1200 requires double-sided, double-density 3.5" microfloppy disks. 
+
+Disk drives are somewhat fragile. Before transporting the SP-1200 (even if it's only across 
+the room), always insert and latch either the original packing material or a "scrap" disk 
+into the drive. This protects the drive from vibration. Do not use a good disk, as it could 
+become damaged during transit. 
+
+When active, the Drive's red LED will light. Do not try to operate any controls when the 
+LED is on (why tempt fate?). The mechanism will occasionally make whirring sounds; 
+these are normal. 
+
+Inserting the disk in the drive 
+
+Referring to the diagram below, insert the disk into the drive label-side up, with the metal 
+disk protector flap going in first. Gently push the disk in as far as it will go, until you hear a 
+solid click that indicates the disk is seated in the drive. 
+
+
+
+50 
+
+
+
+SAVING YOUR DATA 
+
+
+
+
+disk slot 
+
+
+
+disk eject button 
+
+
+
+label 
+
+
+
+Labelling 
+
+Labelling your disks will save frustration; keep a log of where data is saved. Write on an 
+adhesive label which you then attach to the disk. Writing on the disk can damage it; but if 
+you're the gambling type, at least use a felt-tip pen and apply very little pressure. 
+
+Write-protecting disks 
+
+Write-protecting a disk turns off the disk drive's ability to record on to the disk, thus pre- 
+venting accidental erasure. 
+
+To write-protect a disk, open the write-protect "switch" in the corner of the disk. 
+
+To write-enable the disk, close the "switch" so that there is no visible hole in the disk case. 
+
+If you try to write on a disk and cannot, check whether it is write-protected before proceed- 
+ing. 
+
+
+
+51 
+
+
+
+MIDI, SYNC &SMPTE 
+
+
+
+3.5 Micro-Disk 
+Write-Protect 
+Slide-Switch 
+
+
+
+\_^A 
+
+
+
+m 
+
+
+
+f Open to PROTECT 
+
+
+
+Slide (Reverse Side) 
+
+
+
+i 
+
+
+
+J, Close to UNPROTECT 
+
+
+
+5C FORMATTING DISKS AND COPYING SOFTWARE (DISK 9) 
+
+Before a new disk can record (store) any data, it first must be told how to record this data 
+(called formatting the disk). Run the following formatting procedure on any new disk, or 
+on "re-cycled" disks previously used with other systems (such as home computers) since 
+these will not be formatted correctly for the SP-1200. 
+
+
+
+Note: Formatting a disk that already contains data will "bulk erase" any data on the disk 
+being formatted and replace it with the sounds, sequences and software currently in RAM. 
+Always check that disks are either blank, or contain nothing you want to save, before 
+formatting. A disk need only be formatted once unless you want to use the "bulk erase" 
+aspect of formatting. 
+
+We recommend using 3.5" double-sided, double-density microfloppy disks. Avoid bargain 
+disks; stick to name brands. Buying in quantity can save you lots of money, so get together 
+with other SP-1200 or personal computer owners and do group disk purchases for substan- 
+tial discounts. 
+
+Copying software involves "updating" the computer program that makes the SP-1200 
+work. From time to time we will make improvements such as adding a new feature or 
+correcting a problem that has been discovered. Because the program or software resides on 
+the disks, updating the SP-1200 is simply a matter of loading in a new disk and copying the 
+software to all your other disks! 
+
+
+
+52 
+
+
+
+MIDI, SYNC & SMPTE 
+
+
+
+To Format a Disk: 
+
+1. Activate the Disk module. 
+
+2. Key in 9 for Format/Copy Software. The display will say: Format Disk: Are You Sure 
+
+Y/N. 
+
+3. Press YES. The display now says: Formatting... Formatting takes a little over a 
+minute. When complete, the display asks if you would like to format another disk. 
+
+4. Press Enter to return to the Disk menu. 
+
+
+
+To Copy Software: 
+
+1. Turn the SP-1200 off, wait a few seconds the turn it back on. 
+
+2. Insert the new software diskette into the drive when the display says/Tnsert Dis- 
+kette". 
+
+3. When the disk has finished loading, activate the Disk module. 
+
+4. Key in 9 for Format/Copy Software. The display will say: Format Disk: Are You Sure 
+
+Y/N. 
+
+5. Press NO. The display now says: Copy Software: Are You Sure Y/N. 
+
+6. Remove the diskette from the drive and replace it with the disk you wish to update 
+with the new software. Then press YES. The display asks you if you would like to 
+update another disk. 
+
+7. Press ENTER to return to the Disk menu. 
+
+
+
+5D DISK OPERATIONS (DISK OTHROUGH 8) 
+
+Here is a description of each operation, along with which buttons should be pressed. Op- 
+erations which involve saving to disk (and have the potential to erase your work) give you 
+the opportunity to change your mind by asking you for a Yes or No response. All the other 
+functions act immediately upon pressing the number button. 
+
+Load Sequences and Sounds: Loads everything from disk. 
+
+1 Save Sequences: Saves all songs, segments, mixes, and channel assignments cur- 
+rently in memory. 
+
+2 Save Sounds: Saves all sampled sounds currently in memory. 
+
+3 Load Sequences: Loads all songs, segments, mixes, and channel assignments from 
+disk. 
+
+4 Load Segment #: Loads the selected segment from disk. 
+
+5 Load Sounds: Loads all sampled sounds from disk. 
+
+53 
+
+
+
+SAVING YOUR DATA 
+
+
+
+Load Sound #: Loads the selected sound from disk. 
+
+Catalog Sequences: Shows the segments on the disk by number. If you have more 
+segments or sounds than can fit on the display vary Slider #1 to scroll through the 
+entire list. 
+
+Catalog Sounds: Shows the sounds on the disk by abbreviated name. If you have 
+more segments or sounds than can fit on the display vary Slider #1 to scroll through 
+the entire list. 
+
+
+
+54 
+
+
+
+MIDI, SYNC & SMPTE 
+
+
+
+Part 6: MIDI, SYNC & SMPTE 
+
+
+
+6A MIDI Channel and Mode Select 
+
+6B Background Syncronization 
+
+6C Internal Sync 
+
+6D MIDI Sync 
+
+6E SMPTE Sync 
+
+6F Click Sync 
+
+6G Writing SMPTE Time Code on Tape 
+
+6H Writing a 24 Pulses-Per-Quarter Note Click Sync Track on 
+Tape 
+
+
+
+55 
+
+
+
+MIDI, SYNC & SMPTE 
+
+
+
+The SP-1200 includes several MIDI functions and synchronization options. We will describe 
+MIDI options first, then move into synchronization. The non-sync oriented MIDI functions 
+include select MIDI channel and play drums from MIDI keyboard. 
+
+MIDI is a way of exchanging musical information between various electronic music instru- 
+ments. If you are not familiar with MIDI basics, refer to Appendix D. 
+
+
+
+6A MIDI CHANNEL AND MODE SELECT (SET-UP 22) 
+
+1 . Activate the SET-UP module and key in 22, MIDI PARAMETERS. 
+
+2. Specify the Channel Number from 01 to 16 with the Left Arrow and Right Arrow 
+keys or key in the number via the keypad. This specifies the channel over which the 
+SP-1200 will receive and send data when in Poly mode. After selecting the desired 
+Channel Number, press ENTER. 
+
+3. You may now select the MIDI mode. Key in 1 for Omni (the SP-1200 will play note 
+information coming in on any MIDI channel) or 2 for Poly mode (the SP-1200 will 
+play only note information coming in over the basic channel specified in step 2). 
+
+The SP-1200 sounds may now be played from a MIDI keyboard. If the SP-1200 is in 
+Omni mode, it will respond to notes played on the keyboard regardless of the MIDI 
+keyboard's transmitting channel. If the SP-1200 is in Poly mode, it will respond to 
+notes only if the keyboard and SP-1200 are tuned to the same MIDI channel. If the 
+MIDI keyboard provides velocity (dynamics) information, the SP-1200 sounds will 
+respond to this data. 
+
+Having the SP-1200 respond to keyboard notes is handy if you want to treat the SP- 
+1200 solely as a sound generating device and run it from the note information con- 
+tained in an existing sequencer. For example, suppose you have an Emax and 
+Drumulator with the MIDI retrofit, and have created a number of sequences on the 
+Emax that send notes through MIDI to the Drumulator. When you add an SP-1200 to 
+your setup, you might want to continue to run the SP-1200 from the same sequences 
+used with the Drumulator instead of re-programming the sequences into the SP- 
+1200. No problem; just send the sequencer's MIDI note data to the SP-1200. If the SP- 
+1200 drum sounds triggered by the sequence are not exactly the ones you desire, just 
+swap sounds until the right drums correspond to the right notes. 
+
+The following table shows which Emax keyboard notes trigger which SP-1200 drum 
+sounds (of course, other MIDI keyboards may also be used). 
+
+
+
+56 
+
+
+
+MIDI, SYNC & SMPTE 
+
+
+
+EMAX KEYBOARD TO SP-1200 PLAY BUTTONS 
+
+
+
+nrcir^iMAi DiTPii ^ 
+
+
+
+
+D8 
+
+D7 
+
+B1 
+
+B2 
+
+B3 
+
+B4 
+
+B5 
+
+B6 
+
+B7 
+
+B8 
+
+A2 
+
+A4 
+
+A7 
+
+
+D1 ^^^^ 
+
+
+02 ^^^M 
+
+
+^^^™ 
+
+
+D4 ^^^^ 
+
+
+^^^H 
+
+
+D6 ^^^^ 
+
+
+C1 ^^^^ 
+
+
+C2 ^^^^ 
+
+
+C3 ^^^= 
+
+
+C4 ^^^™ 
+
+
+C5 ^^^^ 
+
+
+C6 ^^^3 
+
+
+C7 ^^^3 
+
+
+C8 ^^^^ 
+
+
+A1 ^^^^ 
+
+
+^^^H 
+
+
+A5 ^^^^ 
+
+
+A6 ^^^^ 
+
+
+^^^™ 
+
+
+
+
+H 
+O 
+
+m 
+
+-< 
+
+C/) 
+
+
+
+
+
+
+
+
+
+
++ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+After selecting the desired mode, press ENTER. 
+
+4. The display now asks whether or not you want the "pitch keys" option. If you press 
+YES and play and hold a key for a specific sound (see above), then keys G#3 through 
+B4 will play the different available pitches for that sound. If you don't want pitch 
+keys, press NO. After selecting the desired option, press ENTER. 
+
+
+
+57 
+
+
+
+MIDI, SYNC & SMPTE 
+
+
+
+6B BACKGROUND: SYNCHRONIZATION 
+
+The SP-1200 can synchronize to one of several different tempo references: Internal clock, 
+external click track, MIDI timing messages, or SMPTE time code. It can also generate 
+(write) a click track or SMPTE time code signal on tape. Once recorded, these signals can 
+feed the SP-1200 during overdubs to maintain synchronization with the original tempo. 
+
+The SP-1200 can also serve as a master timing reference (MIDI, Click, or SMPTE) to which 
+other instruments may synchronize. The different sync protocols are selected when the 
+SYNC module is activated. 
+
+
+
+6C INTERNAL SYNC (SYNC 1 ) 
+
+1. To select internal sync, activate the SYNC module and key in 1. In this mode, the 
+SP-1200 serves as the system master timing reference, at a rate set by the Tempo 
+function (see Sections lO and 3H). A continuous click signal is always present at the 
+SMPTE OUT jack; it is used mainly for recording a click track on tape (Section 6H). 
+To send a click output from the SP-1200 while it is in segment mode to another 
+device, program the metronome for a click output (see Section IP). This click output 
+signal appears at the MET OUT jack, and starts and stops as a segment is started and 
+stopped using RUN/STOP 
+
+2. To send a click output from the SP-1200 while it is in song mode, program the Click 
+output as described in Section 3K. Note that MIDI timing signals are generated at 
+the MIDI out jack in song or segment mode, so the SP-1200 can serve as a MIDI 
+system master and generate a Click output when internal sync is selected. 
+
+6D MIDI SYNC (SYNC 2) 
+
+1. The SP-1200 always sends MIDI clock information when running from internal 
+clock, click track clock, or SMPTE clock in either song or segment mode. When 
+slaved to SMPTE, the SP-1200 also sends a MIDI Song Position Pointer which allows 
+other devices to run in sync with the SMPTE track. 
+
+2. The SP-1200 can also slave to MIDI timing information coming in the MIDI IN jack. 
+It is not necessary to press RUN/STOP when running from MIDI, as MIDI systems 
+should include start and stop commands as part of the MIDI data stream. When 
+slaved to a MIDI device, the MIDI THRU jack echoes whatever is coming in the 
+MIDI IN jack. If the master MIDI device sends MIDI Song Position Pointer informa- 
+tion and is started in the middle of a song, the SP-1200 will silently fast forward to 
+syncronize with the master clock. 
+
+Note: If for some reason the MIDI device does not send start/ stop commands but does 
+provide timing information, you can set the SP-1200 to "ready" mode prior to receiving the 
+MIDI signal. Select the desired SP-1200 segment or sequence and press RUN/STOP The 
+sync light will flash, indicating that the SP-1200 is awaiting sync. As soon as the MIDI 
+master is started and sends out MIDI tempo information to the SP-1200, the sync light will 
+go out and the segment or sequence will start playing. 
+
+58 
+
+
+
+MIDI, SYNC & SMPTE 
+
+
+
+6E SMPTE SYNC (SYNC 3) 
+
+1. To select SMPTE sync, activate the SYNC module and key in 3. In this mode, the SP- 
+1200 can slave to SMPTE time code information coming in the SYNC /SMPTE IN 
+jack. Tempo is set by the SP-1200's Tempo function (Sections lO and 3H). 
+
+2. Selecting SMPTE automatically calls up the SMPTE frames per-second rate display 
+Use the Left Arrow and Right Arrow buttons to choose the desired the SMPTE rate. 
+You have the following choices: 
+
+24 = The standard frame rate for film. 
+
+25 = The standard frame rate for European television and video. 
+
+30 = The standard frame rate for American television and video 
+(this is the default). 
+
+30df = The standard NTSC color videotape frame rate. 
+
+When the display shows the desired SMPTE frame rate, press ENTER. 
+
+3. Enter the SMPTE time code point where you want the segment or sequence to begin. 
+The SMPTE time code format is HH:MM:SS:FF, where H = hours, M = minutes, S = 
+seconds, and F = frames (one frame is equivalent to l/30th of a second at the 30 
+frames-per-second rate). When the display shows the SMPTE start point, press 
+ENTER. 
+
+4. To sync to SMPTE, select the desired SP-1200 segment or song and press RUN/ 
+STOP. The sync light will flash, indicating that the SP-1200 is awaiting SMPTE (the 
+display will confirm this). As soon as SMPTE time code enters the SP-1200 via the 
+SYNC /SMPTE IN jack, the display will show the current SMPTE time code reading. 
+
+If the SMPTE time code being read from tape is earlier than the SP-1200's SMPTE start 
+point, the SYNC light will blink until the tape catches up. When the SMPTE time code 
+reading matches the start point, the SYNC light will go out and the segment or song will 
+begin playing. 
+
+If the SMPTE time code being read from tape is later than the SP-1200's start point, the SP- 
+1200 will "fast-forward" through the song or segment to catch up with the tape. The point 
+at which playback begins depends on the start point and tempo. When the SP-1200 catches 
+up with the tape, it sends a MIDI Song Position Pointer and a Continue message from its 
+MIDI OUT and also begins sending MIDI clocks. This enables slave devices such as other 
+drum machines and sequencers to start in sync with the song. 
+
+If the SMPTE time code being read from tape is much later than the SP-1200's start point, 
+the SP-1200 may need to "fast-forward" several times through the song or segment before it 
+catches up with the tape. 
+
+Note: SMPTE start points are stored along with the song information. Therefore, if there are 
+no songs recorded, you will not be able to enter a SMPTE start point. The advantage of this 
+system is that you can store a different SMPTE start point for each song! 
+
+
+
+59 
+
+
+
+MIDI, SYNC & SMPTE 
+
+
+
+6F CLICK SYNC (SYNC 4) 
+
+1. To select Click sync, activate the SYNC module and key in 4. In this mode, the SP- 
+1200 syncs to click pulses arriving at the SYNC/SMPTE IN jack. 
+
+2. Selecting Click automatically selects the Click Divisor display The SP-1200 is de- 
+signed to run at its programmed tempo with a 24 pulses-per-quarter note click. 
+However, some devices put out 48 (Linn), 96 (Oberheim), or 384 (Fairlight) pulses- 
+per-quarter note click signals. Use the Left Arrow and Right Arrow buttons or key- 
+pad to key in a divisor between 01 and 99 to divide the incoming click signal. How- 
+ever, there is one complication — the SP-1200 reads both the rising and falling edge 
+of a clock pulse. What this means is that it thinks a 24 pulses-per-quarter note signal 
+is really 48 pulses, a 96 pulse signal is really 192, and so on. Therefore, if the SP-1200 
+is being driven by a 96 pulses-per-quarter note device, divide this by 08 to obtain a 
+24 pulses-per-quarter note signal; Fairlight fans should divide by 32). After selecting 
+the clock divisor, press ENTER. 
+
+3. To slave to a Click signal, select the desired SP-1200 segment or sequence and press 
+RUN/STOP The sync light will flash, indicating that the SP-1200 is awaiting sync. 
+As soon as the master is started and sends out Click signals to the SP-1200, the sync 
+light will go out and the segment or sequence will start playing. 
+
+
+
+60 
+
+
+
+MIDI, SYNC &SMPTE 
+
+
+
+6G WRITING SMPTETIME CODE ON TAPE 
+(SET-UP SPECIAL FUNCTION 14) 
+
+The SP-1200 is a SMPTE time code generator that can write SMPTE time code on tape 
+(typically one track of a multitrack recorder), to which the SP-1200 can later synchronize. 
+Recording SMPTE on tape is called "striping" the tape. 
+
+1. Choose the desired SMPTE start point and frame rate as described in Section 6E. 
+When you write SMPTE time code, it will start from this point and at the specified 
+frame rate. 
+
+2. Set up the tape recorder in record ready mode, and patch the SYNC /SMPTE OUT 
+jack to the track on which you want to write the SMPTE time code (usually an outer 
+tape track such as 8, 16, or 24). Prepare to write SMPTE by activating the SET-UP 
+module and keying in 23 (Special). Next, key in 14 to write SMPTE; the SP-1200 will 
+start writing SMPTE from the specified SMPTE time point, as indicated by the dis- 
+play. 
+
+Use this signal to set record levels before rolling tape. A level below -3 VU seems to 
+work well, although you will probably need to experiment to determine the opti- 
+mum level (high enough to provide a strong output signal, yet low enough to not 
+bleed over to other tracks). After setting levels, press ENTER to stop writing. Roll the 
+tape back to where you want the SMPTE to start, go into record mode, leave a few 
+seconds of blank tape, then press 14 to start recording the time code on tape. 
+
+Always record more time code than you think you'll need. You can erase it later if 
+you don't use it, and if you ever need it you'll be glad it's there. In fact, many people 
+simply stripe an entire tape with SMPTE time code as soon as they take the tape out 
+of the box. 
+
+3. When finished, press ENTER to stop writing. 
+
+Hint: After recording SMPTE time code, play it back into the SP-1200 via the SMPTE IN 
+jack and play a segment or song to make sure that the time code was recorded at the right 
+level and that there are no drop-outs or other problems. The SMPTE input is optimized to 
+respond to SMPTE signals, and does not need that much level in order to obtain sync — 
+even -10 dBV standard gear can drive the SP-1200. If the SMPTE time code track bleeds 
+over into other channels of the tape, try lowering the record level a bit and amplifying the 
+signal coming from the tape output. 
+
+If the display occasionally flashes "Awaiting SMPTE" while being driven from the SMPTE 
+track, you have either insufficient level or problems with the tape itself. Finally, SMPTE 
+signals are rather "fragile." Avoid putting them through boards or processors; a direct 
+connection from recorder output to SMPTE- reading devices is preferred. 
+
+
+
+61 
+
+
+
+MIDI, SYNC &SMPTE 
+
+
+
+6H WRITING A 24 PULSES-PER-QUARTER NOTE CLICK SYNC 
+TRACK ON TAPE 
+
+The SP-1200 can write a Click track to tape (typically one track of a multitrack recorder), to 
+which the SP-1200 can later synchronize. 
+
+1. Activate the SYNC module and key in 1 for Internal sync. 
+
+2. Program the desired tempo as described in Sections lO and 3H, and program the 
+Metronome to generate a 24 pulses-per-quarter note click (this appears at the rear 
+panel MET OUT jack). If you want the click track to repeat indefinitely go into 
+segment mode and press RUN/STOP If you want to the click track to last the length 
+of a song, program the Metronome for a click output, add a trigger output instruc- 
+tion to the song (Section 3K), and play the song. 
+
+With the SP-1200 set for Internal sync, SMPTE out generates a continuous 24 pulses- 
+per-quarter note signal. This may also be used for striping tape if you also need to 
+have a metronome signal present, but generally using the MET OUT signal is pre- 
+ferred. 
+
+3. Set up the tape recorder in record ready mode, and patch the MET OUT jack to the 
+track on which you want to write the click track (usually an outer track such as 8, 16, 
+or 24). 
+
+4. Press RUN/STOP to generate the click signal. Use this signal to set record levels 
+before rolling tape. Set about a -3 VU record level. After setting levels, press RUN/ 
+STOP again to stop the click. Roll the tape back to where you want the click track to 
+start, enter record mode, leave a few seconds of blank tape, then press RUN/STOP 
+to start recording the click track on tape. Note that any tempo changes you make 
+while the segment is running will be reflected in the click track. 
+
+Always record more click track than you think you'll need. You can erase it later if 
+you don't use it, and if you ever need it you'll be glad it's there. 
+
+5. When finished, press RUN/STOP to stop writing. 
+
+Hint: After recording a click track, play it back into the SP-1200 via the SYNC/SMPTE IN 
+jack and play a segment or song to make sure that the click track was recorded at the right 
+level and that there are no drop-outs or other problems. The SP-1200 requires a fairly hefty 
+click in signal; with most -10 dBV standard gear, the click signal will need to be pre-ampli- 
+fied in order to drive the SP-1200. Most +4 dBm standard gear delivers sufficient output to 
+drive the SP-1200. If the click track bleeds over into other channels of the tape, try lowering 
+the record level a bit and amplifying the signal coming from the tape output. 
+
+
+
+62 
+
+
+
+MIXING & PROCESSING THE SP-1200 
+
+
+
+Part 7: MIXING & PROCESSING 
+
+the SP-1200 
+
+
+
+7A Mixing and Processing 
+
+7B Pseudo Automated Mixdown 
+
+7C Creating Ambience 
+
+7D Using Special Effects in the Studio 
+
+
+
+63 
+
+
+
+MIXING & PROCESSING THE SP-1200 
+
+7A MIXING AND PROCESSING: OVERVIEW 
+
+Sure, the SP-1200 sounds astonishingly realistic... but it doesn't necessarily sound like the 
+drum sounds you hear on records. Why? Because when recording engineers record acous- 
+tic drums, the drums become part of a stereo acoustical space ("ambience"). Also, special 
+effects may be added to various drums to make them punchier, brighter, fatter, and so on. 
+
+The SP-1200 can benefit from these same techniques. While you can simply plug the MIX 
+OUT jack into a tape track or amplifier, a better approach is to plug the different drum 
+sounds into a stereo mixing board (see Section 1M for information on how to assign differ- 
+ent drum sounds to different output channels). This lets you place the drums in the stereo 
+field, add special effects, and vary equalization (tone). 
+
+Don't forget that you can also mix one drum sound subtly behind another drum sound. For 
+example, mixing the low torn sound in behind the snare at a lower volume level results in a 
+fuller sounding snare, while mixing the open hi-hat in with the ride cymbal results in a 
+different ride sound. 
+
+
+
+7B PSEUDO AUTOMATED MIXDOWN 
+
+Remember that you can change the song drum mix whenever desired (Section 3G). By 
+using this feature to change drum levels as required, you can create a sort of automated 
+mixdown effect. You won't believe how handy this is until you actually try it. 
+
+
+
+7C CREATING AMBIENCE 
+
+In most cases, you'll plug the drum outputs right into the mixing console, and pan these 
+sounds across the stereo field. While that will give you a good, clear sound, some people 
+may find it too clear and clinical. The solution is to add ambience — a feeling of acoustical 
+space — to help give a more "live" sound. 
+
+You may synthesize an acoustic space using delay lines, reverb, acoustic techniques, or any 
+combination of the three. The author recommends adding at least one channel of acoustic 
+ambience. The easiest way to do this is to consider the signal coming from the MIX OUT 
+jack as a sort of "ambience /reverb send" jack — after all, it contains all the drum sounds 
+mixed in their proper proportion. Feed this output to an amplifier /speaker combination 
+inside an acoustical space (preferably a large, "live" room with fairly hard surfaces), and 
+turn the sound up pretty loud. You might also want to cut back on the bass as much as 
+possible to keep the bass drum out of the ambient mix. Next, put a good quality mic in the 
+same room. This mic should be at a distance from the speakers, and pointing away from 
+the speakers towards one of the hard surfaces. Feed the mic output back into the board to 
+mix some of this ambient sound in with the direct drum sound. 
+
+It's very helpful to have someone who can move the mic around as you listen to the results 
+of these changes on headphones. You might want to mark the floor with chalk or tape if 
+you find some particularly sweet spots for mic placement. 
+
+
+
+64 
+
+
+
+MIXING & PROCESSING THE SP-1200 
+
+So far, that's one channel of ambience. You could add a second channel, but another ap- 
+proach is to split the mono ambient signal into two feeds. One of these would be panned 
+left, while the other would be delayed by about 15 to 80 ms and be panned right. This gives 
+a uniform ambient sound, yet one which covers the full stereo field. Connecting more time 
+delay effects (chorusing, flanging, pitch transposers, etc.) in parallel with the drum sounds 
+adds very pleasing subliminal effects, assuming that you mix any of these effects in at a 
+relatively low level. 
+
+Another popular ambience effect involves noise gating the ambient signal, and triggering 
+this noise gate from the snare drum and toms. Thus, every time time you hit the snare or a 
+torn, the ambience cuts in; but when the snare and toms aren't happening, there's no 
+spillover or noise from the ambient signal. 
+
+
+
+7D USING SPECIAL EFFECTS IN THE STUDIO 
+
+Here are some special effects which are very useful with electronic drums: 
+
+Reverb is a common special effect. Unfortunately, spring reverbs have some limitations, 
+one of which is an inability to handle sharp bursts of energy — like drum beats. To mini- 
+mize this problem, try limiting the drums before going into the reverb unit. A better choice 
+is to use plate or digital reverbs. 
+
+Splashing is a technique used with reverb. If you want to reverb specific beats, advance the 
+reverb send control just before the beat, then turn it down after the beat. That one beat will 
+be sent to the reverb and reverberated. 
+
+Echo units, when synched as closely as possible to the tempo of the song, can add interest- 
+ing synchro-sonic effects. For example, try feeding the SP-1200's snare output into an echo 
+unit whose echo time equals a quarter or half note, and whose regeneration (feedback) is 
+up part way. You can also add double-time effects easily by setting the echo time equal to 
+an eighth note. 
+
+Equalization can perk up the sound of individual drums. Actually, the quality of the SP- 
+1200 sounds is superb, so in practice little equalization is needed. However, a little extra 
+bottom on the bass drum, some extra sheen on the high hats, and an upper midrange boost 
+on the snare drum can do for a SP-1200 what a little tasteful make-up can do for a face. 
+
+Noise gates, in addition to enhancing ambient effects as described above, can also clip the 
+decay of drums for a more percussive, clipped sound. 
+
+Ring modulators give great outer space and gong-like effects. 
+
+Pitch transposers can fatten up a drum sound by adding harmonics or sub-harmonics to 
+the drum sound. They are especially effective with handclaps. 
+
+Chorus units can really enhance handclaps. Drum unit handclaps tend to sound unrealistic, 
+since after all, no group of humans are going to clap their hands in exactly the same way 
+every time. One way around this is to set the chorus for maximum delay (usually around 
+20 ms), and use modulation to vary the width. As the amount of delay changes, the 
+handclaps tend to sound thinner or thicker. 
+
+65 
+
+
+
+66 
+
+
+
+APPENDIX 
+
+
+
+APPENDIX 
+
+
+
+APPENDIX A: THE ART OF SAMPLING 
+
+Recording good samples is not always easy; creating a really super set of sounds requires 
+patience, practice, and skill. Sure, you can get musically useful results within a few days 
+after working with the SP-1200, but as you learn your craft the quality of your samples will 
+improve dramatically 
+
+Sampling involves two major processes: 
+
+1. Taking the best possible sample. 
+
+2. Manipulating the sample within the SP-1200 (truncating and looping). 
+
+
+
+PART 1: TAKING THE BEST POSSIBLE SAMPLE 
+
+What comes out of the SP-1200 can only be as good as what you put in: Strive for maxi- 
+mum fidelity when sampling. Here are some ways to increase sample quality. 
+
+
+
+GENERAL TIPS 
+
+• Live sampling: Sample "live" whenever possible, rather than recording a sound on 
+tape then sampling from the tape. 
+
+• Beware of overloads: The SP-1200 is a digital recording device. Unlike analog record- 
+ing devices, distortion does not increase slowly past a certain level; rather, it in- 
+creases rapidly above the overload point, and produces a "non-musical", splattering 
+type of distortion. Monitor your levels carefully. 
+
+• Sampling direct vs. sampling via microphone: Whenever possible, sample electronic 
+instruments directly into the SP-1200. Avoid using a recording console, direct box, or 
+other device in between the instrument and SP-1200. 
+
+• Maintain the instrument to be sampled: Tune your instrument if applicable, and 
+check that the instrument doesn't have any loose parts that rattle, squeak, or make 
+other noises. 
+
+• Sampling acoustic instruments: Choose the microphone and mic placement as care- 
+fully as you would for any recording project. Musicians sometimes note how hard it 
+is to get a good "sound" in the studio, but that's what sampling is all about.. .getting 
+a good sound, and once you've got that sound, keeping it. 
+
+67 
+
+
+
+APPENDIX 
+
+
+
+• Play naturally: Sometimes it's a lot harder to play one note than several hundred. 
+Unless you're trying for a special effect, play the sample as you would normally play 
+the instrument. It's often a good idea to play several notes, and use truncation to 
+zero in on the best of the bunch. 
+
+• Avoid ground loops: Ground loops occur when electricity can take two different 
+paths to ground. If there is a resistance difference between the two paths, this can 
+generate a signal (consisting mostly of digital "hash") that can work its way into the 
+recording chain. With all the instruments patched in place and connected to each 
+other, turn off the SP-1200 and insert a ground lift adapter between the SP-1200 plug 
+and the wall. CAUTION: Removing the ground connection defeats the safety advan- 
+tage of using a three-wire plug. Make sure the SP-1200 chassis has some other path 
+to ground (usually via the audio input and output cables). Having two paths to 
+ground can cause ground loops, but having no paths to ground can cause a potential 
+shock hazard if there's an equipment malfunction in the studio. 
+
+WARNING: E-MU cannot be responsible for the use of ground lifters in 
+improperly or inadequately wired environments. 
+
+• Using signal processing while recording: Just as with regular recording, there are 
+no absolutes about recording signals with or without signal processing. Some 
+engineers feel that tracks should always be recorded flat to allow for the maxi- 
+mum number of options during mixdown; others prefer to record with a bit of 
+processing, especially if the processor might be needed on another track when 
+mixing. 
+
+Here are some thoughts about the use of various types of signal processors when recording 
+samples. 
+
+• External Preamp: If you need to preamplify the signal being sampled, set the Sample 
+section GAIN SET to 00 dB and use an external, high-quality preamp to increase the 
+signal level going into the SP-1200. The SP-1200 preamp noise level, while accept- 
+able, is sometimes not as quiet as an external mic preamp. 
+
+• Limiting Dynamic Range: Limiting the signal being sampled can put a higher aver- 
+age signal level into the SP-1200, thus improving the already excellent signal-to- 
+noise ratio. Also, the limit point can be set just under the SP-1200 overload point, 
+which makes level setting less critical. 
+
+• Equalization: If using EQ gives a better instrument sound, then use it. You want the 
+best possible sound going into the SP-1200, so if a little EQ is indicated, it's usually 
+better to add it while recording rather than having to think about it during playback. 
+
+• Compression: Compression can be helpful when looping sounds since it evens out 
+level changes, thus reducing any tendency towards loop "glitching" due to abrupt 
+level changes between the beginning and end points of the loop. If appropriate, use 
+the SP-1200's decay option to shorten the overall decay time and restore the original 
+signal dynamics. 
+
+68 
+
+
+
+APPENDIX 
+
+
+
+• Audio "exciters": To brighten up a sampled signal, use a device such as an Aphex 
+Aural Exciter or EXR Projector. Both of these devices add a high-end "sheen" with- 
+out adding the stridency encountered with excessive high-frequency equalization. 
+
+• Using noise reduction: A number of single-ended noise reduction units (such as the 
+MicMix Dynafex or Rocktron Hush) are now available; these do not require that the 
+noisy signal have been previously encoded, as is the case with Dolby and dbx. If 
+your source signal is noisy, one of these devices can help to greatly clean up the 
+overall sound quality as you sample. 
+
+Maintaining sample quality when sampling from tape recordings: 
+
+Follow common-sense recording practice — be extremely careful about mic placement, use 
+noise reduction when recording samples on to tape, limit the signal going on to tape rather 
+than limiting the signal coming off the tape into the SP-1200, and add aural enhancement if 
+desired. 
+
+Sampling from Compact Discs: This is a great way to get high quality drum sounds, espe- 
+cially with so many records having solo drum intros and breaks. 
+
+Creative use of multi-tracking: Try multi-tracking sounds on a conventional recorder, then 
+sampling the combination sound into the SP-1200. For example, combining electronic and 
+acoustic percussion sounds can produce some very useful results. 
+
+
+
+PART 2: MANIPULATING THE SAMPLE 
+
+Proper use of truncation and looping can conserve memory and create novel effects; let's 
+show how it's done with an example. Suppose you want to sample a long, sustaining 
+sound such as a gong. Although this will eat up a fair amount of memory, here are some 
+suggestions. 
+
+• Compress the gong sound when sampling to even out level variations. This will help 
+create the smoothest looping effect. 
+
+• Set a loop after the initial attack of the gong, and loop as short a section of the sound 
+as possible to conserve memory (see Fig. Appendix-1). 
+
+• Truncate that portion of the sound after the loop end point. 
+
+• With looping, the sound will have infinite sustain. For a more realistic effect, use 
+SET-UP function 18 (DECAY/TUNE SELECT) to set the gong for decay. Use the 
+slider to set an appropriate decay time. 
+
+Looping can also provide echo and DDL effects. Loop a complete sound so that it continu- 
+ally repeats. Then, use SET-UP function 18 to set a decay time; the repeats will fade out 
+over the decay time. The effect is very similar to echo. 
+
+
+
+69 
+
+
+
+APPENDIX 
+
+
+
+APPENDIX B: UNDERSTANDING RHYTHMIC NOTATION 
+
+This extremely brief overview is intended solely as a refresher and memory jogger; for a 
+detailed description of rhythmic notation, see any good book on music theory 
+
+Measures: A piece of music is divided into measures, and each measure is divided into 
+notes. The number of notes, and rhythmic value of the notes, depends both on the composi- 
+tion and the time signature (see Appendix C). 
+
+Note values: With a measure written in 4/4, there are four beats per measure, with each 
+beat representing a quarter note. Thus, there are four quarter notes per measure of 4/4 
+music. 
+
+There are two eighth notes per quarter note. Thus, there are eight eighth notes per measure 
+of 4/4 music. 
+
+There are four sixteenth notes per quarter note. Thus, there are sixteen sixteenth notes per 
+measure of 4/4 music. 
+
+There are eight thirty-second notes per quarter note. Thus, there are thirty-two thirty sec- 
+ond notes per measure of 4/4 music. 
+
+There are also notes which span a greater number of beats than quarter notes. A half-note 
+equals two quarter notes. Therefore, there are two half -notes per measure of 4/4 music. A 
+whole note equals four quarter notes. Therefore, there is one whole note per measure of 4/4 
+music. 
+
+Triplets: The above notes divide measures by factors of 2. However, there are some cases 
+where you want to divide a beat into thirds, giving three notes per beat. Dividing a quarter 
+note by three results in eighth note triplets. The reason why we use the term "eighth note 
+triplets" is because the eighth note is closest to the rhythmic value which we want. Divid- 
+ing an eighth note by three results in sixteenth note triplets. Dividing a sixteenth note by 
+three results in thirty-second note triplets. 
+
+
+
+APPENDIX C: UNDERSTANDING TIME SIGNATURES 
+
+A time signature (also called metric signature) describes the meter of a piece of music. It 
+consists of two numbers arranged like a fraction, such as 3/4, 4/4, etc. The top number 
+(numerator) indicates the number of beats in each measure, while the bottom number 
+(denominator) indicates the rhythmic value of each beat. For example, with a 3/4 time 
+signature the numerator indicates that there are three notes per measure, while the denomi- 
+nator indicates that each of these notes is a quarter note. 4/4 indicates that each measure 
+includes four quarter notes. Usually the downbeat (first beat) of each measure is empha- 
+sized by a metronome to help you get a feel for the meter. 
+
+3/4 and 4/4 are the most common time signatures, but they are by no means the only ones. 
+In jazz, both 5/4 (where each measure has five 1/4 notes) and 7/4 (where each measure has 
+seven 1/4 notes) are often used. In practice, complex time signatures are played like a 
+
+
+
+70 
+
+
+
+APPENDIX 
+
+
+
+combination of simpler time signatures; for example, some 7/4 compositions would have 
+you count each measure not as "1, 2, 3, 4, 5, 6, 7" but as "1, 2, 3, 4, 1, 2, 3". It's often easier 
+for musicians to think of 7/4 as one bar of 4/4 and one bar of 3/4, since as we mentioned, 
+4/4 and 3/4 are extremely common time signatures. 
+
+
+
+APPENDIX D: UNDERSTANDING MIDI/SMPTE 
+
+MIDI is causing a certain amount of confusion among musicians. Fear not — it's not all that 
+difficult to understand, and the SP-1200 makes it particularly easy to deal with MIDI. For 
+those of you who aren't that familiar with MIDI, we'll first answer some common ques- 
+tions. 
+
+
+
+What does the MIDI cable do? 
+
+An instrument already has an AC cord that carries electrical current, and an audio cord that 
+carries audio signals to an amplifier. Now you have a third connection: the MIDI cable. This 
+carries neither audio nor power, but transmits information about the status of the instru- 
+ment to, and receives "status reports" from, other MIDI instruments. This information is 
+coded in a computer language. ..a somewhat primitive language with few words and sev- 
+eral dialects, but a language nonetheless. 
+
+What does MIDI stand for? 
+
+MIDI stands for Musical Instrument Digital Interface. You already know what "musical 
+instrument" means, so that takes care of the first half of this phrase. Digital means that the 
+instrument's information is conveyed in digital, or computer, language. Interface is the 
+term for the actual link between instruments, where data passes from one instrument to 
+another. So MIDI is a link between musical instruments that speaks data in computer 
+language. 
+
+How can information control a synthesizer or drum machine? 
+
+First we need to know a bit about computers, since MIDI instruments have microcomputer 
+souls... in fact, MIDI could not exist without microcomputers. 
+
+Computers are decision makers, and they base those decisions on the data they receive. 
+However, to be useable by a computer any data has to first be translated into a number- 
+based language that the computer can understand. Actually, when you press a keyboard 
+key with a computer-based instrument, you are not directly controlling the sound source. 
+Instead, each time you close a keyboard switch you're sending a number to the computer, 
+and this number tells the computer what note you want it to play for you. 
+
+The computer's "window on the world," where it receives and transmits numerical data, is 
+called its data bus. The computer looks to see whether any information is on the data bus, 
+and if so, acts on this data. For example, if it sees a digital "word" that says "play F#" on 
+the data bus, it will do as the data commands and control a sound source so that it plays an 
+
+
+
+71 
+
+
+
+APPENDIX 
+
+
+
+F#. However, note that the computer doesn't care whether this word isplaced on the data 
+bus due to closing a keyboard switch or striking a drum head — once MIDI translates a 
+note into computer language, the note becomes compatible with any device that speaks the 
+same language. MIDI provides access to the computer's data bus and selects which device 
+will be "on the bus" at any particular moment, thus letting you determine the flow of 
+information from one MIDI device to another. This is why having a specification which 
+manufacturers can follow is so important; it insures that a variety of otherwise incompat- 
+ible devices will be able to communicate with each other over a common data bus. 
+
+
+
+How does MIDI differentiate between different MIDI instruments on the same 
+bus? 
+
+MIDI provides 16 independent channels of information suitable for driving up to 16 poly- 
+phonic synthesizers or other MIDI devices. There are three modes that determine how each 
+MIDI instrument responds to these channels. 
+
+In Omni mode, the SP-1200 (or any other MIDI device) listens to all channels at once. No 
+matter how many notes from how many sources make it through the MIDI bus into the 
+instrument, when in Omni mode it will attempt to play all of them. 
+
+In Poly mode, the instrument can "tune in" to one MIDI channel — just like you can tune 
+in one channel of your television. Having a bunch of instruments set to Poly mode lets you 
+send specific information to different instruments over different MIDI channels. 
+
+Mono mode is considered a "multi-timbral" mode that is applicable to multi-voice synthe- 
+sizers. Therefore, mono mode is not implemented in the SP-1200. 
+
+16 channels, huh? Sounds like a lot of patch cords to me! 
+
+MIDI information is transmitted serially, meaning that all data is sent in sequence. As a 
+result, a single line can carry the MIDI information for all 16 channels, with each instru- 
+ment monitoring all the words that pass over the MIDI interface but responding only to the 
+data on its particular channel. Typically, MIDI instruments include a MIDI IN, MIDI OUT, 
+and MIDI THRU jack. The instrument receives data over the MIDI IN jack and transmits 
+data over the MIDI OUT jack; the MIDI THRU jack provides a replica of the signal at the 
+MIDI IN jack. Therefore, if you want to slave three MIDI devices to a master MIDI device, 
+you would patch the MIDI OUT from the master to the MIDI IN of the first slave, patch 
+MIDI THRU from the first slave to the MIDI IN of the second slave, and connect MIDI 
+THRU from the second slave to MIDI IN of the third slave. 
+
+
+
+What kind of words does the MIDI language include? 
+
+Spoken language is a collection of words that convey a particular set of meanings, hope- 
+fully understood by all those who speak the language. As soon as we start talking about a 
+musical language, the first question is: What concepts do we want this language to define? 
+Since musical instruments will be doing the talking, the language should consist of musical 
+terms — pitch, tempo, and so on. 
+
+
+
+72 
+
+
+
+APPENDIX 
+
+
+
+The words of greatest interest to the SP-1200 relate to pitch and tempo. The SP-1200 sounds 
+can respond to different notes being sent over MIDI (see Section 6A); therefore, drum 
+sounds can be played by hitting individual notes on a MIDI keyboard. If the keyboard 
+sends velocity (dynamics) data, the SP-1200 will respond to this data. The SP-1200 can also 
+"slave" to tempo data being sent over MIDI from a master, or serve as a MIDI master to 
+which other MIDI devices refer for tempo information. 
+
+For a more detailed description of the complete MIDI vocabulary and MIDI in general, 
+refer to the book "MIDI For Musicians" by the author of this manual (available from music 
+stores or write to Music Sales, 24 East 22nd St., New York, NY 10010. The introduction date 
+is January 1986). 
+
+Dealing With "MIDIosyncracies" 
+
+There are certain compatibility problems between MIDI gear from different manufacturers; 
+however, many problems are created by operator error and /or a lack of understanding 
+how MIDI works. If you transmit information on one channel and have the "receiver" set 
+up for a different channel, forget it. MIDI is quite unforgiving that way... you can hit a bum 
+note and not too many people will notice, but send a computer a wrong number and it will 
+most definitely notice. 
+
+MIDI is a lot of fun provided that you don't get discouraged when things go wrong. One of 
+the major problems is "data clogging" of the MIDI data stream. If MIDI is handling drum 
+data, keyboard synthesizer data, timing data, and so on, an excess of information can cause 
+the system to slow down or possibly malfunction. If this occurs, try to figure out what data 
+can be "filtered out" of the MIDI stream. For example, keyboard aftertouch information 
+requires much data; filtering this out of the data stream leaves more breathing room for 
+other data, such as the timing information received by the SP-1200. 
+
+
+
+SMPTE 
+
+SMPTE time code was adopted by the Society of Motion Picture and Television Engineers 
+in order to synchronize audio to video. Basically, SMPTE is a digital code that is recorded 
+on audio tape or video tape, or "burned into" film. This code outputs time information as 
+hours, minutes, seconds, and "frames" (l/30th of a second intervals). For synchronization, 
+sophisticated machines "look" at the SMPTE time code tracks on the audio and video 
+machines to be synchronized, and correct the speed of one unit vis-a-vis the other to main- 
+tain synchronization. These error corrections are very subtle and are not noticeable. 
+
+The SP-1200 uses SMPTE so that songs and sequences may be started at a specific frame of 
+time code. The SP-1200 can also write SMPTE time code on tape. 
+
+
+
+73 
+
+
+
+APPENDIX 
+
+
+
+APPENDIX E:TIPS ON CREATING REALISTIC DRUM PARTS 
+
+If you're a drummer, you probably don't need to read this. But for those of you who are 
+primarily melodic players and are using the SP-1200 to augment your recordings or live 
+act, read on. 
+
+• Listen to drum parts by good drummers. Whenever a record comes on, study the 
+drum sound. Note how the drummer not only sets a solid base on which the other 
+instruments can play, but makes creative use of both notes and spaces. 
+
+• Keep it simple. Drums are not a melodic instrument, but a rhythmic instrument. 
+Often a simple backbeat is more effective than trying to do elaborate series of drum 
+rolls. 
+
+• Beware the three-armed drummer. Remember that a drummer has two feet and two 
+hands; therefore, you can't have a bass drum, high hat, two toms, a snare drum, and 
+rim sound occurring at the same time. Make sure that your parts are physically 
+consistent with the way people play drums, or they will not sound "right". 
+
+• Use dynamics creatively. A drum part without dynamics isn't much of a drum part 
+at all. 
+
+• Work carefully with bass instruments. The bass and drums should lock together 
+into a cohesive sound. If the bass player syncopates in a particular way, try to match 
+that with the drums. 
+
+
+
+APPENDIX F: HOW THE SP-1200 WORKS 
+
+Here's a brief idea of how the SP-1200 does its magic. 
+
+The drum sounds were recorded at a studio using real drums and a human drummer. 
+These sounds were then converted into digital form ("digitized"), and "recorded" into 
+computer memory chips. This may sound like an involved process; and it is. Fortunately, 
+the people at E-MU are experts at digitizing sounds. 
+
+The various control functions are controlled by a built-in microcomputer which is as pow- 
+erful, and in some cases more powerful, than some of the "personal" computers which are 
+now available. Song and segment information is recorded in RAM (random access 
+memory); although RAM loses its data when the power supply is turned off, it can be 
+saved to floppy disks for permanant storage. 
+
+The SP-1200 is really an amazing example of what current technology, coupled with cre- 
+ative engineering, can accomplish. We're proud to offer it to you, and hope that it helps you 
+further your musical dreams. We thank you for your confidence in E-MU products, and 
+would greatly appreciate any comments you might have concerning the SP-1200. 
+
+Contact E-mu at (831) 438-1921, and ask for customer service. 
+
+
+
+74 
+
+
+
+APPENDIX 
+
+
+
+APPENDIX G: SPECIAL FUNCTIONS 
+(SET-UP MODULE FUNCTION #23) 
+
+11. CATALOG FUNCTIONS Use slider #1 to display the options available in the spe- 
+cial function mode. 
+
+12. CLEAR ALL MEMORY This function is used to clear the SP-1200 of all segment 
+and song information, as well as all sounds. If you wish to abort the erase procedure, 
+simply answer "NO" to the the "REALLY?" prompt in the LCD. 
+
+CAUTION: All information not saved to disk will be lost forever when the CLEAR 
+ALL MEMORY function is complete. 
+
+13. MEMORY REMAINING The LCD will show you available sequencer note memory 
+for segments and songs (in percentage) and available sound sampling memory (in 
+seconds). Remember that there is a limit of 2.5 seconds for any one sample although 
+the display may show more than 2.5 seconds of total sample time available. 
+
+14. WRITE SMPTE Please refer to section 6-G for information about writing SMPTE. 
+
+15. CLEAR SOUND MEMORY This function is used to clear the SP-1200 of all sounds. 
+Segment and song memory is unaffected. 
+
+16. CLEAR SEQUENCES This function is used to clear the SP-1200 of all segment and 
+song information. All sounds will remain intact. 
+
+17. COPY SOUND This function allows you to move any sound in the SP-1200 to any 
+location. For example, if you want to move sound D8 to location D7 and sound Al to 
+location D8, you would follow the procedure outlined below. 
+
+PROCEDURE DISPLAY READS 
+
+1. Press: Set-up Module button Set-up function? 
+
+(11-23) 
+
+2. Press: 23 (Special) on keypad Catalog Functions 
+
+Use Slider #1 
+
+3. Press: 17 (Copy sound) on keypad Copy sound: 
+
+Select Sound 
+
+4. Press: D8 button D8 — > 
+
+(the sound to be copied) Select Sound 
+
+5. Press: D7 button D8 — > D7 
+
+(the destination location) Confirm? y/n 
+
+6. Press: Yes on keypad Catalog Functions 
+
+(to confirm and execute copy) Use Slider #1 
+
+Now the D8 sound is found in both the D8 and D7 locations. 
+
+75 
+
+
+
+APPENDIX 
+
+
+
+PROCEDURE DISPLAY READS 
+
+7. Press: 17 (copy sound) on keypad Copy Sound: 
+
+Select Sound 
+
+8. Press: Al button Al — > 
+
+(the sound to be copied) Select Sound 
+
+9. Press: D8 button Al — > D8 
+
+(the destination location) Confirm? y/n 
+
+10. Press: Yes on keypad Catalog Functions 
+
+(to confirm and execute copy) Use Slider #1 
+
+Note: Copies of the sounds have the same name as the original, so it's a good idea to re- 
+name copies as you make them using the "Name Sound" function. 
+
+ALWAYS make sure that you have stored a sound on disk before overwriting it! 
+
+18. SWAP SOUNDS Please refer to section 2-L (page 22) for information on swapping 
+sounds. 
+
+19. DEFAULT DECAY This function applies only to sounds in the TUNE mode (Set-up 
+function #18 - Decay/Tune Select) that need to be decayed as well. A decay range of 
+00 to 31 is available. Note that all sounds in the tune mode will be affected by this 
+setting. 
+
+20. INIT DK/TUNE This function works independently for each sound and provides 
+the initial tuning or decay length depending on the selection made in Set-up func- 
+tion #18 (Decay/Tune Select). Each sound on the SP 1200 can be played at 32 differ- 
+ent tunings or decays, but only 16 tunings or decays for each sound can be accessed 
+at a time. The INIT DK/TUNE function sets the center position of the tune/decay 
+slider so that the most useful range can be selected. 
+
+To Set the INIT DK/TUNE: 
+
+1. Select SPECIAL #20. The display says: Select Sound 
+
+2. Select a sound by pressing a black play button. The display says: "Init DK/TUNE: 
+16. Use Slider #1". 
+
+3. Move Slider #1 to change the sound's initial decay/tune from to 31. 
+
+• All tune and decay values for each sound stored in the sequences are based rela- 
+tive to the INIT DK/TUNE setting. Only 16 values are usable by the sequences 
+and changing the INIT DK/TUNE value after a sequence has been recorded will 
+change the tuning (or decay) of that sound in the sequence. 
+
+• A sound will play at it's assigned INIT DK/TUNE range setting when it is played 
+over MIDI (with pitch keys off), or when the SP 1200 is first turned on. 
+
+76 
+
+
+
+APPENDIX 
+
+
+
+• All new sounds created by sampling are automatically initialized to a INIT DK/ 
+TUNE setting of 16, which is right in the middle of the range and denotes the 
+original pitch of the sampled sound. 
+
+• If a sound's decay/tune select is changed by Setup function #18, the INIT DK/ 
+TUNE setting is reset to the nominal value, 16. 
+
+• To permanently save the the INIT DK/TUNE settings it is necessary to SAVE 
+SOUNDS using DISK function #2. 
+
+21. NAME SOUND This function allows you to name each of the sampled sounds with 
+a six letter name and a three letter abbreviation (which is used when you catalog 
+sounds). The choice of letters is selected with slider #1 and you move on to the next 
+or previous letter in the name using the < — and — > buttons. The first letters of the 
+full and abbreviated names must always be the same and the choice of letters for the 
+abbreviation is limited to the letters used in the full name. Scroll through the possi- 
+bilities for the 2nd and 3rd letters with Slider #1. Press ENTER to exit the function. 
+
+Note: To avoid severe confusion, it is a good idea to name each new sound. Unnamed 
+sounds are given the default sound location names Al, B6, D2, etc., which can be difficult to 
+remember. Copies of the sounds have the same name as the original, so it's also a good idea 
+to rename copies as you make them. 
+
+22. DYNAMIC ALLOCATION Please refer to section 1-N for information on Dynamic 
+Allocation. 
+
+23. Tx SOUND DUMP (Transmit MIDI Sound Dump) 
+
+This function sends the selected sound out over MIDI to an external device. The external 
+device must be equipped with the "MIDI Sample Dump" software, which has been stan- 
+dardized among many manufacturers. The Emax is equipped with this software. 
+
+1. Connect the SP 1200's MIDI IN to the external device's MIDI OUT, and connect the 
+SP 1200's MIDI OUT to the external device's MIDI IN. (The sound dump may work 
+if the SP 1200's MIDI IN is not connected, But the sound transfer will be much 
+slower.) 
+
+2. Press SPECIAL 23. The display says "Select Sound". 
+
+3. Playing any one of the 32 sounds causes that sound (if not empty) to be sent out over 
+MIDI as a sound dump, as per the Sample Dump Standard established by the MMA 
+(The MIDI Manufacturers Association). 
+
+4. After selecting the sound (by pressing the appropriate play button), the SP 1200 will 
+start sending the sound. The message "Sending Sound Data over MIDI" will appear 
+in the display, and an asterisk will flash to let you know that the dump is progress- 
+ing normally. 
+
+
+
+77 
+
+
+
+APPENDIX 
+
+
+
+5. When the sound dump is complete, the message "Sound Dump Good Press Enter" is 
+displayed. 
+
+
+
+MIDI Key Numbers 
+
+
+
+10 12 141 5 1719202224 2627 2931 
+1 2 3 45 6 7 8 9 |1 1|13 I I 1 6|1 8 I 2 1|2 3| 2 5| I 2 8|30| 
+
+I II III II III II III 
+
+A1 A3 A4 A6 A8 B1 B3 B5 B7 B8 C2 C4 C5 C7 D1 D3 D4 D6 D8 
+
+
+
+A2 A5 A7 B2 B4 B6 C1 C3 C6 C8 D2 D5 D7 
+
+SP-1200 Play Buttons 
+
+
+
+= Below Emax keyboard range 
+
+
+
+Notes: Sounds transferred over MIDI are given sound numbers. Sounds on the SP-1200 are 
+numbered thru 31, with corresponding to Al, 1 with A2, all the way through until 31 
+being D8. 
+
+The device receiving the sound must be able to put the sound somewhere: 
+
+- In the case of Emax, the sound will be put in the current preset, on the primary voice of 
+key number through 31, depending on the sound number, where key number is "A-l", 
+key 15 is the bottom key on the keyboard, "CI", and key 31 is "E2". Use the "Copy 
+Voice(s)" function on the Emax to move sounds from keys "A-l" through "Bl" up to the 61 
+key range of the Emax. 
+
+- Many other samplers simply number their sounds, from 1 to 8 or whatever, so they will 
+only be able to accept sounds with those numbers. You may have to use "Copy Sound" 
+(Special #17) to move a desired sound to a sound number that the receiving device will 
+accept. 
+
+
+
+78 
+
+
+
+APPENDIX 
+
+
+
+ERROR? If the receiving device sends an error or some other MIDI information that the SP 
+1200 doesn't expect, the error message "Sound Dump Bad, Press Enter" appears in the 
+display. This either indicates some kind of MIDI incompatibility between the two machines 
+or the selected sound numbers don't match. 
+
+24. Rx SOUND DUMP (Receive MIDI Sound Dump) 
+The external device must be equipped with the"MIDI Sample Dump" software. 
+
+1. Connect the SP 1200's MIDI IN to the external device's MIDI OUT, and connect the 
+SP 1200's MIDI OUT to the external device's MIDI IN. (The sound dump may work 
+if the SP 1200's MIDI OUT is not connected, but the sound transfer will be much 
+slower.) 
+
+2. Press SPECIAL 24. The display says "Select Sound". 
+
+3. Playing any one of the 32 sounds causes the SP 1200 to send a "Dump Request" 
+message to the external device, requesting that it send the sound whose number 
+corresponds to the one selected. 
+
+Note: The SP 1200 will only send the request if the selected sound is NOT empty. 
+The SP 1200 will only accept sound data up to the size of the existing sound in the 
+selected location. If a smaller sound is sent, the SP 1200 will fill the leftover memory 
+with silence. You should then truncate the sound to conserve available memory. 
+
+4. After selecting the sound (by pressing the appropriate play button), the sound dump 
+should start. The display will go back to the "Catalog Functions" message until the 
+sound dump begins. When the external device starts sending data, the message 
+"Receiving Sound Data over MIDI" will appear in the display, and an asterisk will 
+flash to let you know that the dump is progressing normally. 
+
+5. When the sound dump is complete, the message "Receive Done Press Enter" is 
+displayed. 
+
+Notes: Sounds transferred over MIDI are given sound numbers. Sounds on the SP- 1200 are 
+numbered thru 31, with corresponding to Al, 1 with A2, all the way through until 31 
+being D8. 
+
+The device that's being requested to send the sound must have this sound somewhere: 
+
+- In the case of Emax, the sound will come from the current preset, on the primary voice of 
+key number through 31, depending on the sound number, where key number is "A-l", 
+key 15 is the bottom key on the keyboard, "CI", and key 31 is "E2". Use the "Copy 
+Voice(s)" function on the Emax to move sounds to an appropriate key on the Emax. 
+
+- Many other samplers simply number their sounds, from 1 to 8 or whatever, so they will 
+only be able to send sounds with those numbers. You may have to use "Copy Sound" 
+(Special #17) to move a sound to the desired location on the SP-1200 after it's been received 
+
+
+
+79 
+
+
+
+APPENDIX 
+
+
+
+ERROR? If the SP 1200 never displays the "Receiving Sound Data over MIDI" message, 
+and simply stays in the "Catalog Functions" mode, the external device either didn't ac- 
+knowledge the request or the selected sound on the 
+
+SP-1200 was empty. If the selected sound on the SP 1200 wasn't empty, there could be some 
+kind of MIDI incompatibility between the two machines or the selected sound numbers 
+don't match. 
+
+25. REVERSE SOUND This function reverses the sound in memory. The display asks 
+you to select a sound by pressing one of the black play buttons. After you have done 
+so you are asked to: Confirm Y/N. Reversing the sound actually reverses the order 
+of sound data in memory, so all copies of the sound will also be reversed. Reverse 
+can be undone by reversing the sound again. 
+
+SOFTWARE VERSION Shows the version of software that the unit is currently using. The 
+software is loaded into the SP-1200 on power-up. The higher the software number, the 
+more recent it is. As an example; Version 1.2 is more recent than Version 1.0. 
+
+
+
+80 
+
+
+
+APPENDIX 
+
+
+
+APPENDIX H: INTERFACE INTERCONNECTION DIAGRAMS 
+
+BASIC SMPTE SYNC TO TAPE CONNECTION 
+
+This setup can be used to synchronize your entire MIDI system to tape. Since drums are 
+used to keep time, it makes sense to use the drum machine to function as the master clock. 
+That the SP-1200 uses SMPTE and allows tempo changes within a song are added incen- 
+tives to using this scheme. 
+
+SMPTE has a couple of big advantages over a standard click track. First, it lets you synchro- 
+nize from anywhere in the song (with a click track you must always start from the begin- 
+ning). When the SP-1200 locks on to the SMPTE code it sends a MIDI Song Pointer on it's 
+MIDI Out port, enabling your MIDI sequencer to lock on too. This can be a real time saver 
+when doing punch-ins or editing on your sequencer. 
+
+Second, the SP-1200 allows tempo changes independent of the SMPTE code. This allows 
+you to edit tempo changes after time code has been laid down, which cannot be done using 
+a standard click track. 
+
+SYNCRONIZING A NON-MIDI SEQUENCER TO THE SP-1200 
+
+You may own an older model sequencer or drum machine that does not speak MIDI. You 
+can synchronize this equipment to the rest of your setup by programming the metronome 
+output on the SP-1200 to generate a 24 pulse-per-quarter note sync signal (see section 3K). 
+The SP-1200 can also control arpeggiators and ancient analog sequencers by programming 
+the MET/CLK out to the desired rate (1/4 notes to 32nd note triplets). If your older se- 
+quencer requires more than 24 ppq note, you will have to use it as the master and slave the 
+SP-1200 to it via the SMPTE/Clock In jack. 
+
+RECORDING INTO THE SP-1200 WITH MIDI DRUM PADS 
+
+This is a good way to put the human feel back into a drum machine. Connect MIDI Out 
+from the drum pads to the MIDI In on the SP-1200. Syncing your sequencer with MIDI 
+clock from the SP-1200 will allow the complete song to be heard as you record. 
+
+MASTER SEQUENCER CONTROLLING MIDI SYSTEM 
+
+If so desired, your MIDI sequencer can serve as the master controller. Drum parts can be 
+recorded into the master sequencer or the SP-1200. If the SP-1200's sequencer is handling 
+the drums, set the SP-1200 to poly mode and select an unused MIDI channel to block in- 
+coming note-on information. MIDI Thru re-transmits all the MIDI data to the rest of your 
+system. 
+
+
+
+81 
+
+
+
+APPENDIX 
+
+
+
+APPENDIX I: CASSETTE/MIDIDISK OPERATION 
+
+The SP-1200 Cassette /MidiDisk Interface allows users to transfer sequence and sound data 
+from SP-12 units to the SP-1200 using either the cassette interface of the SP-12 or products 
+using the JL Cooper MidiDisk format. To transfer data from Commodore 1541 diskettes, 
+load the data into the SP-12 and transfer using the Cassette OUT of the SP-12 into the 
+SMPTE IN of the SP-1200. 
+
+
+
+To activate the SP-1200 Cassette/Midi Disk Interface: 
+
+Power up the SP-1200 holding down the disk button, or press the disk button before a 
+software diskette has been inserted. You will see the display: 
+
+1 = Cassette 
+
+2 = MidiDisk 
+
+Press the appropriate button for the transfer you wish to perform. You will see the display: 
+
+1 = Seqs 2 = Snds 
+
+3= MakeDsk 
+
+Load the sequences and/or sounds into the SP-1200 by selecting the proper code and 
+following the prompted instructions. Press ENTER to return to the menu. 
+
+When you have loaded the sequences and sounds into the instrument, insert a previously 
+formatted SP-1200 diskette and press 3 to over-write both the sequences and sounds onto 
+the diskette. EVEN IF YOU HAVE NOT LOADED SOUNDS OR SEQUENCES, BOTH 
+WILL BE OVERWRITTEN. 
+
+You may now transfer other cassette or MidiDisk data, or re-boot the instrument normally 
+to utilize the transferred data. You will normally add these sounds to others, as the SP-12 
+ROM sounds are not transferred through this process. You will also need to name your 
+sounds using the SP-1200 sound naming feature. 
+
+
+
+82 
+
+
+
+APPENDIX 
+
+
+
+APPENDIX J: MIDI IMPLEMENTATION 
+
+
+
+SP 1200 MIDI Implementation 
+
+
+
+Copyright E-MU Systems, Inc. 1987 
+
+
+
+item implemented 
+item not implemented 
+
+
+
+MIDI command Transmitted? 
+
+
+Received? 
+
+
+Note off 
+
+
+X 
+
+
+X 
+
+
+Note on 
+
+
+X 
+
+
+X 
+
+
+Poly key pressure 
+
+
+- 
+
+
+- 
+
+
+Control change 
+
+
+- 
+
+
+- 
+
+
+Program change 
+
+
+- 
+
+
+- 
+
+
+Channel pressure 
+
+
+- 
+
+
+- 
+
+
+Pitch wheel 
+
+
+- 
+
+
+- 
+
+
+Sustain footswitch 
+
+
+- 
+
+
+- 
+
+
+Local control on/off 
+
+
+- 
+
+
+- 
+
+
+All notes off 
+
+
+- 
+
+
+X 
+
+
+Omni mode 
+
+
+- 
+
+
+X 
+
+
+Mono mode 
+
+
+- 
+
+
+- 
+
+
+Poly mode 
+
+
+- 
+
+
+X 
+
+
+Song position pointer 
+
+
+X 
+
+
+X 
+
+
+Song select 
+
+
+X 
+
+
+X 
+
+
+Tune request 
+
+
+- 
+
+
+- 
+
+
+Timing clock 
+
+
+X 
+
+
+X 
+
+
+Start sequence 
+
+
+X 
+
+
+X 
+
+
+Continue sequence 
+
+
+X 
+
+
+X 
+
+
+Stop sequence 
+
+
+X 
+
+
+X 
+
+
+Active sensing 
+
+
+- 
+
+
+- 
+
+
+System reset 
+
+
+- 
+
+
+- 
+
+
+System exclusives 
+
+
+X 
+
+
+X 
+
+
+
+Note: All numbers in HEX, except numbers in parenthesis, which are DECIMAL. 
+
+
+
+83 
+
+
+
+APPENDIX 
+
+
+
+TRANSMITTED MESSAGES: BASIC MIDI COMMANDS 
+
+Note On/Off ("Pitch Keys" off) 
+
+
+
+Note On/Off ("Pitch Keys" on) 
+
+
+
+9n 
+
+
+n = MIDI channel no. (0 to 15) 
+
+
+kk 
+
+
+kk = key# (36 to 67) 
+
+
+vv 
+
+
+velocity (loudness) 
+
+
+kk 
+
+
+kk = key# (36 to 67) 
+
+
+00 
+
+
+zero velocity for note off 
+
+
+9n 
+
+
+n = MIDI channel no. (0 to 15) 
+
+
+PP 
+
+
+pp = pitch key# (69 to 83) 
+
+
+40 
+
+
+nominal velocity (64) 
+
+
+kk 
+
+
+kk = key# (36 to 67) 
+
+
+vv 
+
+
+velocity (loudness) 
+
+
+kk 
+
+
+kk = key# (36 to 67) 
+
+
+00 
+
+
+zero velocity (key's note off) 
+
+
+PP 
+
+
+pp = pitch key# (69 to 83) 
+
+
+00 
+
+
+zero velocity (pitch key's note off) 
+
+
+
+Note Ons are followed immediately by note off, running status, zero velocity. 
+
+Velocity is fixed at 7c unless "dynamic buttons" is on, in which case the velocity 
+value will vary from 0c to 7c. 
+
+
+
+Song Position Pointer 
+
+
+
+£2 
+
+LL Song position value, Is byte 
+mm Song position value, ms byte 
+
+
+
+LL and mm make up a 14 bit number which corresponds to the number of MIDI 
+beats (1 beat = 6 MIDI clocks = one sixteenth note) since the start of the song. 
+
+Sent by SP 1200 when Sync is set to SMPTE, and a new SMPTE time code is re- 
+ceived. Will fast-forward to the appropriate place in the song or segment and 
+output the appropriate song position value over MIDI. 
+
+After sending a Song Position Pointer, the SP 1200 will send a Continue com- 
+mand. 
+
+
+
+84 
+
+
+
+APPENDIX 
+
+
+
+Song Select f3 ss ss = song # (0 to 99) 
+
+Sent by SP 1200 when a new song is selected. 
+
+
+
+Timing Clock f8 
+
+Sent by the SP 1200 when sequence is running, unless Sync is set to MIDI, in which case 
+Timing clocks are not sent by the SP 1200. 
+
+
+
+Start fa 
+
+Sent by the SP 1200 when a song is started from the front panel. 
+
+Continue fb 
+
+Sent by the SP 1200 only after a Song Position Pointer is sent. 
+
+Stop fc 
+
+Sent by the SP 1200 when a song is stopped from the front panel. 
+
+TRANSMITTED MESSAGES: 
+
+MMA Sample Dump Commands 
+
+MMA stands for MIDI Manufacturer's Association, the organization that invented the 
+"Sample Dump Standard". 
+
+Dump Request fO system exclusive 
+
+7e 
+
+ch MIDI base channel (0 to 15) 
+
+03 MMA exclusive number 
+
+ss sound number lsb (0 to 31) 
+
+00 sound number msb (always 0) 
+
+i7 EOX 
+
+SP1200 will only send this if it is requested to do so from the front panel Special function 
+(24). (See "Receiving a sound dump".) 
+
+85 
+
+
+
+APPENDIX 
+
+
+
+Transmitting a sound dump from the SP 1200 to an external device with 
+the MMA Sample Dump Standard. 
+
+There are two ways an SP 1200 can be made to transmit a sound dump over MIDI: 
+
+SP 1200 can receive a "Dump Request" exclusive from an external device, (hereafter 
+called the "Requestor", specifying a sound number (0 to 31). 
+
+Manually, from the front panel "Special" function (23). 
+
+SP 1200 first checks if the requested sound exists (size not = 0): 
+
+- doesn't exist: request is ignored, nothing happens. 
+
+- does exist: continue. 
+
+SP 1200 responds by displaying "Sending Sound Data over MIDI" on it's LCD. 
+
+SP 1200 then sends the "MMA sample dump header", telling requestor among other 
+things, how big of a sample to expect. 
+
+SP 1200 then polls it's MIDI input line, waiting for a response from requestor within 
+SP 1200's timeout period of 5 seconds. 
+
+If response is an ACK, (packet # ignored) SP 1200 will continue dump. 
+
+If response is a WAIT, SP 1200 will reset it's timeout counter (5 seconds), and go back 
+to waiting for a response again. If requestor needs more time to make up it's mind, it 
+should send more Wait commands. 
+
+If no response at all, SP 1200 will assume an "open loop" system and continue the 
+dump. 
+
+If response is anything else, it is bad, and SP 1200 will display "Sound Dump Bad, 
+Press Enter", then send a CANCEL command, and abort back to normal SP 1200 
+operation. 
+
+SP 1200 now switches it's timeout from 5 seconds to about 20 mS. 
+
+SP 1200 will then send the sound dump in a series of "MMA Data Packets", starting 
+with packet # 00. After Requestor receives packet, it responds: 
+
+If response is an ACK, SP 1200 will continue dump with next packet. An ACK re- 
+sponse must have the correct packet # . Packet numbers continue up thru 7f, then 
+wrap around back to 00. 
+
+If response is a WAIT, SP 1200 will reset it's timeout counter (20 mS), and go back to 
+waiting for a response again. 
+
+
+
+86 
+
+
+
+APPENDIX 
+
+
+
+If response is a NAK, SP 1200 will try sending the same packet again. 
+
+- If no response at all, SP 1200 will assume an "open loop" system and continue the 
+dump. 
+
+- If response is anything else, it is bad, and SP 1200 will display "Sound Dump 
+Bad, Press Enter", then send a CANCEL command, and abort back to normal SP 
+1200 operation. 
+
+• SP 1200 will continue sending packets, getting an ACK for each one, until it has sent 
+the entire dump, as specified by the "sound length" in the Sample Dump Header. 
+
+• The last packet will always contain 120 data bytes, even if there may be fewer than 
+that remaining in the sound. The remaining bytes will be filled in with garbage data 
+and should be ignored. 
+
+• After sending the last packet, SP 1200 displays "Sound Dump Good Press Enter", 
+and returns to normal operation. 
+
+• Every 8 packets sent, SP 1200 will toggle an asterisk on the LCD. 
+
+
+
+MMA Sample Dump Header 
+
+
+
+fO 
+
+
+system exclusive 
+
+
+7e 
+
+
+
+
+0c 
+
+
+MIDI base channel (0 to 15) 
+
+
+01 
+
+
+MMA exclusive number 
+
+
+ss 
+
+
+sample number lsb (0 to 31) 
+
+
+00 
+
+
+sample number msb (always 0) 
+
+
+0c 
+
+
+significant bits (12) 
+
+
+02 
+
+
+sample period (lsb) in nsec 
+
+
+2c 
+
+
+sample period (nsb) 
+
+
+02 
+
+
+sample period (msb) 
+
+
+LL 
+
+
+sample length (lsb) in words 
+
+
+LL 
+
+
+sample length (nsb) 
+
+
+LL 
+
+
+sample length (msb) 
+
+
+ss 
+
+
+sustain loop start word (lsb) 
+
+
+ss 
+
+
+sustain loop start word (nsb) 
+
+
+ss 
+
+
+sustain loop start word (msb) 
+
+
+ee 
+
+
+sustain loop end word (lsb) 
+
+
+
+87 
+
+
+
+APPENDIX 
+
+
+
+ee sustain loop end word (nsb) 
+
+ee sustain loop end word (msb) 
+
+00 loop type (forwards only) 
+
+£7 BOX 
+
+Sample period is fixed at (l/26.04)kHz = 9602 HEX in nanoseconds. 
+
+MM A Data Packet fO system exclusive 
+
+7e 
+
+0c MIDI base channel (0 to 15) 
+
+02 MMA exclusive number 
+
+cc packet count (0 to 127) 
+
+— 120 data bytes 
+
+
+
+xx checksum (exclusive OR of above 124 
+bytes) 
+
+£7 EOX 
+
+
+
+The (120) data bytes represent (60) 12-bit linear SP 1200 data words: 
+
+byte 0: Obbbbbbb bbbbbbb = 7 ms bits of data word 
+
+byte 1: OaaaaaOO aaaaa = 5 Is bits of data word 
+
+byte 2: Oddddddd ddddddd = 7 ms bits of data word 1 
+
+byte 3: OcccccOO ccccc = 5 Is bits of data word 1 
+
+etc 
+
+byte 119: OyyyyyOO yyyyyyy = 5 Is bits of data word 59 
+
+The 12-bit data is in "complement offset binary" format: most negative value = 000 hex, 
+"zero" = 800 hex, most positive = fff hex 
+
+
+
+88 
+
+
+
+APPENDIX 
+
+
+
+Acknowledge (ACK) fO 
+
+7e 
+Oc 
+7i 
+
+PP 
+
+f7 
+
+See "Receiving a sound dump" description. 
+
+Not Acknowledge (NAK) fO 
+
+7e 
+Oc 
+7e 
+
+PP 
+
+f7 
+
+See "Receiving a sound dump" description. 
+
+Cancel Dump (CANCEL) fO 
+
+7e 
+Oc 
+7d 
+
+PP 
+i7 
+
+See "Receiving a sound dump" description. 
+
+
+
+system exclusive 
+
+MIDI base channel (0 to 15) 
+
+packet number 
+EOX 
+
+system exclusive 
+
+MIDI base channel (0 to 15) 
+
+packet number 
+EOX 
+
+system exclusive 
+
+MIDI base channel (0 to 15) 
+
+packet number 
+EOX 
+
+
+
+89 
+
+
+
+APPENDIX 
+
+
+
+RECEIVED MESSAGES: BASIC MIDI COMMANDS 
+
+Note Off 8n n = MIDI channel # (0 to 15) 
+
+kk kk = key # (36 to 67) 
+
+vv vv = velocity (1 to 127) ignored 
+
+Note Off 9n n = MIDI channel # (0 to 15) 
+
+kk kk = key # (36 to 67) 
+00 zero velocity 
+
+Note On 9n n = MIDI channel # (0 to 15) 
+
+kk kk = key # (36 to 67) 
+
+vv vv = velocity (1 to 127) 
+
+If SP 1200 receives a Note On for key "kk", followed by a Note On for key "pp" before it 
+gets a Note Off for "kk", then SP 1200 will play "kk" at pitch "pp". 
+
+All Notes Off & Mode Messages bn n = MIDI channel # (0 to 15) 
+
+mm mode command (123 thru 127) 
+
+00 
+
+All mode messages (123 thru 127) turn off notes whose source was MIDI. 
+If mode number was 123, 126, or 127, SP 1200 will only do the all notes off. 
+If mode number was 124, SP 1200 will also set POLY mode. 
+If mode number was 125, SP 1200 will also set OMNI mode. 
+
+Song Position Pointer f2 
+
+LL Song position value, Is byte 
+
+mm Song position value, ms byte 
+
+LL and mm make up a 14 bit number which corresponds to the number of MIDI beats (1 
+beat = 6 MIDI clocks = one sixteenth note) since the start of the song. 
+
+SP 1200 will only accept this command if Sync is set to MIDI. 
+
+Upon receiving this, SP 1200 will fast forward to the appropriate spot in the current song or 
+segment. It will then wait for a Continue command followed by Timing Clocks before 
+starting to play. 
+
+
+
+90 
+
+
+
+APPENDIX 
+
+
+
+Song Select f3 
+
+ss ss = sequence # (0 to 99) 
+Receiving this selects a new sequence on the SP1200. 
+
+Timing Clock f8 
+
+Ignored unless Sync is sent to MIDI. 
+
+Advances SP1200's sequencer by l/96th note. 
+
+Ignored if SP 1200 is waiting for a Continue after receiving a Song Position Pointer. 
+
+If received while SP 1200 is fast forwarding after receiving a Song Position Pointer and a 
+Continue, the Song Position cue point will just be incremented by one. 
+
+Sequencer Start fa 
+
+Sequencer Stop fc 
+
+RECEIVED MESSAGES: MMA SAMPLE DUMP COMMANDS 
+
+Dump Request 
+
+
+
+fO 
+
+
+system exclusive 
+
+
+7e 
+
+
+
+
+0c 
+
+
+MIDI base channel ( to 15) 
+
+
+03 
+
+
+MMA exclusive number 
+
+
+ss 
+
+
+sample number lsb (0 to 31) 
+
+
+00 
+
+
+sample number msb (always 0) 
+
+
+f7 
+
+
+EOX 
+
+
+
+Upon receiving this, SP 1200 will stop whatever it is doing and attempt to transmit an 
+MMA sound dump of the specified sample. (See "Transmitting a sound dump" descrip- 
+tion.) 
+
+The sound number must be between (0 and 31), or else it is ignored. The "sound number 
+msb" must always be 0. Sound will replace the sound at Al on the SP 1200, and sound 
+(31) will replace sound D8. 
+
+MIDI base chanel is ignored. 
+
+
+
+91 
+
+
+
+APPENDIX 
+
+
+
+Receiving a sound dump from an external device to the SP 1200 with the MMA sample 
+dump. 
+
+There are two ways an SP 1200 can be made to receive a sound dump over MIDI: 
+
+1. SP 1200 can receive a "Sound Dump Header" exclusive from an external device, 
+(hereafter called the "Sender"), specifying a sound number (0 to 31). 
+
+2. Manually, from the front panel "Special" function (24), which sends a "Dump Re- 
+quest" out MIDI for the specified sound. This may or may not cause a sound dump, 
+depending on what the SP 1200 is connected to. 
+
+The sound being received will replace the existing sound in the SP 1200, so the first thing 
+the SP 1200 does is check if the specified sound exists: 
+
+If sound doesn't exist, (size = 0), SP 1200 aborts, nothing happens. 
+
+If sound length is non-zero, dump continues. 
+
+SP 1200 then displays "Receiving Sound Data over MIDI" on it's LCD. 
+
+SP 1200 then sends an "ACK" (with packet# = 00, although Sender should ignore), 
+to let Sender know that header was received OK. 
+
+SP 1200 will now poll it's MIDI input line, waiting for data packet #00. 
+
+Sender should then send the sound dump in a series of "MMA Data Packets", start- 
+ing with packet # 00. After SP 1200 receives packet, it responds: 
+
+ACK, if packet was not garbled and packet # and checksum were correct. SP 1200 
+will then wait for the next packet. 
+
+CANCEL, if anything but an ACK is seen, or nothing at all is seen within the 
+timeout period of 5 seconds. SP 1200 then displays "Sound Dump Bad, Press 
+Enter", and returns to normal operation. 
+
+If Sender sends a WAIT instead of a data packet, SP 1200 will reset it's timeout 
+counter (5 seconds) and look for the same packet again. 
+
+Note that SP 1200 will accept only as many bytes as are currently allocated for that 
+sound in the SP 1200. If fewer than that many are sent, SP 1200 will fill the remainder 
+with silence. If more than that are sent, SP 1200 will send CANCEL on the last packet 
+it cares about, and ignore any subsequent packets. 
+
+If all packets received OK, SP 1200 will display "Sample Dump Good Press Enter" 
+and return to normal operation. If something was bad, SP 1200 will display "Sample 
+Dump Bad Press Enter", and return to normal operation. 
+
+Every 8 packets sent, SP 1200 will toggle an asterisk on the LCD. 
+
+
+
+92 
+
+
+
+APPENDIX 
+
+
+
+Sample Dump Header 
+
+
+
+fO 
+
+
+system exclusive 
+
+
+7e 
+
+
+
+
+Oc 
+
+
+MIDI base channel (0 to 15) 
+
+
+01 
+
+
+MMA exclusive number 
+
+
+ss 
+
+
+sample number lsb (0 to 31) 
+
+
+00 
+
+
+sample number msb (always 0) 
+
+
+0c 
+
+
+significant bits 
+
+
+PP 
+
+
+sample period (lsb) in nsec 
+
+
+PP 
+
+
+sample period (nsb) 
+
+
+PP 
+
+
+sample period (msb) 
+
+
+LL 
+
+
+sample length (lsb) in words 
+
+
+LL 
+
+
+sample length (nsb) 
+
+
+LL 
+
+
+sample length (msb) 
+
+
+ss 
+
+
+sustain loop start word (lsb) 
+
+
+ss 
+
+
+sustain loop start word (nsb) 
+
+
+ss 
+
+
+sustain loop start word (msb) 
+
+
+ee 
+
+
+sustain loop end word (lsb) 
+
+
+ee 
+
+
+sustain loop end word (nsb) 
+
+
+ee 
+
+
+sustain loop end word (msb) 
+
+
+Lt 
+
+
+loop type 
+
+
+£7 
+
+
+EOX 
+
+
+
+"MIDI base channel" is ignored. 
+
+The sound number must be between (0 and 31), or else it is ignored. The "sound 
+number msb" must always be 0. Sound will replace the sound at Al on the 
+SP 1200, and sound (31) will replace sound D8. 
+
+SP 1200 uses the "significant bits" to determine how to decode the Data Packets ( 
+see "MMA Data Packet" description below). 
+
+SP 1200 ignores the "sample length". Instead it will accept only as many bytes as 
+are currently allocated for that sound in the SP 1200. If fewer than that many are 
+sent, SP 1200 will fill the remainder with silence. 
+
+Sample period is ignored, since SP 1200 has only one playback rate, 26.04 kHz. 
+
+
+
+93 
+
+
+
+APPENDIX 
+
+
+
+Sustain "loop start" and "loop end " are ignored. The original sound's loop points 
+are used instead. 
+
+"Loop type" is ignored, since SP 1200 only has one loop type, forwards. 
+
+
+
+MMA Data Packet 
+
+
+
+fO 
+7e 
+0c 
+02 
+cc 
+
+
+
+system exclusive 
+
+MIDI base channel (0 to 15) 
+MMA exclusive number 
+packet count (0 to 127) 
+120 data bytes 
+
+
+
+xx checksum of above 124 bytes 
+£7 EOX 
+
+
+
+The MIDI base channel is ignored. 
+
+
+
+• The 120 data bytes are packed according to the "significant bits" in the sample dump 
+header. There are 3 possible data packet configurations: 
+
+
+
+- for # significant bits = (8 thru 14): 
+
+The (120) data bytes represent (60) 14-bit linear data words: 
+
+
+
+byte 0: 
+
+
+Obbbbbbb 
+
+
+byte 1: 
+
+
+Oaaaaaaa 
+
+
+byte 2: 
+
+
+Oddddddd 
+
+
+byte 3: 
+
+
+Occccccc 
+
+
+
+-etc- 
+
+
+
+byte 119 Oyyyyyyy 
+
+
+
+bbbbbbb = bits (7 thru 14) of data word 
+aaaaaaa = bits (0 thru 6) of data word 
+ddddddd = bits (7 thru 14) of data word 1 
+ccccccc = bits (0 thru 6) of data word 1 
+
+yyyyyyy = bits (0 thru 6) of data word 59 
+
+
+
+94 
+
+
+
+APPENDIX 
+
+
+
+- for # significant bits = (15 thru 21): 
+
+The (120) data bytes represent (40) 21-bit linear data words: 
+
+
+
+byte 0: 
+
+
+Occccccc 
+
+
+byte 1: 
+
+
+Obbbbbbb 
+
+
+byte 2: 
+
+
+Oaaaaaaa 
+
+
+byte 3: 
+
+
+Offfffff 
+
+
+byte 4: 
+
+
+Oeeeeeee 
+
+
+
+-etc- 
+
+
+
+byte 119 Oyyyyyyy 
+
+
+
+ccccccc = bits (15 thru 21) of data word 
+bbbbbbb = bits (7 thru 14) of data word 
+aaaaaaa = bits (0 thru 6) of data word 
+fffffff = bits (15 thru 21) of data word 1 
+eeeeeee = bits (0 thru 6) of data word 1 
+
+yyyyyyy = bits (0 thru 6) of data word 39 
+
+
+
+for # significant bits = (22 thru 28): 
+
+The (120) data bytes represent (30) 28-bit linear data words: 
+
+ddddddd = bits (22 thru 28) of data word 
+ccccccc = bits (15 thru 21) of data word 
+bbbbbbb = bits (7 thru 14) of data word 
+aaaaaaa = bits (0 thru 6) of data word 
+hhhhhhh = bits (22 thru 28) of data word 1 
+ggggggg = bits (15 thru 21) of data word 1 
+
+wwwwwww = bits (0 thru 6) of data word 29 
+
+While the SP 1200 will accept any of these formats, in all cases it will only use the (12) most 
+significant bits of each data word and ignore all the rest. 
+
+Acknowledge (ACK) 
+
+
+
+byte 0: 
+
+
+Oddddddd 
+
+
+byte 1: 
+
+
+Occccccc 
+
+
+byte 2: 
+
+
+Obbbbbbb 
+
+
+byte 3: 
+
+
+Oaaaaaaa 
+
+
+byte 4: 
+
+
+Ohhhhhhh 
+
+
+byte 5: 
+
+
+Oggggggg 
+
+
+
+
+
+
+byte 119 
+
+
+Owwwwwww 
+
+
+
+fO 
+
+
+system exclusive 
+
+
+7e 
+
+
+
+
+0c 
+
+
+MIDI base channel (0 to 15) 
+
+
+7t 
+
+
+
+
+PP 
+
+
+packet number 
+
+
+f7 
+
+
+EOX 
+
+
+
+MIDI base channel is ignored. See "Transmitting a sound dump' 
+
+
+
+95 
+
+
+
+APPENDIX 
+
+
+
+Not Acknowledged (NAK) 
+
+
+
+- MIDI base channel is ignored. 
+
+See "Transmitting a sound dump" 
+
+Wait (WAIT) 
+
+
+
+- MIDI base channel is ignored. 
+
+See "Transmitting a sound dump" 
+
+
+
+fO 
+
+
+system exclusive 
+
+
+7e 
+
+
+
+
+Oc 
+
+
+MIDI base charm 
+
+
+7e 
+
+
+
+
+PP 
+
+
+packet number 
+
+
+f7 
+
+
+EOX 
+
+
+
+fO 
+7e 
+Oc 
+
+7c 
+
+PP 
+f7 
+
+
+
+system exclusive 
+
+MIDI base channel (0 to 15) 
+
+packet number 
+EOX 
+
+
+
+96 
+
+
+
+
+WORLD HEADQUARTERS 
+E-MU/ENSONIQ 
+
+P.O. BOX 660015 
+SCOTTS VALLEY, CA USA 
+95067-0015 
+
+TELEPHONE: 831-438-1921 
+FAX: 831-438-8612 
+
+
+
+-MU 
+
+
+
+EUROPE, AFRICA, MIDDLE EAST 
+E-MU SYSTEMS 
+
+SUITE 6, ADAM FERGUSON HOUSE 
+ESKM1LLS INDUSTRIAL PARK 
+MUSSELBURGH, EAST LOTHIAN 
+SCOTLAND, EH21 7PQ 
+
+TELEPHONE: +44 (0) 131-653-6556 
+FAX: +44 (0) 131-665-0473 
+
+
+

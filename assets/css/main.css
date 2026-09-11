@@ -1,22 +1,16 @@
 @unocss all;
 
 :root {
-  --sp-bg: #0a0a08;
-  --sp-surface: #141410;
-  --sp-raised: #1c1c16;
-  --sp-active: #2a2a20;
-  --sp-border: #2a2a22;
-  --sp-border-active: #4a4a3a;
-  --sp-text: #c8c4a8;
-  --sp-text-dim: #8a8668;
-  --sp-text-muted: #5a5648;
-  --sp-accent: #d4c86a;
-  --sp-accent-bright: #e8d878;
-  --sp-pad: #3a3428;
-  --sp-pad-active: #8a7a3a;
-  --sp-meter-low: #3a4a2a;
-  --sp-meter-mid: #6a7a3a;
-  --sp-meter-clip: #c84838;
+  --sp-faceplate: #2c2c2f;
+  --sp-faceplate-dark: #202023;
+  --sp-faceplate-light: #3c3c40;
+  --sp-chassis: #161618;
+  --sp-lcd-bg: #1b2310;
+  --sp-lcd-glow: #a2bc38;
+  --sp-led-red: #ff2222;
+  --sp-led-dim: #881515;
+  --sp-label: #eae6dd;
+  --sp-label-dim: #a6a29a;
 }
 
 * {
@@ -31,17 +25,31 @@ html, body {
 }
 
 body {
-  font-family: 'JetBrains Mono', monospace;
-  background: var(--sp-bg);
-  color: var(--sp-text);
-  font-size: 11px;
-  line-height: 1.4;
+  font-family: 'Bahnschrift', 'DIN 1451', 'Arial Narrow', sans-serif;
+  background: var(--sp-chassis);
+  color: var(--sp-label);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-#app {
+#__nuxt {
   height: 100%;
+}
+
+/* Disable text selection on rapid taps */
+button, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 1px solid var(--sp-led-dim);
+  outline-offset: 2px;
 }
 
 /* Scrollbar */
@@ -50,54 +58,14 @@ body {
   height: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--sp-surface);
+  background: var(--sp-faceplate-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--sp-border-active);
+  background: var(--sp-faceplate-light);
+  border-radius: 2px;
 }
 
-/* Range input */
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 4px;
-  background: var(--sp-raised);
-  outline: none;
-  cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 8px;
-  height: 16px;
-  background: var(--sp-accent);
-  border: none;
-  cursor: pointer;
-}
-
-input[type="range"]::-moz-range-thumb {
-  width: 8px;
-  height: 16px;
-  background: var(--sp-accent);
-  border: none;
-  border-radius: 0;
-  cursor: pointer;
-}
-
-/* Focus states - keyboard navigation */
-:focus-visible {
-  outline: 1px solid var(--sp-accent);
-  outline-offset: 1px;
-}
-
-/* Transitions */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.15s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+/* Disable iOS zoom on double-tap */
+button {
+  touch-action: manipulation;
 }

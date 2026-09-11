@@ -1,0 +1,11006 @@
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SP1200 
+
+SAMPLING PERCUSSION 
+
+SYSTEM 
+
+
+
+SERVICE 
+
+MANUAL 
+
+
+©1987 E-mu Systems Inc. Scotts Valley. CA All Rights Reserved 
+E-muP/N FI 333 Rev, B 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SP1200 
+
+TABLE OF CONTENTS 
+
+INTRODUCTION.1 
+
+1. BASIC OPERATION.3 
+
+SP1200 FRONT PANEL LAYOUT.3 
+
+BASIC OPERATION.4 
+
+RECORDING A SEOUENCE.6 
+
+2. INTERFACE SPECIFICATIONS.7 
+
+MIDI.7 
+
+SMPTE.7 
+
+CLOCK IN and CLOCK OUT.8 
+
+CASSETTE IN.8 
+
+FOOTSWITCH and PEDAL CONNECTION.8 
+
+AUDIO CONNECTION.9 
+
+AC POWER and FUSE.9 
+
+SP1200 CONNECTION DIAGRAM.10 
+
+MIDI IMPLEMENTATION CHART.1 1 
+
+DETAILED MIDI SPEC.12 
+
+3. MECHANICAL PROCEDURES.23 
+
+4. FUNCTIONAL TEST PROCEDURE.25 
+
+5. DIAGNOSTICS & TRIMS.29 
+
+SP1200 ROM DIAGNOSTICS.29 
+
+POWER SUPPLY SPECIFICATIONS.32 
+
+TRIM PROCEDURE.32 
+
+SMPTE PROBLEMS.34 
+
+SMPTE ONE-SHOT TEST.35 
+
+COMMON SP1200 PROBLEMS.36 
+
+6. THEORY OF OPERATION .39 
+
+OVERVIEW.39 
+
+SIMPLIFIED BLOCK DIAGRAM.40 
+
+i 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+CPU and FRONT PANEL.42 
+
+MEMORY DE-MULTIPLEXING.47 
+
+SAMPLING.47 
+
+MICROCONTROLLER.51 
+
+POWER SUPPLY.53 
+
+7. SIGNAL NAME DEFINITIONS. 55 
+
+8. SCHEMATIC DIAGRAMS.:. 61 
+
+9. WIRING DIAGRAMS.81 
+
+10. PARTS LIST.85 
+
+11. Engineering Changes and Software Updates 
+
+12. Service Policy 
+
+13. Credits 
+
+
+ii 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTRODUCTION 1 
+
+
+INTRODUCTION 
+
+
+The SP1200 Digital Sampler is a powerful and complex instrument. 
+E-mu Systems Inc. intends this manual to be an aid to the experienced 
+service technician only. 
+
+To service the SP1200 you should be familiar with the 7400 series of 
+digital logic, floppy disk drives, ADC's and DAC's, op-amps as well as 
+microprocessor troubleshooting techniques, and current music 
+S 5 mthesizer technology. The minimum equipment required to service 
+and repair the SP1200 are: a digital multimeter, a lOOMHz dual trace 
+oscilloscope and basic technician hand tools. 
+
+Because the SP1200 has so many complex functions, we highly 
+recommend having a complete SP1200 Operation Manual on hand to 
+help you understand all the functions. 
+
+The information contained in this manual is proprietary to E-mu 
+Systems Inc. The entire manual is protected under copyright and none 
+of it may be reproduced by any meains without written permission from 
+E-mu. This manual is available only to approved service people and is 
+property of E-mu Systems. Please consider all of the data secret and 
+use it only to service the SP1200. 
+
+We feel obliged to remind you that any modification of an SP1200 other 
+than as specified by a factory authorized E-mu Change Order (ECO) will 
+void the warranty of the instrument. 
+
+Please read this manual thoroughly before attempting to service the 
+SP1200. If you feel unsure about working on the instrument, contact 
+our service department. 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+BASIC OPERATION 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+^ ^t>120Q SAMPilNO(^CU$$ION _: 
+
+@ Song Set-up^^^^^ Sync Sample Master Control 
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+SP1200 FRONT PANEL LAYOUT 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+4 BASIC OPERATION 
+
+
+BASIC OPERATION 
+
+These brief instructions are not meant as a substitute for the SP1200 
+Operation Manual . To completely understand the operation of the 
+SP1200 we strongly recommend that you have a complete manual on 
+hand. The SP1200 Operation Manual can be ordered through our 
+Customer Service department. 
+
+The panel is divided up into 7 modules. Each module has a specific 
+group of functions. The Performance Module has all the real time 
+controls, such as the Play Buttons, sequencer Run/Stop and Record. 
+The sliders have multiple functions as selected by the TUNE/DECAY, 
+MIX, MULTI MODE button. The play buttons are assignable by pressing 
+SELECT. TAP/REPEAT is used to enter a desired tempo by tapping the 
+button (in tempo mode) or repeat a sound being played automatically. 
+
+MASTER The Master Control Module has a backlit LCD display as well 
+as a numeric ke 3 q)ad and ENTER button. The TEMPO button is used to 
+change the current tempo value. Right and left arrow buttons 
+increment or decrement the value above the flashing cursor. YES and 
+NO buttons let you make decisions and the Mix and Metronome output 
+levels are set here. 
+
+PROGRAMMING To the left of the master control is the Programming 
+Module. The creation of songs and segments is the function of this 
+module. In Segment mode the selection of auto correct, time 
+signature, segment length and metronome rate are controlled here. 
+Step programming and segment copy as well as swing functions are 
+controlled by Segment Mode. Song Mode is used for creating songs by 
+linking segments together. Mix and tempo changes are controlled 
+here. 
+
+SET-UP Above and to the left is the Set-Up Module. It has the 
+controls for all of the multi-modes such as Multi-pitch and Multi-level. 
+It also has channel assignments for routing sounds to different output 
+channels and Loop/Truncate for modifying sounds that have been 
+sampled. Deleting sampled sounds as well as changing their decay are 
+initiated using this module. MIDI parameters are selected and the 
+Special Function section contains all the functions not on the front 
+panel and any that have been added as software updates. 
+
+DISK To the right of Set-Up is the Disk Module. All Disk operations 
+such as loading, saving and formatting disks are initiated through this 
+module. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. AU Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+BASIC OPERATION 5 
+
+
+SYNC Next is the Sync Module. This is used for selecting the method 
+of clocking the sequencer. The options are; Internal 83010 , where the 
+internal sequencer clock is the master. MIDI, where the MIDI clock 
+triggers the sequence. SMPTE, which uses an audio SMPTE track and 
+Click, which uses a square wave tyqie sync track on tape, another drum 
+machine or a sync box. 
+
+SAMPLE Last we have the Sample Module. This allows the user to 
+sample up to 32 of their own sounds. The SP1200 has 10 seconds of 
+sampling time which is divided up into (4) 2.5 second banks. That is, 
+no one sound can be longer than 2.5 seconds. After being sampled the 
+sound can be truncated, looped, decayed or pitch shifted and assigned 
+to any output channel. 
+
+
+PROGRAMMING OVERVIEW. 
+
+The SP1200 has two main programming modes. Segment and Song. 
+Segments are drum patterns that can vary in length from 1 to 99 
+measures. The user creates Segments that contain the songs 
+introduction, main groove, fills and the ending. The Segments are 
+then linked together in Song Mode to create the song. 
+
+Song and Segment modes are selected by pressing the Song/Segment 
+mode select button. When Song mode is selected, the horizontal row 
+of programming buttons assume the functions along the top Song row. 
+When Segment mode is selected, the buttons assume the lower 
+Segment related functions. 
+
+
+PERFORMANCE OVERVIEW 
+
+All the sounds are accessed through this module. Only eight sounds at 
+a time can be played. Which eight are played can be accessed by using 
+the Select Button. It is possible to "rip off' a sound by pla 5 dng two 
+sounds at the same time when they are assigned to the same output 
+channel. The software assigns the last sound played as the priority. 
+This can be used to a good effect on the Hi-Hat to simulate the foot 
+opening and closing it. It can also cause problems if you try to play two 
+sounds at the same time on the same channel. 
+
+The TAP/REPEAT button is used for entering a tempo or repeating a 
+sound. In Tempo mode the button is tapped several times to enter the 
+desired tempo. Repeat is used for automatically repeating a sound at 
+the Auto Correct rate. This is done by holding the repeat button down 
+and pressing the desired sound. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTERFACE SPECIFICATION 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTERFACE SPECIFICATION 7 
+
+
+INTERFACE SPECIFICATION 
+
+
+THE MIDI INTERFACE 
+
+Hardware: MIDI is a serial, 5 milliamp current loop interface between 
+two or more computer controlled musical instruments. It uses 
+optoisolators and non-grounded inputs to prevent ground loops. MIDI 
+operates at a 31.25K Baud rate and does not use any handshaking. 
+
+Each MIDI connection requires two wires to complete the loop. The 
+hardware used is very simple. The output is an open collector driver, 
+consisting of a 7407 and a series resistor. The return line is a series 
+resistor connected to 5 volts. The MIDI input current runs through a 
+150 Q resistor and then directly into a 6N138 optoisolator. The 
+SP1200 uses the standard 5 pin DIN connectors for MIDI IN, MIDI 
+OUT and MIDI THRU. 
+
+MIDI Thru: MIDI Thru on the SP1200 is an open collector driver, 
+consisting of a 7407 and a series resistor. 
+
+System Exclusives: SP1200 contains MIDI system exclusive 
+commands in the form of MIDI Sample Dump commands. For more 
+information on the system exclusive specifications, refer to the MIDI 
+specification at the end of this section. 
+
+SMPTE INTERFACE 
+
+(Society of Motion Picture and Television Engineers) 
+
+To understand SMPTE a very basic knowledge of video is extremely 
+helpful. If you do not understand video, we suggest finding a book or 
+two on the subject of SMPTE and Video. SMPTE time code is used 
+primarily for editing video tape. It is recorded on a spare audio track 
+and has a 80 bit code that uniquely identifies each frame. The format 
+looks Uke this: 
+
+I Hours I Minutes 1 Seconds I Frames I 
+
+SMPTE has other uses such as S 5 nicing two 24 track tape machines 
+together or film to sound syncing. It is also used in studios as the 
+master sync track and for autolocators on multitrack tape machines. 
+Since SMPTE records the absolute value, it is superior to click tracks 
+and regular sync tones. The SP1200 sequencer can be programmed to 
+start at 1 hour, 20 minutes, 30 seconds, 21st frame and it will start 
+precisely at that moment. If the master tape is fast forwarded, the 
+SP1200's sequencer will fast forward until S 5 tic is achieved then begin 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+5 INTERFACE SPECIFICATION 
+
+
+playing. It will also send a MIDI Song Pointer command from it's MIDI 
+out so that other MIDI devices can lock to SMPTE. There are two 
+SMPTE transmission rates we use. For video in the USA, 2400 baud is 
+used. This number is derived from 30 frames per second times 80 bits 
+per frame. For most of the rest of the world 2000 baud is used. This 
+corresponds to 25 frames per second times 80 bits. Film uses 24 
+frames per second and gets by using 2000 baud. The SMPTE input 
+needs to see at least 250 millivolts to read the time code reliably. For 
+more information on how we generate and receive SMPTE, see the 
+Theory of Operation. 
+
+
+CLOCK IN and CLOCK OUT 
+
+Clock In: The SMPTE/Clock in jack allows an external device such as 
+another drum machine or sequencer to control the tempo of the 
+SP1200. The SP1200 can receive almost any input clock rate by the 
+use of its software clock divider (in the Sjnic module). The SP1200 is 
+based on 24 ppn. The input circuit reads changes of state, therefore to 
+read a 24 ppn clock, the divisor should be set to divide by 2. The 
+divisor can divide from 1 to 99 and thus can read clock rates from 12 
+to 1188 pulses-per-quarter note. The pulses should be at least 1 
+millisecond wide and have a level of 1 to 5 volts. 
+
+Clock Out (Met): The metronome out jack allows SP1200 to be the 
+master clock and drive sequencers and drum machines at a rate of 24 
+pulses per quarter note. The SP1200’s metronome can be 
+programmed to output 24 ppn in either song or segment mode. This 
+
+is a 5 volt pulse which is about 6 milliseconds wide. 
+
+CASSETTE IN 
+
+The SP1200 will read SP-12 cassette data files. Both sequence and 
+sound data can be transferred. See Appendix I in the SP1200 
+Operation Manual for detailed instructions on transferring data. 
+
+FOOTSWITCH AND PEDAL CONNECTION 
+
+Footswitch: Three control footswitch jacks are provided for 
+performance control of Run/Stop, Single Step, or Tap Tempo. The 
+footswitches should be of the momentary contact type and should be 
+
+normally-open. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTERFACE SPECIFICATION 5 
+
+
+AUDIO CONNECTIONS 
+
+1. Mono: The SP1200 has provisions for a variety of output connection 
+schemes. The most common hookup will be simply to use the Mix out 
+jack. If a monophonic amplifier is used, simply connect the Mix output 
+to the input of the amplifier. Guitar amps are not recommended 
+because they are generally noisy and low fidelity. The output level of 
+SP1200 is somewhere in between Instrument and line level. Care 
+should be taken when connecting to an instrument amplifier so that 
+the delicate nerve cells in your ears are not destroyed. 
+
+2. Individual Outputs: There may be times when different equalization 
+or reverb settings are desired on the various instruments that have 
+been sampled. SP1200 has eight monophonic channel outputs that can 
+be used when individual processing on specific Instruments is desired. 
+Voices are assigned to output channels using the channel assignment 
+function in the Setup module. Eiynamic Allocation defeats the channel 
+assignments. Note that the Mix Output is summed from the individual 
+outputs. Output impedance is 1 K Q. 
+
+3. Sample Input: The sample in jack can accept any signal level from 
+microphone level to line level, liie gain is adjusted with the sample 
+input pot and the cursor keys while in VU/gain mode in the sample 
+module. The level can be read in the liquid crystal display while in this 
+mode. Input impedance is lOK Q. 
+
+
+AC POWER CONNECTION and FUSE 
+
+The AC power connector is how SP1200 gets power (obviously). The 
+fuse receptacle is just as obvious. It is located directly next to the 
+power receptacle. Before changing or checking a fuse, UNPLUG the 
+power cord. To remove the fuse holder, simply press in the red fuse 
+cap. The fuse holder will now pop out with it's fuse fii the fuse socket. 
+SP1200 uses a 1 amp, 250 volt fast-blo mini-fuse. SP1200 should not 
+normally blow fuses. If a fuse that has been replaced blows again, 
+suspect the transformer or diode bridge. 
+
+
+© 1987 E-mu Systems Inc., Scotts VaUey, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+10 INTERFACE SPECIFICATION 
+
+
+
+MIXER 
+
+
+® Q 
+
+MULTI-TRACK 
+TAPE DECK 
+
+
+ELECTRONIC 
+DRUM PADS 
+
+
+Microphone 
+or Line Out 
+of Mixer 
+
+
+SP-1200 Rear Panel Connection Diagram 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTERFACE SPECIFICATION 11 
+
+
+SP1200 
+
+MIDI Implementation 
+
+Copyright E-mu Systems inc. 1987 
+
+5/21/87 
+
+
+X = item implemented 
+- = item not implemented 
+
+MIDI command Transmitted? Received? 
+
+
+Note off 
+Note on 
+
+Poly key pressure 
+Control change 
+Program change 
+Channel pressure 
+Pitch wheel 
+Sustain footswitch 
+Local control on/off 
+All notes off 
+Omni mode 
+Mono mode 
+Poly mode 
+
+Song position pointer 
+Song select 
+Tune request 
+Timing clock 
+Start sequence 
+Continue sequence 
+Stop sequence 
+Active sensing 
+System reset 
+System exclusives 
+
+
+X 
+
+X 
+
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+
+X 
+
+X 
+
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+
+X 
+
+
+X 
+
+
+Note: All numbers in HEX, except numbers in parenthesis, which are DECIMAL. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. AH Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only © E-mu Systems, Inc. 1987 
+
+Not for reproduction or sale 
+
+
+
+^2 INTERFACE SPECIFICATION 
+
+
+TRANSMITTED MESSAGES: Basic MIDI Commands 
+
+
+Note On/Off ("Pitch Keys" off) 9n n = MIDI channel no. (Oto 15) 
+
+kk kk = key# (36 to 67) 
+w velocity (loudness) 
+
+kk kk = key# (36 to 67) 
+
+00 zero velocity for note off 
+
+Note On/Off ("Pitch Keys" on) 9n n = MIDI channel no. (Oto 15) 
+
+pp pp = pitch key# (69 to 83) 
+
+40 nominal velocity (64) 
+
+kk kk = key# (36 to 67) 
+
+w velocity (loudness) 
+
+kk kk = key# (36 to 67) 
+
+00 zero velocity (key's note off) 
+
+pp pp = pitch key# (69 to 83) 
+
+00 zero velocity (pitch key's note off) 
+
+O Note 0ns are followed immediately by note off, running status, zero velocity. 
+
+O Velocity is fixed at 7c unless "dynamic buttons" is on, in which case the 
+velocity value will vary from Oc to 7c. 
+
+
+Song Position Pointer f2 
+
+LL Song position value. Is byte 
+mm Song position value, ms byte 
+
+O LL and mm make up a 14 bit number which corresponds to the number of 
+MIDI beats (1 beat = 6 MIDI clocks = one sixteenth note) since the start of 
+the song. 
+
+O Sent by SP1200 when Sync is set to SMPTE, and a new SMPTE time code 
+is received. Will fast-forward to the appropriate place in the song or 
+segment and output the appropriate song position value over MIDI. 
+
+O After sending a Song Position Pointer, the SP1200 will send a Continue 
+command. 
+
+
+Song Select f3 
+
+ss ss = song # (0 to 99) 
+O Sent by SP1200 when a new song is selected. 
+
+
+Timing Clock f8 
+
+O Sent by the SP1200 when sequence is running, unless Sync is set to MIDI, 
+in which case Timing clocks are not sent by the SP1200. 
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTERFACE SPECIFICATION 13 
+
+
+start fa 
+
+O Sent by the SP1200 when a song is started from the front panel. 
+
+
+Continue fb 
+
+O Sent by the SP1200 only after a Song Position Pointer is sent. 
+
+
+Stop fc 
+
+O Sent by the SP1200 when a song is stopped from the front panel. 
+
+
+TRANSMITTED MESSAGES: 
+MMA Sample Dump Commands 
+
+
+MMA stands for MIDI Manufacturer's Association, the organization that invented 
+the "Sample Dump Standard". 
+
+
+Dump Request 
+
+
+fO system exclusive 
+
+7e 
+
+ch MIDI base channel (0 to 15) 
+
+03 MMA exclusive number 
+
+ss sound number Isb (0 to 31) 
+
+00 sound number msb (always 0) 
+
+f7 EOX 
+
+
+O SP1200 will only send this if it is requested to do so from the front panel 
+Special function (24). (See "Receiving a sound dump".) 
+
+
+Transmitting a sound dump from the SP1200 to an external 
+device with the MMA Sampie Dump Standard. 
+
+- There are two ways an SP1200 can be made to transmit a sound dump over 
+MIDI: 
+
+- SP1200 can receive a "Dump Request" exclusive from an external 
+device, (hereafter called the "Requestor", specifying a sound number (0 to 31). 
+
+- Manually, from the front panel "Special" function (23). 
+
+- SP1200 first checks if the requested sound exists (size not = 0): 
+
+- doesn’t exist: request is ignored, nothing happens. 
+
+- does exist: continue. 
+
+- SP1200 responds by displaying "Sending Sound Data over MIDI" on it's 
+LCD. 
+
+- SP1200 then sends the "MMA sample dump header", telling requestor among 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Valley, Ca. AH Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+14 INTERFACE SPECIFICATION 
+
+
+other things, how big of a sample to expect. 
+
+- SP1200 then polls it's MIDI input line, waiting for a response from requestor 
+within SP1200's timeout period of 5 seconds. 
+
+- If response is an ACK, (packet # ignored) SP1200 will continue dump. 
+
+- If response is a WAIT, SP1200 will reset it's timeout counter 
+
+(5 seconds), and go back to waiting for a response again. If requestor 
+needs more time to make up it’s mind, it should send more Wait 
+commands. 
+
+- If no response at all, SP1200 will assume an "open loop" system and 
+continue the dump. 
+
+- If response is anything else, it is bad, and SP1200 will display "Sound 
+Dump Bad, Press Enter", then send a CANCEL command, and abort 
+back to normal SP1200 operation. 
+
+- SP1200 now switches it's timeout from 5 seconds to about 20 mS. 
+
+- SP1200 will then send the sound dump in a series of "MMA Data Packets", 
+starting with packet # 00. After Requestor receives packet, it responds: 
+
+- If response is an ACK, SP1200 will continue dump with next packet. An 
+ACK response must have the correct packet # . Packet numbers continue 
+up thru 7f, then wrap around back to 00. 
+
+- if response is a WAIT, SP1200 will reset it's timeout counter 
+(20 mS), and go back to waiting for a response again. 
+
+- If response is a NAK, SP1200 will try sending the same packet again. 
+
+- If no response at all, SP1200 will assume an "open loop" system and 
+continue the dump. 
+
+- If response is anything else, it is bad, and SP1200 will display "Sound 
+Dump Bad, Press Enter", then send a CANCEL command, and abort 
+back to normal SP1200 operation. 
+
+- SP1200 will continue sending packets, getting an ACK for each one, until it 
+has sent the entire dump, as specified by the "sound length" in the Sample 
+Dump Header. 
+
+- The last packet will always contain 120 data bytes, even if there may be fewer 
+than that remaining in the sound. The remaining bytes will be filled in with 
+garbage data and should be ignored. 
+
+- After sending the last packet, SP1200 displays "Sound Dump Good Press 
+Enter", and returns to normal operation. 
+
+- Every 8 packets sent, SP1200 will toggle an asterisk on the LCD. 
+
+
+MMA Sample Dump Header 
+
+
+fO system exclusive 
+
+7e 
+
+Oc MIDI base channel (0 to 15) 
+
+01 MMA exclusive number 
+
+ss sample number Isb (0 to 31) 
+
+00 sample number msb (always 0) 
+Oc significant bits (12) 
+
+02 sample period (Isb) in nsec 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emuiatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTERFACE SPECIFICATION 15 
+
+
+
+2c 
+
+sample period (nsb) 
+
+
+02 
+
+sample period (msb) 
+
+
+LL 
+
+sample length (Isb) in words 
+
+
+LL 
+
+sample length (nsb) 
+
+
+LL 
+
+sample length (msb) 
+
+
+ss 
+
+sustain loop start word (Isb) 
+
+
+ss 
+
+sustain loop start word (nsb) 
+
+
+ss 
+
+sustain loop start word (msb) 
+
+
+ee 
+
+sustain loop end word (Isb) 
+
+
+ee 
+
+sustain loop end word (nsb) 
+
+
+ee 
+
+sustain loop end word (msb) 
+
+
+00 
+
+loop type (forwards only) 
+
+
+M 
+
+EOX 
+
+O Sample period is fixed at {1/26.04)kHz = 9602 HEX in nanoseconds. 
+
+MMA Data Packet 
+
+fO 
+
+system exclusive 
+
+
+7e 
+
+
+
+Oc 
+
+MIDI base channel (0 to 15) 
+
+
+02 
+
+MMA exclusive number 
+
+
+cc 
+
+packet count (0 to 127) 
+
+
+— 
+
+120 data bytes 
+
+
+XX 
+
+checksum (exclusive OR of 
+
+
+
+above 124 bytes) 
+
+
+M 
+
+EOX 
+
+O The (120) data bytes represent (60) 12-bit linear SP1200 data words: 
+
+byte 0: Obbbbbbb 
+
+bbbbbbb 
+
+= 7 ms bits of data word 0 
+
+byte 1: OaaaaaOO 
+
+aaaaa 
+
+= 5 Is bits of data word 0 
+
+byte 2: Oddddddd 
+
+ddddddd 
+
+= 7 ms bits of data word 1 
+
+byte 3: OcccccOO 
+
+ccccc 
+
+= 5 Is bits of data word 1 
+
+—etc- 
+
+
+
+byte 119: OyyyyyOO 
+
+yyyyyyy = 
+
+5 Is bits of data word 59 
+
+The 12-bit data is in "complement offset binary 
+
+" format: 
+
+most negative value = 000 hex, 
+
+"zero" = 800 hex, most positive = fff hex 
+
+Acknowledge (ACK) 
+
+fO 
+
+system exclusive 
+
+
+7e 
+
+
+
+Oc 
+
+MIDI base channel (0 to 15) 
+
+
+7f 
+
+
+
+PP 
+
+packet number 
+
+
+f7 
+
+EOX 
+
+
+O See "Receiving a sound dump" description. 
+
+
+© 1987 E-mu ^’sterns Inc., Scotts Valley, Ca. AU Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+16 INTERFACE SPECIFICATION 
+
+
+Not Acknowledge (NAK) fO 
+
+7e 
+
+Oc 
+
+7e 
+
+PP 
+
+f7 
+
+OSee "Receiving a sound dump" description 
+
+system exclusive 
+
+MIDI base channel (0 to 15) 
+
+packet number 
+
+EOX 
+
+Cancel Dump (CANCEL) fO 
+
+system exclusive 
+
+7e 
+
+
+Oc 
+
+MIDI base channel (0 to 15) 
+
+7d 
+
+
+PP 
+
+packet number 
+
+f7 
+
+EOX 
+
+OSee "Receiving a sound dump" description 
+
+. 
+
+
+RECEIVED MESSAGES: 
+
+Basic 
+
+MIDI Commands 
+
+Note Off 
+
+8n 
+
+n = MIDI channel # (0 to 15) 
+
+
+kk 
+
+kk = key # (36 to 67) 
+
+
+w 
+
+w = velocity (1 to 127) ignored 
+
+Note Off 
+
+9n 
+
+n = MIDI channel # (0 to 15) 
+
+
+kk 
+
+kk = key # (36 to 67) 
+
+
+00 
+
+zero velocity 
+
+Note On 
+
+9n 
+
+n = MIDI channel # (0 to 15) 
+
+
+kk 
+
+kk = key # (36 to 67) 
+
+
+w 
+
+w = velocity (1 to 127) 
+
+tv If SP1200 receives a Note On for key 
+
+"kk", followed by a Note On for key 
+
+"pp" before it gets a Note Off for 
+
+"kk", then SP1200 will play "kk" at pitch "pp". 
+
+All Notes Off 
+
+bn 
+
+n = MIDI channel # (0 to 15) 
+
+and Mode Messages 
+
+mm 
+
+mode command (123 thru 127) 
+
+
+00 
+
+
+O All mode messages (123 thru 127) turn off notes whose source was MIDI. 
+
+O If mode number was 123, 126, or 127, SP1200 will only do the all notes off. 
+O If mode number was 124, SP1200 will also set POLY mode. 
+
+
+© 1987 E-mu %stems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTERFACE SPECIFICATION 17 
+
+
+O If mode number was 125, SP1200 will also set OMNI mode. 
+
+
+Song Position Pointer f2 
+
+LL Song position value, Is byte 
+mm Song position value, ms byte 
+O LL and mm make up a 14 bit number which corresponds to the number of 
+MIDI beats (1 beat = 6 MIDI clocks = one sixteenth note) since the start of the 
+song. 
+
+O SP1200 will only accept this command if Sync is set to MIDI. 
+
+O Upon receiving this, SP1200 will fast forward to the appropriate spot in the 
+current song or segment. It will then wait for a Continue command followed by 
+Timing Clocks before starting to play. 
+
+
+Song Select f3 
+
+ss ss = sequence # (0 to 99) 
+O Receiving this selects a new sequence on the SP1200. 
+
+
+Timing Clock f8 
+
+O Ignored unless Sync is sent to MIDI. 
+
+O Advances SP1200's sequencer by 1/96th note. 
+
+O Ignored if SP1200 is waiting for a Continue after receiving a Song Position 
+Pointer. 
+
+O If received while SP1200 is fast forwarding after receiving a Song Position 
+Pointer and a Continue, the Song Position cue point will just be 
+incremented by one. 
+
+
+Sequencer Start fa 
+
+
+Sequencer Stop 
+
+
+fc 
+
+
+RECEIVED MESSAGES: MMA Sample Dump Commands 
+
+
+Dump Request 
+
+
+fO system exclusive 
+
+7e 
+
+Oc MIDI base channel ( 0 to 15) 
+
+03 MMA exclusive number 
+
+ss sample number Isb (0 to 31) 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+18 INTERFACE SPECIFICATION 
+
+
+00 sample number msb (always 0) 
+
+f7 EOX 
+
+O Upon receiving this, SP1200 will stop whatever it is doing and attempt to 
+transmit an MMA sound dump of the specified sample. (See "Transmitting a 
+sound dump" description.) 
+
+O The sound number must be between (0 and 31), or else it is ignored. The 
+"sound number msb" must always be 0. Sound 0 will replace the sound at A1 
+on the SP1200, and sound (31) will replace sound D8. 
+
+O MIDI base channel is ignored. 
+
+
+Receiving a sound dump from an externai device 
+to the SP1200 with the MMA sample dump. 
+
+There are two ways an SP1200 can be made to receive a sound dump over 
+MIDI: 
+
+- SP1200 can receive a "Sound Dump Header" exclusive from an external 
+device, (hereafter called the "Sender"), specifying a sound number (0 to 31). 
+
+- Manually, from the front panel "Special" function (24), which sends a 
+"Dump Request" out MIDI for the specified sound. This may or may not cause a 
+sound dump, depending on what the SP1200 is connected to. 
+
+- The sound being received will replace the existing sound in the SP1200, so 
+the first thing the SP1200 does is check if the specified sound exists: 
+
+- If sound doesn't exist, (size = 0), SP1200 aborts, nothing happens. 
+
+- If sound length is non-zero, dump continues. 
+
+O SP1200 then displays "Receiving Sound Data over MIDI" on it's LCD. 
+
+O SP1200 then sends an "ACK" (with packet# = 00, although Sender should 
+ignore), to let Sender know that header was received OK. 
+
+O SP1200 will now poll it's MIDI input line, waiting for data packet #00. 
+
+O Sender should then send the sound dump in a series of "MMA Data 
+Packets", starting with packet # 00. After SP1200 receives packet, it responds: 
+ACK, if packet was not garbled and packet # and checksum were correct. 
+SP1200 will then wait for the next packet. 
+
+CANCEL, if anything but an ACK is seen, or nothing at all is seen within the 
+timeout period of 5 seconds. SP1200 then displays "Sound Dump Bad, 
+Press Enter", and returns to normal operation. 
+
+O If Sender sends a WAIT instead of a data packet, SP1200 will reset it's 
+timeout counter (5 seconds) and look for the same packet again. 
+
+O Note that SP1200 will accept only as many bytes as are currently allocated 
+for that sound in the SP1200. If fewer than that many are sent, SP1200 will fill 
+the remainder with silence. If more than that are sent, SP1200 will send 
+CANCEL on the last packet it cares about, and ignore any subsequent packets. 
+
+
+© 1987 E-mu Systems Inc., Scotts VaUey, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emuiatorarchive.com 
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only © E-mu Systems, Inc. 1987 
+
+Not for reproduction or sale 
+
+
+
+INTERFACE SPECIFICATION 19 
+
+
+O If all packets received OK, SP1200 will display "Sample Dump Good Press 
+Enter" and return to normal operation. If something was bad, SP1200 will 
+display "Sample Dump Bad Press Enter", and return to normal operation. 
+
+- Every 8 packets sent, SP1200 will toggle an asterisk on the LCD. 
+
+Sample Dump Header fO system exclusive 
+
+7e 
+
+Oc MIDI base channel (0 to 15) 
+
+01 MMA exclusive number 
+
+ss sample number Isb (0 to 31) 
+
+00 sample number msb (always 0) 
+
+Oc significant bits 
+
+pp sample period (Isb) in nsec 
+
+pp sample period (nsb) 
+
+pp sample period (msb) 
+
+LL sample length (Isb) in words 
+
+LL sample length (nsb) 
+
+LL sample length (msb) 
+
+ss sustain loop start word (Isb) 
+ss sustain loop start word (nsb) 
+
+ss sustain loop start word (msb) 
+
+ee sustain loop end word (Isb) 
+
+ee sustain loop end word (nsb) 
+
+ee sustain loop end word (msb) 
+
+Lt loop type 
+
+f7 EOX 
+
+O "MIDI base channel" is ignored. 
+
+O The sound number must be between (0 and 31), or else it is ignored. The 
+"sound number msb" must always be 0. Sound 0 will replace the sound at A1 
+on the SP1200, and sound (31) will replace sound D8. 
+
+O SP1200 uses the "significant bits" to determine how to decode the Data 
+Packets ( see "MMA Data Packet" description below). 
+
+O SP1200 ignores the "sample length". Instead it will accept only as many 
+bytes as are currently allocated for that sound in the SP1200. If fewer than that 
+many are sent, SP1200 will fill the remainder with silence. 
+
+O Sample period is ignored, since SP1200 has only one playback rate, 26.04 
+kHz. 
+
+O Sustain "loop start" and "loop end " are ignored. The original sound's loop 
+points are used instead. 
+
+O "Loop type" is ignored, since SP1200 only has one loop type, forwards. 
+
+
+MMA Data Packet fO system exclusive 
+
+7e 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only © E-mu Systems, Inc. 1987 
+
+Not for reproduction or sale 
+
+
+
+20 INTERFACE SPECIFICATION 
+
+
+Oc MIDI base channel (0 to 15) 
+
+02 MMA exclusive number 
+
+cc packet count (0 to 127) 
+
+120 data bytes 
+
+XX checksum of above 124 bytes 
+
+f7 EOX 
+
+O The MIDI base channel is ignored. 
+
+O The 120 data bytes are packed according to the "significant bits" in the 
+sample dump header. There are 3 possible data packet configurations: 
+
+- for # significant bits = (8 thru 14): 
+
+The (120) data bytes represent (60) 14-bit linear data words: 
+byte 0: Obbbbbbb bbbbbbb = bits (7 thru 14) of data word 0 
+
+byte 1: Oaaaaaaa aaaaaaa = bits (0 thru 6) of data word 0 
+
+byte 2: Oddddddd ddddddd = bits (7 thru 14) of data word 1 
+
+byte 3: Occccccc ccccccc = bits (0 thru 6) of data word 1 
+
+-etc- 
+
+byte 119 Oyyyyyyy yyyyyyy = bits (0 thru 6) of data word 59 
+
+- for # significant bits = (15 thru 21): 
+
+The (120) data bytes represent (40) 21-bit linear data words: 
+byte 0: Occccccc ccccccc = bits (15 thru 21) of data word 0 
+
+bytel: Obbbbbbb bbbbbbb = bits (7 thru 14) of data word 0 
+
+byte 2: Oaaaaaaa aaaaaaa = bits (0 thru 6) of data word 0 
+
+byte 3: Offfffff fffffff = bits (15 thru 21) of data word 1 
+
+byte 4: Oeeeeeee eeeeeee = bits (0 thru 6) of data word 1 
+
+-etc- 
+
+byte 119 Oyyyyyyy yyyyyyy = bits (0 thru 6) of data word 39 
+
+- for # significant bits = (22 thru 28): 
+
+The (120) data bytes represent (30) 28-bit linear data words: 
+byte 0: Oddddddd ddddddd = bits (22 thru 28) of data word 0 
+
+byte 1: Occccccc ccccccc = bits (15 thru 21) of data word 0 
+
+byte 2: Obbbbbbb bbbbbbb = bits (7 thru 14) of data word 0 
+
+byte 3: Oaaaaaaa aaaaaaa = bits (0 thru 6) of data word 0 
+
+byte 4: Ohhhhhhh hhhhhhh = bits (22 thru 28) of data word 1 
+
+byte 5: Oggggggg ggggggg = bits (15 thru 21) of data word 1 
+
+-etc- 
+
+byte 119 Owwwwwww wwwwwww = bits (0 thru 6) of data word 29 
+
+While the SP1200 will accept any of these formats, in all cases it will only use 
+the (12) most significant bits of each data word and ignore all the rest. 
+
+
+© 1987 E-mu %stems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+INTERFACE SPECIFICATION 21 
+
+
+Acknowledge (ACK) 
+
+fO 
+
+7e 
+
+system exclusive 
+
+
+Oc 
+
+7f 
+
+MIDI base channel (0 to 15) 
+
+
+PP 
+
+packet number 
+
+O MIDI base channel is ignored. 
+
+f7 
+
+EOX 
+
+IV See "Transmitting a sound dump" 
+
+
+
+Not Acknowledged (NAK) fO 
+
+7e 
+
+Oc 
+
+7e 
+
+PP 
+
+f7 
+
+O MIDI base channel is ignored. 
+
+O See "Transmitting a sound dump" 
+
+
+system exclusive 
+
+MIDI base channel (0 to 15) 
+
+packet number 
+EOX 
+
+
+Wait (WAIT) 
+
+
+fO system exclusive 
+
+7e 
+
+Oc MIDI base channel (0 to 15) 
+
+7c 
+
+PP packet number 
+
+f7 EOX 
+
+
+O MIDI base channel is ignored. 
+
+O See "Transmitting a sound dump" 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. AU Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+MECHANICAL PROCEDURES 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+_ MECHANICAL PROCEDURES ^3 
+
+MECHANICAL PROCEDURES 
+
+
+PRECAUTIONS 
+
+Observe the following precautions when working on~the SP1200 : 
+
+Switch power off and check 110/220 switch before connecting 
+SP1200 to power outlet or amplifier. 
+
+NEVER toggle the 110/220 switch with power on. 
+
+Troubleshooting must be done with power on. 
+
+Do not bend or strain the PCBs or you may cause tiny breaks in the 
+printed circuit traces which will be very difficult to find. 
+
+Switch power off before disconnecting or connecting any circuitry, or 
+removing or installing PCBs. 
+
+To replace soldered components, switch power off, remove the PCB 
+completely from the instrument, and desolder from both sides. Use a 
+vacuum desoldering tool. The traces on the SP1200 circuit boards are 
+very thin. Use extreme care and work carefully. 
+
+Remember: Heat the pin, not the pad. 
+
+
+Opening the SP1200 
+
+
+THE SERVICE POSITION 
+
+Before taking the SP1200 apart we recommend providing a soft work 
+surface. A carpeted or rubber covered workbench is ideal. When the 
+machine is in the service position the front panel will be face down on 
+the work surface which might damage it. We also recommend the use 
+of an extra long interpanel cable (50 pin ribbon) which will allow you 
+to place the top panel face up next to the bottom panel. This will 
+prevent top panel scratches while allowing access to the front panel 
+and the main PCB inside the unit. 
+
+To open the unit place the SP1200 upside-down on the padded 
+workbench and remove the (5) screws (E-mu P/N HS364) from the 
+perimeter of the bottom panel. Flip the machine right side up and 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+MECHANICAL PROCEDURES 
+
+
+remove (3) screws (E-mu P/N HS364) from the top edge of the back 
+panel. Grasp the top panel at it's thickest portion and lift it as if there 
+were a hinge at the front. This is analogous to opening the cover of a 
+large book. The top cover will pivot about 180 degrees and lay face 
+down on the padded work surface. The front panel PCB is connected 
+to the main PCB via a short 50 pin ribbon cable. This cable can be 
+removed from either or both ends. As previously mentioned, replacing 
+this cable with one that is about 2 feet long will make working on the 
+machine much easier. These cables can be found at electronics and 
+computer stores or through mail order. 
+
+
+REMOVING THE FRONT PANEL PCB 
+
+First remove the 50 pin ribbon cable and audio cables. Next remove 
+the knobs from the front panel by pulling on them. Lay the top cover 
+face down on a soft work surface and remove the 12 screws E-mu P/N 
+HS 353) and lift out the PCB. If any parts need replacement the fisch 
+paper will have to be removed. Note that the inside cover is coated 
+with a conductive material. The fisch paper keeps the circuitry from 
+shorting to this coating. To install the PCB, reverse the above 
+procedure. 
+
+
+REMOVING THE MAIN PCB 
+
+Unplug the 50 pin ribbon and audio cables. Remove the nuts and 
+washers on the back panel jacks and put them in a safe place. Unplug 
+the AC harness from the PCB. Remove the hex nut and washer that 
+attaches the 5 Volt regulator to the back panel. Remove the 8 screws 
+holding the PCB in place and carefully remove the PCB. To install, 
+reverse the procedure. It's OK for the regulator to be shorted to the 
+back panel, but make sure that it's tightened down securely and has 
+heat sink compound applied. 
+
+
+REMOVING THE FLOPPY DISK DRIVE 
+
+To remove the floppy disk drive, first remove the power and data 
+cables from the floppy drive. The drive is mounted to the bottom panel 
+housing by (4) 4-40 x 1/4" machine screws (E-mu P/N HS 352). 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+FUNCTIONAL TEST 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+FUNCTIONAL TEST 25 
+
+
+FUNCTIONAL TEST 
+
+
+This Functional test is designed to test all of the functions without 
+taking the machine apart. Everything can be tested using this 
+procedure but it is not as quick in some cases as using the built-in 
+ROM diagnostics. These tests can be used in addition to the ROM 
+diagnostics when the results of a test are questionable. 
+
+You will need a pre/power amp or receiver with a speaker or 
+headphones to accomplish the functional test. 
+
+If the sound tests give questionable results the DAC trims (see 
+diagnostics) could be the culprit. 
+
+1. LED Test. AU the LEDs are turned on for a second when power is 
+first applied. Check to see that all of them are lit. 
+
+2. Display. The display has 2 lines of 16 characters. If you can read 
+both lines of the sign on message then the display is probably OK. 
+
+We haven't seen many display failures, and don't expect you will see 
+problems very often. If one fails, replace the whole assembly. 
+
+3. Button Test. Test the sound buttons by pressing each one and 
+listening for a soimd. Make sure djmamic buttons are on, then hit the 
+play buttons hard and the sound will get louder. If it does not, the 
+dynamic button circuit could be at fault. Test the SELECT button by 
+pressing it and looking to see if the LED that is lit is advanced by one. 
+The TUNE/DECAY and SONG/SELECT buttons are tested similarly. 
+Press the SETT-UP button and check that it's LED comes on. The DISK, 
+SYNC and SAMPLE buttons are tested in the same way. To test the 
+TEMPO button press SONG/SEGMENT button to get into either one of 
+those modes. Press TEMPO and check that the blinking cursor on the 
+display is now xmder the tempo value. Now press the left arrow button 
+and check that the tempo value decreases. Press the right arrow 
+button and the tempo value should Increase. Press the ENTER button 
+and the blinking cursor on the display will move to a position under 
+the song/segment number. Pressing any keypad number twice wiU 
+change the song/segment number to a two digit value corresponding 
+to the button pressed. To test the TAP/REPElAr button press and hold 
+it while pressing any sound play button eind listen for the sound 
+repeating continuously. The rate of repeat will be determined by the 
+auto-correct setting. Test the RUN/STOP button by pressing it while 
+in segment mode. One of two things should happen. If the segment 
+
+
+© 1987 E-mu %«teins Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+26 FUNCTIONAL TEST 
+
+
+selected has a sequence in It, the SP1200 will begin playing. If the 
+segment was empty the metronome will beep. To test RECORD get 
+into song mode by pressing the SONG/SEGMENT button. Now press 
+RECORD and the LED should light. 
+
+4. Sound Test. You should listen to all the soimds critically at the mix 
+out Jack and at their separate output jacks. Plugging into the separate 
+outputs wiU remove that sound from the mix output. Listen for 
+excessive noise or distortion, clicks or pops and any other 
+abnormalities. If any one or two sounds are bad, check to see if they 
+share an output channel (Channel Assign). If they do then that 
+channel's output filter or sample/hold is suspect. If all sounds are bad 
+check the separate channel out. If they sound good here then the mix 
+out amp is suspect. If they are still bad check the Main DAC, the Level 
+DAC and their buffers. If nothmg looks bad use the ROM diagnostics 
+and check the Soimd RAM. Also listen to the metronome output by 
+plugging into the met out jack and running a sequence. This is a full 
+level output so be careful. 
+
+5. Slider Test. Press the TUNE/DECAY button twice to call up MIX 
+mode. The display wiU show a bar graph for each slider corresponding 
+to the sound level during playback. Before testing the sliders note the 
+position of the bar graph so it can be restored to it's original position. 
+Test each slider by moving it to the maximum and minimum position 
+while watching the display. At minimum only one segment will be 
+seen. At maximum all the segments will be seen. Adjust the slider until 
+the bar graph is returned to the original position. Test the remaining 
+sliders in the same way. 
+
+6. Potentiometer Test. To test the mix out pot start a sequence by 
+pressing RUN/STOP. Turn the pot through it's full range listening for 
+noise or dropout. Test the metronome pot by creating a segment with 
+no sounds playing. To do this, find a blank segment or erase one. Press 
+RECORD and hold it, then press RUN/STOP. You will now hear the 
+metronome clicking at quarter note intervals. Turn the metronome 
+pot through it's entire range listening for noise or sound dropout. 
+
+When the pot is set to minimum, no sound should be heard. Noise on 
+these pots can indicate either a dirty pot or DC offset on the line. 
+
+To test the sample pot it will be necessary to erase some of the sample 
+memory. To erase sound memory press SET-UP, 23, 15 and YES. this 
+will erase all of the sound memory. Now press SAMPLE. You wlU need 
+a signal source to sample. The radio, a S 5 mthesizer or a signal 
+generator will work. Connect the audio source to the sample input. 
+Press sample and adjust the input level by pressing 3 and then using 
+the right and left arrow select 0, 20 or 40 dB. Set the input level so 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+FUNCTIONAL TEST ^7 
+
+
+that the gain pot can be set near maximum and the VU meter does not 
+go off scale. Press 9 to start sampling and turn the sample pot from it's 
+maximum to minimum position during the sampling period. Press 
+sample to exit the module. Press SELECT next to the play buttons 
+until LED A is lit. Play the A1 button and listen to the sample. Listen 
+for a steadily decreasing level with no pops, clicks or soimd dropout. 
+
+7. Disk Test. You will need a blank 3.5" ^ifloppy diskette for this test. 
+Insert the blank disk in the drive and select the DISK module. Press 9 
+for Format/Copy Software. The display will say Format Disk: Are You 
+Sure? Say YES and the display will say: Formatting... After the disk has 
+been formatted you can save the contents of the machine to disk and 
+then load them back in which will verify the disk functions. If the disk 
+fails any of these tests invoke the ROM diagnostic routines. 
+
+8. MIDI Test. To test MIDI a keyboard or drum machine that is 
+MIDI equipped will be needed. Connect the SP1200's MIDI OUT to 
+the other unit's MIDI IN. If using a keyboard, select a patch that has a 
+fast attack on the envelope. Hit a few play buttons on the SP1200 
+while listening to the other machine. Does it play? If it does then the 
+SP1200's MIDI transmit is OK. Now connect the SP1200's MIDI IN to 
+the other unit's MIDI OUT. Play a few keys (at the lower end of the 
+keyboard) while listening to the SP1200. If it plays the MIDI receive 
+circuits are functioning properly. If this test fails try running the ROM 
+diagnostics. 
+
+9. SMPTE Test. You will need a tape deck to perform these tests. A 
+multitrack deck is ideal because it allows you to simulate an actual 
+studio situation, however a stereo deck will suffice for the basic test. 
+
+Basic Test 
+
+We will write a SMPTE track on tape, rewind the tape and trigger the 
+sequencer with the SMPTE track we just made. Plug the SP1200's 
+SMPTE OUT jack into your tape deck input. Start the tape recording. 
+Press SET-UP, 23, and 14. Adjust the record level to -3 VU. Let it run 
+for about a minute. Press ENTER to stop the SP1200 and rewind the 
+tape to the beginning. On the SP1200 press SYNC 3, then press 
+ENTER 3 times. Get into segment mode and press RUN/STOP to play 
+a segment. The display should tell you that it is "Awaiting SMPTE". 
+
+Plug the tape deck output into the SMPTE IN. Start the tape and 
+watch the display. When SMPTE is received and decoded the display 
+will change and replace the "Awaiting SMPTE" message with the 
+SMPTE time display which shows (numerically): 
+
+HH:MM:SS:FF 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+FUNCTIONAL TEST 
+
+
+Where HH = hours, MM= minutes, SS = seconds, FF= frames 
+
+The frames display will be changing fast enough to be difficult to read. 
+The sequence should be playing as well. 
+
+Advanced Test 
+
+For this test you need a multitrack recorder. 
+
+1. Record a simple segment 2 bars long into the SP1200. 
+
+2. Stripe the tape with a few minutes of SMPTE code. 
+
+3. Set the SMPTE start point to about 00:00:15:00 
+
+4. Setup the SP1200 for SMPTE as explained above. 
+
+5. While S 5 mcing to SMPTE, record the sequence on another track. 
+
+6. Rewind and listen to the live SP1200 track vs the recorded track. 
+They should stay in perfect S 5 mc. Let it run for awhile. 
+
+7. Pull out the SMPTE cord and plug it back in. The SP1200 should 
+catch up and lock on perfectly. 
+
+Problems? Try adjusting the signal level entering the SP1200. If there 
+are still problems call Emu Customer Service. They might be able to 
+help. 
+
+10. External Footswitches. You will need a momentary normally-open 
+footswitch that terminates with a 1/4" plug. Alternately any 1/4" cord 
+can be used and one end can be shorted using a suitable conductor. 
+Plug the switch into the RUN/STOP jack. This should start and stop 
+the sequencer when the footswitch is pressed. Plug the footswitch 
+into the STEP/END REPEAT jack. Press the SONG/SEGMENT button 
+to get into song mode. Watch the display while you press the switch 
+and you should see the song number advance. Plug the footswitch into 
+the TAP/AUTO REPEAT jack. Press and hold the footswitch while 
+holding a play button. The sound should retrigger continuously as long 
+as the switch is held down. 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+DIAGNOSTICS AND TRIMS 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+DIAGNOSTICS 29 
+
+
+DIAGNOSTICS and TRIMS 
+
+
+The SP1200 contains a number of on-board diagnostic tests and trim 
+procedures. These can be accessed or read from the front panel 
+without even opening the unit! 
+
+SP 1200 DIAGNOSTICS 
+
+To activate the diagnostic software, power the instrument up while 
+holding SEmjP depressed, or press SETUP before a disk has been 
+inserted. 
+
+The instrument will perform a series of tests as outlined below. To 
+step from test to test, press ENTER. This will be prompted when 
+screen size allows. It is safe to turn the instrument off during any 
+test. 
+
+The tests are: 
+
+1. CPU RAM Test 
+
+2. ROM Test 
+
+3. Sound RAM Test 
+
+4. Button/Footswitch Test 
+
+5. LCD Test 
+
+6. LED Test 
+
+7. Slider Test 
+
+8. Sample Trim Test 
+
+9. MIDI Test 
+
+10. SMPTE Test 
+
+11. Dynamic Button Test 
+
+12. Disk Test 
+
+Exiting the disk test cycles the unit back to the Button/Footswitch 
+test; the user must reboot to repeat the RAM and ROM tests. 
+
+The details of each test are as follows: 
+
+1. CPU RAM TEST 
+
+Tests the CPU d 5 mamic RAM with a fairly uncomprehensive test from 
+location 2000H to FFFFH. Will catch all gross failures. Reports error 
+address and IC # of failure. Press ENTER to step to next test. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+30 DIAGNOSTICS _ 
+
+2. ROM TESTS 
+
+Calculates and displays the ROM checksum which should be identical 
+to that displayed by PROM programmers. Prompts you to press 
+ENTER to step to the next test. 
+
+3. SOUND RAM TEST 
+
+Uses a fairly comprehensive double pass pattern to test the CPU 
+access of the sound RAM. Reports error address and 1C #. Press 
+ENTER to step to the next test. This test takes a couple of minutes, 
+
+4. BUTTON/FOOTSWITCH TEST 
+
+Displays the name of the button or footswitch on the display when 
+pressed. Pressing ENTER displays "enter" and steps to the next test 
+on the release of ENTER. 
+
+5. LCD TEST 
+
+Di spla ys "boxes" on the display to verify that all dots work. Press 
+ENTER (you guessed it) to step to the next test. 
+
+6. LED TEST 
+
+Gives LED chase pattern. Provides hours of entertainment. Prompts 
+you to press ENTER to step to the next test, 
+
+7. SLIDER TEST 
+
+Displays De-jittered value (0-127) on 8 sliders. Press ENTER to step 
+to the next test. 
+
+8. SAMPLE TRIM TEST 
+
+Prompts for adjustment of RTl (sample offset) to a value of 800. The 
+actual value is displayed. Should be adjusted near to, but not exactly 
+800 (797—>803). Press ENTER to step to the next test. 
+
+9. MIDI TEST 
+
+Prompts for a loopback connection from MIDI IN to MIDI OUT, and to 
+press ENTER when connected. MIDI is tested for all possible bytes, 
+and the results reported. Press ENTER to step to the next test. 
+Pressing <— repeats the MIDI test. 
+
+10. SMPTE TEST 
+
+Prompts for a loopback connection from SMPTE IN to SMPTE OUT, 
+and to press ENTER when connected. SMPTE is tested for all possible 
+bytes at rates of 30 and 24 EPS (this takes about 5 sec), and the results 
+reported. Press ENTER to step to the next test. Pressing <— repeats 
+the SMPTE test. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+DIAGNOSTICS 31 
+
+
+11. DYNAMIC BUTTON TEST 
+
+Reports dynamic button sensor result (0-200) for all play buttons. 
+Adjust the trimmer on the back of the front panel board for maximun 
+dynamic range. This adjustment is non-critical. Adjust to customer's 
+preference. Press ENTER to step to the next test. 
+
+12. FLOPPY DISK TEST 
+
+Prompts to press 1 for verify only test, 2 for write/verify test 
+(WARNING: DESTROYS ALL DATA ON THE DISK), 3 to skip back to 
+CPU RAM test. 
+
+A verify test reads all tracks on a previously written disk and reports 
+errors for each full pass. A write/verify test writes a pseudo-random 
+pattern onto all tracks of the disk, verifying after each write, then 
+reads the disk in its entirety and reports errors from both passes. 
+Holding "3" down at the end of a pass exits the test. 
+
+Errors are reported as follows: 
+
+PASS HE DE SE P1 
+
+NNNN NN NN NN NN 
+
+Pass is the pass number; a write/ verify pass is counted as a single 
+pass. Up to 9999 passes (about 70 hours) will be logged before 
+weirdness occurs. 
+
+HE is the number of hard (uncorrectable after 10 retries) errors that 
+occurred during the test. Note that DISK NOT READY from an 
+uninserted disk is considered a hard error, as is WRITE PROTECT if 
+write/verify is chosen. 
+
+DE is the number of CRC errors that occurred. It takes 10 in a row to 
+generate a hard error. 
+
+SE is the number of seek errors that occurred. It takes 2 on a row to 
+generate a hard error. 
+
+PI is the number of "phase one" errors that occur. Since the drive 
+attempts to read the disk before the settling times have elapsed, 
+counting on the CRC and seek error detection to find any errors, this 
+displays any such errors that occur. Failures on this test does not 
+indicate a "bad" drive. They mean that the drive is not in perfect 
+alignment and will take longer to load a disk since it has to re-read 
+tracks. 
+
+
+© 1987 E-mu l^stems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+52 DIAGNOSTICS 
+
+
+HE, DE, SE, and PI display a maximum of 99 errors, and will continue 
+to display 99 when more than 99 errors have occurred. 
+
+It is safe to remove the disk at any time from a VERIFY test; no 
+damage will result to the diskette. Removing the diskette during a 
+WRITE/VERIFY test may write a bad sector on the disk (preventing it 
+from being useful for a verify test subsequently): powering the 
+instrument down may even de-format the diskette. We recommend 
+you either use one diskette only for WRITE/VERIFY tests, or that you 
+hold "3" down to exit the test before powering the instrument down. 
+
+
+POWER SUPPLY SPECIFICATIONS 
+
+The SP 1200 power supply generates 4 voltages: +5 V, +15 V, -15V, 
+and +12 V. The specifications are: 
+
+
+VOLTAGE 
+
+TEST POINT 
+
+SPECIFICATION 
+
++5V Digital 
+
+Any TTL Chip 
+
+4.75 to 
+
+5.25 Volts 
+
++ 15V Analog 
+
+Pin3 VRl or TP 
+
+14.25 to 
+
+15.75 Volts 
+
+-15V Analog 
+
+Pin3 VR2 or TP 
+
+-14.25 to 
+
+-15.75 Volts 
+
++12V Analog 
+
+12V TP near Reg. 
+
+11.25 to 
+
+12.75 Volts 
+
+
+TRIM PROCEDURE 
+
+The SP 1200 has 7 trimmers located on the main circuit board. Four 
+of the trimmers are trimmed using a high impedance digital ohm 
+meter. These relate to the DC offset adjustments around the sound and 
+level DACs. The sample offset trim (RTl) is calibrated by using the 
+diagnostic routine #8. The last two trims are the d 3 mamic filter trims 
+and can either be calibrated using an oscilloscope or to personal taste 
+by using your ears. 
+
+The DAC DC offsets can and do drift over time and should be routinely 
+checked to ensure optimum performance. 
+
+
+To Calibrate the DAC trims: 
+
+1. Turn on the SP 1200 and let it warm up for about 15 minutes. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. AU Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+DIAGNOSTICS 53 
+
+
+2. Turn the unit OFF then reboot without playing any buttons. 
+
+3. Attach the GROUND lead of your ohm meter to the analog ground 
+(TP 3 and 4) on the circuit board. 
+
+4. Adjust the trimmers using the test points given in the order listed. 
+
+
+1st DAC OUTPUT LEVEL TRIM (Use Oscilloscope) 
+
+This adjusts the maximum gain of the DAC buffer so that the 4051 
+demultiplexer will not be overdriven which causes distortion and 
+channel crosstalk. The gain trimmer is KT?. 
+
+To trim RT7: Playback various samples with dynamic buttons OFF, all 
+mix levels FULL and with scope probe on IC98 pin 6. Trim RT7 so that 
+the level out of IC98 does not exceed 5 Volts peak-to-peak. Listen to 
+the audio outputs afterward with the SP 1200's mixer up full to make 
+sure that no clipping or crosstalk is occurring. 
+
+
+OHM METER TRIMS 
+
+
+TRIMMER 
+
+TEST POINT 
+
+SPECIFICATION 
+
+2nd 
+
+RT3 
+
+IC99 pin 2 
+
+Less than 1 millivolt 
+
+3rd 
+
+RT4 
+
+IC99 pin 6 
+
+Less than 1 millivolt 
+
+4th 
+
+RT2 
+
+IC98 pin 2 
+
+Less than 5 millivolts 
+
+Any 
+
+Order 
+
+RTl 
+
+SP 1200 
+Diagnostics 
+
+Reading of =804 or greater 
+in the display. (Should 
+not be exactly 800) 
+
+
+Test the RTl trim setting by entering Sample mode with no input and 
+gain set at +40 dB. Turn up your amp gain and listen for a clicking 
+noise at the mix out. If you hear clicking, readjust RTl. 
+
+5th Recheck RT7 and recalibrate if necessary. 
+
+Dynamic Filter Trim: 
+
+Factory method 
+
+1. Short the two test points CNLO and CNLl which puts the filters into 
+oscillation. 
+
+
+© 1987 E-mu Systems Inc., Scotts VaUey, Ca. AU Rights Reserved 
+
+
+Contact The Emuiator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+34 DIAGNOSTICS 
+
+
+2. Tune the output frequency of each filter to 1.0 kHz. Monitor at pins 
+1 and 14 of the TL084 output buffer or Mix Out jack with volume full. 
+
+By ear method 
+
+1. Simply play tom-tom drum soimds through channels 7 and 8 and 
+adjust the tone to taste. The customer may even want these outputs to 
+be brighter or duller. Ask them. 
+
+In any case, the filter adjustments are non-ciitical. 
+
+
+SMPTE PROBLEMS 
+
+Problems related to SMPTE (or sync problems in general) seem to be 
+a constant source of grief. Actually they are not that hard to solve if you 
+know how to go about it. SMPTE problems seem to have 3 major 
+causes: Ground loops. One-shot problems and of course operator error. 
+
+Ground Loops. Ground loops in computer audio equipment can have 
+more symptoms than just the familiar 60 cycle hum. Digital audio 
+ground loops can take the form of high frequency whines and tones 
+caused by the beating of digitally generated signals. These tones can 
+adversely affect the SMPTE track as well as adding unwanted noise to 
+the audio chain. Ground loops are formed when interconnected pieces 
+of equipment have more than one path to ground. They are usually 
+caused by having the 3rd prong of each power cord plugged in to the 
+socket. Since these are all common and the ground Avire of the audio 
+cords are common, two or more ground paths are set up. A general 
+rule for eliminating ground loops is to 3-wire ground only one piece of 
+equipment in the system, usually the mixer or power amp, 
+
+Unfortimatly this defeats the safety feature of the 3-prong cord and 
+voids the warranty of most equipment. It can and does solve many sync 
+and noise problems. Use of a direct box when recording the SMPTE 
+track can ^so be of help in getting a clean signal on tape. 
+
+One-Shot Window. One-shots always seem to cause trouble and this 
+circuit is no exception. The componants age and change value and 
+then the circuit doesn't work correctly. If a customer is having SMPTE 
+sync problems, the test below is a good place to start. If the window is 
+out of spec, the capacitor (C81) can be replaced or the resistor value 
+(R41) adjusted as necessary. Remember to set your scope for negative 
+slope trigger when performing the measurement. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+DIAGNOSTICS 55 
+
+
+SMPTE One-Shot Test 
+
+
+We have found that the timing Cap. on the One-Shot circuit is 
+often not within tolerance. 
+
+To check for the proper pulse width; 
+
+1) Feed a 2.5Kh2 square wave of at least 250mv into the SMPTE input. 
+
+2) Set SP-1200 for SMPTE sync at 25 frames per second. 
+
+3) Set up scope for 50 us/div and a negative trigger. 
+
+4) Measure pulse width at 1C 94 pin 12. It should be between 3 00 and 370 us. 
+
+5) Set SP-1200 for SMPTE sync at 30 frames per second 
+
+6) Measure pulse width at IC94 pin 12.lt shouldbe between 250 and 300 us. 
+
+
+
+SP1200 Tempo. The tempo of the SP1200 Is not exactly as shown in 
+the display. It is close enough for most uses but we have had cases 
+where it was not close enough. Case in point. SMPTE was written with 
+another SMPTE generator and a sequencer track recorded. The 
+SP1200 was brought in later to add the drums but the tempos didn't 
+match. A basic drum track should have been recorded first and the 
+sequencer synced to the SP1200. There would have been no problems. 
+
+Make sure the SMPTE start point is set later than 00:00:00:00. The 
+SP1200 needs a few frames to lock on. 
+
+
+© 1987 E-mu %stems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+36 DIAGNOSTICS 
+
+
+COMMON SP 1200 PROBLEMS 
+
+
+When troubleshooting the SP 1200, we recommend checking the 
+power supply first. Other common sources of problems are 
+connectors, sockets, and broken solder joints. You should also make 
+sure that you are using the latest version of software to avoid chasing 
+phantoms. If you suspect a software problem and you are using the 
+latest version, contact the factory. The most frequent problems seem 
+to be with the disk drive which is not normally field repairable. 
+
+
+If you get stuck on a problem, please feel free to contact our Customer 
+Service department at (408) 438-1921. They will be happy to assist 
+you. Telephone support hours are between 8:30 am and 5:30 pm PST 
+Monday through Friday. 
+
+
+PROBLEM 
+No Boot 
+
+No lights, no power 
+No Boot No Diagnostics 
+Won't boot-up disk 
+Won't boot-up disk 
+Won't boot-up disk 
+Won't load disks 
+
+Won't load disks 
+Intermittent lock up 
+LCD reads Insert Disk 
+LCD -> Loading Software 
+
+
+CAUSE 
+
+Power Supply problem 
+
+Bad RAM PAL 
+
+Check ICs 126,127 are from 
+
+Disk/SMPTE Mux Prob. 
+
+No IK pullup IC127 pin 2 
+
+Drive out of alignment 
+or bad disk 
+
+Drive out of alignment 
+
+Intermittent CPU 
+
+Faulty power to Disk 
+
+Disk data cable backwards 
+
+
+SOLUTION 
+
+Check it out! 
+
+Replace RAM PAL 
+same manufacturer 
+Check ICs 126,127 
+Add pullup resistor 
+Try different disks 
+
+Replace or align drive 
+Replace CPU 
+Check Disk power 
+Install cable correctly 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+DIAGNOSTICS 37 
+
+
+Sync 
+
+Bad SMPTE sync 
+
+1-shot out of tolerance 
+
+Check 1-shot window 
+
+Bad SMPTE sync 
+
+No back pnl to Jack Gnd 
+
+Restore ground path 
+
+Audio Problems 
+
+Oscillations in Sample 
+
+Trimmer RT1 set exactly 
+to 800 
+
+Re-trim to approx. 804 
+
+Channel lor 2 missing 
+Channel 1or 2 muted 
+
+Bad SSM Chip 
+
+Bad Filter Cap 
+
+Replace bad Chip 
+Replace bad Cap. 
+
+Channel missing 
+
+Check IC112 Demux 
+
+Replace as necessary 
+
+Channel crosstalk 
+
+7523 in 1C97 socket 
+
+Replace with 7524 
+
+Channel crosstalk 
+
+Bad 4051 Demux 
+
+Replace as necessary 
+
+Crackling Ch 1 and 2 
+or crosstalk 
+
+Bad 1C 62 CS PAL 
+
+Replace bad Chip 
+
+Hiss or crackling channel 
+
+Bad Sample/Hold Cap. 
+
+Replace Cap. 
+
+Poor audio quality 
+
+DAC needs trim 
+
+Trim DAC etc. 
+
+Poor audio quality due 
+to missing DAC bits 
+
+Bad IC151 or IC152 
+
+Replace bad chips 
+
+Metallic distortion when 
+sounds are tuned 
+
+May be normal due to the 
+way SP1200 tunes sounds 
+
+Explain facts to 
+customer 
+
+Clank,Clunk, mult, sounds 
+
+Microcontroller problem 
+
+Look for bad levels pC 
+
+Other 
+
+VU stuck high in sample 
+mode 
+
+Offset in Anti-Alias Filter 
+
+Replace Op-amp or 
+bad Componant 
+
+Slider doesn't work 
+
+Broken solder joint at pot 
+
+Resolder pot 
+
+Scratchy Pot 
+
+DC offset in circuit 
+or bad pot 
+
+Clean pot or find offset 
+
+LCD Backlight intermittant 
+
+Bad LCD HV supply 
+
+Replace as necessary 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+THEORY OF OPERATION 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+THEORY OF OPERATION 39 
+
+
+THEORY OF OPERATION 
+
+
+OVERVIEW 
+
+The SP1200 is very much like the Drumulator and the SP-12 in that it 
+uses multiplexed audio controlled by a custom designed micro¬ 
+controller and uses a Z-80 CPU. There are some major differences like 
+the 12 bit format, disk drive and user sampling. Knowledge of the 
+Drumulator and or SP-12 will be helpful in learning how the SP1200 
+functions. 
+
+The simplified block diagram (see fig 2) shows the entire SP1200. 
+Starting at the top left we see that the sliders are read by an ADC 
+circuit. The value is read from the data bus by the Z-80A when it 
+selects the ADC chip. 
+
+The LEDs are treated as a write only port. They are connected to a 
+latch which the Z-80A writes to when an LED needs to be turned on 
+or off. 
+
+The display is connected to the data bus and treated as a re ad/write 
+port. All information for the user is written to this port in ASCII 
+except for a few graphic symbols. 
+
+The pots are regular analog controls. The mix out pot is connected in 
+the feedback loop of the mix out buffer amp. The metronome pot is 
+connected from the metronome output to ground. The wiper is then 
+summed into the mix out with the rest of the output channels. The 
+sample gain pot has one end grounded and the other connected to the 
+sample input jack. The wiper of the pot feeds the input buffer amp. 
+
+The buttons are set up in a matrix and decoded to determine which 
+button was pressed. Two I/O ports are used for this. The first port is 
+the decoder which the Z-80A writes to for row selection. The second 
+port is used to read all the columns to determine which SAvitch was 
+pressed on the decoded row. 
+
+The Z-80A is the main CPU that runs the machine. It reads the 
+buttons and sliders and writes to the display. I communicates to the 
+world through the SIO (Serial Input Output). The instructions that 
+boot the machine are contatued in EPROM. The main operating 
+instructions are loaded into RAM from the floppy disk on power up. 
+This RAM called the Program Memory also contains the program 
+variables, CPU stack and sequencer memory. The CTC is used 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Vcdley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+THEORY OF OPERATION 41 
+
+
+primarily for generating timed interrupts. The CPU is interrupted by 
+the CTC to scan the buttons every 1.2 milliseconds. It also is used for 
+sequencer timing and SMPTE/SYNC input and output timing. The 
+microcontroller handles all the sound output control. It generates the 
+memory timing and control signals as well as the memory addresses. 
+
+It also generates the signals for the sound level control registers and 
+timing for the de-multiplexing of sounds. 
+
+The sound memory is composed entirely of 4464 D 3 mamic RAMs 
+which are four bits wide by 64K for a total sound memory size of 256K 
+words. The sound memory is divided up into 4 banks of 2.5 seconds 
+each. Sounds cannot cross over into another bank. Since the d 5 mamic 
+RAMs lose their memory when power is removed, any sound data that 
+has not been saved to disk will be lost forever. 
+
+The DAC is a standard 12 bit linear device. It is used both for pla 5 dng 
+and sampling sounds. 
+
+For signal level control a standard 8 bit multiplying DAC is used as an 
+attenuator the signal being fed into the DAC reference. The level value 
+is stored in a register in the microcontroller. It is sent to the level 
+DAC at the appropriate time to control the level of each sound 
+separately. 
+
+The sample circuit uses the 12 bit sound DAC and a successive 
+approximation register to digitize the incoming signal. This is done 
+under CPU control. 
+
+The de-multiplexer separates the 8 channels then routes them to the 
+sample/holds. Two channels (7,8) are direct outs. The rest of the 
+channels are filtered. The channels are summed together at the mix 
+out amp. There are 8 separate outputs independent from the mix out 
+out not shown in this diagram. 
+
+
+-NOTICE - 
+
+The SP1200 was designed to use 74HCT series logic instead of 74LS. 
+We di d t hi s 1 0 I ower t he power requi rements and use a smal Ier 
+power supply. We do NOT recommend using 74LS chips as 
+repi acement s f or HOT as t hey overt ax t he power suppi y. There are 
+some locations where LS is used because of circuit loading, however 
+the majority of TTL ICs are HOT. 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Valley, Ca. AH Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+CPU + Front Panel 
+Fig 3 
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+Address Bus 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+_ THEORY OF OPERATION 43 
+
+THE CPU AND FRONT PANEL 
+
+
+The SP1200 uses a Z-80A processor running at 3.3 mHz. Its memory 
+consists of 8K bytes of EPROM memory and 64K of d 3 mamic RAM. A 
+PAL is used to decode the CPUs memory. 
+
+The pot ADC is a single chip. It has 8 analog inputs, 3 digital select 
+lines to decode 1 of the 8 inputs, a clock input, a start conversion 
+input, an end of conversion output and an output enable. The ADC is 
+mapped into two of the Z-80As I/O ports. The first port written to 
+select the 1 of 8 sliders and start the conversion. The second port is 
+used to read back the digital value of the pot. Slider 8 is multiplexed 
+with the dynamic button circuit on the front panel using a 4053 analog 
+mux. The ADC reads the output of this circuit and sends it to the CPU 
+to control the playback level. 
+
+The CTC (Counter Timer Circuit) is used primarily for interrupt driven 
+timing functions in the software. The most often used timing function 
+is for what we call housekeeping. This is an interrupt generated by the 
+CTC every 1.2 milliseconds that reminds the CPU to read the front 
+panel buttons and sliders. The second most often used CTC function is 
+running the sequencer. If you look at schematic page 2 of 18 you will 
+see that ZC2 (Zero Count channel 2) is connected to CTl (Clock 
+Trigger channel 1). This is done to cascade the two counters to 
+provide very high resolution (. 1 BPM) sequencer timing. The CTC is 
+also used to generate a clock for the bit rate on the SMPTE/SYNC 
+input. Lastly the CTC provides a transmit clock to the SIO (Serial 
+Input/Output) for outputting SMPTE and click signals. 
+
+The SIO (Serial Input/Output) is used for all serial interfacing. It sends 
+and receives all the signals for MIDI, SMPTE, Sync and the disk drive. 
+As mentioned above, the CTC supplies the SIO with a clock for signal 
+rate control of SMPTE. Channel A is dedicated to MIDI and the floppy 
+disk drive, with conventional MIDI input, output and thru circuitry. 
+Channel B is dedicated to the SMPTE/SYNC interface. The remaining 
+pins on the SIO used for implementing part of the floppy disk drive 
+interface. 
+
+The floppy disk drive actually uses both halves of the SIO. When the 
+disk drive is in use, the TLC, RXC, ROS, and the RLC signals going to 
+the lower half of the SIO are switched (by IC126) from the SMPTE 
+decoders to the floppy disk circuits. Refer to the block diagram fig. 4. 
+Since no other SP1200 functions are accessible during disk operations 
+anyway, this works out fine. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+To Memory 
+
+
+
+Sample Circuits 
+Fig. 7 
+
+
+© 1987 E-mu Systems Inc. Scotts Vallqr. CA. AU Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+THEORY OF OPERATION 45 
+
+
+The SMPTE bi-phase decoder has two rates selected by the SIODTRB 
+bit. Referring to the schematic, page 2 of 18, pin 25 of the SIO is 
+connected to Q1 through R31. When pin 25 is high, Q1 is off. This 
+causes IC 94's output pulse width to be determined by R41 and C81. 
+When SIO pin 25 is low, Q1 is turned on which causes R37 to be in 
+parallel with R41. This changes the RC time constant on IC94 which 
+narrows the pulse on its output. This is done to accommodate the two 
+SMPTE rates of 25 and 30 frames-per-second. Note: 24 and 25 
+frames-per-second are close enough to use the same size Avindow. The 
+input circuit is an LM 311 comparator which accommodates signals 
+from approximately 250mV to 5 volts. Following this circuit is an edge 
+detector. This generates a 25|iS pulse on the rising or falling edge of 
+the square wave input. The output of this circuit feeds the 1-shot 
+circuit whose pulse width is set by Q1 as previously explained. To 
+better understand the SMPTE circuit see fig. 5, which is a timing 
+diagram of the circuit on page 2 of 18. The top of the diagram shows 
+the bit cell time. Notice that a transition during a bit cell time 
+indicates a 1 whereas no change is a 0. This is the standard SMPTE 
+encoding scheme. The transition is a flux change on the tape. The 
+signal recorded onto the tape is a square wave with two frequencies. 
+One frequency is twice the rate of the other during a bit cell time. 
+
+This is called bi-phase encoding. The higher frequency will cause a 
+transition during a bit cell while the lower frequency will not. The top 
+trace is the signal that came off the tape after it has been cleaned up 
+by IC 104. Compare this to the data at the SIO and you can see how the 
+flux changes correspond to the data. The second trace is the output of 
+the edge detector circuit. It can be seen that this circuit puts out a 
+pulse the width determined by R72 and C107, for every transition of 
+the input signal. This signal is used to drive the 1 shot (IC94) and 
+clock the flip-flop (IC95) to qualify the data. If the edge detector 
+output is high during the middle of a bit cell time, it clocks the 1 shot 
+data into it. This is decoding a 1. If there is not an edge detected 
+during the bit cell then the flip-flop does not get clocked during the 
+bit cell time and the output is a 0. 
+
+The LEDs are mapped into the CPU's I/O space as a write only port. 
+The LED latch is connected directly to the data bus. The CPU writes a 
+0 to the latch to turn the LED on and a 1 to turn it off. The resistors 
+prevent excessive current flow through the LEDs. 
+
+The display is connected directly to the data bus and is mapped as an 
+I/O port. After the display is initialized, the CPU sends ASCII 
+characters to it for displaying user messages. 
+
+The buttons are arranged in a matrix as can be seen in fig. 3. The 
+
+
+© 1987 E-mu Systems Inc., Scotts VaUey, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+46 
+
+
+1C 104 
+Pin 3 
+
+
+IC 104 
+Pin 10 
+
+
+IC 94 
+Pin 5 
+
+
+1C 94 
+Pin 12 
+
+
+IC 95 
+Pin 5 
+
+
+Data to 
+UART 
+
+
+
+
+Squaring 
+
+Circuit 
+
+
+Edge 
+
+Detector 
+
+
+One 
+
+Shot 
+
+
+One 
+
+Shot 
+
+
+SMPTE Timing 
+
+Fig. 5 
+
+
+© 1987 E-mu ^sterns Inc. Scotts Valley, CA. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+THEORY OF OPERATION 47 
+
+
+buttons are also mapped in the CPUs I/O space. When the Z-80A wants 
+to read the buttons it writes to the button latch which drives a 
+decoder which selects a row. The decoder's output goes low for the 
+selected row. The columns are pulled up with resistors. If a switch was 
+pressed in the selected row the column line would be pulled low and 
+the decoder would sink the current. The CPU then reads the I/O port 
+which selects the button bus driver. If any output of the button bus 
+driver is low then the button on that column (and the previously 
+decoded row) is being pressed which will be read by the CPU. 
+
+
+MEMORY DE-MULTIPLEXING 
+
+The SP1200 uses 12 bit linear encoding for the sound data. To make 
+the SP1200s design compatible with the SP-12, the memory was set 
+up in the same way. Refer to Figure 6 for a block diagram of the 
+memory de-multiplexing scheme. On the SP-12, the memory was 
+Static RAM. Each RAM chip was 8 bits wide and so the 12 bit data was 
+split up into a byte and a nibble. The SP1200 uses Dynamic RAMs 
+which are 4 bits wide so that the memory organization seems 
+unnecessarily complex. (Why not just use 3 RAMs per word?) Keep in 
+mind that this is a cany over from the SP-12 and it all makes more 
+sense. Sound memory address 0 switches the source of the low order 
+nibble every other word. LSB RAMs A and B Eire alternately switched by 
+a 1 of 2 data selector (IC 90). All addressing, de-multiplexing, 
+RAS/CAS, etc. is controlled lay the microcontroller and a couple of 
+PALs (ProgrEimmable Logic Array) which is in turn controlled by the 
+CPU. The CPU can read or write memory through the bi-directional 
+data latches IC70 amd IC71. 
+
+
+SAMPLING 
+
+The block diagram of the sampling circuits can be seen in fig. 7. The 
+SP1200 uses the successive approximation technique to digitize the 
+incoming audio signal. 
+
+Before we get into the way the SP1200 samples, a basic explanation of 
+successive approximation is in order. Referring to fig. 8 the three 
+most basic elements of an 8 bit system can be seen. A few details such 
+as the CPU and the sample/hold were left out in order to simplify the 
+drawing. To start the process, the timer would send a start conversion 
+signal and the successive approximation would begin. The SAR starts 
+by setting bit 7 and looking at the output of the comparator. The 
+output of the comparator tells the SAR whether the DAC's output is 
+higher or lower than the input signal. If the DAC output is higher, the 
+
+
+© 1987 E-mu Sjrstems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+48 THEORY OF OPERATION 
+
+
+input bit will be set to 0. If the DAC output is lower, the input bit Avill 
+be set to a 1. In fig. 8 the SAR set bit 7 which represents .500 volts 
+and tested the comparator output. Since the + input was .600 V and 
+the - was .500 V, the comparator's output was high which says the DAC 
+is less than the input. The SAR will now set bit 7 high for the 
+remainder of the test. As can be seen at the bottom of fig. 5, each bit is 
+exactly half of the previous one. When the SAR sets bit 6 high, the 
+DAC's output is the sum of bit 7 and bit 6 or .750 V. This is higher 
+than the .600 V on the input and so the comparator output will be 0. 
+Bit 6 is reset to 0. This process continues until all 8 bits are tested 
+and set to 0 or 1. After aU the bits are tested, the End of Conversion 
+(EOC) line goes low to signal the main CPU that the data is ready to be 
+stored in memory, 
+
+OK, back to the SP1200. Fig. 7 shows the basic blocks of the A/D 
+converter. Starring from the left is the anti-aliasing filter. Aliasing is 
+the phenomenon where the input frequency and the sample rate beat 
+together to generate unwanted frequencies. These frequencies are the 
+difference between the sample rate and the Incoming signal. This 
+happens when the input signal to be sampled exceeds half the sample 
+rate and is allowed to be sampled. The anti-alias filter keeps this from 
+happening. These filters usually have a very steep cutoff on the order 
+of 42dB per octave and a cutoff frequency of less than half the sample 
+rate of the system. Refer to schematic page 7 of 18 to see the anti-alias 
+filter. 
+
+Next we have the sample/hold. This keeps the signal to be sampled 
+steady while we convert it. At each End of Conversion signal, a new 
+sample is held at the S/H. The comparator is used to compare the 
+signal with the DAC output. The SAR sets and tests each bit using the 
+DAC and comparator to determine the actual voltage of the input 
+signal.The number of conversions made per second is the sample rate. 
+
+The next part of the circuit is a bit tricky. During sampling the - Input 
+line is held low which selects only the "A" half of the data selector (IC 
+90). This allows the DAC free access to the data coming from the SAR. 
+As was previously mentioned, the sound memory in the SP1200 is set 
+up as if the data path were 16 bits wide (as it is in the SP-12). When a 
+sound is sampled, the least significant 4 bits of each 12 bit word are 
+only written to memory every other sample. Notice the split in the 
+data path for the low nibble coming out of the SAR in fig. 7. A latch is 
+used to hold the intermediate nibble until the next conversion. At that 
+time the last nibble and the current nibble are both written into RAM 
+at the same time. During the conversion process the CPU is in a wait 
+state. Before the next conversion starts the PAL (IC69) removes the 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Valley, Ca. AU Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+50 
+
+
+
+Bit? 
+
+To CPU 
+Data bus 
+
+BitO 
+
+
+^End of Conversion 
+(EOC) 
+
+
+Start Conversion 
+
+
+DAC Output 
+
+
+
+Sample Theory 
+Fig. 8 
+
+
+© 1987 E-mu Sjretems Inc. Scotts Valley, CA. AU Rights Reserved 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+THEORY OF OPERATION 51 
+
+
+wait state and the data is written into RAM with the address provided 
+by the CPU. The PAL decodes the -Input and -WR lines so that in 
+actuality the CPU is reading the data in through IC 70 and 71 while 
+RAM is being written so that it can update the display VU meter. 
+
+
+THE MICROCONTROLLER 
+
+The Microcontroller (pC) is in control of playing the sounds. The CPU 
+teUs it where the sound is, the length, pitch, and loop points if any, 
+then the pC generates all the sign^s to get the sound out of memory 
+and to the DAC and sample/hold. As previously mentioned, the sound 
+the SP1200 uses multiplexed audio. The pC de-multiplexes the signal 
+using a 4051 and sample/holds it using caps and bi-FET op amps (see 
+the schematic page 15 of 18). The pC (see fig. 9) is a special purpose 
+dedicated microprocessor. It is not programmable so we call it a 
+microcontroller. It generates all of the memory control signals and 
+handles all the addressing during playback. It also controls the level of 
+the sound being played using the level registers and has a bank select 
+register for addressing memory beyond the 16 bits of the address 
+latch output. 
+
+The Z-80A interfaces to the pC in 5 places. The first is the register file 
+input latch. This is where the CPU writes the address, sound file size, 
+pitch and any loop point data. The second interface is the register file 
+RAM address latch. The CPU uses this latch to load register file RAM 
+addresses. The third is the sound level register. This register holds 
+the data that corresponds to the sound's playback level (see schematic 
+page 8 of 18). Also on this page of the schematic is the fourth interface 
+which is the bank select register. This is used to select which 64K 
+byte block of memory will be accessed. The fifth interface is the 
+request latch. This is set after the CPU has loaded data in the register 
+file input latch and the register file RAM address latch. When the pC 
+reads the request latch, it knows that data is in the file latches and 
+writes it into the register file RAM. The data comes right of the Z-80A 
+data bus. The CPU writes to the pController as 5 separate I/O ports. 
+
+To play a sound the CPU writes the Start Address, the Sound Length 
+and the Pitch of the sound into the Input Registers (See Fig. 8). It also 
+writes the Bank Number and the Sound Level into their registers. The 
+pController takes over from here. With no pitch shifting, (as 
+implemented on the Drumulator) the carry line entering the upper 
+four adders is always 1 (AO on the lower adder is 0). The Start and 
+Size numbers get stored in the 2114 memory chips. Their locations in 
+the 2114s correspond to the output channel number which is 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+Carry 
+
+
+Adder Output 
+
+
+To Sound 
+
+
+
+
+
+Request 
+
+CPU-^ 
+
+cs 
+
+
+
+Fig. 9 
+
+
+SP 1200 Microcontroller 
+
+© 1987 E-mu Systems Inc. Scotts Valley. CA. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+THEORY OF OPERATION 55 
+
+
+controlled by the CPU via the RAM address latch. The microcode 
+PROM controls the timing of all the registers and shifts the numbers 
+through. Every time the address gets shifted through the adder, it is 
+incremented by 1 and then sent to the output register and also back to 
+the 2114 memories to await its next cycle through the adder. The Size 
+number gets shifted through in the same way and signals the micro¬ 
+code PROM (via the carry out) that the sound has finished. OK, let’s 
+talk about pitch shifting. As previously mentioned, the Start, Size and 
+Pitch numbers are stored in the upper 2114 memories. The Size 
+number is incremented in the same way as with no pitch shift, but 
+now the Carry In and AO on the lower 2114 are not fixed. On each 
+channel's cycle the appropriate pitch number is loaded into the 
+Increment Latch. This number is added to the previous value in order 
+to generate a carry value of either 0 or 1. A carry of 0 will cause the 
+same sample to be played twice. A carry of 1 will increment the 
+sample's address. If AO is set to a 1 and the carry out of the lower 
+adders is always 1, then the address will be incremented by 2. This 
+will cause every other memory location to be skipped and the sound 
+will play twice as fast or an octave higher. To shift down an octave, the 
+AO bit is set to 0 and the increment value is set so that the carry out of 
+the lower adders will always be 0. Now every sample will play twice. It 
+will take twice as long to play the sample and the pitch will be an 
+octave lower. Intermediate pitch values (neither 0000000 or 
+1111111) will cause alternating 0 and 1 values at the carry out of the 
+lower adders and either increment or not increment the current 
+address value on that cycle. This will cause smaller pitch shift 
+intervals. The CPU only sends values to the ^Controller pitch register 
+which create semitone tuning intervals. 
+
+
+POWER SUPPLY 
+
+The SP1200 uses a linear power supply to generate all the necessaiy 
+voltages. The transformer, power switch, 115/220 switch, fuse and 
+diode bridge are mounted on the back panel. The transformer has two 
+secondaries. The lower secondary is a 36 volt AC center tap which is 
+rectified by D3 through D6, filtered by C85 and C77 and regulated to 
++/- 15 volts by VRl and VR2. The other secondary is is 12 volts which 
+is rectified by the diode bridge, filtered by C153 and regulated to 5 
+volts by the 3-terminal IC regulator VR4. 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SIGNAL NAMES 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+_ SIGNAL NAME DEFINITIONS 55 
+
+SP1200 SIGNAL NAME DEFINITIONS 
+
+
+The signal names are comprised of: 
+
+(a) + or - specifying active high or low. 
+
+(b) An abbreviation of the signal function. 
+
+(c) An abbreviation of the signal type. 
+
+(d) The signal's destination and source page numbers. 
+
+There are three types of signals; D, V and I. D stands for digital, V stands for 
+voltage or an analog signal and I stands for a current. 
+
+
+EXAMPLE: (a) 
+
+(b) 
+
+(c) 
+
+- 
+
+8M 
+
+.D 
+
+(Low) 
+
+8 mHz Clock 
+
+Digital 
+
+
+SP 1200 Signal Name 
+
+List 
+
+
+
+Name Source 
+
+Destination 
+
+Type 
+
+Description 
+
++A0.D 
+
+1 
+
+2,3.6.8,13 
+
+TTL 
+
+Main CPU Addr Bus 0 
+
++A1.D 
+
+1 
+
+2,3,6,8 
+
+TTL 
+
+Main CPU Addr Bus 1 
+
++A2.D 
+
+1 
+
+3,4 
+
+TTL 
+
+Main CPU Addr Bus 2 
+
++A3.D 
+
+1 
+
+3,4 
+
+TTL 
+
+Main CPU Addr Bus 3 
+
++A4.D 
+
+1 
+
+3,4 
+
+TTL 
+
+Main CPU Addr Bus 4 
+
++A5.D 
+
+1 
+
+3,4 
+
+TTL 
+
+Main CPU Addr Bus 5 
+
++A6.D 
+
+1 
+
+3,4 
+
+TTL 
+
+Main CPU Addr Bus 6 
+
++A7.D 
+
+1 
+
+3,4 
+
+TTL 
+
+Main CPU Addr Bus 7 
+
++A8.D 
+
+1 
+
+3 
+
+TTL 
+
+Main CPU Addr Bus 8 
+
++A9.D 
+
+1 
+
+3 
+
+TTL 
+
+Main CPU Addr Bus 9 
+
++A10.D 
+
+1 
+
+3 
+
+TTL 
+
+Main CPU Addr Bus 11 
+
++A12.D 
+
+1 
+
+3 
+
+TTL 
+
+Main CPU Addr Bus 12 
+
++A13.D 
+
+1 
+
+3 
+
+TTL 
+
+Main CPU Addr Bus 13 
+
++A14.D 
+
+1 
+
+3 
+
+TTL 
+
+Main CPU Addr Bus 14 
+
++A15.D 
+
+1 
+
+3 
+
+TTL 
+
+Main CPU Addr Bus 15 
+
++ADCEOC.D 
+
+14 
+
+14 
+
+TTL 
+
+ADC End of Conv. 
+
++C20M.D 
+
+1 
+
+3,4 
+
+TTL 
+
+20 MHz Clock 
+
++C2MHZ.D 
+
+1 
+
+2 
+
+TTL 
+
+2 MHz Clock 
+
+
+© 1987 E-mu S 5 rstems Inc., Scotts Valley, Ca. All Rights 
+
+Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+56 SIGNAL NAME DEFINITIONS 
+
+
+Name Source 
+
+Destination 
+
+Type 
+
+Description 
+
++C3MHZ.D 
+
+1 
+
+3,4,10 
+
+TTL 
+
+3 MHz Clock 
+
+-C6MHZ 
+
+1 
+
+4,10 
+
+TTL 
+
+6 MHZ Clock 
+
++C7.D 
+
+8 
+
+9 
+
+TTL 
+
+pC Carry Interconnect 
+
++CARRY.D 
+
+9 
+
+7 
+
+TTL 
+
+|iC Carry Out 
+
+-CLE.D 
+
+7 
+
+7 
+
+TTL 
+
+Carry Latch Enable 
+
++CNL7.D 
+
+1 
+
+14 
+
+TTL 
+
+Channel 7 Clk (SmpI) 
+
++CNLOO.V 
+
+16 
+
+17 
+
+Ana. Volt. 
+
+Dyn. Flit Out Ch. 0 
+
++CNL01.V 
+
+16 
+
+17 
+
+Ana. Volt. 
+
+Dyn. Flit Out Ch. 1 
+
+-fCNLSO.D 
+
+7 
+
+8 
+
+TTL 
+
+Channel Addr 0 
+
++CNLS1.D 
+
+7 
+
+8,15 
+
+TTL 
+
+Channel Addr 1 
+
++CNLS2.D 
+
+7 
+
+8,15 
+
+TTL 
+
+Channel Addr 2 + 
+
+-CNLS2.D 
+
+7 
+
+8 
+
+TTL 
+
+Channel Addr 2 - 
+
++CNLSHO.V 
+
+15 
+
+16 
+
+Ana. Volt. 
+
+Channel 0 S/H out 
+
++CNLSH1.V 
+
+15 
+
+16 
+
+Ana. Volt. 
+
+Channel 1 S/H out 
+
++CNLSH2.V 
+
+15 
+
+17 
+
+Ana. Volt. 
+
+Channel 2 S/H out 
+
++CNLSH3.V 
+
+15 
+
+17 
+
+Ana. Volt. 
+
+Channel 3 S/H out 
+
++CNLSH4.V 
+
+15 
+
+17 
+
+Ana. Volt. 
+
+Channel 4 S/H out 
+
++CNLSH5.V 
+
+15 
+
+17 
+
+Ana. Volt. 
+
+Channel 5 S/H out 
+
++CNLSH6.V 
+
+15 
+
+15 
+
+Ana. Volt. 
+
+Channel 6 S/H out 
+
++CNLSH7.V 
+
+15 
+
+15 
+
+Ana. Volt. 
+
+Channel 7 S/H out 
+
+-CSCTC.D 
+
+4 
+
+2 
+
+TTL 
+
+CTC Chip Select 
+
++CSDISP.D 
+
+4 
+
+8 
+
+TTL 
+
+Display Chip Select 
+
+-CSPB.D 
+
+4 
+
+
+TTL 
+
+Push Button Chip Sel. 
+
++CSRADC.D 
+
+4 
+
+5 
+
+TTL 
+
+Read ADC Chip Select 
+
+-CSRPB.D 
+
+4 
+
+5 
+
+TTL 
+
+Read Push Button CS 
+
+-CSSIO.D 
+
+4 
+
+2 
+
+TTL 
+
+SIO Chip Select 
+
+-CSSM.D 
+
+4 
+
+
+TTL 
+
+Sound RAM Chip Sei. 
+
+-CSWAD.D 
+
+4 
+
+7 
+
+TTL 
+
+Z80 Wr Reg. File CS 
+
++CSWADC.D 
+
+4 
+
+5 
+
+TTL 
+
+Write ADC Chip Select 
+
+-CSWHI.D 
+
+4 
+
+9 
+
+TTL 
+
+Z80 pC Hi Byte CS 
+
+-CSWLDO.D 
+
+4 
+
+6 
+
+TTL 
+
+Wr LED Latch 0 CS 
+
+-CSWLD1.D 
+
+4 
+
+6 
+
+TTL 
+
+Wr LED Latch ICS 
+
+-CSWLO.D 
+
+4 
+
+9 
+
+TTL 
+
+Z80 pC Lo Byte CS 
+
+-CSWLVH.D 
+
+4 
+
+8 
+
+TTL 
+
+Wr Vol. Hi Chip Sel 
+
+-CSWLVLD 
+
+4 
+
+8 
+
+TTL 
+
+Wr Vol. Lo Chip Sel 
+
+-CSWPBL.D 
+
+4 
+
+5 
+
+TTL 
+
+Wr Push Buttons CS 
+
+-i-DO.D 
+
+1 
+
+2,3,5,6,7,8,9 
+
+TTL 
+
+Main CPU Data Bus 0 
+
++D1.D 
+
+1 
+
+2,3,5,6,7,8,9 
+
+TTL 
+
+Main CPU Data Bus 1 
+
+-fD2.D 
+
+1 
+
+2,3,5,6,7,8,9 
+
+TTL 
+
+Main CPU Data Bus 2 
+
++D3.D 
+
+1 
+
+2,3,5,6,7,8,9 
+
+TTL 
+
+Main CPU Data Bus 3 
+
++D4.D 
+
+1 
+
+2,3,5,6,7,8,9 
+
+TTL 
+
+Main CPU Data Bus 4 
+
++D5.D 
+
+1 
+
+2,3,5,6,7,8,9 
+
+TTL 
+
+Main CPU Data Bus 5 
+
+-hD6.D 
+
+1 
+
+2,3,5,6,8,9 
+
+TTL 
+
+Main CPU Data Bus 6 
+
++D7.D 
+
+1 
+
+2,3,5,6,8,9 
+
+TTL 
+
+Main CPU Data Bus 7 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SIGNAL NAME DEFINITIONS 57 
+
+
+Name Source 
+
++DAC0.D 12 
+
++DAC1.D 12 
+
++DAC2.D 12 
+
++DAC3.D 12 
+
++DAC4.D 12 
+
++DAC5.D 12 
+
++DAC6.D 12 
+
++DAC7.D 12 
+
++DAC8.D 12 
+
++DAC9.D 12 
+
++DAC10.D 12 
+
++DAC11.D 12 
+
+-DOE.D 7 
+
++DACOUT.V 15 
+
++GAIN1.D 5 
+
+-GAIN2.D 5 
+
++IL7.D 8 
+
+-ILE.D 7 
+
+-INDEX CN7 
+
+-INPUT.D 5 
+
+-INT.D 2 
+
+-lORQ.D 1 
+
++LATCH.D 4 
+
++LD0.D 8 
+
++LD1.D 8 
+
++LD2.D 8 
+
++LD3.D 8 
+
++LD4.D 8 
+
++LD5.D 8 
+
++LD6.D 8 
+
++LD7.D 8 
+
+-M1.D 1 
+
+-MLE.D 7 
+
+-MREQ.D 1 
+
+-NMI.D 
+
++PHI.D 1 
+
++RA0.D 7 
+
++RA1.D 7 
+
++RA2.D 7 
+
++RA3.D 7 
+
++RA4.D 7 
+
++RA5.D 7 
+
++RAMA0.D 10 
+
++RAMA1.D 10 
+
+
+Destination 
+
+Type 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+9 
+
+TTL 
+
+14 
+
+Ana. 
+
+6,16 
+
+TTL 
+
+6,16 
+
+TTL 
+
+9 
+
+TTL 
+
+8 
+
+TTL 
+
+2 
+
+TTL 
+
+6,12,13,14 
+
+TTL 
+
+1 
+
+TTL 
+
+2,4,13 
+
+TTL 
+
+12 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+15 
+
+TTL 
+
+2,3,4 
+
+TTL 
+
+9 
+
+TTL 
+
+3 
+
+TTL 
+
+1 
+
+TTL 
+
+2 
+
+TTL 
+
+8,9 
+
+TTL 
+
+8,9 
+
+TTL 
+
+8,9 
+
+TTL 
+
+8,9 
+
+TTL 
+
+8,9 
+
+TTL 
+
+8,9 
+
+TTL 
+
+11 
+
+TTL 
+
+11 
+
+TTL 
+
+
+Description 
+
+Sound DAC Data 0 
+Sound DAC Data 1 
+Sound DAC Data 2 
+Sound DAC Data 3 
+Sound DAC Data 4 
+Sound DAC Data 5 
+Sound DAC Data 6 
+Sound DAC Data 7 
+Sound DAC Data 8 
+Sound DAC Data 9 
+Sound DAC Data 10 
+Sound DAC Data 11 
+^iC Latch Out Enable 
+Sound DAC Output 
+Env/Gain Control Bit 1 
+Env/Gain Control Bit 2 
+Increment Latch Bit 7 
+Increment Latch Enab. 
+Floppy Disk Index 
+Sample Input Select 
+CPU Interrupt Request 
+CPU I/O Request 
+Latch DAC Data 
+Level Data Bit 0 
+Level Data Bit 1 
+Level Data Bit 2 
+Level Data Bit 3 
+Level Data Bit 4 
+Level Data Bit 5 
+Level Data Bit 6 
+Level Data Bit 7 
+Z-80 Ml 
+
+Snd Mem Addr Ltch En 
+Z-80 Mem. Req. 
+
+Z-80 Non-Mask Int. 
+Z-80 Clock 
+Reg. File Addr Bit 0 
+Reg. File Addr Bit 1 
+Reg. File Addr Bit 2 
+Reg. File Addr Bit 3 
+Reg. File Addr Bit 4 
+Reg. File Addr Bit 5 
+RAM Addr Bit 0 
+RAM Addr Bit 1 
+
+
+© 1987 E-mu S 5 rstems Inc., Scotts Valley, Ca. AH Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+58 SIGNAL NAME DEFINITIONS 
+
+
+Name 
+
+Source 
+
+Destination 
+
+Type 
+
+Description 
+
++RAMA2.D 
+
+10 
+
+11 
+
+TTL 
+
+RAM Addr Bit 2 
+
++RAMA3.D 
+
+10 
+
+11 
+
+TTL 
+
+RAM Addr Bit 3 
+
++RAMA4.D 
+
+10 
+
+11 
+
+TTL 
+
+RAM Addr Bit 4 
+
++RAMA5.D 
+
+10 
+
+11 
+
+TTL 
+
+RAM Addr Bit 5 
+
+-HRAMA6.D 
+
+10 
+
+11 
+
+TTL 
+
+RAM Addr Bit 6 
+
++RAMA7.D 
+
+10 
+
+11 
+
+TTL 
+
+RAM Addr Bit 7 
+
+-RAS3.D 
+
+10 
+
+11 
+
+TTL 
+
+Row Addr. Strobe 3 
+
+-RAS4.D 
+
+10 
+
+11 
+
+TTL 
+
+Row Addr. Strobe 4 
+
+-RAS5.D 
+
+10 
+
+11 
+
+TTL 
+
+Row Addr. Strobe 5 
+
+-RD.D 
+
+1 
+
+2,3,4 
+
+TTL 
+
+Z-80 Read 
+
++RDB16.D 
+
+9 
+
+8 
+
+TTL 
+
+Reg. File Data Bit 16 
+
++RDB17.D 
+
+9 
+
+8 
+
+TTL 
+
+Reg. File Data Bit 17 
+
++RDB18.D 
+
+9 
+
+8 
+
+TTL 
+
+Reg. File Data Bit 18 
+
++RDB19.D 
+
+9 
+
+8 
+
+TTL 
+
+Reg. File Data Bit 19 
+
+-I-RDB20.D 
+
+9 
+
+8 
+
+TTL 
+
+Reg. File Data Bit 20 
+
++RDB21.D 
+
+9 
+
+8 
+
+TTL 
+
+Reg. File Data Bit 21 
+
++RDB22.D 
+
+9 
+
+8 
+
+TTL 
+
+Reg. File Data Bit 22 
+
++RDB23.D 
+
+9 
+
+8 
+
+TTL 
+
+Reg. File Data Bit 23 
+
+-RESET.D 
+
+1 
+
+2,3 
+
+TTL 
+
+Reset 
+
+-RFSH.D 
+
+1 
+
+3 
+
+TTL 
+
+Dynamic RAM Refresh 
+
++RLC.D 
+
+4 
+
+2 
+
+TTL 
+
+Receive Latch Clock 
+
+-i-ROS.D 
+
+4 
+
+2 
+
+TTL 
+
+Receive One-Shot Clk 
+
+-RSTPB.D 
+
+18 
+
+1 
+
+TTL 
+
+Force Reset Test Point 
+
+-RWP.D 
+
+7 
+
+8,9 
+
+TTL 
+
+Reg. File ReadA/Vrite 
+
++RXC.D 
+
+4 
+
+2 
+
+TTL 
+
+SIO Receive Clock 
+
++SDB0.D 
+
+13 
+
+12 
+
+TTL 
+
+Snd Data Bit 0 (Demx) 
+
++SDB0A.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus A Bit 0 
+
++SDB0B.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus B Bit 0 
+
++SDB1.D 
+
+13 
+
+12 
+
+TTL 
+
+Snd Data Bit 1 (A+B) 
+
++SDB1A.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus A Bit 1 
+
++SDB1B.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus B Bit 1 
+
++SDB2.D 
+
+13 
+
+12 
+
+TTL 
+
+Snd Data Bit 2 (A+B) 
+
+-1-SDB2A.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus A Bit 2 
+
+-(-SDB2B.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus B Bit 2 
+
++SDB3.D 
+
+13 
+
+12 
+
+TTL 
+
+Snd Data Bit 3 (A+B) 
+
+-HSDB3A.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus A Bit 3 
+
++SDB3B.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus B Bit 3 
+
++SDB4.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus Bit 4 
+
++SDB5.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus Bit 5 
+
+-t-SDB6.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus Bit 6 
+
++SDB7.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus Bit 7 
+
+-I-SDB8.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus Bit 8 
+
++SDB9.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus Bit 9 
+
+-t-SDBIO.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus Bit 10 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. AH Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SIGNAL NAME DEFINITIONS 59 
+
+
+Name Source 
+
+Destination 
+
+Type 
+
+Description 
+
+-fSDBII.D 
+
+10,11 
+
+12,13 
+
+TTL 
+
+Snd Data Bus Bit 11 
+
+-SELDSK.D 
+
+2 
+
+4 
+
+TTL 
+
+SMPTE/Disk Select 
+
+-SELECT 
+
+2 
+
+CN7 
+
+TTL 
+
+Floppy Select 
+
+-tSHSTB.D 
+
+4 
+
+15 
+
+TTL 
+
+Sample/Hold Strobe 
+
+-SIDE 
+
+2 
+
+CN7 
+
+TTL 
+
+Floppy Disk Side Sel. 
+
+-t-SIOIEO.D 
+
+2 
+
+2 
+
+TTL 
+
+SIO Int. Ena. Out 
+
++SMAO.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 0 
+
++SMA1.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 1 
+
++SMA2.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 2 
+
++SMA3.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 3 
+
++SMA4.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 4 
+
++SMA5.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 5 
+
++SMA6.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 6 
+
++SMA7.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 7 
+
++SMA8.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 8 
+
++SMA9.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 9 
+
++SMA10.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 10 
+
++SMA11.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 11 
+
+-t-SMA12.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 12 
+
+-I-SMA13.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 13 
+
+-FSMA14.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 14 
+
+-tSMAIS.D 
+
+9 
+
+10 
+
+TTL 
+
+Snd Mem Addr 15 
+
++SMA16.D 
+
+8 
+
+10 
+
+TTL 
+
+Snd Mem Addr 16 
+
++SMA17.D 
+
+8 
+
+10 
+
+TTL 
+
+Snd Mem Addr 17 
+
++SMA18.D 
+
+8 
+
+10 
+
+TTL 
+
+Snd Mem Addr 18 
+
+-SMACAS.D 
+
+10 
+
+11 
+
+TTL 
+
+Snd Mem Addr CAS 
+
+-SMOE.D 
+
+13 
+
+10,11 
+
+TTL 
+
+Snd Mem Output En. 
+
++SMPAMP.V 
+
+8 
+
+14 
+
+Ana. Volt. 
+
+Sample Pre-amp Out 
+
+-t-SMPRLC.D 
+
+2 
+
+4 
+
+TTL 
+
+SMPTE Rec Latch Clk 
+
+-fSMPROS.D 
+
+2 
+
+4 
+
+TTL 
+
+SMPTEI-shot LchClk 
+
+-hSMPRXC.D 
+
+2 
+
+4 
+
+TTL 
+
+SMPTE Receive Clock 
+
+-SMPTXC.D 
+
+2 
+
+4 
+
+TTL 
+
+SMPTE Transmit Clock 
+
+-STEP 
+
+2 
+
+CN7 
+
+TTL 
+
+Floppy Disk Head Step 
+
+-SWEH.D 
+
+13 
+
+10,11 
+
+TTL 
+
+Snd Mem Wr Ena Hi 
+
+-SWELD 
+
+13 
+
+10,11 
+
+TTL 
+
+Snd Mem Wr Ena Lo 
+
+-TKOO 
+
+CN7 
+
+2 
+
+TTL 
+
+Floppy Track 00 
+
+-TOE.D 
+
+7 
+
+8 
+
+TTL 
+
+Temp Latch Out Ena 
+
+-TXC.D 
+
+4 
+
+2 
+
+TTL 
+
+Transmit Clock 
+
++TXD.D 
+
+2 
+
+4 
+
+TTL 
+
+Transmit Data 
+
++UCK.D 
+
+7 
+
+8,9 
+
+TTL 
+
+pC Main Clock -»■ 
+
+-UCK.D 
+
+1 
+
+4,7,10,13 
+
+TTL 
+
+jiC Main Clock - 
+
+-i-UCNLO.D 
+
+1 
+
+7,8,13 
+
+TTL 
+
+pC Chan Addr 0 
+
++UCNL1.D 
+
+1 
+
+7,8,13 
+
+TTL 
+
+pC Chan Addr 1 
+
++UCNL2.D 
+
+1 
+
+7,8,13 
+
+TTL 
+
+pC Chan Addr 2 
+
+
+© 1987 E-mu S 3 rstems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+60 SIGNAL NAME DEFINITIONS 
+
+
+Name 
+
+Source 
+
+Destination 
+
++UCNT0.D 
+
+1 
+
+4,7,10,13 
+
+-fUCNTI.D 
+
+1 
+
+4,5,7,10,13,14 
+
++UCNT2.D 
+
+1 
+
+4,7,10,13 
+
+-WAIT.D 
+
+13 
+
+1 
+
+-WD 
+
+4 
+
+CN7 
+
+-WP 
+
+CN7 
+
+2 
+
+-WR.D 
+
+1 
+
+3,4,13 
+
+-WTGT 
+
+2 
+
+CN7 
+
+
+Type 
+
+Description 
+
+TTL 
+
+State Counter Bit 0 
+
+TTL 
+
+State Counter Bit 1 
+
+TTL 
+
+^C State Counter Bit 2 
+
+TTL 
+
+Z-80 Wait 
+
+TTL 
+
+Floppy Disk Write 
+
+TTL 
+
+Floppy Write Protect 
+
+TTL 
+
+Z-80 Write 
+
+TTL 
+
+Floppy Write Gate 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SCHEMATICS 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only © E-mu Systems, Inc. 1987 
+
+Not for reproduction or sale 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only © E-mu Systems, Inc. 1987 
+
+Not for reproduction or sale 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+-MIDI 
+
+e A 
+
+
+INPUT 
+
+’^IN9U 
+
+3 
+
++MIDI 
+
+R55 ~r' 
+
+1 A A A A X 
+
+2 
+
+INPUT 
+
+* VVVv • 
+
+150 5V. 
+
+6N138 
+
+
+^7*07 150 5'/. 
+
+
+D7 
+
+RXDR 
+
+D6 
+
+RTUff 
+
+D5 
+
+TXOfl 
+
+D4 
+
+TTCff 
+
+03 
+
+RTSff 
+
+02 
+
+rnff 
+
+01 
+
+EJTRTT 
+
+00 
+
+DCUF 
+
+SYfTCTT 
+
+ITT 
+
+ruFftr 
+
+RD77T 
+
+m 
+
+RXDB 
+
+arr 
+
+RTCB' 
+
+TXDB 
+
+c/o 
+
+TTUF 
+
+B/fi 
+
+RT5B’ 
+
+CT 
+
+OTW 
+
+RTSTT 
+
+DtnjB' 
+
+rjf 
+
+rCL06 
+
+RDTF 
+
+Z-80flSIO/2 
+
+lEI 
+
+[EO 
+
+
+--WvA 
+
+*^07 IS0 5';^ 
+
+
+[Cl 03 
+
+11 10 
+
+
+CX RCX 
+-CK Q 
+
+IC94 
+74LS221 
+
+
+S' 
+
+D 
+
+
+CC95 
+
+74HCT74 
+
+CLK 
+
+IT 
+
+R' 
+
+J 
+
+
+-SELOSK. 0 
+♦RXC. 0 
+
+
+CASS/ 
+SYNC/ n 
+SMPTE 
+INPUT 
+
+
+-Ml.D 
+
+-lORQ. D 
+-RO. D 
+-INT. D 
+D 
+
+^fll. 0 
+-CSCTC.O 
+-RESET. D 
+D 
+
+i-sro[£o.o 
+
+
+
+07 
+
+CT0 
+
+06 
+
+
+OS 
+
+zco 
+
+04 
+
+
+03 
+
+
+
+
+01 
+
+00 
+
+[Cl 08 
+Z-80flCTC 
+
+ZCl 
+
+DT 
+
+CT2 
+
+nirnr 
+
+
+
+
+nrr 
+
+
+fl0 
+
+
+Ri 
+
+CT3 
+
+CF 
+
+
+RTsrr 
+
+
+CK 
+
+
+[£I 
+
+lEO 
+
+
+
+
+_ 
+
+13 
+
+
+
+
+
+^ Q -1 
+IC10S 
+—CCLK 
+12 74HCTn2 
+
+►- K O’ ^ 
+
+R” 
+
+
+>R72 4070BPWR 
+>47K 
+
+
+-S Q -L 
+I Cl 05 
+CCLK 
+74HCTU2 
+"K O’ ^ 
+fT 
+
+
+5 ]| lC104y^ 
+4070BPWR 
+
+
+
+♦ TXD. D 
+-SUPTXC. D 
+
+
+E-mu Systems, 
+
+Inc. 
+
+SP1200 MAIN - CTC and SIO 
+
+DOC#: SK103 
+
+PAGE 2 OF 18 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+-SUPTXC.0 
+1-SUPROS. D 
+^■SUPRXC. D 
+^SMPRLC.0 
+
+
+
+
+fl2 
+
+or 
+
+ftl 
+
+
+FI0 
+
+
+tC41 
+
+cpr 
+
+74HCT138 
+
+
+
+
+EM 
+
+or 
+
+EM 
+
+(itr 
+
+
+IS 
+
+f 
+
+14 
+
+* 
+
+L3 
+
+♦ 
+
+
+E-mu Systems, Inc. 
+
+SP1200 MAIN - Sequencer Memory 
+
+
+DOC#; SK103 
+
+
+PAGE 4 OF 18 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+FI {nr 
+
+D— 
+
+QB 
+
+B 
+
+uw 
+
+7 1-CNLS2. D 
+
+6 -CNLS2. D 
+
+le 1-CNLSl.D 
+
+QC 
+
+c 
+
+cir 
+
+15 tCNLSe. D 
+
+LK [C68 ini’ 
+74HCT379 
+
+- 
+
+
+fUCK.D 
+
+
+
+IC6S 
+
+,^0 74HCT157 
+
+OR 
+
+fll 
+
+Be 
+
+J tRfl5. D 
+
+
+E-mu Systems, Inc. 
+
+
+SP1200 MAIN VERS 1 - Control Sequencer 
+
+
+DOC#: SKI 03 PAGE 7 OF IS 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+>RDB23.□ 
+fRDB22. D 
+♦RDB21. D 
+1-ROB20. 0 
+i*RD6l9. D 
+vRDBlB.D 
+♦•RDBL7. 0 
+»RDBL 6 .D 
+
+
+OH 
+
+OH 
+
+OG 
+
+QC 
+
+OF 
+
+OF 
+
+DE 
+
+QE 
+
+DO 
+
+QD 
+
+DC 
+
+QC 
+
+OB 
+
+OB 
+
+OB 
+
+Qfl 
+
+or 
+
+rci2 
+
+CLK 
+
+74HCT37+ 
+
+
+DH 
+
+OH 
+
+OG 
+
+QG 
+
+Of 
+
+OF 
+
+DE 
+
+QE 
+
+DO 
+
+QO 
+
+DC 
+
+QC 
+
+06 
+
+QB 
+
+OB 
+
+OR 
+
+or 
+
+rC32 
+
+CLK 
+
+74HCT374. 
+
+
+B9 
+
+
+R 8 
+
+
+fl7 
+
+
+R5 
+
+OB 
+
+fl4 
+
+DC 
+
+fi3 
+
+OD 
+
+R 2 
+
+IC14 
+
+B 1 
+
+2114 
+
+300n6 
+
+R 0 
+
+
+CS 
+
+
+WE 
+
+
+
+
+16 
+
+
+17 
+
+
+1 
+
+
+2 
+
+
+3 
+
+
+4 
+
+
+3 
+
+
+1 6 
+
+
+5 
+
+
+8 
+
+
+
+CD 
+
+74LS283 
+
+
+
+S3 ] 
+
+‘B2 
+
+1018 
+
+
+
+S2 
+
+
+
+
+■R3 
+
+
+SI 
+
+■n 2 
+
+
+
+■Rl 
+
+
+S0 
+
+
+C 
+
+
+
+13 
+
+
+12 
+
+1 
+
+2 
+
+11 
+
+6 
+
+
+1.3 
+
+15 
+
+12 
+
+2 
+
+11 
+
+6 
+
+
+12 
+
+
+|l4 
+
+
+*3 
+
+
+— 
+
+,3 74LS283 
+
+s: 
+
+2 IC3B 
+
+
+♦IL7. D 
+
+- 
+
+•n. n 
+
+
+
+OH 
+
+OH 
+
+DC 
+
+QG 
+
+DF 
+
+OF 
+
+DE 
+
+QE 
+
+OD 
+
+QO 
+
+DC 
+
+QC 
+
+DB 
+
+QB 
+
+DB 
+
+Qfl 
+
+DT 
+
+IC17 
+
+CLK 
+
+74HCT374 
+
+
+
+
+17 
+
+
+
+14 
+
+
+
+13 
+
+* 
+
+
+8 
+
+
+
+7 
+
+1 
+
+
+4 
+
+
+
+3 
+
+
+
+' 1 C 
+
+
+i-U- 
+
+
+
+17 
+
+
+14 
+
+
+13 
+
+
+ft 
+
+
+7 
+
+► 
+
+4 
+
+
+3 
+
+» 
+
+r 
+
+. 11 
+
+
+
+E-mu Systems, 
+
+inc. 
+
+SPI 200 MAIN - Register File MSBs 
+
+DOC#; SKI03 
+
+PAGE 9 OF IS 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+♦sufiifs. n 
+
+i-suftifi. n 3 
+
+Dfle 74HCT157 
+Qf 
+
++sufii4..n 5 
+
+Dfll 
+
+♦fiuftis. n ® 
+
+DB0 
+
+QE 
+
+tsuflip. n 1 + 
+
+♦syfln.n 13 
+
+OBt 
+
+DC0 
+
+QC 
+
++suftiw. n 11 
+
+DCl 
+
++SMfl9. D 1® 
+
+“““ ot 
+
+DDl 
+
+fl0 ERB" 
+
+
+_J t 
+
+
+
+♦sufifi.n 2 
+
+IC148 
+
+naffi 74HCri57 
+
+.sum. n 3 
+
+Qfl 
+
+♦ SMflR. n 5 
+
+Dfll 
+
+♦SMflS. n ® 
+
+308 
+
+QB 
+
+♦RMft* n 
+
+361 
+
+♦ SUfl3. D 13 
+
+QC 
+
+♦sufl?. n 11 
+
+1® 
+
+DCl 
+
+“““ QD 
+
+
+301 
+
+fl« ERF 
+
+
+yi 
+
+-SWEH. D 
+
+
+-SMDE.D 
+
+
+♦fiufiia.n 9 
+
+
+♦ SUfll 7. n 
+
+17 r 
+
+n i 
+
+16 01 
+
++ucNrj?.n R 
+
+15 P 
+
+♦ UCNTl.n K 
+
+u m 
+
+♦ lICNTfl.n 7 
+
+13 r 
+
+
+an 
+
+
+iiii 
+
+in I 
+
+ipjiii 
+
+
+II 
+
+
+mi 
+
+
+hnnnnnHm 
+
+iiiiiiliii 
+
+iiiiiiiiii 
+
+iiiiiiiiii 
+
+
+II 
+
+
+fill 
+
+
+Blllllll 
+
+9IIIIIII 
+
+9IIIIII 
+
+
+flBj 
+
+HQi 
+
+iiiiai 
+
+iiiial 
+
+
+i-Rfiuae. 0 
+-SMRCaS. D 
+1-S08U. D 
+fSD6l0. D 
+rSDB9. 0 
+^S0B8. 0 
+*SDB7. D 
+^SD86. D 
+4-SDBS. C 
+rSDB4. 0 
+
+
+E-mu Systems, Inc. 
+
+
+SP1200 MAIN - ROM Sound Memory 
+
+
+DOC#: SK103 
+
+
+PAGE 10 OF 18 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+D 
+
+i>RRMR6. D 
+^•RfiMflS. 0 
+^RAUR4.D 
+^RflMfl3. D 
+-^RflURS. D 
+^RRMRl. D 
+■^RRURe. D 
+-RflSS. D 
+-SUftCflS. D 
+
+
+
+E-mu Systems, 
+
+Inc. 
+
+SP1200 MAIN - RAM Sound Memory 
+
+DOC#: SKI03 
+
+PAGE 11 OF 18 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+«-SOBU.O 
+*-SDBlB. D 
+^S0B9. 0 
+«-S0B8. D 
+1-SDB7. D 
+«-S0B6. 0 
+<-SDB5. 0 
+*S0Bi. 0 
+
+
+
+^S083fl.D 
+•■S0B2fl. D 
+fSDBlfl.O 
+fSDBdn.D 
+1-S0B3B. 0 
+tS0B2B.D 
+1-SDBlB.O 
+i-SDBBB.D 
+
+
+-INPUT.0 
+*f\t. D 
+-WR. D 
+-lORQ. D 
+-CSSU. D 
++UCNL2. 0 
+♦UCNLl. D 
+i-UCNLO. D 
++UCNT2. 0 
++UCNT1. D 
+
+fUCNTB. D 
+-UCK. D 
+
+
+
+E-mu Systems, Inc. 
+
+SP1200 MAIN - Sound Memory Intfc 
+
+
+DOC#: SK103 
+
+
+PAGE 13 OF 18 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+
+[C75 \ 
+
+LF398 
+
+'—^[N OUT^ 
+
+>PL VR C 
+
+e 1 7 [ 6 I 
+
+C5^ 
+
+l000pF 
+
+IC83 —-T-poly 
+
+[\.10 
+
+
+DfiTfi 
+
+m 
+
+QU 
+
+
+Qie 
+
+
+Q9 
+
+
+Q8 
+
+SC 
+
+Q7 
+
+
+Q9 
+
+
+Q5 
+
+EfIF 
+
+Q4 
+
+[C72 
+
+Q3 
+
+7+HCT50i Q2 
+
+
+Q1 
+
+
+oe 
+
+
+sour 
+
+CLK 
+
+EOC 
+
+
+E-mu Systems, 
+
+Inc. 
+
+SP1200 MAIN-Input ADC 
+
+DOC#: SK103 
+
+PAGE 14 OF 18 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+3. 9K5X RT7 10K 
+
+IT 
+
+
+4 I 5 |$ |7 js |9 I 10 11 I 12| 1S[ U I 15| IS 
+I MSB D10D9 08 D7 D6 05 0-1 D3 D2 □! LSB * 
+
+
+TTsb 
+
+Fe \ 
+
+
+C83 - V V V 
+
+^33pF RT3 25K 
+
+-cer LT 
+
+
++ CSS 100 5X 
+
+IBuF—L—*— 
+
+
++ I 5 6 I 7 I 8 I 9 I 18 I 11 I U 
+
+MSB D6 D5 oi 03 D2 6l“LSB 77~\16 
+FB \ 
+
+IC97 
+
+
+COM 
+
+X0 
+
+ICU2 
+
+40S1B 
+
+XI 
+
+
+tz 
+
+fl2 
+
+X3 
+
+
+
+
+
+
+
+
+
+
+IT 
+
+Cl 63 
+
+,_1 / , 
+
+- 
+
+2 ^ 
+
+3 rC98 
+
+22pFLr 
+
+
+
+
+
+
+
+/ 
+
+
+/ 
+
+1 
+
+
+12 
+
+
+I C102 
+
+I 
+
+L084 
+
+J_-4700pF 
+pol y 
+
+
+
+
+10 
+
+1 
+
+I C101 
+
+
+ri.0B4. 
+
+l-47«18p 
+
+r'"', 
+
+q 
+
+
+
+3 
+
+ICl^ 9 
+
+C1S0 
+
+
+rL084 
+
+X-4700P 
+■^pol y 
+
+
+
+^ * 
+
+* R 
+
+ICl^ 9 
+
+1 C99 
+
+
+rL08+ 
+
+J^700p 
+-^po! y 
+
+tl 
+
+
+^ * 
+
+^ 12 
+
+icn^ 9 
+
+C96 
+
+
+•L084 
+
+X-4700P 
+
+-j— pol y 
+
+C 
+
+_ 1 
+
+_ * 
+
+^ 10 
+
+
+t 
+
+
+
+C97 
+
+J-^70fip 
+
+
+TL084 
+
+-j—pal y 
+
+c 
+
+3 
+
+icm)*- 
+
+CSS 
+
+J.--4700P 
+
+
+y' 
+
+TL084 
+
+-|—pal y 
+
+IZ 
+
+5 
+
+[CU>^- 
+
+T C35 
+
+
+TL084 
+
+
+E-mu Systems, Inc. 
+
+SP1200 MAIN-DACS and Demux 
+
+
+DOC#: SK103 
+
+
+PAGE 15 OF 18 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+p— 
+
+C128 
+
+
+
+1. 0K57 
+
+Cl 40 
+
+0 
+
+. 01 liiL 
+
+
+1 
+
+e 
+
+. 8lil0\ 
+
+
+
+6 
+
+
+
+
+R87 
+
+R109 
+
+i 5 
+
+ICl ^—1 
+
+IR94 
+
+R121 
+
+3. 0K57. 
+
+5. 1K57 
+
+
+rL084 
+
+5. LK57. 
+
+5. IK57 
+
+CU4 
+
+
+C122 
+
+
+
+
+.--4700pF 
+
+
+L--l000pF 
+
+
+
+
+Cl 
+
+rH 
+
+27 
+
+( t 
+
+
+-'VVVV— 
+
+1. 0K5Z 
+
+si 0lt 
+
+rL 
+
+3_j\ 
+
+0 
+
+Ries 
+
+4-aaaa^-*- 
+
+
+►R33 
+
+f-AAAA/—I 
+
+
++. 3K5>: 3K57. 
+
+
+
+TL08+ 
+Cl 33 
+-.-leeepF 
+-10-/. 
+
+
+
+TO MIX 
+
+OUT 
+
+ATTEN 
+
+1-CNLSH6. V 
+
+
+
+\ 
+
+0. 0URI/C 
+
+w - 
+
+R107 
+
+\ 4 k— A AAA M 
+
+^IC12>J-<> 
+
+V V VV 
+
+3.9K5Z 1 
+
+TL084 
+
+
+R161 
+
+-VWv- 
+
+1.0^57. Cl 38 
+
+
+>R92 RU9 
+
+3. 9KS7 3. 9KS% 
+
+
+
+
+
+E-mu Systems, Inc. 
+
+
+SP1200 MAIN - Output Channels 
+
+
+DOC#: SK103 
+
+
+PAGE 17 OF 18 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+WIRING DIAGRAMS 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+
+
+PINS»E 
+
+
+
+
+SP1200 CHASSIS WIRING 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+
+
+o 
+
+< 
+
+
+o 
+<-> c 
+
+_ TO OS 
+U- CO CL 
+
+
+E 
+
+o ” 
+
+
+Si 5 
+o o 
+
+O •- 
+
+_QJ O) 
+
+
+CO 
+
+Qj 
+
+E 
+
+03 
+
+I 
+
+o 
+
+< 
+
+
+
+LO 
+
+CD 
+
+
+o 
+
+o 
+
+o 
+
+\ 
+
+o 
+
+o 
+
+o 
+
+/ 
+
+
+C\J 
+
+CO 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+
+
+s 
+
+
+O 
+
+- 
+
+
+£ 
+
+.s 
+
+5 
+
+
+a 
+
+Si 
+
+
+
+o 
+
+ro 
+
+
+
+
+(c) 
+
+
+E-mu Systems, Inc. 
+All Rights Reserved 
+
+
+Scotts Valley, Ca. 
+
+7-37 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+PARTS LIST 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+PARTS LIST 55 
+
+
+SP 1200 PARTS LIST 
+
+
+ORDERING PARTS: Parts can be ordered by written order or by 
+phone. When ordering parts, you MUST order by E-mu part number. 
+The minimum parts order is $15.00. Emergency rush orders can 
+usually be sent out the same day if the order is received by 11:00 PST. 
+Parts orders can be placed between the hours of 8:30 am and 5:30 pm 
+PST Monday through Friday. E-mu Customer Service Department 
+(408) 438-1921. 
+
+
+MAIN BOARD 
+
+
+CAPACITORS 
+
+E-MU P/N 
+
+QUANTITY 
+
+470 pF 40V 
+
+CA318 
+
+2 
+
+4700 gF 16V 
+
+CA319 
+
+1 
+
+3.3 mF 25V 
+
+CA324 
+
+1 
+
+220 pF 
+
+CC 104 
+
+1 
+
+22 pF 50V 
+
+CC 302 
+
+1 
+
+470 pF 50V 
+
+CC 305 
+
+2 
+
+820 pF 50V 
+
+CC 307 
+
+2 
+
+4700 pF 50V 
+
+CC 309 
+
+4 
+
+.01 pF 50V 
+
+CC 311 
+
+9 
+
+.01 pF 50V 
+
+CC 312 
+
+6 
+
+.1 pF 50V 
+
+CC 314 
+
+73 
+
+1000 pF lOOV 
+
+CC 324 
+
+12 
+
+3900 pF 50V 
+
+CC 325 
+
+1 
+
+47 pF 50V 
+
+CC 326 
+
+1 
+
+5 pF 50V 
+
+CC 328 
+
+1 
+
+33 pF 50V 
+
+CC 329 
+
+3 
+
+68 pF 
+
+CM 117 
+
+1 
+
+1000 pF Plas. 
+
+CP 107 
+
+8 
+
+4700 pF Plas. 
+
+CP 108 
+
+8 
+
+10 pF Tant. 16V 
+
+CT 316 
+
+6 
+
+10 pF Tant. 25V 
+
+CT 317 
+
+2 
+
+COMPONANT 
+
+E-MU P/N 
+
+QUANTITY 
+
+1/4" Audio Jack Mono 
+
+JA 301 
+
+8 
+
+1/4" 1 CLSD CKT Jack 
+
+JA 307 
+
+2 
+
+1/4" 2 CLSD CKT Jack 
+
+JA 310 
+
+6 
+
+18 pin DIP Socket 
+
+JC 105 
+
+21 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+86 PARTS LIST 
+
+
+20 pin DIP Socket 
+
+JC 106 
+
+8 
+
+24 pin DIP Socket 
+
+JC 107 
+
+1 
+
+28 pin DIP Socket 
+
+JC 308 
+
+3 
+
+40 pin DIP Socket 
+
+JC 309 
+
+2 
+
+16 pin DIP Socket 
+
+JC 311 
+
+15 
+
+5 Pin DIN Socket 
+
+JI 302 
+
+3 
+
+6 pin Molex Pwr. Conn 
+
+JP 111 
+
+2 
+
+AMP Pwr Conn. 
+
+JP 322 
+
+1 
+
+.100 x4 Male Pwr Conn 
+
+JP 333 
+
+1 
+
+Rib Header Conn 
+
+JR 307 
+
+1 
+
+50 Pin Header 
+
+JR 311 
+
+1 
+
+
+ICs 
+
+E-MU P/N 
+
+QUANTITY 
+
+Analog and Hybrid ICs 
+
+4051 Analog Mux 
+
+IC 208 
+
+1 
+
+4053 Analog Switch 
+
+IC 345 
+
+1 
+
+NE5534 Audio Driver 
+
+IL 108 
+
+1 
+
++ 12V Reg. lA 
+
+IL 110 
+
+1 
+
+LF356 BI-FET 
+
+IL 301 
+
+1 
+
+TL084 Quad Op-Amp 
+
+IL 302 
+
+8 
+
+SSM 2044 VCF 
+
+IL 303 
+
+2 
+
+-H15V Reg. lA 
+
+IL 308 
+
+1 
+
+AdJ. Reg. 1.5A 
+
+IL 321 
+
+1 
+
+5V Reg. 3A 
+
+IL 333 
+
+1 
+
+6N138 Opto-isolator 
+
+OE 300 
+
+1 
+
+Interface ICs 
+
+LM311 Comparator 
+
+II 102 
+
+2 
+
+7523 MDAC 
+
+II 304 
+
+1 
+
+ADC 0809 
+
+II 336 
+
+1 
+
+7541 12 Bit MDAC 
+
+II 337 
+
+1 
+
+LF 398 S/H 
+
+II 338 
+
+1 
+
+Memory ICs and PALs 
+
+2114 SRAM 4K 300 nS 
+
+IM 357 
+
+6 
+
+4464 64K x 4 RAM 
+
+IM 373 
+
+14 
+
+74S288 pC PROM 
+
+IP 326 
+
+1 
+
+74S288 Log PROM 
+
+IP 327 
+
+1 
+
+Z-80 RAM PAL 
+
+IP 357 
+
+1 
+
+Chip Select PAL 
+
+IP 358 
+
+1 
+
+Sound Mem. PAL 
+
+IP 359 
+
+1 
+
+DRAM PAL 
+
+IP 360 
+
+1 
+
+2764 Mainboot EPROM 
+
+IP 362 
+
+1 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+t 
+
+I 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+PARTS LIST 87 
+
+
+Digital ICs 
+
+
+
+
+4070 Quad XOR 
+
+IC 
+
+131 
+
+1 
+
+74C2 Tri-State Buffer 
+
+IC 
+
+341 
+
+1 
+
+Z-80A CPU 
+
+IM 
+
+343 
+
+1 
+
+Z-80A SIO/2 
+
+IM 
+
+344 
+
+1 
+
+Z-80A Counter/Timer 
+
+IM 
+
+346 
+
+1 
+
+7407 Hex Buffer 
+
+IT 
+
+104 
+
+1 
+
+74LS290 Decade Counter 
+
+IT 
+
+122 
+
+1 
+
+74LS14 Hex Schm. Trig. 
+
+IT 
+
+307 
+
+1 
+
+74LS157 Quad Mux. 
+
+IT 
+
+313 
+
+1 
+
+74LS221 Dual 1-Shot 
+
+IT 
+
+316 
+
+2 
+
+74LS283 Bin Adder 
+
+IT 
+
+318 
+
+6 
+
+74S161 Bin Counter 
+
+IT 
+
+331 
+
+2 
+
+74HCT32 Quad AND 
+
+IT 
+
+354 
+
+1 
+
+74HCT74 Dual D Fl-Fl 
+
+IT 
+
+355 
+
+3 
+
+74HCT138 3-8 Decoder 
+
+IT 
+
+357 
+
+2 
+
+74HCT174 Hex D F-F 
+
+IT 
+
+359 
+
+2 
+
+74HCT244 Oct Buffer 
+
+IT 
+
+360 
+
+2 
+
+74HCT273 Oct Fl-Fl 
+
+IT 
+
+361 
+
+3 
+
+74HCT374 Oct Fl-Fl 
+
+IT 
+
+362 
+
+5 
+
+74HCT08 Quad AND 
+
+IT 
+
+363 
+
+1 
+
+74HCT393 4-Bit Dual 
+
+IT 
+
+364 
+
+1 
+
+74HCT42 BCD->Dec 
+
+IT 
+
+366 
+
+1 
+
+74HCT10 Tri NAND 
+
+IT 
+
+368 
+
+2 
+
+74HCT00 Quad NAND 
+
+IT 
+
+369 
+
+1 
+
+74HCT670 4x4 Reg File 
+
+IT 
+
+371 
+
+4 
+
+74S04 Hex Inv. 
+
+IT 
+
+375 
+
+1 
+
+74LS379 Quad Fl-Fl 
+
+IT 
+
+377 
+
+1 
+
+74HCT157 Quad Mux 
+
+IT 
+
+379 
+
+7 
+
+74HCT504 
+
+IT 
+
+381 
+
+1 
+
+74HCT245 Oct Buffer 
+
+IT 
+
+383 
+
+2 
+
+74HCT377 Oct D Fl-Fl 
+
+IT 
+
+384 
+
+3 
+
+74HCT112 J-K Fl-Fl 
+
+IT 
+
+385 
+
+1 
+
+74HCT373 Oct Latch 
+
+IT 
+
+391 
+
+2 
+
+
+RESISTORS 
+
+E-MU P/N 
+
+QUANTITY 
+
+4.7K O X 9 Res. Net. SIP 
+
+RN 319 
+
+1 
+
+330 O x8 Res. Net. 
+
+RN 320 
+
+2 
+
+1.5KO x9 Res. Net. 10 pin 
+
+RN 321 
+
+1 
+
+lOKO 1/4 W 1% 
+
+RP 106 
+
+7 
+
+15K Q 1/4 W 1% 
+
+RP 107 
+
+1 
+
+90.9K O 1/4 W 1% 
+
+RP 110 
+
+1 
+
+124K Q 1/4 W 1% 
+
+RP 304 
+
+1 
+
+226K Q 1/4 W 1% 
+
+RP 309 
+
+1 
+
+12. IK Q 1/4 W 1% 
+
+RP 312 
+
+2 
+
+121 Q 1/4 W 1% 
+
+RP 315 
+
+1 
+
+
+© 1987 E-mu S 5 ratems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+88 PARTS LIST _ 
+
+21KQ1/4W1% RP 317 1 
+
+13.3K O 1/4 W 1% RP 318 2 
+
+19. IK O 1/4 W 1% RP 320 2 
+
+1.33K O 1/4 W 1% RP 321 1 
+
+43.2K Q 1/4 W 1% RP 323 2 
+
+162K Q 1/4 W 1% RP 324 1 
+
+47.5K Q 1/4 W 1% RP 335 1 
+
+31.6K Q 1/4 W 1% RP 337 1 
+
+402K Q 1/4 W 1% RP 342 1 " 
+
+6.19K Q 1/4 W 1% RP 344 1 
+
+82.5K a 1/4 W 1% RP 345 1 
+
+3.92K Q 1/4 W 1% RP 346 1 
+
+107K Q 1/4 W 1% RP 347 1 
+
+118KQ1/4W1% RP 348 1 
+
+14.7K O 1/4 W 1% RP 349 1 
+
+7.5K Q 1/4 W 1% RP 351 1 
+
+150 Q 1/4 W RR 102 5 
+
+3.3KO 1/4 W RR 110 2 
+
+47K Q 1/4 W RR 122 1 
+
+4.7MQ1/4W RR 132 1 
+
+47 Q 1/4 W RR 133 2 
+
+100 Q 1/4 W RR 301 4 
+
+200 Q 1/4 W RR 302 5 
+
+330 Q 1/4 W RR 303 1 
+
+390 O 1/4 W RR 304 2 
+
+1K0 1/4W RR 305 24 
+
+4.7KQ1/4W RR 307 6 
+
+10KQ1/4W RR 309 7 
+
+IIK Q 1/4 W RR 310 1 
+
+15KQ1/4W RR311 4 
+
+22K n 1/4 W RR 313 8 
+
+30KQ1/4W RR 315 2 
+
+33K0 1/4W RR 316 2 
+
+39Kni/4W RR 317 2 
+
+100KQ1/4W RR 318 2 
+
+20KQ1/4W RR 323 1 
+
+IM Q 1/4 W RR 325 3 
+
+3K0 1/4W RR 327 1 
+
+1.5MQ1/4W RR 332 1 
+
+220KQ1/4W RR 335 2 
+
+2.2KQ1/4W RR 337 1 
+
+110KQ1/4W RR 342 1 
+
+680 Q 1/4 W RR 343 1 
+
+270 0 1/4 W RR 347 1 
+
+7.5K0 1/4W RR 351 1 
+
+6.2KQ1/4W RR 352 4 
+
+5.1K0 1/4W RR 353 4 
+
+4.3K0 1/4W RR 354 4 
+
+3.9KQ1/4W RR 355 4 
+
+© 1987 E-mu Systems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+PARTS LIST 55 
+
+
+3.6KQ 1/4 W 
+
+RR 356 
+
+1 
+
+2.4K Q 1/4 W 
+
+RR 357 
+
+1 
+
+lOK Q Trim 
+
+RT 301 
+
+3 
+
+25K Q Trim 
+
+RT 307 
+
+1 
+
+50K O Trim 
+
+RT 308 
+
+1 
+
+lOOK a Trim 
+
+RT 309 
+
+2 
+
+
+MISCELLANEOUS 
+
+E-MU P/N 
+
+QUANTITY 
+
+1N914 Signal Diode 
+
+DD301 
+
+4 
+
+1N4002 Rect. Diode 
+
+DD 302 
+
+4 
+
+2N411 PNP Trans 
+
+QQ 101 
+
+1 
+
+20 mHz Crystal 
+
+ZX 304 
+
+1 
+
+
+
+FRONT PANEL 
+
+
+PART NAME 
+
+E-MU P/N 
+
+QUANTITY 
+
+Piezo Xtal Assy 
+
+AD 341 
+
+1 
+
+100 pF Cap. 
+
+CC 103 
+
+1 
+
+.02 pF 50V Cap. 
+
+CC313 
+
+1 
+
+.1 pF 50V Cap. 
+
+CC 314 
+
+1 
+
+1 pF Tant 25V Cap. 
+
+CT 315 
+
+1 
+
+lOpFTant 16V Cap. 
+
+CT 316 
+
+3 
+
+1N914 Diode 
+
+DD 301 
+
+41 
+
+4-40 Kepf Nut 
+
+HN 304 
+
+4 
+
+3/8-32 Nut 
+
+HN 311 
+
+3 
+
+4-40 X 3/8 Screw 
+
+HS 302 
+
+4 
+
+3mm xlOmm Ph. Screw 
+
+HS 325 
+
+16 
+
+Nylon Spacer 
+
+HS 369 
+
+16 
+
+#4 Nylon Washer 
+
+HW 210 
+
+4 
+
+3/8" Lock Washer 
+
+HW 312 
+
+3 
+
+14053 Analog Mux 
+
+1C 345 
+
+1 
+
+TLC27N Quad Op-Amp 
+
+IL 324 
+
+1 
+
+6 Pin Molex Pwr Conn. 
+
+JP 111 
+
+1 
+
+50 Pin Rib Header 
+
+JR 301 
+
+1 
+
+LCD 16x2 lines 
+
+LP 304 
+
+1 
+
+Red LED 
+
+LP 311 
+
+15 
+
+
+© 1987 E-mu ^sterns Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+90 PARTS LIST 
+
+
+lOK Lx)g Pot 
+
+RC 302 
+
+3 
+
+lOK Lin Slider Pot 
+
+RC 311 
+
+8 
+
+lOK O 1/4 W 1% 
+
+RP 106 
+
+1 
+
+523 Q 1/4 W 1% 
+
+RP 308 
+
+1 
+
+4.7KO 1/4 W 
+
+RR 307 
+
+1 
+
+lOKQ 1/4 W 
+
+RR 309 
+
+3 
+
+15KQ 1/4 W 
+
+RR 311 
+
+2 
+
+lOOK £2 1/4 W 
+
+RR 318 
+
+1 
+
+390K Q 1/4 W 
+
+RR 328 
+
+1 
+
+2.2M n 1/4 W 
+
+RR 338 
+
+1 
+
+lOOK Q Trim. 
+
+RT 309 
+
+1 
+
+Lg. Black Switch 
+
+SW 301 
+
+10 
+
+Small Red Switch 
+
+SW 306 
+
+1 
+
+Small White Switch 
+
+SW 312 
+
+28 
+
+LCD Volt. Supply 
+
+ZV 300 
+
+1 
+
+
+CHASSIS 
+
+
+PART NAME 
+
+E-MU P/N 
+
+QUANTITY 
+
+Diode Bridge 5A 50V 
+
+DB 300 
+
+1 
+
+Chassis (Bottom Panel) 
+
+EM 354 
+
+1 
+
+Reg. Heatsink 
+
+EM 359 
+
+1 
+
+Plastic Housing 1200 
+
+EP 324 
+
+1 
+
+Slider Knob 
+
+HK 313 
+
+8 
+
+Rotary Knob (No Cap) 
+
+HK 314 
+
+3 
+
+Rotary Knob Cap 
+
+HK 315 
+
+3 
+
+3/8 X 32 Panel Nut 
+
+HN 135 
+
+16 
+
+4-40 Kepf Nut 
+
+HN 304 
+
+2 
+
+8-32 Kepf Nut 
+
+HN 308 
+
+4 
+
+8-32 X 3/8" Ph. Screw 
+
+HS 122 
+
+4 
+
+4-40 X 3/8" Standoff 
+
+HS 351 
+
+3 
+
+4-40 X 1/4" SEM Screw 
+
+HS 352 
+
+13 
+
+6-32 X 1/4" SEM Screw 
+
+HS 353 
+
+12 
+
+8-18 X 3/8" Inplas Screw 
+
+HS 364 
+
+8 
+
+3/8" Panel Washer 
+
+HW 322 
+
+16 
+
+Fuse Holder 
+
+JC 124 
+
+1 
+
+Red Fuse Cap 
+
+JC 137 
+
+1 
+
+AC Pwr Conn/RFI Filt. 
+
+JP 310 
+
+1 
+
+Power Switch 
+
+SW 103 
+
+1 
+
+
+© 1987 E-mu S 5 fstems Inc., Scotts Valley, Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+PARTS LIST 91 
+
+
+110/220 Switch 
+
+SW 107 
+
+1 
+
+Fuse 2A Slo-blo 
+
+ZF 102 
+
+1 
+
+Front Panel Label 
+
+ZL 361 
+
+1 
+
+3.5" Floppy Disk Drive 
+
+ZM 336 
+
+1 
+
+Front Pnl Fisch Paper 
+
+ZP 323 
+
+1 
+
+Rubber Foot 
+
+ZR 308 
+
+4 
+
+Power Transformer 
+
+ZT 307 
+
+1 
+
+MISCELLANEOUS 
+
+E-MU P/N 
+
+QUANTITY 
+
+Set of 5 Prod. Disks 
+
+AD 358 
+
+1 
+
+SP1200 Op. Manual 
+
+FI 332 
+
+1 
+
+Power Cord US 
+
+WC 116 
+
+1 or... 
+
+Power Cord W. Europe 
+
+WC 308 
+
+1 
+
+SP1200 Shipping Box 
+
+ZS 364 
+
+1 
+
+Left Shipping Foam 
+
+ZS 365 
+
+1 
+
+Right Shipping Foam 
+
+ZS 366 
+
+1 
+
+
+CABLES 
+
+
+PART NAME 
+
+E-MU P/N 
+
+QUANTITY 
+
+Front Panel Audio Cable 
+
+AD 335 
+
+1 
+
+Interpanel Data Cable 
+
+AD 345 
+
+1 
+
+Disk Data Cable 
+
+AD 353 
+
+1 
+
+Disk Power Cable 
+
+AD 354 
+
+1 
+
+Female Molex Pin 
+
+JP 305 
+
+- 
+
+Male Molex Pin 
+
+JP 306 
+
+- 
+
+
+© 1987 E-mu Systems Inc., Scotts Valley. Ca. All Rights Reserved 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SERVICE POLICY 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SERVICE POLICY 
+
+9/87 
+
+E-mu Systems, Inc. 
+
+SP1200 Sampling Percussion System 
+
+SERVICE/WARRANTY CENTER POLICIES 
+
+
+WHAT IT’S ALL ABOUT 
+
+This service program covers E-mu Systems SP1200 equipment. It is 
+highly recommended that Service/Warranty Centers have adequate 
+supplies of spare parts on hand to efficiently represent E-mu Systems. 
+Service/Warranty Centers should conduct business in a professional 
+manner and provide E-mu with information concerning product 
+quality and customer needs. 
+
+SP1200 PRODUCT WARRANTY 
+
+E-mu Systems warranty covers all defects in materials and 
+workmanship for a period of ONE YEAR (90 days for disk drives) from 
+the date of purchase by the original owner. The wcirranty does not 
+cover: 
+
+1. Damages due to improper or inadequate maintenance, 
+accident, misuse, abuse, alteration, imauthorized repairs, 
+tampering, or failure to follow normal operating procedures as 
+outlined in the user's manual. 
+
+2. Damage or deterioration of cabinet or keyboard. 
+
+3. Damages occurring during any shipment of the product for 
+any reason. 
+
+4. Any product that has been modified in any way by anyone 
+other than E-mu Systems, Inc. or E-mu Authorized 
+Service/Warranty Centers. 
+
+SERVICE CENTER 
+
+E-mu Authorized Service Centers will provide for warranty and non¬ 
+warranty repair of SP1200 equipment. Service Centers will perform 
+required updates, repair PCB's, and exchange failed parts. 
+
+WARRANTY CENTER 
+
+E-mu Authorized Warranty Centers will provide for warranty and non¬ 
+warranty repair of SP1200 equipment. Warranty Centers will exchange 
+failed parts ONLY. Warranty Centers WILL NOT perform component 
+repair on SP1200 PCB's. 
+
+WARRANTY PARTS 
+
+Warranty parts are those belonging to a warranty SP1200 System and 
+those parts held as warranty inventory by a Service/Warranty Center. 
+E-mu will replace any faulty warranty parts or components due to 
+defective workmanship or materials. 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SERVICE POLICY 
+
+
+WARRANTY PARTS RETURN 
+
+Warranty parts to be returned will require a Return Authorization. 
+Please call E-mu Service Department for authorization and write the 
+number on the outside of the package. Service/Warranty Centers are 
+responsible for all freight charges incurred when returning parts to E- 
+mu Systems, Inc. 
+
+WARRANTY SWAP 
+
+Provided the Center has adequate credit terms with E-mu, a 
+replacement part will be billed and sent freight prepaid before the 
+failed part is returned. A Return Authorization will be assigned to the 
+replacement part and should be used when returning the failed part. 
+The Return Authorization should be written on the outside of the 
+return package. Failed parts will be credited to the Service/Warranty 
+Center account provided they are received at E-mu within sixty days 
+(ninety days for International) of initial Warranty Swap. 
+
+Service/Warranty Centers Domestic and International are responsible 
+for all freight charges incurred when returning parts to E-mu 
+Systems, Inc. 
+
+INTERNATIONAL NOTE * It is recommended that parts are 
+consolidated and shipped bulk freight. Freight collect charges will be 
+refused and parts wlU not be credited to the account. Any duties 
+Incurred importing a replacement part may be reclaimed from local 
+customs service when exporting the failed part. 
+
+WARRANTY CLAIMS 
+
+E-mu will reimburse Service/Warranty Centers for warranty work 
+performed on SP1200 equipment. In order to be eligible for 
+reimbursement, please submit a completed Warranty Claim Form, a 
+copy of Customer Proof of Purchase, and return within SIXTY days of 
+repair date. 
+
+Parts used for warranty repair should be listed on the Warranty Claim 
+Form and returned for replacement. Credit will NOT be issued for 
+peirts returned other than WARRANTY SWAP (see above). 
+
+ECO’S 
+
+E-mu will provide Service/Warranty Centers with ECO's recommended 
+to improve the performance of the SP1200. 
+
+CREDIT TERMS 
+
+Credit terms are required to receive Warranty Swaps. Please contact 
+our Accounts Payable Department to inquire. 
+
+FACTORY AUTHORIZATION 
+
+If any questions or problems arise regarding Warranty Repair or 
+Warranty Swap, please call for authorization before working on the 
+SP1200. 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+__SERVICE POLICY 
+
+TECHNICAL SUPPORT 
+
+E-mu Systems provides Service/Warranty Centers with telephone 
+support lines to assistance in resolving technical questions. Telephone 
+support hours are between 8:30am and 5:30pm PST Monday through 
+Friday. E-mu Service Department (408) 438-1921. 
+
+FACTORY REPAIRS 
+
+If the Service/Warranty Center is unable to resolve the failure, please 
+notify E-mu Service and request a Return Authorization. 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SP1200 CREDITS 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+For the personal use of SP1200 Owners only 
+Not for reproduction or sale 
+
+
+© E-mu Systems, Inc. 1987 
+
+
+SP1200 Credits 
+
+
+HARDWARE DESIGN 
+
+Dave Rossum 
+
+SOFTWARE DESIGN 
+
+Bill Aspromonte 
+Tony Dean 
+Marc Ferguson 
+Dave Rossum 
+
+FUNCTIONAL DESIGN 
+
+Marco Alpert 
+Marc Ferguson 
+Dave Rossum 
+
+MECHANICAL DESIGN 
+
+Ken Provost 
+
+INDUSTRIAL DESIGN 
+
+Max Yoshimoto 
+
+PROJECT MANAGEMENT 
+
+Tony Dean 
+
+SOUND PROCESSING 
+
+Dan Boiba 
+Kevin Monahan 
+
+TECH MANUAL 
+
+Steve Davies (SP-12) 
+
+Riley Smith (SP1200, diagrams) 
+Nancy Enge (Cover) 
+
+SPECIAL THANKS 
+
+Dave Rossum 
+Roger Sheehan 
+E-mu Service Dept. 
+
+
+Contact The Emulator Archive for more information: www.emulatorarchive.com 
+
+
+
+
+
+
