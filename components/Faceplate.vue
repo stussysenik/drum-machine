@@ -11,7 +11,7 @@ import ProgrammingStrip from './faceplate/ProgrammingStrip.vue'
 import PerformanceControls from './faceplate/PerformanceControls.vue'
 import ChannelStrip from './faceplate/ChannelStrip.vue'
 import FloppyDrive from './faceplate/FloppyDrive.vue'
-import TutorialDialog from './faceplate/TutorialDialog.vue'
+import LearnCompanion from './faceplate/LearnCompanion.vue'
 
 const store = useDrumMachineStore()
 const audio = useAudioEngine()
@@ -39,6 +39,11 @@ onMounted(async () => {
   await audio.init()
   await stockKit.loadStockKit()
   store.updateLcd()
+
+  // Wire sequencer boundary event for queued song switching
+  sequencer.onSegmentBoundary(() => {
+    store.commitQueuedSongAtBoundary()
+  })
 
   window.addEventListener('pointerdown', ensureToneStarted, { once: true })
 })
@@ -107,7 +112,7 @@ onMounted(async () => {
         <span>E-mu Systems, Inc.</span>
       </div>
     </div>
-    <TutorialDialog :open="tutorialOpen" @close="tutorialOpen = false" />
+    <LearnCompanion :open="tutorialOpen" @close="tutorialOpen = false" />
   </div>
 </template>
 

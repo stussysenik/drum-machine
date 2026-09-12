@@ -16,8 +16,13 @@ import type {
   HardwareModule,
   SampleData,
   LcdState,
+  ProjectMetadata,
+  ProjectSource,
+  LessonProgress,
+  LessonStatus,
+  StudyDefinition,
 } from '~/types'
-import { SP1200 } from '~/types'
+import { SP1200, PROJECT_SCHEMA_VERSION } from '~/types'
 
 // Default sound names across Bank A-D (standard factory mapping)
 const defaultSoundLabels: Record<number, { name: string; abbr: string }> = {
@@ -116,6 +121,25 @@ export const useDrumMachineStore = defineStore('drumMachine', {
 
     // Keypad entry buffer
     keypadBuffer: '',
+
+    // === PHASE 7: ADOPTION & SONGBENCH ===
+    projectMeta: {
+      schemaVersion: PROJECT_SCHEMA_VERSION,
+      projectName: 'MY PROJECT',
+      source: 'user' as ProjectSource,
+      studyId: null as string | null,
+      lessonProgress: [] as LessonProgress[],
+      lastOpenedAt: Date.now(),
+    } as ProjectMetadata,
+
+    pendingSong: null as number | null,
+    activeSongEntryIndex: 0,
+
+    // Learn companion
+    lessonRuntime: {
+      activeLessonId: null as string | null,
+      completedSteps: {} as Record<string, string[]>,
+    },
   }),
 
   getters: {
@@ -139,6 +163,63 @@ export const useDrumMachineStore = defineStore('drumMachine', {
 
     getSample: (state) => (id: string): SampleData | undefined =>
       state.samples.find(s => s.id === id),
+
+    // === PHASE 7 GETTERS ===
+
+    activeSong: (state): Song => state.songs[state.currentSong],
+
+    isSongEmpty: (state) => (): boolean => {
+      const song = state.songs[state.currentSong]
+      return song.entries.length === 0
+    },
+
+    /**
+     * Get all unique pattern indices reachable from the current song's entries.
+     */
+    reachablePatternIndices: (state) => (): number[] => {
+      const song = state.songs[state.currentSong]
+      const indices = new Set<number>()
+      for (const entry of song.entries) {
+        indices.add(entry.patternIndex)
+      }
+      return Array.from(indices).sort((a, b) => a - b)
+    },
+
+    /**
+     * Compute an 8-channel layer summary for a given pattern.
+     */
+    patternLayerSummary: (state) => (patternIndex: number) => {
+      const pattern = state.patterns[patternIndex]
+      const layers: Array<{ channel: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8; pads: PadId[]; activeSteps: number; sampleLabel: string | null }> = []
+
+      for (let v = 0; v < 8; v++) {
+        const vc = v as VoiceChannel
+        const activeSteps = pattern.steps[vc].filter(s => s.active).length
+        const pads: PadId[] = []
+
+        // Find pads that map to this voice channel in any bank
+        for (let b = 0; b < 4; b++) {
+          const padId = (b * 8 + v) as PadId
+          if (state.padSettings[padId].sampleId) {
+            pads.push(padId)
+          }
+        }
+
+        // Get sample label from Bank A pad
+        const bankAPad = v as PadId
+        const sampleId = state.padSettings[bankAPad].sampleId
+        const sample = sampleId ? state.samples.find(s => s.id === sampleId) : undefined
+
+        layers.push({
+          channel: (v + 1) as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8,
+          pads,
+          activeSteps,
+          sampleLabel: sample?.name ?? null,
+        })
+      }
+
+      return layers
+    },
   },
 
   actions: {
@@ -316,6 +397,169 @@ export const useDrumMachineStore = defineStore('drumMachine', {
     setBpm(bpm: number) {
       this.bpm = Math.max(SP1200.BPM_MIN, Math.min(SP1200.BPM_MAX, bpm))
       this.patterns[this.currentPattern].bpm = this.bpm
+      this.updateLcd()
+    },
+
+    // === PATTERN & SONG SELECTION ===
+    selectPattern(index: number) {
+      if (index >= 0 && index < SP1200.MAX_PATTERNS) {
+        this.currentPattern = index
+        this.updateLcd()
+      }
+    },
+
+    selectSong(index: number) {
+      if (index >= 0 && index < SP1200.MAX_SONGS) {
+        this.currentSong = index
+        this.activeSongEntryIndex = 0
+        this.updateLcd()
+      }
+    },
+
+    // === SONG ENTRY MANAGEMENT ===
+    addSongEntry(patternIndex: number, repeats: number) {
+      const song = this.songs[this.currentSong]
+      if (song.entries.length < 100) {
+        song.entries.push({ patternIndex, repeats: Math.max(1, repeats) })
+      }
+    },
+
+    removeSongEntry(index: number) {
+      const song = this.songs[this.currentSong]
+      if (index >= 0 && index < song.entries.length) {
+        song.entries.splice(index, 1)
+      }
+    },
+
+    clearSong() {
+      this.songs[this.currentSong].entries = []
+    },
+
+    // === SWING ===
+    setSwing(value: number) {
+      this.swing = Math.max(50, Math.min(71, value))
+    },
+
+    // === PHASE 7: SONG WORKBENCH ===
+
+    /**
+     * Select a song. If stopped, apply immediately.
+     * If playing, queue for next segment boundary.
+     */
+    requestSongSelection(songIndex: number) {
+      if (songIndex < 0 || songIndex >= SP1200.MAX_SONGS) return
+      if (songIndex === this.currentSong) return
+
+      if (!this.playing) {
+        // Immediate selection when stopped
+        this.selectSong(songIndex)
+        this.pendingSong = null
+        this.setLcd(`SONG: ${String(songIndex + 1).padStart(2, '0')}`, 'SELECTED')
+        setTimeout(() => this.updateLcd(), 1200)
+      } else {
+        // Queue for boundary when playing
+        this.pendingSong = songIndex
+        this.setLcd(`NEXT SONG: ${String(songIndex + 1).padStart(2, '0')}`, 'AT SEG BOUNDARY')
+      }
+    },
+
+    /**
+     * Cancel a pending song selection.
+     */
+    cancelPendingSong() {
+      this.pendingSong = null
+      this.updateLcd()
+    },
+
+    /**
+     * Called by sequencer at segment boundary to commit queued song.
+     */
+    commitQueuedSongAtBoundary() {
+      if (this.pendingSong !== null) {
+        const target = this.pendingSong
+        this.selectSong(target)
+        this.pendingSong = null
+        this.setLcd(`SONG: ${String(target + 1).padStart(2, '0')}`, 'NOW PLAYING')
+        setTimeout(() => this.updateLcd(), 1200)
+      }
+    },
+
+    // === PHASE 7: LESSONS ===
+
+    setActiveLesson(lessonId: string | null) {
+      this.lessonRuntime.activeLessonId = lessonId
+      if (lessonId && !this.lessonRuntime.completedSteps[lessonId]) {
+        this.lessonRuntime.completedSteps[lessonId] = []
+      }
+    },
+
+    completeLessonStep(lessonId: string, stepId: string) {
+      if (!this.lessonRuntime.completedSteps[lessonId]) {
+        this.lessonRuntime.completedSteps[lessonId] = []
+      }
+      if (!this.lessonRuntime.completedSteps[lessonId].includes(stepId)) {
+        this.lessonRuntime.completedSteps[lessonId].push(stepId)
+      }
+    },
+
+    resetLessonProgress(lessonId: string) {
+      this.lessonRuntime.completedSteps[lessonId] = []
+    },
+
+    updateProjectMeta(partial: Partial<ProjectMetadata>) {
+      Object.assign(this.projectMeta, partial)
+      this.projectMeta.lastOpenedAt = Date.now()
+    },
+
+    /**
+     * Clone a study into the current project.
+     */
+    loadStudyDefinition(study: StudyDefinition) {
+      // Set BPM and swing from study
+      this.bpm = study.bpm
+      this.setSwing(study.swing)
+
+      // Clear and load patterns from study
+      for (const studyPattern of study.patterns) {
+        const pattern = this.patterns[studyPattern.index]
+        pattern.name = studyPattern.name
+        pattern.bpm = study.bpm
+        pattern.swing = study.swing
+        pattern.length = studyPattern.length
+
+        // Convert boolean step arrays to StepData
+        for (let v = 0; v < 8; v++) {
+          const vc = v as VoiceChannel
+          const activeArr = studyPattern.steps[vc]
+          if (activeArr) {
+            for (let s = 0; s < 16; s++) {
+              pattern.steps[vc][s].active = activeArr[s] ?? false
+            }
+          } else {
+            for (let s = 0; s < 16; s++) {
+              pattern.steps[vc][s].active = false
+            }
+          }
+        }
+      }
+
+      // Load song if present
+      if (study.song) {
+        const song = this.songs[this.currentSong]
+        song.entries = study.song.entries.map(e => ({
+          patternIndex: e.patternIndex,
+          repeats: e.repeats,
+        }))
+        song.name = study.title
+      }
+
+      // Update project metadata
+      this.updateProjectMeta({
+        source: 'study',
+        studyId: study.id,
+        projectName: study.title,
+      })
+
       this.updateLcd()
     },
 

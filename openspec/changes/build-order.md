@@ -16,6 +16,7 @@ graph TD
     P3 --> P4[Phase 4: 96 PPQN Sequencer & Live Repeat Engine]
     P4 --> P5[Phase 5: 10s Memory Budget & Sampling Engine]
     P5 --> P6[Phase 6: Virtual Floppy Disk & State Persistence]
+    P6 --> P7[Phase 7: Adoption Lessons & Song Workbench]
 ```
 
 ---
@@ -99,3 +100,25 @@ graph TD
 - [ ] IndexedDB virtual floppy drive library.
 - [ ] Authentic floppy drive sound effects (head stepping, motor spin, eject click) and activity LED indicator.
 - **Verification Gate:** Full machine state (32 sounds, 100 segments, 100 songs, mixes) persists across browser reloads.
+
+---
+
+### Phase 7: Adoption Lessons & Song Workbench
+**Objective:** Make the completed machine teachable and easy to orient without replacing the SP-1200 faceplate with a DAW.
+- [x] Implement the opt-in, state-aware learning companion and source-controlled practice studies.
+- [x] Ship `Pocket 92` and `A/B/Four-Bar Story` as generic, editable technique studies in isolated practice projects.
+- [x] Implement the Song Workbench: 100-song selection, chain/repeat visibility, segment jump, and eight-channel layer summary.
+- [x] Queue song changes at sequencer-reported segment boundaries during playback; select immediately while stopped.
+- [x] Persist versioned project metadata and lesson progress through the Phase 6 persistence layer.
+- **Change Contract:** `openspec/changes/adoption-and-song-workbench/` defines the lesson catalogue, safe-load rules, UI boundaries, state contracts, task sequence, and legacy-spec audit.
+- **Verification Gate:** A new player can load and modify a study, navigate a non-empty song, resume a completed lesson after reload, and use the faceplate unobstructed when the companion is closed.
+
+#### 2026-09-11 Implementation Log
+- Types extended: `LessonDefinition`, `StudyDefinition`, `ProjectMetadata`, `SongWorkbenchState`, and supporting types in `types/index.ts`.
+- Store extended: `selectPattern`, `selectSong`, `addSongEntry`, `removeSongEntry`, `clearSong`, `setSwing` (previously missing but referenced by SongPanel), plus Phase 7 actions (`requestSongSelection`, `cancelPendingSong`, `commitQueuedSongAtBoundary`, `setActiveLesson`, `completeLessonStep`, `loadStudyDefinition`, etc.) and getters (`activeSong`, `isSongEmpty`, `reachablePatternIndices`, `patternLayerSummary`).
+- Study data: `data/studies/pocket92.ts` (2-bar kick/snare/hat at 92 BPM), `data/studies/abFourBarStory.ts` (MAIN/VARIATION/FILL with song chain), `data/studies/index.ts` registry.
+- Lesson catalogue: `data/lessons.ts` — 5 lessons across phases 0–4, with capability gating for sampling (Phase 3, blocked until sampling lands).
+- UI: `LearnCompanion.vue` replaces `TutorialDialog.vue` — accessible dialog with Learn/Songs tabs, lesson cards, active lesson view with progress, study loaders. `SongWorkbench.vue` — song selector, chain display, entry list with segment jump, 8-channel layer summary.
+- Sequencer: `onSegmentBoundary` callback registered; boundary event triggers `commitQueuedSongAtBoundary` for queued song switching.
+- Persistence: `saveProjectMeta`/`loadProjectMeta` with schema versioning and migration; integrated into `saveSession`/`loadSession` and export/import.
+- Pre-existing type errors remain in `DataFader.vue`, `ParameterButtons.vue`, `useKeyboard.ts` (unimplemented store actions from earlier phases — not introduced by this change).

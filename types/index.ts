@@ -123,3 +123,96 @@ export const SP1200 = {
 export function padToVoiceChannel(padId: PadId): VoiceChannel {
   return (padId % 8) as VoiceChannel
 }
+
+// === ADOPTION LESSONS & SONG WORKBENCH (Phase 7) ===
+
+export type LessonCapability = 'playback' | 'recording' | 'swing' | 'sampling' | 'song-chain'
+
+export type LessonPhase = 0 | 1 | 2 | 3 | 4
+
+export type LessonSetup = 'none' | 'new-practice-project' | 'current-project-optional'
+
+export type LessonReset = 'restore-study-snapshot' | 'none'
+
+export interface LessonStep {
+  id: string
+  label: string
+  detail: string
+}
+
+export interface LessonDefinition {
+  id: string
+  phase: LessonPhase
+  title: string
+  durationMinutes: number
+  capability: LessonCapability[]
+  intent: string
+  setup: LessonSetup
+  steps: LessonStep[]
+  reset: LessonReset
+}
+
+export type LessonStatus = 'available' | 'blocked' | 'in-progress' | 'completed'
+
+export interface LessonProgress {
+  lessonId: string
+  status: LessonStatus
+  completedSteps: string[]
+  startedAt: number | null
+  completedAt: number | null
+}
+
+export type ProjectSource = 'user' | 'study'
+
+export interface ProjectMetadata {
+  schemaVersion: number
+  projectName: string
+  source: ProjectSource
+  studyId: string | null
+  lessonProgress: LessonProgress[]
+  lastOpenedAt: number
+}
+
+export interface StudyDefinition {
+  id: string
+  version: string
+  title: string
+  description: string
+  bpm: number
+  swing: number
+  patterns: StudyPattern[]
+  song: StudySong | null
+}
+
+export interface StudyPattern {
+  index: number
+  name: string
+  length: number
+  steps: Record<VoiceChannel, boolean[]>
+}
+
+export interface StudySong {
+  entries: Array<{ patternIndex: number; repeats: number }>
+}
+
+export interface SongWorkbenchState {
+  selectedSong: number
+  playState: 'stopped' | 'playing'
+  pendingSong: number | null
+  activeEntryIndex: number | null
+  entries: Array<{
+    position: number
+    patternIndex: number
+    repeats: number
+    mixOverride?: number
+    tempoOverride?: number
+  }>
+  layers: Array<{
+    channel: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+    pads: PadId[]
+    activeSteps: number
+    sampleLabel: string | null
+  }>
+}
+
+export const PROJECT_SCHEMA_VERSION = 1

@@ -4,8 +4,8 @@
 // SINGLETON: one set of localforage instances shared across all composables.
 
 import localforage from 'localforage'
-import type { Pattern, Song, SampleData, PadId } from '~/types'
-import { SP1200 } from '~/types'
+import type { Pattern, Song, SampleData, PadId, ProjectMetadata } from '~/types'
+import { SP1200, PROJECT_SCHEMA_VERSION } from '~/types'
 
 type LocalForageInstance = ReturnType<typeof localforage.createInstance>
 
@@ -15,6 +15,7 @@ let songStore: LocalForageInstance | null = null
 let settingsStore: LocalForageInstance | null = null
 let sampleStore: LocalForageInstance | null = null
 let sampleBufferStore: LocalForageInstance | null = null
+let projectMetaStore: LocalForageInstance | null = null
 let _store: ReturnType<typeof useDrumMachineStore> | null = null
 
 function getStores() {
@@ -24,6 +25,7 @@ function getStores() {
     settingsStore = localforage.createInstance({ name: 'sp1200', storeName: 'settings' })
     sampleStore = localforage.createInstance({ name: 'sp1200', storeName: 'samples' })
     sampleBufferStore = localforage.createInstance({ name: 'sp1200', storeName: 'sampleBuffers' })
+    projectMetaStore = localforage.createInstance({ name: 'sp1200', storeName: 'projectMeta' })
   }
   return {
     patternStore: patternStore!,
@@ -31,6 +33,7 @@ function getStores() {
     settingsStore: settingsStore!,
     sampleStore: sampleStore!,
     sampleBufferStore: sampleBufferStore!,
+    projectMetaStore: projectMetaStore!,
   }
 }
 
@@ -71,6 +74,28 @@ export function usePersistence() {
     await settingsStore.setItem('swing', store.swing)
     await settingsStore.setItem('currentPattern', store.currentPattern)
     await settingsStore.setItem('currentSong', store.currentSong)
+  }
+
+  // === PROJECT METADATA (Phase 7) ===
+
+  async function saveProjectMeta(meta: ProjectMetadata) {
+    const { projectMetaStore } = getStores()
+    await projectMetaStore.setItem('current', meta)
+  }
+
+  async function loadProjectMeta(): Promise<ProjectMetadata | null> {
+    const { projectMetaStore } = getStores()
+    const raw = await projectMetaStore.getItem('current') as ProjectMetadata | null
+    if (!raw) return null
+    // Migration: ensure schema version exists
+    if (!raw.schemaVersion) {
+      raw.schemaVersion = PROJECT_SCHEMA_VERSION
+    }
+    // Migration: ensure lessonProgress is an array
+    if (!raw.lessonProgress) {
+      raw.lessonProgress = []
+    }
+    return raw
   }
 
   async function saveSample(sample: SampleData, buffer: AudioBuffer) {
@@ -186,6 +211,7 @@ export function usePersistence() {
         currentPattern: store.currentPattern,
         currentSong: store.currentSong,
       },
+      projectMeta: store.projectMeta,
       samples: store.samples.map(s => ({
         id: s.id,
         name: s.name,
@@ -215,6 +241,7 @@ export function usePersistence() {
     if (data.patterns) store.$patch({ patterns: data.patterns })
     if (data.songs) store.$patch({ songs: data.songs })
     if (data.settings) store.$patch({ ...data.settings })
+    if (data.projectMeta) store.updateProjectMeta(data.projectMeta as ProjectMetadata)
     store.updateLcd()
   }
 
@@ -232,6 +259,7 @@ export function usePersistence() {
     const store = getStore()
     await savePattern(store.currentPattern, store.activePattern)
     await saveSettings()
+    await saveProjectMeta(store.projectMeta)
   }
 
   // === LOAD SESSION ===
@@ -243,6 +271,11 @@ export function usePersistence() {
     if (pattern) {
       store.patterns[store.currentPattern] = pattern
     }
+    // Load project metadata (Phase 7)
+    const meta = await loadProjectMeta()
+    if (meta) {
+      store.updateProjectMeta(meta)
+    }
     store.updateLcd()
   }
 
@@ -253,14 +286,16 @@ export function usePersistence() {
     saveAllSongs,
     saveSettings,
     saveSample,
+    saveProjectMeta,
+    loadProjectMeta,
     saveSession,
+    loadSession,
     loadPattern,
     loadAllPatterns,
     loadSong,
     loadSettings,
     loadSampleBuffer,
     loadAllSamples,
-    loadSession,
     deleteSample,
     exportToJSON,
     exportToShareCode,

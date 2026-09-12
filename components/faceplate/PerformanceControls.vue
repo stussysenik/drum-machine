@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useDrumMachineStore } from '~/stores/drumMachine'
+import { useSequencer } from '~/composables/useSequencer'
 import type { BankId } from '~/types'
 
 const store = useDrumMachineStore()
+const sequencer = useSequencer()
 
 function handleMode() {
   store.cyclePerformanceMode()
@@ -13,7 +15,7 @@ function handleBank() {
 }
 
 function handleRunStop() {
-  store.togglePlay()
+  sequencer.toggle()
 }
 
 function handleRecord() {

@@ -20,6 +20,7 @@ let _audio: ReturnType<typeof useAudioEngine> | null = null
 let songEntryIndex = 0
 let songRepeatCount = 0
 let totalStepsInPattern = 0
+let segmentBoundaryCallback: (() => void) | null = null
 
 function getStore() {
   if (!_store) _store = useDrumMachineStore()
@@ -56,15 +57,20 @@ function onStep(time: number) {
     const step = pattern.steps[voiceChannel][stepIndex]
 
     if (step.active) {
-      // Find which pad(s) map to this voice channel
+      // Find the first pad (across all banks) that has a sample for this voice channel
       const padA = v as PadId
       const padB = (v + 8) as PadId
+      const padC = (v + 16) as PadId
+      const padD = (v + 24) as PadId
 
-      // Trigger pad from the active bank
-      if (store.selectedBank === 'A' && audio.hasSample(padA)) {
+      if (audio.hasSample(padA)) {
         audio.triggerPad(padA)
-      } else if (store.selectedBank === 'B' && audio.hasSample(padB)) {
+      } else if (audio.hasSample(padB)) {
         audio.triggerPad(padB)
+      } else if (audio.hasSample(padC)) {
+        audio.triggerPad(padC)
+      } else if (audio.hasSample(padD)) {
+        audio.triggerPad(padD)
       }
     }
   }
@@ -81,6 +87,11 @@ function onStep(time: number) {
   // When we complete 16 steps, advance song entry if in song mode
   if (stepIndex >= 16) {
     stepIndex = 0
+
+    // Emit segment boundary event for queued song switching
+    if (segmentBoundaryCallback) {
+      segmentBoundaryCallback()
+    }
 
     if (store.mode === 'song') {
       songRepeatCount++
@@ -225,5 +236,8 @@ export function useSequencer() {
     tapTempo,
     syncTransport,
     dispose,
+    onSegmentBoundary(callback: () => void) {
+      segmentBoundaryCallback = callback
+    },
   }
 }
