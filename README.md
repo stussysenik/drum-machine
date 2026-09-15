@@ -6,7 +6,7 @@ Built with Nuxt 3, Tone.js, and a Rust/WASM audio engine.
 
 ## Live Demo
 
-**[senik-sp1200.vercel.app](https://senik-sp1200.vercel.app)**
+**[stussysenik-sp1200.vercel.app](https://stussysenik-sp1200.vercel.app)**
 
 ## What It Is
 
